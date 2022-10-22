@@ -3,7 +3,7 @@
 ## Github Page
 https://flashdesignory.github.io/vanilla-js-components/
 
-## Preview
+## Local Preview
 ````
 console:
 1. npm install
