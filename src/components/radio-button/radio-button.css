@@ -1,0 +1,43 @@
+.radio-button-container {
+  color: orange;
+  display: flex;
+}
+
+.radio-button-container .label {
+  margin-left: 5px;
+}
+
+.radio-button-container .input {
+  /* hide & reset */
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  margin: 0;
+  /* custom styles */
+  font: inherit;
+  color: currentColor;
+  width: 20px;
+  height: 20px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+.radio-button-container .input::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  transform: scale(0);
+  box-shadow: inset 1em 1em darkorange;
+  border-radius: 50%;
+}
+
+.radio-button-container .input:checked::before {
+  transform: scale(1);
+}
+
+.radio-button-group-container .radio-button-container:not(:last-child) {
+  margin-bottom: 5px;
+}

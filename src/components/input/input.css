@@ -1,0 +1,21 @@
+.input-container .input {
+  outline: 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid darkorange;
+  color: darkorange;
+  transition: all 0.3s ease;
+}
+
+.input-container .input:hover {
+  border-color: orangered;
+}
+
+.input-container .input:focus {
+  border-color: orange;
+}
+
+.input-container .input::placeholder {
+  color: darkOrange;
+  opacity: 0.5;
+}

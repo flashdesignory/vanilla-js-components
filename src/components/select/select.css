@@ -1,0 +1,16 @@
+.select-container .select {
+  outline: 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid darkorange;
+  color: darkorange;
+  transition: all 0.3s ease;
+}
+
+.select-container .select:hover {
+  border-color: orangered;
+}
+
+.select-container .option {
+  color: darkorange;
+}

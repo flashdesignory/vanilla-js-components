@@ -1,0 +1,31 @@
+.button {
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  border-width: 1px;
+  border-style: solid;
+  transition: all 0.3s ease;
+}
+
+.button-primary {
+  background-color: darkorange;
+  border-color: darkorange;
+  color: #333333;
+}
+
+.button-primary:hover {
+  background-color: orange;
+  border-color: orange;
+}
+
+.button-secondary {
+  background-color: transparent;
+  border-color: darkorange;
+  color: darkorange;
+}
+
+.button-secondary:hover {
+  border-color: #787676;
+  color: #787676;
+}
