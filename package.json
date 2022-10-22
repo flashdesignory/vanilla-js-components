@@ -9,7 +9,7 @@
     "pretty": "prettier ./src --check",
     "pretty:fix": "npm run pretty -- --write",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -o docs-build"
   },
   "author": "",
   "license": "ISC",
