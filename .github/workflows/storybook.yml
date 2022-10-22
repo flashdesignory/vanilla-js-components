@@ -19,7 +19,7 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
-          branch: gh-pages
+          branch: main
           folder: docs-build # The folder that the build-storybook script generates files.
           clean: true # Automatically remove deleted files from the deploy branch
           target_folder: docs # The folder that we serve our Storybook files from
