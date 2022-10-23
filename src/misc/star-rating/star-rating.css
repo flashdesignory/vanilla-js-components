@@ -1,6 +1,10 @@
-.ratings-content,
-.ratings-content > * {
+.ratings-container,
+.ratings-container > * {
   box-sizing: border-box;
+}
+
+.ratings-container {
+  display: flex;
 }
 
 .ratings-content {
