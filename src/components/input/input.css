@@ -1,3 +1,7 @@
+.input-container, .input-container > * {
+  box-sizing: border-box;
+}
+
 .input-container .input {
   outline: 0;
   padding: 10px;

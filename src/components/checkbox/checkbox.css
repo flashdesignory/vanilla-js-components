@@ -1,3 +1,7 @@
+.checkbox-container, .checkbox-container > * {
+  box-sizing: border-box;
+}
+
 .checkbox-container {
   color: orange;
   display: flex;

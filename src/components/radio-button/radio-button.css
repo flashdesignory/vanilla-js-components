@@ -1,3 +1,7 @@
+.radio-button-container, .radio-button-container > * {
+  box-sizing: border-box;
+}
+
 .radio-button-container {
   color: orange;
   display: flex;

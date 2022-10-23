@@ -1,3 +1,7 @@
+.button-container, .button-container > * {
+  box-sizing: border-box;
+}
+
 .button {
   border: none;
   padding: 10px;
