@@ -3,7 +3,11 @@
 import "./skeleton.css";
 
 export class Skeleton {
-    constructor() {}
+    constructor({
+        avatarShape = "square"
+    }) {
+        this.avatarShape = avatarShape;
+    }
 
     render() {
         const container = document.createElement('div');
@@ -23,7 +27,7 @@ export class Skeleton {
         container.appendChild(right);
 
         const square = document.createElement('div');
-        square.classList.add('square');
+        square.classList.add(`${this.avatarShape}`);
         right.appendChild(square);
 
         return container;

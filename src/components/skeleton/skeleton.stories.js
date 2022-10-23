@@ -10,5 +10,12 @@ const Template = ({ ...args }) => {
   return skeleton.render();
 };
 
-export const Simple = Template.bind({});
-Simple.args = {};
+export const Circle = Template.bind({});
+Circle.args = {
+    avatarShape: "circle"
+};
+
+export const Square = Template.bind({});
+Square.args = {
+    avatarShape: "square"
+};
