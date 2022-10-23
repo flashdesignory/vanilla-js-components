@@ -1,4 +1,5 @@
-.button-container, .button-container > * {
+.button-container,
+.button-container > * {
   box-sizing: border-box;
 }
 

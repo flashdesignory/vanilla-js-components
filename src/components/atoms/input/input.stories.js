@@ -1,7 +1,7 @@
 import { Input } from "./input";
 
 export default {
-  title: "Components/Input",
+  title: "Atoms/Input",
   argTypes: {
     id: { control: "text" },
     type: { control: "text" },
@@ -20,4 +20,11 @@ Text.args = {
   id: "input",
   type: "text",
   placeholder: "Enter something",
+};
+
+export const TextWithValue = Template.bind({});
+TextWithValue.args = {
+  id: "controlled-input",
+  type: "text",
+  value: "Initial Value",
 };

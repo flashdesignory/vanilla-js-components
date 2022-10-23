@@ -1,0 +1,11 @@
+.input-form-container {
+  display: flex;
+}
+
+.input-form-container form {
+  display: flex;
+}
+
+.input-form-container .input-container:not(:last-child) {
+  margin-right: 10px;
+}

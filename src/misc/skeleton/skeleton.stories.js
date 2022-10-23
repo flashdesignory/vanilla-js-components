@@ -1,7 +1,7 @@
 import { Skeleton } from "./skeleton";
 
 export default {
-  title: "Components/Skeleton",
+  title: "Misc/Skeleton",
   argTypes: {},
 };
 
@@ -12,10 +12,10 @@ const Template = ({ ...args }) => {
 
 export const Circle = Template.bind({});
 Circle.args = {
-    avatarShape: "circle"
+  avatarShape: "circle",
 };
 
 export const Square = Template.bind({});
 Square.args = {
-    avatarShape: "square"
+  avatarShape: "square",
 };

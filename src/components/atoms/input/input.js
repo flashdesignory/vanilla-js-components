@@ -3,17 +3,18 @@
 import "./input.css";
 
 export class Input {
-  constructor({ id, type, placeholder, onInput }) {
+  constructor({ id, type, placeholder, value, onInput }) {
     this.id = id;
     this.type = type;
     this.placeholder = placeholder;
+    this.value = value;
     this.onInput = onInput;
 
     this.handleOnInput = this.handleOnInput.bind(this);
   }
 
   handleOnInput(e) {
-    this.onInput(e);
+    if (this.onInput) this.onInput(e);
   }
 
   render() {
@@ -24,6 +25,7 @@ export class Input {
     input.id = this.id;
     input.type = this.type;
     input.placeholder = this.placeholder;
+    if (this.value) input.value = this.value;
     input.addEventListener("input", this.handleOnInput);
     container.appendChild(input);
     return container;

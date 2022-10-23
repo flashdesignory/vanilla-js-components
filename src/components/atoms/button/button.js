@@ -12,7 +12,7 @@ export class Button {
   }
 
   handleOnClick(e) {
-    this.onClick(e);
+    if (this.onClick) this.onClick(e);
   }
 
   render() {

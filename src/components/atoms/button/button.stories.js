@@ -1,7 +1,7 @@
 import { Button } from "./button";
 
 export default {
-  title: "Components/Button",
+  title: "Atoms/Button",
   argTypes: {
     label: { control: "text" },
     onClick: { action: "onClick" },

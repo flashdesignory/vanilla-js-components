@@ -1,7 +1,7 @@
 import { Checkbox } from "./checkbox";
 
 export default {
-  title: "Components/Checkbox",
+  title: "Atoms/Checkbox",
   argTypes: {
     id: "checkbox",
     name: { control: "text" },

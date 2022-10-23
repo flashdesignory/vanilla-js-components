@@ -14,7 +14,7 @@ export class Checkbox {
   }
 
   handleOnChange(e) {
-    this.onChange(e);
+    if (this.onChange) this.onChange(e);
   }
 
   render() {

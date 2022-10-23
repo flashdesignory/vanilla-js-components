@@ -2,7 +2,7 @@ import { RadiobuttonGroup } from "./radio-button-group";
 import { data } from "./data";
 
 export default {
-  title: "Components/Radiobutton Group",
+  title: "Atoms/Radiobutton Group",
   argTypes: {
     name: { control: "text" },
     onChange: { action: "onChange" },

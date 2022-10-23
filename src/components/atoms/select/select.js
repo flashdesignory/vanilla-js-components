@@ -13,6 +13,8 @@ export class Select {
   }
 
   handleOnChange(e) {
+    if (!this.onChange) return;
+
     if (this.multiple) {
       const selected = [...e.target.options].filter(
         (option) => option.selected

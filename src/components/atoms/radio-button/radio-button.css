@@ -1,4 +1,5 @@
-.radio-button-container, .radio-button-container > * {
+.radio-button-container,
+.radio-button-container > * {
   box-sizing: border-box;
 }
 

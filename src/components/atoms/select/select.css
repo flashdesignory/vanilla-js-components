@@ -1,4 +1,5 @@
-.select-container, .select-container > * {
+.select-container,
+.select-container > * {
   box-sizing: border-box;
 }
 

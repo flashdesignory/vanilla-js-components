@@ -1,24 +1,22 @@
-import { Select } from "./select";
+import { CheckboxGroup } from "./checkbox-group";
 import { data } from "./data";
 
 export default {
-  title: "Components/Select",
+  title: "Atoms/Checkbox Group",
   argTypes: {
-    id: { control: "text" },
-    multiple: { control: "boolean" },
+    name: { control: "text" },
     onChange: { action: "onChange" },
     data: { control: "array" },
   },
 };
 
 const Template = ({ ...args }) => {
-  const select = new Select({ ...args });
-  return select.render();
+  const cbg = new CheckboxGroup({ ...args });
+  return cbg.render();
 };
 
 export const Simple = Template.bind({});
 Simple.args = {
-  id: "select",
-  multiple: false,
+  name: "animals",
   data: data,
 };
