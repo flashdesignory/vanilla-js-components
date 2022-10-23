@@ -1,0 +1,27 @@
+.ratings-content,
+.ratings-content > * {
+  box-sizing: border-box;
+}
+
+.ratings-content {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+.ratings-star {
+  font-size: 32px;
+  color: black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ratings-star.active {
+  color: goldenrod;
+}
+
+.ratings-star:not(.active):hover,
+.ratings-star:not(.active):hover ~ .ratings-star {
+  color: goldenrod;
+}

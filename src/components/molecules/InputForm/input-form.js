@@ -19,6 +19,7 @@ export class InputForm {
     this.onSubmit = onSubmit;
 
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
+    this.handleOnInput = this.handleOnInput.bind(this);
   }
 
   handleOnSubmit(e) {
@@ -27,6 +28,10 @@ export class InputForm {
     if (this.onSubmit) this.onSubmit(e);
     e.preventDefault();
     e.target.reset();
+  }
+
+  handleOnInput(e) {
+    console.log("input", e.target.value);
   }
 
   render() {
@@ -42,7 +47,7 @@ export class InputForm {
       type: "text",
       placeholder: this.placeholder,
       value: this.value,
-      // onInput: (e) => console.log(e.target.value)
+      onInput: this.handleOnInput,
     });
     form.appendChild(textInput.render());
 
