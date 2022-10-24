@@ -26,3 +26,20 @@ export class Button {
     return container;
   }
 }
+
+export const FunctionalButton = ({ type, label, onClick }) => {
+  const handleOnClick = (e) => {
+    if (onClick) onClick(e);
+  };
+  const render = () => {
+    const container = document.createElement("div");
+    container.classList.add("button-container");
+    const button = document.createElement("button");
+    button.classList.add("button", `button-${type}`);
+    button.textContent = label;
+    button.addEventListener("click", handleOnClick);
+    container.appendChild(button);
+    return container;
+  };
+  return { render };
+};
