@@ -1,5 +1,5 @@
 // import sheet from './checkbox.css' assert { type: 'css' };
-// document.adoptedStyleSheets = [sheet];
+// document.adoptedStyleSheets.push(sheet);
 import "./checkbox.css";
 import { Checkbox } from "./checkbox.js";
 

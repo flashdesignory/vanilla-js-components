@@ -1,5 +1,5 @@
 // import sheet from './skeleton.css' assert { type: 'css' };
-// document.adoptedStyleSheets = [sheet];
+// document.adoptedStyleSheets.push(sheet);
 import "./skeleton.css";
 
 export class Skeleton {

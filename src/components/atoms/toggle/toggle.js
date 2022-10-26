@@ -1,5 +1,5 @@
-/* import sheet from './toggle.css' assert { type: 'css' };
-document.adoptedStyleSheets = [sheet]; */
+// import sheet from './toggle.css' assert { type: 'css' };
+// document.adoptedStyleSheets.push(sheet);
 import "./toggle.css";
 
 export class Toggle {

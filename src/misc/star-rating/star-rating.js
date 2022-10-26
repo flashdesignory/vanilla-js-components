@@ -1,5 +1,5 @@
 // import sheet from './star-rating.css' assert { type: 'css' };
-// document.adoptedStyleSheets = [sheet];
+// document.adoptedStyleSheets.push(sheet);
 import "./star-rating.css";
 
 export class StarRating {

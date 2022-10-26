@@ -1,5 +1,5 @@
 // import sheet from './button.css' assert { type: 'css' };
-// document.adoptedStyleSheets = [sheet];
+// document.adoptedStyleSheets.push(sheet);
 import "./button.css";
 
 export class Button {

@@ -1,5 +1,5 @@
 // import sheet from './select.css' assert { type: 'css' };
-// document.adoptedStyleSheets = [sheet];
+// document.adoptedStyleSheets.push(sheet);
 import "./select.css";
 
 export class Select {

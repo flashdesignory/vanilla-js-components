@@ -1,5 +1,5 @@
 // import sheet from './input-form.css' assert { type: 'css' };
-// document.adoptedStyleSheets = [sheet];
+// document.adoptedStyleSheets.push(sheet);
 import "./input-form.css";
 
 import { Input } from "../../atoms/input/input.js";

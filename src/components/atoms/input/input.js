@@ -1,5 +1,5 @@
 // import sheet from './input.css' assert { type: 'css' };
-// document.adoptedStyleSheets = [sheet];
+// document.adoptedStyleSheets.push(sheet);
 import "./input.css";
 
 export class Input {

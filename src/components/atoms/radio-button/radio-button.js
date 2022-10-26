@@ -1,5 +1,5 @@
 // import sheet from './radio-button.css' assert { type: 'css' };
-// document.adoptedStyleSheets = [sheet];
+// document.adoptedStyleSheets.push(sheet);
 import "./radio-button.css";
 
 export class RadioButton {
