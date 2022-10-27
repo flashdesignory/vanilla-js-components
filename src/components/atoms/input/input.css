@@ -1,5 +1,5 @@
 .input-container,
-.input-container > * {
+.input-container * {
   box-sizing: border-box;
 }
 

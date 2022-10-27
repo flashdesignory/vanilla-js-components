@@ -1,3 +1,8 @@
+.toggle-container,
+.toggle-container * {
+  box-sizing: border-box;
+}
+
 .toggle-container {
   display: flex;
   justify-content: center;

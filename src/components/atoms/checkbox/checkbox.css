@@ -1,5 +1,5 @@
 .checkbox-container,
-.checkbox-container > * {
+.checkbox-container * {
   box-sizing: border-box;
 }
 

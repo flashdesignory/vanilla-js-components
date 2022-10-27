@@ -1,5 +1,5 @@
 .skeleton,
-.skeleton > * {
+.skeleton * {
   box-sizing: border-box;
 }
 

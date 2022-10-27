@@ -1,9 +1,9 @@
-.list-container,
-.list-container > * {
+.virtual-list,
+.virtual-list * {
   box-sizing: border-box;
 }
 
-.list-container {
+.virtual-list  {
   width: 100%;
   background-color: transparent;
   position: relative;
@@ -14,13 +14,13 @@
     0 1px 8px 0 rgba(0, 0, 0, 0.12);
 }
 
-.list-content {
+.virtual-list .list-content {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.list-content .item-container {
+.virtual-list .list-content .item-container {
   display: flex;
   flex-direction: row;
   background-color: gray;

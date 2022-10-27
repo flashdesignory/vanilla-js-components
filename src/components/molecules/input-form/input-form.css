@@ -1,3 +1,8 @@
+.input-form-container,
+.input-form-container * {
+  box-sizing: border-box;
+}
+
 .input-form-container {
   display: flex;
 }

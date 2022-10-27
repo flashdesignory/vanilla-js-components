@@ -1,0 +1,84 @@
+.dynamic-list,
+.dynamic-list  * {
+  box-sizing: border-box;
+}
+
+.dynamic-list{
+  width: 100%;
+  background-color: transparent;
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-radius: 5px;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2),
+    0 1px 8px 0 rgba(0, 0, 0, 0.12);
+}
+
+.dynamic-list .list-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.dynamic-list .item-container {
+  display: flex;
+  flex-direction: row;
+  background-color: gray;
+  padding: 10px;
+  position: absolute;
+  width: 100%;
+}
+
+.dynamic-list .item-content {
+  padding: 10px;
+  background: #FFF;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2),
+    0 1px 8px 0 rgba(0, 0, 0, 0.12);
+}
+
+.dynamic-list .item-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #FFF;
+  flex-shrink: 0;
+  margin-right: 10px;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2),
+    0 1px 8px 0 rgba(0, 0, 0, 0.12);
+}
+
+.dynamic-list .item-description {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.dynamic-list .item-image {
+  width: auto;
+  height: 100%;
+  max-height: 160px;
+  margin-bottom: 5px;
+}
+
+.dynamic-list .item-metadata {
+  font-size: 10px;
+  color: lightgrey;
+}
+
+.dynamic-list .text {
+  height: 80px;
+}
+
+.dynamic-list .text .item-content {
+  align-items: flex-start;
+}
+
+.dynamic-list .image {
+  height: 220px;
+}
