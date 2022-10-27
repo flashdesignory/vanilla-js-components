@@ -6,7 +6,7 @@ export default {
   argTypes: {
     data: { control: "json" },
     displayHeight: { control: "number" },
-    displayWidth: { control: "number" }
+    displayWidth: { control: "number" },
   },
 };
 

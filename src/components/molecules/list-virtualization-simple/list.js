@@ -28,7 +28,7 @@ export class VirtualList {
     this.scrollTop = 0;
     // set initial elements
     this.container = document.createElement("div");
-    this.container.classList.add('virtual-list');
+    this.container.classList.add("virtual-list");
     this.container.style.height = `${this.visibleWindowHeight}px`;
     this.container.style.width = `${this.itemWidth}px`;
 

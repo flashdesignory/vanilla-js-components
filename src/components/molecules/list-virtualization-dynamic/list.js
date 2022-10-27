@@ -42,8 +42,8 @@ export class DynamicList {
 
     this.totalHeight = 0;
 
-    this.container = document.createElement('div');
-    this.container.classList.add('dynamic-list');
+    this.container = document.createElement("div");
+    this.container.classList.add("dynamic-list");
     this.container.style.height = `${this.displayHeight}px`;
     this.container.style.width = `${this.displayWidth}px`;
 
@@ -51,7 +51,7 @@ export class DynamicList {
     this.updateElements = this.updateElements.bind(this);
 
     const throttled = throttle(this.handleOnScroll, 50);
-    this.container.addEventListener('scroll', throttled);
+    this.container.addEventListener("scroll", throttled);
 
     this.populatePositions();
     this.updateElements();
@@ -67,15 +67,23 @@ export class DynamicList {
 
     const startIndex = Math.max(
       getIndex(this.positions, this.scrollTop) - this.amountRowsBuffered,
-      0,
+      0
     );
 
     const endIndex = Math.min(
-      getIndex(this.positions, this.scrollTop + this.displayHeight) + this.amountRowsBuffered,
-      this.data.length - 1,
+      getIndex(this.positions, this.scrollTop + this.displayHeight) +
+        this.amountRowsBuffered,
+      this.data.length - 1
     );
 
-    console.log('scrollTop', this.scrollTop, 'startIndex', startIndex, 'endIndex', endIndex);
+    console.log(
+      "scrollTop",
+      this.scrollTop,
+      "startIndex",
+      startIndex,
+      "endIndex",
+      endIndex
+    );
 
     this.items = [];
     for (let i = startIndex; i <= endIndex; i++) {
@@ -90,7 +98,7 @@ export class DynamicList {
     this.data.forEach((item) => {
       const position = {
         y: this.totalHeight,
-        height: item.type === 'text' ? 80 : 220,
+        height: item.type === "text" ? 80 : 220,
       };
       this.totalHeight += position.height;
       this.positions.push(position);
@@ -101,8 +109,8 @@ export class DynamicList {
   render() {
     if (this.content) this.container.removeChild(this.content);
 
-    this.content = document.createElement('div');
-    this.content.classList.add('list-content');
+    this.content = document.createElement("div");
+    this.content.classList.add("list-content");
     this.content.style.height = `${this.totalHeight}px`;
     this.items.forEach((item) => {
       this.content.appendChild(item.render());

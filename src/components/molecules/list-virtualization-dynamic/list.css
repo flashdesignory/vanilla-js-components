@@ -1,9 +1,9 @@
 .dynamic-list,
-.dynamic-list  * {
+.dynamic-list * {
   box-sizing: border-box;
 }
 
-.dynamic-list{
+.dynamic-list {
   width: 100%;
   background-color: transparent;
   position: relative;
@@ -31,7 +31,7 @@
 
 .dynamic-list .item-content {
   padding: 10px;
-  background: #FFF;
+  background: #fff;
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -47,7 +47,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #FFF;
+  background-color: #fff;
   flex-shrink: 0;
   margin-right: 10px;
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2),
