@@ -1,4 +1,8 @@
-export const throttle = (fn, delay, { leading = true, trailing = true } = {}) => {
+export const throttle = (
+  fn,
+  delay,
+  { leading = true, trailing = true } = {}
+) => {
   let last = 0;
   let timeout;
   return function (...args) {

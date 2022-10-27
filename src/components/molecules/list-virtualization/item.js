@@ -1,12 +1,12 @@
-import { Skeleton } from '../../../misc/skeleton/skeleton.js';
+import { Skeleton } from "../../../misc/skeleton/skeleton.js";
 
 export class Item {
   constructor(props) {
-    this.container = document.createElement('div');
-    this.container.classList.add('item-container');
-    
+    this.container = document.createElement("div");
+    this.container.classList.add("item-container");
+
     this.display = new Skeleton({
-      avatarShape: 'circle',
+      avatarShape: "circle",
       shouldAnimate: true,
     });
 
@@ -22,7 +22,9 @@ export class Item {
 
   render() {
     this.container.id = this.id;
-    this.container.style.transform = `translateY(${this.index * this.height}px)`;
+    this.container.style.transform = `translateY(${
+      this.index * this.height
+    }px)`;
     this.container.appendChild(this.display.render());
     return this.container;
   }
