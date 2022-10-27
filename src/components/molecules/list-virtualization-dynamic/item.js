@@ -1,3 +1,5 @@
+import { DefaultAvatar } from "./avatar.js";
+
 export class Item {
   constructor({ data, yPosition }) {
     this.data = data;
@@ -19,6 +21,8 @@ export class Item {
     const avatarElement = document.createElement("div");
     avatarElement.classList.add("item-avatar");
     this.containerElement.appendChild(avatarElement);
+
+    avatarElement.insertAdjacentHTML("afterbegin", DefaultAvatar);
 
     const contentElement = document.createElement("div");
     contentElement.classList.add("item-content");
