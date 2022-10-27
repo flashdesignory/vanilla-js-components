@@ -30,7 +30,7 @@ export class VirtualList {
     this.container = document.createElement("div");
     this.container.classList.add("virtual-list");
     this.container.style.height = `${this.visibleWindowHeight}px`;
-    this.container.style.width = `${this.itemWidth}px`;
+    this.container.style.maxWidth = `${this.itemWidth}px`;
 
     this.content = document.createElement("div");
     this.content.classList.add("list-content");

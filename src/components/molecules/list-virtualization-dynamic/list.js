@@ -45,7 +45,7 @@ export class DynamicList {
     this.container = document.createElement("div");
     this.container.classList.add("dynamic-list");
     this.container.style.height = `${this.displayHeight}px`;
-    this.container.style.width = `${this.displayWidth}px`;
+    this.container.style.maxWidth = `${this.displayWidth}px`;
 
     this.handleOnScroll = this.handleOnScroll.bind(this);
     this.updateElements = this.updateElements.bind(this);
