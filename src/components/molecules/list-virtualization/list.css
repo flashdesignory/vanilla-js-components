@@ -1,0 +1,30 @@
+.list-container,
+.list-container > * {
+  box-sizing: border-box;
+}
+
+.list-container {
+  width: 100%;
+  background-color: transparent;
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-radius: 5px;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2),
+    0 1px 8px 0 rgba(0, 0, 0, 0.12);
+}
+
+.list-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.list-content .item-container {
+  display: flex;
+  flex-direction: row;
+  background-color: gray;
+  padding: 10px;
+  position: absolute;
+  width: 100%;
+}
