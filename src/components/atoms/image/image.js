@@ -21,7 +21,7 @@ export class Image {
 
         const image = document.createElement("img");
         image.src = this.src;
-        if (this.alt) image.setAttribute("alt", this.alt);
+        if (this.alt) image.alt = this.alt;
         if (this.width) image.width = this.width;
         if (this.height) image.height = this.height;
         container.appendChild(image);
