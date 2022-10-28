@@ -7,6 +7,7 @@ export default {
     alt: { control: "text" },
     width: { control: "text" },
     height: { control: "text" },
+    animate: { control: "boolean" },
   },
 };
 
@@ -20,5 +21,14 @@ Simple.args = {
   src: "./image_01.jpg",
   alt: "animals on a bus",
   width: "300",
-  height: "300"
+  height: "300",
+};
+
+export const Animated = Template.bind({});
+Animated.args = {
+  src: "./image_01.jpg",
+  alt: "animals on a bus",
+  width: "300",
+  height: "300",
+  animate: true,
 };
