@@ -17,7 +17,7 @@ let url = './data/quotes.json';
 
 let list = null;
 let state = {
-  page: 1,
+  page: 0,
   limit: 10,
   totalItems: 0
 }
@@ -28,7 +28,7 @@ const fetchData = async (page, limit) => {
 
 const requestMore = async () => {
   console.log('request more ...');
-  if (state.page * state.limit < state.totalItems) {
+  if (state.page * state.limit < state.totalItems || state.totalItems === 0) {
     state.page++;
     const data = await fetchData(state.page, state.limit);
     state.totalItems = data.total;
@@ -37,16 +37,9 @@ const requestMore = async () => {
   }
 };
 
-const init = async() => {
-  const data = await fetchData(state.page, state.limit);
-  state.totalItems = data.total;
-  list.updateData(data);
-  list.handleOnScroll();
-}
-
 const Template = ({ ...args }) => {
   list = new InfiniteList({ ...args });
-  init();
+  requestMore();
   return list.render();
 };
 
