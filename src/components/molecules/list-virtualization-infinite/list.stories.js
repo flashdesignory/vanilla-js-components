@@ -1,5 +1,5 @@
-import { InfiniteList } from './list.js';
-import { getData } from './server.js';
+import { InfiniteList } from "./list.js";
+import { getData } from "./server.js";
 
 export default {
   title: "Molecules/List",
@@ -13,24 +13,20 @@ export default {
   },
 };
 
-let url = './data/quotes.json';
+let url = "./data/quotes.json";
 
 let list = null;
 let state = {
   page: 0,
   limit: 10,
-  totalItems: 0
-}
-
-const fetchData = async (page, limit) => {
-  return await getData(url, page, limit);
+  totalItems: 0,
 };
 
 const requestMore = async () => {
-  console.log('request more ...');
+  console.log("request more ...");
   if (state.page * state.limit < state.totalItems || state.totalItems === 0) {
     state.page++;
-    const data = await fetchData(state.page, state.limit);
+    const data = await getData(url, state.page, state.limit);
     state.totalItems = data.total;
     list.updateData(data);
     list.handleOnScroll();

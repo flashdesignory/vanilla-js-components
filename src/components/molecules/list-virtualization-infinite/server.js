@@ -15,4 +15,4 @@ export const getData = async (url, page, limit) => {
 
   response.items = [...quotes];
   return response;
-}
+};

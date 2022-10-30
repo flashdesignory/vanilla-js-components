@@ -2,8 +2,8 @@
 // document.adoptedStyleSheets.push(sheet);
 import "./list.css";
 
-import { Item } from './item.js';
-import { throttle } from './utils.js';
+import { Item } from "./item.js";
+import { throttle } from "./utils.js";
 
 export class InfiniteList {
   constructor({
@@ -30,25 +30,28 @@ export class InfiniteList {
     this.lastListElement = null;
     this.observerConfig = {
       root: null,
-      rootMargin: '0px',
+      rootMargin: "0px",
       threshold: 1,
     };
     this.handleOnObserve = this.handleOnObserve.bind(this);
-    this.oberver = new IntersectionObserver(this.handleOnObserve, this.observerConfig);
+    this.oberver = new IntersectionObserver(
+      this.handleOnObserve,
+      this.observerConfig
+    );
     // set initial elements
-    this.container = document.createElement('div');
-    this.container.classList.add('infinite-list');
+    this.container = document.createElement("div");
+    this.container.classList.add("infinite-list");
     this.container.style.height = `${this.visibleWindowHeight}px`;
     this.container.style.maxWidth = `${this.itemWidth}px`;
 
-    this.content = document.createElement('div');
-    this.content.classList.add('list-content');
+    this.content = document.createElement("div");
+    this.content.classList.add("list-content");
     this.container.appendChild(this.content);
     // bind functions
     this.handleOnScroll = this.handleOnScroll.bind(this);
     // throttle scroll;
     const throttled = throttle(this.handleOnScroll, 50);
-    this.container.addEventListener('scroll', throttled);
+    this.container.addEventListener("scroll", throttled);
     // display initial list items
     if (data && data.length > 0) {
       this.updateData(data);
@@ -82,14 +85,14 @@ export class InfiniteList {
 
     const startIndex = Math.max(
       Math.floor(this.scrollTop / this.itemHeight) - this.amountRowsBuffered,
-      0,
+      0
     );
 
     const endIndex = Math.min(
-      Math.ceil((this.scrollTop + this.visibleWindowHeight) / this.itemHeight)
-      - 1
-      + this.amountRowsBuffered,
-      this.data.length - 1,
+      Math.ceil((this.scrollTop + this.visibleWindowHeight) / this.itemHeight) -
+        1 +
+        this.amountRowsBuffered,
+      this.data.length - 1
     );
 
     this.items = [];
@@ -109,7 +112,10 @@ export class InfiniteList {
 
     this.items.forEach((item, index) => {
       const itemElement = item.render();
-      if (index === this.items.length - 1 && item.id === this.data[this.data.length - 1].id) {
+      if (
+        index === this.items.length - 1 &&
+        item.id === this.data[this.data.length - 1].id
+      ) {
         this.lastListElement = itemElement;
         if (this.lastListElement) this.oberver.observe(this.lastListElement);
       }

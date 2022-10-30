@@ -21,8 +21,8 @@ export class Item {
     }px)`;
     this.container.style.height = `${this.height}px`;
 
-    const content = document.createElement('div');
-    content.classList.add('item-content');
+    const content = document.createElement("div");
+    content.classList.add("item-content");
     this.container.appendChild(content);
 
     const left = document.createElement("div");
@@ -42,12 +42,12 @@ export class Item {
     right.classList.add("right");
     content.appendChild(right);
 
-    const quote = document.createElement('div');
-    quote.classList.add('item-quote');
+    const quote = document.createElement("div");
+    quote.classList.add("item-quote");
     quote.textContent = `${this.id}: ${this.post.quote}`;
 
-    const author = document.createElement('div');
-    author.classList.add('item-author');
+    const author = document.createElement("div");
+    author.classList.add("item-author");
     author.textContent = this.post.author;
 
     right.appendChild(quote);
