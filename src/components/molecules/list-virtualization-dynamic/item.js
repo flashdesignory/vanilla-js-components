@@ -1,52 +1,60 @@
 import { DefaultAvatar } from "./avatar.js";
 
 export class Item {
-  constructor({ data, yPosition }) {
+  constructor(props) {
+    this.container = document.createElement("div");
+    this.container.classList.add("item-container");
+
+    if (props) this.update(props);
+  }
+
+  update(props) {
+
+    const { data, yPosition } = props;
     this.data = data;
     this.yPosition = yPosition;
   }
 
   render() {
-    this.containerElement = document.createElement("div");
-    this.containerElement.classList.add("item-container");
-    this.containerElement.style.transform = `translateY(${this.yPosition}px)`;
+    this.container.id = this.data.id;
+    this.container.style.transform = `translateY(${this.yPosition}px)`;
 
     // setting height depending on type
     if (this.data.type === "text") {
-      this.containerElement.classList.add("text");
+      this.container.classList.add("text");
     } else if (this.data.type === "image") {
-      this.containerElement.classList.add("image");
+      this.container.classList.add("image");
     }
 
-    const avatarElement = document.createElement("div");
-    avatarElement.classList.add("item-avatar");
-    this.containerElement.appendChild(avatarElement);
+    const avatar = document.createElement("div");
+    avatar.classList.add("item-avatar");
+    this.container.appendChild(avatar);
 
-    avatarElement.insertAdjacentHTML("afterbegin", DefaultAvatar);
+    avatar.insertAdjacentHTML("afterbegin", DefaultAvatar);
 
-    const contentElement = document.createElement("div");
-    contentElement.classList.add("item-content");
-    this.containerElement.appendChild(contentElement);
+    const content = document.createElement("div");
+    content.classList.add("item-content");
+    this.container.appendChild(content);
 
     if (this.data.type === "text") {
-      const descriptionElement = document.createElement("div");
-      descriptionElement.classList.add("item-description");
-      descriptionElement.textContent = this.data.content;
-      contentElement.appendChild(descriptionElement);
+      const description = document.createElement("div");
+      description.classList.add("item-description");
+      description.textContent = this.data.content;
+      content.appendChild(description);
     } else if (this.data.type === "image") {
-      const imageElement = document.createElement("img");
-      imageElement.classList.add("item-image");
-      imageElement.src = this.data.source;
-      imageElement.width = this.data.width;
-      imageElement.height = this.data.height;
-      contentElement.appendChild(imageElement);
+      const image = document.createElement("img");
+      image.classList.add("item-image");
+      image.src = this.data.source;
+      image.width = this.data.width;
+      image.height = this.data.height;
+      content.appendChild(image);
     }
 
-    const metadataElement = document.createElement("div");
-    metadataElement.classList.add("item-metadata");
-    metadataElement.textContent = this.data.metadata;
-    contentElement.appendChild(metadataElement);
+    const metadata = document.createElement("div");
+    metadata.classList.add("item-metadata");
+    metadata.textContent = this.data.metadata;
+    content.appendChild(metadata);
 
-    return this.containerElement;
+    return this.container;
   }
 }
