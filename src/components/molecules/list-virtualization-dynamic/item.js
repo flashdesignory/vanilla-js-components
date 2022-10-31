@@ -1,4 +1,4 @@
-import { DefaultAvatar } from "./avatar.js";
+import { DefaultAvatar } from "../../../assets/avatar.js"
 
 export class Item {
   constructor(props) {
