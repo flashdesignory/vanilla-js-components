@@ -32,10 +32,13 @@ export class DisplayCard extends DisplayCardBase {
   }
 
   render() {
+    this.left.replaceChildren();
+    this.right.replaceChildren();
+
     this.container.id = this.id;
     this.container.style.height = `${this.height}px`;
 
-    if (this.y) {
+    if (this.y !== undefined) {
       this.container.style.transform = `translateY(${this.y}px)`;
     } else {
       this.container.style.transform = `translateY(${

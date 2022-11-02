@@ -95,16 +95,21 @@ export class InfiniteList {
       this.data.length - 1
     );
 
-    this.items = [];
+    // this.items = [];
+    let count = 0;
     for (let i = startIndex; i <= endIndex; i++) {
       const item = this.data[i];
       const props = { ...item, index: i, height: this.itemHeight };
-      this.items.push(new DisplayCard(props));
+      if (this.items[count]) {
+        this.items[count].update(props);
+      } else {
+        this.items.push(new DisplayCard(props));
+      }
+      count++;
     }
   }
 
   render() {
-    // hard refresh - i know!
     this.content.replaceChildren();
     this.content.style.height = `${this.totalHeight}px`;
 

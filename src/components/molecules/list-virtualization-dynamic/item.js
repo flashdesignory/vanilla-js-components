@@ -1,4 +1,4 @@
-import { DefaultAvatar } from "../../../assets/avatar.js"
+import { DefaultAvatar } from "../../../assets/avatar.js";
 
 export class Item {
   constructor(props) {
@@ -9,7 +9,6 @@ export class Item {
   }
 
   update(props) {
-
     const { data, yPosition } = props;
     this.data = data;
     this.yPosition = yPosition;

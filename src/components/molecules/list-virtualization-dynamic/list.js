@@ -76,12 +76,18 @@ export class DynamicList {
       this.data.length - 1
     );
 
-    this.items = [];
+    // this.items = [];
+    let count = 0;
     for (let i = startIndex; i <= endIndex; i++) {
       const data = this.data[i];
       const position = this.positions[i];
       const props = { ...data, y: position.y, height: position.height };
-      this.items.push(new DisplayCard(props));
+      if (this.items[count]) {
+        this.items[count].update(props);
+      } else {
+        this.items.push(new DisplayCard(props));
+      }
+      count++;
     }
   }
 
@@ -97,7 +103,7 @@ export class DynamicList {
   }
 
   render() {
-    if (this.content) this.container.removeChild(this.content);
+    this.container.replaceChildren();
 
     this.content = document.createElement("div");
     this.content.classList.add("list-content");
