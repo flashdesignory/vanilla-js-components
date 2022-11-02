@@ -16,7 +16,7 @@
 
 .ratings-star {
   font-size: 32px;
-  color: black;
+  color: #666;
   cursor: pointer;
   transition: all 0.3s ease;
   user-select: none;

@@ -2,7 +2,7 @@
 // document.adoptedStyleSheets.push(sheet);
 import "./list.css";
 
-import { Item } from "./item.js";
+import { DisplayCard } from "../../atoms/display-card/display-card.js";
 import { throttle } from "../../../lib/index.js";
 
 export class VirtualList {
@@ -70,7 +70,7 @@ export class VirtualList {
     for (let i = startIndex; i <= endIndex; i++) {
       const item = this.data[i];
       const props = { ...item, index: i, height: this.itemHeight };
-      this.items.push(new Item(props));
+      this.items.push(new DisplayCard(props));
     }
   }
 

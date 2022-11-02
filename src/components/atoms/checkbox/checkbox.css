@@ -6,10 +6,12 @@
 .checkbox-container {
   color: orange;
   display: flex;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .checkbox-container .label {
   margin-left: 5px;
+  font-family: inherit;
 }
 
 .checkbox-container .input {

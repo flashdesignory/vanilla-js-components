@@ -2,8 +2,8 @@
 // document.adoptedStyleSheets.push(sheet);
 import "./list.css";
 
-import { Item } from "./item.js";
 import { throttle } from "../../../lib/index.js";
+import { DisplayCard } from "../../atoms/display-card/display-card.js";
 
 const getIndex = (items, scrollTop) => {
   let min = 0;
@@ -76,21 +76,12 @@ export class DynamicList {
       this.data.length - 1
     );
 
-    console.log(
-      "scrollTop",
-      this.scrollTop,
-      "startIndex",
-      startIndex,
-      "endIndex",
-      endIndex
-    );
-
     this.items = [];
     for (let i = startIndex; i <= endIndex; i++) {
       const data = this.data[i];
       const position = this.positions[i];
-      const props = { data, yPosition: position.y };
-      this.items.push(new Item(props));
+      const props = { ...data, y: position.y, height: position.height };
+      this.items.push(new DisplayCard(props));
     }
   }
 
@@ -98,12 +89,11 @@ export class DynamicList {
     this.data.forEach((item) => {
       const position = {
         y: this.totalHeight,
-        height: item.type === "text" ? 80 : 220,
+        height: item.type === "text" ? 130 : 268,
       };
       this.totalHeight += position.height;
       this.positions.push(position);
     });
-    console.log(this.positions);
   }
 
   render() {

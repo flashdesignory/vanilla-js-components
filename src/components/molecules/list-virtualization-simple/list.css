@@ -19,12 +19,3 @@
   flex-direction: column;
   width: 100%;
 }
-
-.virtual-list .list-content .item-container {
-  display: flex;
-  flex-direction: row;
-  background-color: gray;
-  padding: 10px;
-  position: absolute;
-  width: 100%;
-}

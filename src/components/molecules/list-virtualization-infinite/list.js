@@ -2,8 +2,8 @@
 // document.adoptedStyleSheets.push(sheet);
 import "./list.css";
 
-import { Item } from "./item.js";
-import { throttle } from "./utils.js";
+import { throttle } from "../../../lib/index.js";
+import { DisplayCard } from "../../atoms/display-card/display-card.js";
 
 export class InfiniteList {
   constructor({
@@ -99,7 +99,7 @@ export class InfiniteList {
     for (let i = startIndex; i <= endIndex; i++) {
       const item = this.data[i];
       const props = { ...item, index: i, height: this.itemHeight };
-      this.items.push(new Item(props));
+      this.items.push(new DisplayCard(props));
     }
   }
 

@@ -3,6 +3,10 @@
   box-sizing: border-box;
 }
 
+.input-container {
+  display: flex;
+}
+
 .input-container .input {
   outline: 0;
   padding: 10px;
@@ -10,6 +14,8 @@
   border: 2px solid darkorange;
   color: darkorange;
   transition: all 0.3s ease;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  max-width: 400px;
 }
 
 .input-container .input:hover {

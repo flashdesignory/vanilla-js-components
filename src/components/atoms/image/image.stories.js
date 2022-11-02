@@ -7,7 +7,7 @@ export default {
     alt: { control: "text" },
     width: { control: "text" },
     height: { control: "text" },
-    animate: { control: "boolean" },
+    fadeIn: { control: "boolean" },
   },
 };
 
@@ -18,7 +18,7 @@ const Template = ({ ...args }) => {
 
 export const Simple = Template.bind({});
 Simple.args = {
-  src: "./image_01.jpg",
+  src: "./misc/image-1.jpg",
   alt: "animals on a bus",
   width: "300",
   height: "300",
@@ -26,9 +26,9 @@ Simple.args = {
 
 export const Animated = Template.bind({});
 Animated.args = {
-  src: "./image_01.jpg",
+  src: "./misc/image-1.jpg",
   alt: "animals on a bus",
   width: "300",
   height: "300",
-  animate: true,
+  fadeIn: true,
 };

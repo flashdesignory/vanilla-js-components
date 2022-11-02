@@ -3,40 +3,56 @@
 import "./image.css";
 
 export class Image {
-  constructor({ src, alt, width, height, animate = false }) {
+  constructor({
+    src,
+    alt,
+    width,
+    height,
+    imageClass,
+    containerClass,
+    fadeIn = false,
+  }) {
     this.src = src;
     this.alt = alt;
     this.width = width;
     this.height = height;
-    this.animate = animate;
+    this.imageClass = imageClass;
+    this.containerClass = containerClass;
+    this.fadeIn = fadeIn;
 
     this.handleOnError = this.handleOnError.bind(this);
     this.handleOnLoad = this.handleOnLoad.bind(this);
+
+    this.container = document.createElement("div");
+    this.container.classList.add("image-container");
+    if (this.containerClass) {
+      this.container.classList.add(this.containerClass);
+    }
+
+    this.image = document.createElement("img");
+    if (this.imageClass) {
+      this.image.classList.add(this.imageClass);
+    }
+    this.image.addEventListener("load", this.handleOnLoad);
+    this.image.addEventListener("error", this.handleOnError);
+    this.container.appendChild(this.image);
   }
 
-  handleOnError(e) {
+  handleOnError() {
     console.log("error occured");
   }
 
-  handleOnLoad(e) {
+  handleOnLoad() {
     console.log("image has loaded");
-    if (this.animate) this.image.style.opacity = 1;
+    if (this.fadeIn) this.image.style.opacity = 1;
   }
 
   render() {
-    const container = document.createElement("div");
-    container.classList.add("image-container");
-
-    this.image = document.createElement("img");
-    this.image.addEventListener("load", this.handleOnLoad);
-    this.image.addEventListener("error", this.handleOnError);
     this.image.src = this.src;
     if (this.alt) this.image.alt = this.alt;
     if (this.width) this.image.width = this.width;
     if (this.height) this.image.height = this.height;
-    if (this.animate) this.image.style.opacity = 0;
-    container.appendChild(this.image);
-
-    return container;
+    if (this.fadeIn) this.image.style.opacity = 0;
+    return this.container;
   }
 }

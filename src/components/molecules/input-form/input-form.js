@@ -38,9 +38,13 @@ export class InputForm {
     const container = document.createElement("div");
     container.classList.add("input-form-container");
 
+    const content = document.createElement("div");
+    content.classList.add("input-form-content");
+    container.appendChild(content);
+
     const form = document.createElement("form");
     form.id = this.id;
-    container.appendChild(form);
+    content.appendChild(form);
 
     const textInput = new Input({
       id: "input",

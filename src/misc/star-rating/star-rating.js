@@ -4,8 +4,8 @@ import "./star-rating.css";
 
 export class StarRating {
   constructor() {
-    this.containerElement = document.createElement("div");
-    this.containerElement.classList.add("ratings-container");
+    this.container = document.createElement("div");
+    this.container.classList.add("ratings-container");
 
     this.currentRating = 0;
     this.stars = [];
@@ -25,20 +25,20 @@ export class StarRating {
   }
 
   render() {
-    const contentElement = document.createElement("div");
-    contentElement.classList.add("ratings-content");
-    this.containerElement.appendChild(contentElement);
+    const content = document.createElement("div");
+    content.classList.add("ratings-content");
+    this.container.appendChild(content);
 
     for (let i = 5; i > 0; i--) {
-      const starElement = document.createElement("div");
-      starElement.classList.add("ratings-star");
-      starElement.id = i;
-      starElement.innerHTML = "&starf;";
-      starElement.addEventListener("click", this.updateRating);
-      this.stars.push(starElement);
-      contentElement.appendChild(starElement);
+      const star = document.createElement("div");
+      star.classList.add("ratings-star");
+      star.id = i;
+      star.innerHTML = "&starf;";
+      star.addEventListener("click", this.updateRating);
+      this.stars.push(star);
+      content.appendChild(star);
     }
 
-    return this.containerElement;
+    return this.container;
   }
 }

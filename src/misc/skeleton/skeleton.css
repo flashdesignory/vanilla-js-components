@@ -1,9 +1,9 @@
-.skeleton,
-.skeleton * {
+.skeleton-container,
+.skeleton-container * {
   box-sizing: border-box;
 }
 
-.skeleton {
+.skeleton-container {
   --skeleton-border-radius: 5px;
   --skeleton-padding: 15px;
   --skeleton-elements-color: #ccc;
@@ -23,7 +23,7 @@
     0 1px 8px 0 rgba(0, 0, 0, 0.12);
 }
 
-.skeleton .left {
+.skeleton-left {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -32,35 +32,35 @@
   height: 100%;
 }
 
-.skeleton .right {
+.skeleton-right {
   display: flex;
   flex-direction: column;
 }
 
-.skeleton .square {
+.skeleton-square {
   width: 80px;
   height: 80px;
   border-radius: var(--skeleton-border-radius);
   background-color: var(--skeleton-elements-color);
 }
 
-.skeleton .circle {
+.skeleton-circle {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   background-color: var(--skeleton-elements-color);
 }
 
-.skeleton .line {
+.skeleton-line {
   width: 100%;
   height: 20px;
   border-radius: var(--skeleton-border-radius);
   background-color: var(--skeleton-elements-color);
 }
 
-.skeleton .circle,
-.skeleton .square,
-.skeleton .line {
+.skeleton-circle,
+.skeleton-square,
+.skeleton-line {
   animation: skeleton-animation 3s ease-in-out infinite;
 }
 

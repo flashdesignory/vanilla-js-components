@@ -1,0 +1,14 @@
+.text-container,
+.text-container * {
+  box-sizing: border-box;
+}
+
+.text-container {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.text-container.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

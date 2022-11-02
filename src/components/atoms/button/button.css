@@ -11,6 +11,7 @@
   border-width: 1px;
   border-style: solid;
   transition: all 0.3s ease;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .button-primary {

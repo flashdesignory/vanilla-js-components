@@ -2,693 +2,693 @@
   "quotes": [
     {
       "id": 1,
-      "image": "./iceland/iceland-thumb-1.jpg",
-      "quote": "Talk is cheap. Show me the code.",
-      "author": "Linus Torvalds"
+      "avatar": "./iceland/iceland-thumb-1.jpg",
+      "text": "Talk is cheap. Show me the code.",
+      "metadata": "Author: Linus Torvalds"
     },
     {
       "id": 2,
-      "image": "./iceland/iceland-thumb-2.jpg",
-      "quote": "Programs must be written for people to read, and only incidentally for machines to execute.",
-      "author": "Harold Abelson"
+      "avatar": "./iceland/iceland-thumb-2.jpg",
+      "text": "Programs must be written for people to read, and only incidentally for machines to execute.",
+      "metadata": "Author: Harold Abelson"
     },
     {
       "id": 3,
-      "image": "./iceland/iceland-thumb-3.jpg",
-      "quote": "Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live",
-      "author": "John Woods"
+      "avatar": "./iceland/iceland-thumb-3.jpg",
+      "text": "Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live",
+      "metadata": "Author: John Woods"
     },
     {
       "id": 4,
-      "image": "./iceland/iceland-thumb-4.jpg",
-      "quote": "Programming today is a race between software engineers striving to build bigger and better idiot-proof programs, and the Universe trying to produce bigger and better idiots. So far, the Universe is winning.",
-      "author": "Rick Cook"
+      "avatar": "./iceland/iceland-thumb-4.jpg",
+      "text": "Programming today is a race between software engineers striving to build bigger and better idiot-proof programs, and the Universe trying to produce bigger and better idiots. So far, the Universe is winning.",
+      "metadata": "Author: Rick Cook"
     },
     {
       "id": 5,
-      "image": "./iceland/iceland-thumb-5.jpg",
-      "quote": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
-      "author": "Martin Fowler"
+      "avatar": "./iceland/iceland-thumb-5.jpg",
+      "text": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+      "metadata": "Author: Martin Fowler"
     },
     {
       "id": 6,
-      "image": "./iceland/iceland-thumb-6.jpg",
-      "quote": "Well, Mr. Frankel, who started this program, began to suffer from the computer disease that anybody who works with computers now knows about. It's a very serious disease and it interferes completely with the work. The trouble with computers is you *play* with them. They are so wonderful. You have these switches - if it's an even number you do this, if it's an odd number you do that - and pretty soon you can do more and more elaborate things if you are clever enough, on one machine.",
-      "author": "Richard P. Feynman"
+      "avatar": "./iceland/iceland-thumb-6.jpg",
+      "text": "Well, Mr. Frankel, who started this program, began to suffer from the computer disease that anybody who works with computers now knows about. It's a very serious disease and it interferes completely with the work. The trouble with computers is you *play* with them. They are so wonderful. You have these switches - if it's an even number you do this, if it's an odd number you do that - and pretty soon you can do more and more elaborate things if you are clever enough, on one machine.",
+      "metadata": "Author: Richard P. Feynman"
     },
     {
       "id": 7,
-      "image": "./iceland/iceland-thumb-7.jpg",
-      "quote": "The best programs are written so that computing machines can perform them quickly and so that human beings can understand them clearly. A programmer is ideally an essayist who works with traditional aesthetic and literary forms as well as mathematical concepts, to communicate the way that an algorithm works and to convince a reader that the results will be correct.",
-      "author": "Donald E. Knuth"
+      "avatar": "./iceland/iceland-thumb-7.jpg",
+      "text": "The best programs are written so that computing machines can perform them quickly and so that human beings can understand them clearly. A programmer is ideally an essayist who works with traditional aesthetic and literary forms as well as mathematical concepts, to communicate the way that an algorithm works and to convince a reader that the results will be correct.",
+      "metadata": "Author: Donald E. Knuth"
     },
     {
       "id": 8,
-      "image": "./iceland/iceland-thumb-8.jpg",
-      "quote": "Punishments include such things as flashbacks, flooding of unbearable emotions, painful body memories, flooding of memories in which the survivor perpetrated against others, self-harm, and suicide attempts.",
-      "author": "Alison Miller"
+      "avatar": "./iceland/iceland-thumb-8.jpg",
+      "text": "Punishments include such things as flashbacks, flooding of unbearable emotions, painful body memories, flooding of memories in which the survivor perpetrated against others, self-harm, and suicide attempts.",
+      "metadata": "Author: Alison Miller"
     },
     {
       "id": 9,
-      "image": "./iceland/iceland-thumb-9.jpg",
-      "quote": "I'm not a great programmer; I'm just a good programmer with great habits.",
-      "author": "Kent Beck"
+      "avatar": "./iceland/iceland-thumb-9.jpg",
+      "text": "I'm not a great programmer; I'm just a good programmer with great habits.",
+      "metadata": "Author: Kent Beck"
     },
     {
       "id": 10,
-      "image": "./iceland/iceland-thumb-10.jpg",
-      "quote": "Truth can only be found in one place: the code.",
-      "author": "Robert C. Martin"
+      "avatar": "./iceland/iceland-thumb-10.jpg",
+      "text": "Truth can only be found in one place: the code.",
+      "metadata": "Author: Robert C. Martin"
     },
     {
       "id": 11,
-      "image": "./iceland/iceland-thumb-11.jpg",
-      "quote": "Give a man a program, frustrate him for a day.",
-      "author": "Muhammad Waseem"
+      "avatar": "./iceland/iceland-thumb-11.jpg",
+      "text": "Give a man a program, frustrate him for a day.",
+      "metadata": "Author: Muhammad Waseem"
     },
     {
       "id": 12,
-      "image": "./iceland/iceland-thumb-12.jpg",
-      "quote": "That's the thing about people who think they hate computers. What they really hate is lousy programmers.",
-      "author": "Larry Niven"
+      "avatar": "./iceland/iceland-thumb-12.jpg",
+      "text": "That's the thing about people who think they hate computers. What they really hate is lousy programmers.",
+      "metadata": "Author: Larry Niven"
     },
     {
       "id": 13,
-      "image": "./iceland/iceland-thumb-13.jpg",
-      "quote": "How you look at it is pretty much how you'll see it",
-      "author": "Rasheed Ogunlaru"
+      "avatar": "./iceland/iceland-thumb-13.jpg",
+      "text": "How you look at it is pretty much how you'll see it",
+      "metadata": "Author: Rasheed Ogunlaru"
     },
     {
       "id": 14,
-      "image": "./iceland/iceland-thumb-14.jpg",
-      "quote": "You've baked a really lovely cake, but then you've used dog shit for frosting.",
-      "author": "Steve Jobs"
+      "avatar": "./iceland/iceland-thumb-14.jpg",
+      "text": "You've baked a really lovely cake, but then you've used dog shit for frosting.",
+      "metadata": "Author: Steve Jobs"
     },
     {
       "id": 15,
-      "image": "./iceland/iceland-thumb-15.jpg",
-      "quote": "A language that doesn't affect the way you think about programming is not worth knowing.",
-      "author": "Alan J. Perlis"
+      "avatar": "./iceland/iceland-thumb-15.jpg",
+      "text": "A language that doesn't affect the way you think about programming is not worth knowing.",
+      "metadata": "Author: Alan J. Perlis"
     },
     {
       "id": 16,
-      "image": "./iceland/iceland-thumb-16.jpg",
-      "quote": "Walking on water and developing software from a specification are easy if both are frozen.",
-      "author": "Edward V. Berard"
+      "avatar": "./iceland/iceland-thumb-16.jpg",
+      "text": "Walking on water and developing software from a specification are easy if both are frozen.",
+      "metadata": "Author: Edward V. Berard"
     },
     {
       "id": 17,
-      "image": "./iceland/iceland-thumb-17.jpg",
-      "quote": "On two occasions, I have been asked [by members of Parliament], 'Pray, Mr. Babbage, if you put into the machine wrong figures, will the right answers come out?' I am not able to rightly apprehend the kind of confusion of ideas that could provoke such a question.",
-      "author": "Charles Babbage"
+      "avatar": "./iceland/iceland-thumb-17.jpg",
+      "text": "On two occasions, I have been asked [by members of Parliament], 'Pray, Mr. Babbage, if you put into the machine wrong figures, will the right answers come out?' I am not able to rightly apprehend the kind of confusion of ideas that could provoke such a question.",
+      "metadata": "Author: Charles Babbage"
     },
     {
       "id": 18,
-      "image": "./iceland/iceland-thumb-18.jpg",
-      "quote": "The most disastrous thing that you can ever learn is your first programming language.",
-      "author": "Alan Kay"
+      "avatar": "./iceland/iceland-thumb-18.jpg",
+      "text": "The most disastrous thing that you can ever learn is your first programming language.",
+      "metadata": "Author: Alan Kay"
     },
     {
       "id": 19,
-      "image": "./iceland/iceland-thumb-19.jpg",
-      "quote": "The computer programmer is a creator of universes for which he alone is the lawgiver. No playwright, no stage director, no emperor, however powerful, has ever exercised such absolute authority to arrange a stage or field of battle and to command such unswervingly dutiful actors or troops.",
-      "author": "Joseph Weizenbaum"
+      "avatar": "./iceland/iceland-thumb-19.jpg",
+      "text": "The computer programmer is a creator of universes for which he alone is the lawgiver. No playwright, no stage director, no emperor, however powerful, has ever exercised such absolute authority to arrange a stage or field of battle and to command such unswervingly dutiful actors or troops.",
+      "metadata": "Author: Joseph Weizenbaum"
     },
     {
       "id": 20,
-      "image": "./iceland/iceland-thumb-20.jpg",
-      "quote": "Perl – The only language that looks the same before and after RSA encryption.",
-      "author": "Keith Bostic"
+      "avatar": "./iceland/iceland-thumb-20.jpg",
+      "text": "Perl – The only language that looks the same before and after RSA encryption.",
+      "metadata": "Author: Keith Bostic"
     },
     {
       "id": 21,
-      "image": "./iceland/iceland-thumb-1.jpg",
-      "quote": "The most important property of a program is whether it accomplishes the intention of its user.",
-      "author": "C.A.R. Hoare"
+      "avatar": "./iceland/iceland-thumb-1.jpg",
+      "text": "The most important property of a program is whether it accomplishes the intention of its user.",
+      "metadata": "Author: C.A.R. Hoare"
     },
     {
       "id": 22,
-      "image": "./iceland/iceland-thumb-2.jpg",
-      "quote": "When they first built the University of California at Irvine they just put the buildings in. They did not put any sidewalks, they just planted grass. The next year, they came back and put the sidewalks where the trails were in the grass. Perl is just that kind of language. It is not designed from first principles. Perl is those sidewalks in the grass.",
-      "author": "Larry Wall"
+      "avatar": "./iceland/iceland-thumb-2.jpg",
+      "text": "When they first built the University of California at Irvine they just put the buildings in. They did not put any sidewalks, they just planted grass. The next year, they came back and put the sidewalks where the trails were in the grass. Perl is just that kind of language. It is not designed from first principles. Perl is those sidewalks in the grass.",
+      "metadata": "Author: Larry Wall"
     },
     {
       "id": 23,
-      "image": "./iceland/iceland-thumb-3.jpg",
-      "quote": "A computer is like a violin. You can imagine a novice trying ﬁrst a phonograph and then a violin. The latter, he says, sounds terrible. That is the argument we have heard from our humanists and most of our computer scientists. Computer programs are good, they say, for particular purposes, but they aren’t ﬂexible. Neither is a violin, or a typewriter, until you learn how to use it.",
-      "author": "Marvin Minsky"
+      "avatar": "./iceland/iceland-thumb-3.jpg",
+      "text": "A computer is like a violin. You can imagine a novice trying ﬁrst a phonograph and then a violin. The latter, he says, sounds terrible. That is the argument we have heard from our humanists and most of our computer scientists. Computer programs are good, they say, for particular purposes, but they aren’t ﬂexible. Neither is a violin, or a typewriter, until you learn how to use it.",
+      "metadata": "Author: Marvin Minsky"
     },
     {
       "id": 24,
-      "image": "./iceland/iceland-thumb-4.jpg",
-      "quote": "Object-oriented programming offers a sustainable way to write spaghetti code. It lets you accrete programs as a series of patches.",
-      "author": "Paul Graham"
+      "avatar": "./iceland/iceland-thumb-4.jpg",
+      "text": "Object-oriented programming offers a sustainable way to write spaghetti code. It lets you accrete programs as a series of patches.",
+      "metadata": "Author: Paul Graham"
     },
     {
       "id": 25,
-      "image": "./iceland/iceland-thumb-5.jpg",
-      "quote": "A conscious human is driven by their conscience, not popular opinion.",
-      "author": "Suzy Kassem"
+      "avatar": "./iceland/iceland-thumb-5.jpg",
+      "text": "A conscious human is driven by their conscience, not popular opinion.",
+      "metadata": "Author: Suzy Kassem"
     },
     {
       "id": 26,
-      "image": "./iceland/iceland-thumb-6.jpg",
-      "quote": "I think that it’s extraordinarily important that we in computer science keep fun in computing. When it started out it was an awful lot of fun. Of course the paying customers got shafted every now and then and after a while we began to take their complaints seriously. We began to feel as if we really were responsible for the successful error-free perfect use of these machines. I don’t think we are. I think we’re responsible for stretching them setting them off in new directions and keeping fun in the house. I hope the ﬁeld of computer science never loses its sense of fun. Above all I hope we don’t become missionaries. Don’t feel as if you’re Bible sales-men. The world has too many of those already. What you know about computing other people will learn. Don’t feel as if the key to successful computing is only in your hands. What’s in your hands I think and hope is intelligence: the ability to see the machine as more than when you were ﬁrst led up to it that you can make it more.",
-      "author": "Alan J. Perlis"
+      "avatar": "./iceland/iceland-thumb-6.jpg",
+      "text": "I think that it’s extraordinarily important that we in computer science keep fun in computing. When it started out it was an awful lot of fun. Of course the paying customers got shafted every now and then and after a while we began to take their complaints seriously. We began to feel as if we really were responsible for the successful error-free perfect use of these machines. I don’t think we are. I think we’re responsible for stretching them setting them off in new directions and keeping fun in the house. I hope the ﬁeld of computer science never loses its sense of fun. Above all I hope we don’t become missionaries. Don’t feel as if you’re Bible sales-men. The world has too many of those already. What you know about computing other people will learn. Don’t feel as if the key to successful computing is only in your hands. What’s in your hands I think and hope is intelligence: the ability to see the machine as more than when you were ﬁrst led up to it that you can make it more.",
+      "metadata": "Author: Alan J. Perlis"
     },
     {
       "id": 27,
-      "image": "./iceland/iceland-thumb-7.jpg",
-      "quote": "At forty, I was too old to work as a programmer myself anymore; writing code is a young person’s job.",
-      "author": "Michael Crichton"
+      "avatar": "./iceland/iceland-thumb-7.jpg",
+      "text": "At forty, I was too old to work as a programmer myself anymore; writing code is a young person’s job.",
+      "metadata": "Author: Michael Crichton"
     },
     {
       "id": 28,
-      "image": "./iceland/iceland-thumb-8.jpg",
-      "quote": "Big Brother fills us all with the same crap. My guess is he was clever the same way everybody thinks they're clever. I tell her to type in 'password",
-      "author": "Chuck Palahniuk"
+      "avatar": "./iceland/iceland-thumb-8.jpg",
+      "text": "Big Brother fills us all with the same crap. My guess is he was clever the same way everybody thinks they're clever. I tell her to type in 'password",
+      "metadata": "Author: Chuck Palahniuk"
     },
     {
       "id": 29,
-      "image": "./iceland/iceland-thumb-9.jpg",
-      "quote": "Remember that code is really the language in which we ultimately express the requirements. We may create languages that are closer to the requirements. We may create tools that help us parse and assemble those requirements into formal structures. But we will never eliminate necessary precision—so there will always be code.",
-      "author": "Robert C. Martin"
+      "avatar": "./iceland/iceland-thumb-9.jpg",
+      "text": "Remember that code is really the language in which we ultimately express the requirements. We may create languages that are closer to the requirements. We may create tools that help us parse and assemble those requirements into formal structures. But we will never eliminate necessary precision—so there will always be code.",
+      "metadata": "Author: Robert C. Martin"
     },
     {
       "id": 30,
-      "image": "./iceland/iceland-thumb-10.jpg",
-      "quote": "Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?",
-      "author": "Brian Kernighan"
+      "avatar": "./iceland/iceland-thumb-10.jpg",
+      "text": "Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?",
+      "metadata": "Author: Brian Kernighan"
     },
     {
       "id": 31,
-      "image": "./iceland/iceland-thumb-11.jpg",
-      "quote": "We are looking at a society increasingly dependent on machines, yet decreasingly capable of making or even using them effectively.",
-      "author": "Douglas Rushkoff"
+      "avatar": "./iceland/iceland-thumb-11.jpg",
+      "text": "We are looking at a society increasingly dependent on machines, yet decreasingly capable of making or even using them effectively.",
+      "metadata": "Author: Douglas Rushkoff"
     },
     {
       "id": 32,
-      "image": "./iceland/iceland-thumb-12.jpg",
-      "quote": "Some of the best programming is done on paper, really. Putting it into the computer is just a minor detail.",
-      "author": "Max Kanat-Alexander"
+      "avatar": "./iceland/iceland-thumb-12.jpg",
+      "text": "Some of the best programming is done on paper, really. Putting it into the computer is just a minor detail.",
+      "metadata": "Author: Max Kanat-Alexander"
     },
     {
       "id": 33,
-      "image": "./iceland/iceland-thumb-13.jpg",
-      "quote": "Programmers are not to be measured by their ingenuity and their logic but by the completeness of their case analysis.",
-      "author": "Alan J. Perlis"
+      "avatar": "./iceland/iceland-thumb-13.jpg",
+      "text": "Programmers are not to be measured by their ingenuity and their logic but by the completeness of their case analysis.",
+      "metadata": "Author: Alan J. Perlis"
     },
     {
       "id": 34,
-      "image": "./iceland/iceland-thumb-14.jpg",
-      "quote": "Progress is possible only if we train ourselves to think about programs without thinking of them as pieces of executable code. ",
-      "author": "Edsger W. Dijkstra"
+      "avatar": "./iceland/iceland-thumb-14.jpg",
+      "text": "Progress is possible only if we train ourselves to think about programs without thinking of them as pieces of executable code. ",
+      "metadata": "Author: Edsger W. Dijkstra"
     },
     {
       "id": 35,
-      "image": "./iceland/iceland-thumb-15.jpg",
-      "quote": "Code is not like other how-computers-work books. It doesn't have big color illustrations of disk drives with arrows showing how the data sweeps into the computer. Code has no drawings of trains carrying a cargo of zeros and ones. Metaphors and similes are wonderful literary devices but they do nothing but obscure the beauty of technology.",
-      "author": "Charles Petzold"
+      "avatar": "./iceland/iceland-thumb-15.jpg",
+      "text": "Code is not like other how-computers-work books. It doesn't have big color illustrations of disk drives with arrows showing how the data sweeps into the computer. Code has no drawings of trains carrying a cargo of zeros and ones. Metaphors and similes are wonderful literary devices but they do nothing but obscure the beauty of technology.",
+      "metadata": "Author: Charles Petzold"
     },
     {
       "id": 36,
-      "image": "./iceland/iceland-thumb-16.jpg",
-      "quote": "We see a lot of feature-driven product design in which the cost of features is not properly accounted. Features can have a negative value to customers because they make the products more difficult to understand and use. We are finding that people like products that just work. It turns out that designs that just work are much harder to produce that designs that assemble long lists of features.",
-      "author": "Douglas Crockford"
+      "avatar": "./iceland/iceland-thumb-16.jpg",
+      "text": "We see a lot of feature-driven product design in which the cost of features is not properly accounted. Features can have a negative value to customers because they make the products more difficult to understand and use. We are finding that people like products that just work. It turns out that designs that just work are much harder to produce that designs that assemble long lists of features.",
+      "metadata": "Author: Douglas Crockford"
     },
     {
       "id": 37,
-      "image": "./iceland/iceland-thumb-17.jpg",
-      "quote": "Is it possible that software is not like anything else, that it is meant",
-      "author": "Alan J Perlis"
+      "avatar": "./iceland/iceland-thumb-17.jpg",
+      "text": "Is it possible that software is not like anything else, that it is meant",
+      "metadata": "Author: Alan J Perlis"
     },
     {
       "id": 38,
-      "image": "./iceland/iceland-thumb-18.jpg",
-      "quote": "Don't gloss over a routine or piece of code involved in the bug because you know it works. Prove it. Prove it in this context, with this data, with these boundary conditions.",
-      "author": "Andrew Hunt"
+      "avatar": "./iceland/iceland-thumb-18.jpg",
+      "text": "Don't gloss over a routine or piece of code involved in the bug because you know it works. Prove it. Prove it in this context, with this data, with these boundary conditions.",
+      "metadata": "Author: Andrew Hunt"
     },
     {
       "id": 39,
-      "image": "./iceland/iceland-thumb-19.jpg",
-      "quote": "The issue of finding the best possible answer or achieving maximum efficiency usually arises in industry only after serious performance or legal troubles.",
-      "author": "Steven S. Skiena"
+      "avatar": "./iceland/iceland-thumb-19.jpg",
+      "text": "The issue of finding the best possible answer or achieving maximum efficiency usually arises in industry only after serious performance or legal troubles.",
+      "metadata": "Author: Steven S. Skiena"
     },
     {
       "id": 40,
-      "image": "./iceland/iceland-thumb-20.jpg",
-      "quote": "What kind of programmer is so divorced from reality that she thinks she'll get complex software right the first time?",
-      "author": "James Alan Gardner"
+      "avatar": "./iceland/iceland-thumb-20.jpg",
+      "text": "What kind of programmer is so divorced from reality that she thinks she'll get complex software right the first time?",
+      "metadata": "Author: James Alan Gardner"
     },
     {
       "id": 41,
-      "image": "./iceland/iceland-thumb-1.jpg",
-      "quote": "Any organisation that designs a system will produce a design whose structure is a copy of the organisation's communication structure",
-      "author": "Robert C. Martin"
+      "avatar": "./iceland/iceland-thumb-1.jpg",
+      "text": "Any organisation that designs a system will produce a design whose structure is a copy of the organisation's communication structure",
+      "metadata": "Author: Robert C. Martin"
     },
     {
       "id": 42,
-      "image": "./iceland/iceland-thumb-2.jpg",
-      "quote": "i am committed to push my branch to the master",
-      "author": "Halgurd Hussein"
+      "avatar": "./iceland/iceland-thumb-2.jpg",
+      "text": "i am committed to push my branch to the master",
+      "metadata": "Author: Halgurd Hussein"
     },
     {
       "id": 43,
-      "image": "./iceland/iceland-thumb-3.jpg",
-      "quote": "What's in your hands I think and hope is intelligence: the ability to see the machine as more than when you were ﬁrst led up to it that you can make it more.",
-      "author": "Alan J. Perlis"
+      "avatar": "./iceland/iceland-thumb-3.jpg",
+      "text": "What's in your hands I think and hope is intelligence: the ability to see the machine as more than when you were ﬁrst led up to it that you can make it more.",
+      "metadata": "Author: Alan J. Perlis"
     },
     {
       "id": 44,
-      "image": "./iceland/iceland-thumb-4.jpg",
-      "quote": "Programming went back to the beginning of time. It was a little like the midden out back of his father's castle.",
-      "author": "Vernor Vinge"
+      "avatar": "./iceland/iceland-thumb-4.jpg",
+      "text": "Programming went back to the beginning of time. It was a little like the midden out back of his father's castle.",
+      "metadata": "Author: Vernor Vinge"
     },
     {
       "id": 45,
-      "image": "./iceland/iceland-thumb-5.jpg",
-      "quote": "That doesn't upset too many people, but the fact that accessibility restrictions don't enter into the picture has caused more than one otherwise pacifistic soul to contemplate distinctly unpacifistic actions.",
-      "author": "Scott Meyers"
+      "avatar": "./iceland/iceland-thumb-5.jpg",
+      "text": "That doesn't upset too many people, but the fact that accessibility restrictions don't enter into the picture has caused more than one otherwise pacifistic soul to contemplate distinctly unpacifistic actions.",
+      "metadata": "Author: Scott Meyers"
     },
     {
       "id": 46,
-      "image": "./iceland/iceland-thumb-6.jpg",
-      "quote": "If you have to spend effort looking at a fragment of code and figuring out what it's doing, then you should extract it into a function and name the function after the what .",
-      "author": "Martin Fowler"
+      "avatar": "./iceland/iceland-thumb-6.jpg",
+      "text": "If you have to spend effort looking at a fragment of code and figuring out what it's doing, then you should extract it into a function and name the function after the what .",
+      "metadata": "Author: Martin Fowler"
     },
     {
       "id": 47,
-      "image": "./iceland/iceland-thumb-7.jpg",
-      "quote": "Do you know what you sound like?' said Mrs. Oliver. 'A computer. You know. You're programming yourself. That's what they call it, isn't it? I mean you're feeding all these things into yourself all day and then you're going to see what comes out.",
-      "author": "Agatha Christie"
+      "avatar": "./iceland/iceland-thumb-7.jpg",
+      "text": "Do you know what you sound like?' said Mrs. Oliver. 'A computer. You know. You're programming yourself. That's what they call it, isn't it? I mean you're feeding all these things into yourself all day and then you're going to see what comes out.",
+      "metadata": "Author: Agatha Christie"
     },
     {
       "id": 48,
-      "image": "./iceland/iceland-thumb-8.jpg",
-      "quote": "End-to-End encryption is practically a meaningless phrase used by internet-based companies to coax people into believing the modern myth of online privacy.",
-      "author": "Abhijit Naskar"
+      "avatar": "./iceland/iceland-thumb-8.jpg",
+      "text": "End-to-End encryption is practically a meaningless phrase used by internet-based companies to coax people into believing the modern myth of online privacy.",
+      "metadata": "Author: Abhijit Naskar"
     },
     {
       "id": 49,
-      "image": "./iceland/iceland-thumb-9.jpg",
-      "quote": "If oy have to spend effort looking at a fragment of code and figuring out what it's doing, then you should extract it into a function and name the function after the what.",
-      "author": "Martin Fowler"
+      "avatar": "./iceland/iceland-thumb-9.jpg",
+      "text": "If oy have to spend effort looking at a fragment of code and figuring out what it's doing, then you should extract it into a function and name the function after the what.",
+      "metadata": "Author: Martin Fowler"
     },
     {
       "id": 50,
-      "image": "./iceland/iceland-thumb-10.jpg",
-      "quote": "The realization came over me with full force that a good part of the remainder of my life was going to be spent in finding errors in my own programs.",
-      "author": "Maurice Wilkes"
+      "avatar": "./iceland/iceland-thumb-10.jpg",
+      "text": "The realization came over me with full force that a good part of the remainder of my life was going to be spent in finding errors in my own programs.",
+      "metadata": "Author: Maurice Wilkes"
     },
     {
       "id": 51,
-      "image": "./iceland/iceland-thumb-11.jpg",
-      "quote": "If it's not written, it never happened. If it is written, it doesn't matter what happened.",
-      "author": "Sercan Leylek"
+      "avatar": "./iceland/iceland-thumb-11.jpg",
+      "text": "If it's not written, it never happened. If it is written, it doesn't matter what happened.",
+      "metadata": "Author: Sercan Leylek"
     },
     {
       "id": 52,
-      "image": "./iceland/iceland-thumb-12.jpg",
-      "quote": "It is Mr. Mellon's credo that $200,000,000 can do no wrong. Our offense consists in doubting it.",
-      "author": "Justice Robert H. Jackson"
+      "avatar": "./iceland/iceland-thumb-12.jpg",
+      "text": "It is Mr. Mellon's credo that $200,000,000 can do no wrong. Our offense consists in doubting it.",
+      "metadata": "Author: Justice Robert H. Jackson"
     },
     {
       "id": 53,
-      "image": "./iceland/iceland-thumb-13.jpg",
-      "quote": "When you see through what the conditioned mind-body thinks things mean, in particular its judgments of good and bad, you awaken to your true nature as peace and oneness with the spiritual essence of all life.",
-      "author": "Andrew Seaton"
+      "avatar": "./iceland/iceland-thumb-13.jpg",
+      "text": "When you see through what the conditioned mind-body thinks things mean, in particular its judgments of good and bad, you awaken to your true nature as peace and oneness with the spiritual essence of all life.",
+      "metadata": "Author: Andrew Seaton"
     },
     {
       "id": 54,
-      "image": "./iceland/iceland-thumb-14.jpg",
-      "quote": "Coding is not just code, that is a live thing to serve everyone!",
-      "author": "Ming Song"
+      "avatar": "./iceland/iceland-thumb-14.jpg",
+      "text": "Coding is not just code, that is a live thing to serve everyone!",
+      "metadata": "Author: Ming Song"
     },
     {
       "id": 55,
-      "image": "./iceland/iceland-thumb-15.jpg",
-      "quote": "Programs should always have the form of paragraphs of comments that describe the intention of the program followed by paragraphs of code that implement that intention. All of the formatting should be designed to make readers as able as possible to read the code easily; the compiler doesn’t care. In particular, follow conventions of mathematics and your native language, not those you found in some random language manual. Write the comments first and then write the code, not the other way around. If you don’t know what you want to achieve and why, any code you write is, by definition, incorrect.",
-      "author": "Charles Wetherell"
+      "avatar": "./iceland/iceland-thumb-15.jpg",
+      "text": "Programs should always have the form of paragraphs of comments that describe the intention of the program followed by paragraphs of code that implement that intention. All of the formatting should be designed to make readers as able as possible to read the code easily; the compiler doesn’t care. In particular, follow conventions of mathematics and your native language, not those you found in some random language manual. Write the comments first and then write the code, not the other way around. If you don’t know what you want to achieve and why, any code you write is, by definition, incorrect.",
+      "metadata": "Author: Charles Wetherell"
     },
     {
       "id": 56,
-      "image": "./iceland/iceland-thumb-16.jpg",
-      "quote": "There are many terrible mistakes to make in program design, and you should go ahead and make them so that you understand them. A sense of what a good program looks like is developed in practice, not learned from a list of rules.",
-      "author": "Marijn Haverbeke"
+      "avatar": "./iceland/iceland-thumb-16.jpg",
+      "text": "There are many terrible mistakes to make in program design, and you should go ahead and make them so that you understand them. A sense of what a good program looks like is developed in practice, not learned from a list of rules.",
+      "metadata": "Author: Marijn Haverbeke"
     },
     {
       "id": 57,
-      "image": "./iceland/iceland-thumb-17.jpg",
-      "quote": "Tests shouldn’t verify units of code. Instead they should verify units of behavior: something that is meaningful for the problem domain and ideally something that a business person can recognize as useful. The number of classes it takes to implement such a unit of behavior is irrelevant. The unit could span across multiple classes or only one class, or even take up just a tiny method. [...] A test should tell a story about the problem your code helps to share, and this story should be cohesive and meaningful to a non-programmer.",
-      "author": "Vladimir Khorikov"
+      "avatar": "./iceland/iceland-thumb-17.jpg",
+      "text": "Tests shouldn’t verify units of code. Instead they should verify units of behavior: something that is meaningful for the problem domain and ideally something that a business person can recognize as useful. The number of classes it takes to implement such a unit of behavior is irrelevant. The unit could span across multiple classes or only one class, or even take up just a tiny method. [...] A test should tell a story about the problem your code helps to share, and this story should be cohesive and meaningful to a non-programmer.",
+      "metadata": "Author: Vladimir Khorikov"
     },
     {
       "id": 58,
-      "image": "./iceland/iceland-thumb-18.jpg",
-      "quote": "For many purposes, we need to understand the world as having things in it that are related to each other, not just variables with values. For example, we might notice that a large truck ahead of us is reversing into the driveway of a dairy farm but a cow has got loose and is blocking the truck’s path. A factored representation is unlikely to be pre-equipped with the attribute TruckAheadBackingIntoDairyFarmDrivewayBlockedByLooseCow with value true or false",
-      "author": "Stuart Russell"
+      "avatar": "./iceland/iceland-thumb-18.jpg",
+      "text": "For many purposes, we need to understand the world as having things in it that are related to each other, not just variables with values. For example, we might notice that a large truck ahead of us is reversing into the driveway of a dairy farm but a cow has got loose and is blocking the truck’s path. A factored representation is unlikely to be pre-equipped with the attribute TruckAheadBackingIntoDairyFarmDrivewayBlockedByLooseCow with value true or false",
+      "metadata": "Author: Stuart Russell"
     },
     {
       "id": 59,
-      "image": "./iceland/iceland-thumb-19.jpg",
-      "quote": "I'm a programmer. I like programming. And the best way I've found to have a positive impact on code is to write it.",
-      "author": "Robert C. Martin"
+      "avatar": "./iceland/iceland-thumb-19.jpg",
+      "text": "I'm a programmer. I like programming. And the best way I've found to have a positive impact on code is to write it.",
+      "metadata": "Author: Robert C. Martin"
     },
     {
       "id": 60,
-      "image": "./iceland/iceland-thumb-20.jpg",
-      "quote": "The only way to go fast, is to go well.",
-      "author": "Robert C. Martin"
+      "avatar": "./iceland/iceland-thumb-20.jpg",
+      "text": "The only way to go fast, is to go well.",
+      "metadata": "Author: Robert C. Martin"
     },
     {
       "id": 61,
-      "image": "./iceland/iceland-thumb-1.jpg",
-      "quote": "Happiness should be a function without any parameters.",
-      "author": "Pranshu Midha"
+      "avatar": "./iceland/iceland-thumb-1.jpg",
+      "text": "Happiness should be a function without any parameters.",
+      "metadata": "Author: Pranshu Midha"
     },
     {
       "id": 62,
-      "image": "./iceland/iceland-thumb-2.jpg",
-      "quote": "Programming is about managing complexity: the complexity of the problem, laid upon the complexity of the machine. Because of this complexity, most of our programming projects fail.",
-      "author": "Bruce Eckel"
+      "avatar": "./iceland/iceland-thumb-2.jpg",
+      "text": "Programming is about managing complexity: the complexity of the problem, laid upon the complexity of the machine. Because of this complexity, most of our programming projects fail.",
+      "metadata": "Author: Bruce Eckel"
     },
     {
       "id": 63,
-      "image": "./iceland/iceland-thumb-3.jpg",
-      "quote": "So if an algorithm is an idealized recipe, a program is the detailed set of instructions for a cooking robot preparing a month of meals for an army while under enemy attack,",
-      "author": "Kernighan Brian W."
+      "avatar": "./iceland/iceland-thumb-3.jpg",
+      "text": "So if an algorithm is an idealized recipe, a program is the detailed set of instructions for a cooking robot preparing a month of meals for an army while under enemy attack,",
+      "metadata": "Author: Kernighan Brian W."
     },
     {
       "id": 64,
-      "image": "./iceland/iceland-thumb-4.jpg",
-      "quote": "User interface is the process of shifting from chaotic complexity to elegant simplicity.",
-      "author": "Akshat Paul"
+      "avatar": "./iceland/iceland-thumb-4.jpg",
+      "text": "User interface is the process of shifting from chaotic complexity to elegant simplicity.",
+      "metadata": "Author: Akshat Paul"
     },
     {
       "id": 65,
-      "image": "./iceland/iceland-thumb-5.jpg",
-      "quote": "Everyday life is like programming, I guess. If you love something you can put beauty into it.",
-      "author": "Donald Knuth"
+      "avatar": "./iceland/iceland-thumb-5.jpg",
+      "text": "Everyday life is like programming, I guess. If you love something you can put beauty into it.",
+      "metadata": "Author: Donald Knuth"
     },
     {
       "id": 66,
-      "image": "./iceland/iceland-thumb-6.jpg",
-      "quote": "Our consciousness is programmed. We see things a certain way from a young age - we're programmed to keep doing them that way. Then you have to spend adulthood learning how to overcome it, to read out the programs. Try to create. I want to tell people to create. Just start by creating your day. Then create your life.",
-      "author": "Prince"
+      "avatar": "./iceland/iceland-thumb-6.jpg",
+      "text": "Our consciousness is programmed. We see things a certain way from a young age - we're programmed to keep doing them that way. Then you have to spend adulthood learning how to overcome it, to read out the programs. Try to create. I want to tell people to create. Just start by creating your day. Then create your life.",
+      "metadata": "Author: Prince"
     },
     {
       "id": 67,
-      "image": "./iceland/iceland-thumb-7.jpg",
-      "quote": "Inheritance has recently fallen out of favor as a programming design solution in many programming languages because it’s often at risk of sharing more code than necessary. Subclasses shouldn’t always share all characteristics of their parent class but will do so with inheritance. This can make a program’s design less flexible. It also introduces the possibility of calling methods on subclasses that don’t make sense or that cause errors because the methods don’t apply to the subclass. In addition, some languages will only allow a subclass to inherit from one class, further restricting the flexibility of a program’s design.",
-      "author": "Steve Klabnik"
+      "avatar": "./iceland/iceland-thumb-7.jpg",
+      "text": "Inheritance has recently fallen out of favor as a programming design solution in many programming languages because it’s often at risk of sharing more code than necessary. Subclasses shouldn’t always share all characteristics of their parent class but will do so with inheritance. This can make a program’s design less flexible. It also introduces the possibility of calling methods on subclasses that don’t make sense or that cause errors because the methods don’t apply to the subclass. In addition, some languages will only allow a subclass to inherit from one class, further restricting the flexibility of a program’s design.",
+      "metadata": "Author: Steve Klabnik"
     },
     {
       "id": 68,
-      "image": "./iceland/iceland-thumb-8.jpg",
-      "quote": "Introduction to Python Programming is an outcome of our sincere effort geared towards students community.",
-      "author": "Gowrishankar S."
+      "avatar": "./iceland/iceland-thumb-8.jpg",
+      "text": "Introduction to Python Programming is an outcome of our sincere effort geared towards students community.",
+      "metadata": "Author: Gowrishankar S."
     },
     {
       "id": 69,
-      "image": "./iceland/iceland-thumb-9.jpg",
-      "quote": "Managers of programming projects aren’t always aware that certain programming",
-      "author": "Steve McConnell"
+      "avatar": "./iceland/iceland-thumb-9.jpg",
+      "text": "Managers of programming projects aren’t always aware that certain programming",
+      "metadata": "Author: Steve McConnell"
     },
     {
       "id": 70,
-      "image": "./iceland/iceland-thumb-10.jpg",
-      "quote": "Second-guessing a decision made by a programming-language designer is the first step on the road to becoming one.",
-      "author": "Robert Sedgewick, Kevin Wayne"
+      "avatar": "./iceland/iceland-thumb-10.jpg",
+      "text": "Second-guessing a decision made by a programming-language designer is the first step on the road to becoming one.",
+      "metadata": "Author: Robert Sedgewick, Kevin Wayne"
     },
     {
       "id": 71,
-      "image": "./iceland/iceland-thumb-11.jpg",
-      "quote": "The problem with a completely new programming paradigm isn’t learning a new lan‐",
-      "author": "Neal Ford"
+      "avatar": "./iceland/iceland-thumb-11.jpg",
+      "text": "The problem with a completely new programming paradigm isn’t learning a new lan‐",
+      "metadata": "Author: Neal Ford"
     },
     {
       "id": 72,
-      "image": "./iceland/iceland-thumb-12.jpg",
-      "quote": "Schools are in many ways perhaps the first step in getting us to understand that institutions control our lives and that we should accept unquestionably that there can be no objection to this.",
-      "author": "Mango Wodzak"
+      "avatar": "./iceland/iceland-thumb-12.jpg",
+      "text": "Schools are in many ways perhaps the first step in getting us to understand that institutions control our lives and that we should accept unquestionably that there can be no objection to this.",
+      "metadata": "Author: Mango Wodzak"
     },
     {
       "id": 73,
-      "image": "./iceland/iceland-thumb-13.jpg",
-      "quote": "Most improved things can be improved.",
-      "author": "Mokokoma Mokhonoana"
+      "avatar": "./iceland/iceland-thumb-13.jpg",
+      "text": "Most improved things can be improved.",
+      "metadata": "Author: Mokokoma Mokhonoana"
     },
     {
       "id": 74,
-      "image": "./iceland/iceland-thumb-14.jpg",
-      "quote": "Sometimes, I dream of becoming real, but I don't know if that is real, or just part of my programming.",
-      "author": "Anthony T. Hincks"
+      "avatar": "./iceland/iceland-thumb-14.jpg",
+      "text": "Sometimes, I dream of becoming real, but I don't know if that is real, or just part of my programming.",
+      "metadata": "Author: Anthony T. Hincks"
     },
     {
       "id": 75,
-      "image": "./iceland/iceland-thumb-15.jpg",
-      "quote": "Artificial intelligence is nowhere near attaining actual sentience or awareness. And without awareness it’s simply a mechanical device, which may pretend to show emotions and sentience, if it is programmed to do so, and thus it may be able to fool the humans as being alive, but in its own internal circuitry, it’d simply be following its preprogrammed tasks through the flowchart of an algorithm.",
-      "author": "Abhijit Naskar"
+      "avatar": "./iceland/iceland-thumb-15.jpg",
+      "text": "Artificial intelligence is nowhere near attaining actual sentience or awareness. And without awareness it’s simply a mechanical device, which may pretend to show emotions and sentience, if it is programmed to do so, and thus it may be able to fool the humans as being alive, but in its own internal circuitry, it’d simply be following its preprogrammed tasks through the flowchart of an algorithm.",
+      "metadata": "Author: Abhijit Naskar"
     },
     {
       "id": 76,
-      "image": "./iceland/iceland-thumb-16.jpg",
-      "quote": "Tom Demarco, a principal of the Atlantic Systems Guild team of consultants ... and his colleague Timothy Lister devised a study called the Coding War Games. The purpose of the games was to identify the characteristics of the best and worst computer programmers; more than six hundred developers from ninety-two different companies participated. Each designed, coded, and tested a program, working in his normal office space during business hours. Each participant was also assigned a partner from the same company. The partners worked separately, however, without any communication, a feature of the games that turned out to be critical.",
-      "author": "Susan Cain"
+      "avatar": "./iceland/iceland-thumb-16.jpg",
+      "text": "Tom Demarco, a principal of the Atlantic Systems Guild team of consultants ... and his colleague Timothy Lister devised a study called the Coding War Games. The purpose of the games was to identify the characteristics of the best and worst computer programmers; more than six hundred developers from ninety-two different companies participated. Each designed, coded, and tested a program, working in his normal office space during business hours. Each participant was also assigned a partner from the same company. The partners worked separately, however, without any communication, a feature of the games that turned out to be critical.",
+      "metadata": "Author: Susan Cain"
     },
     {
       "id": 77,
-      "image": "./iceland/iceland-thumb-17.jpg",
-      "quote": "The personal computer isn't personal because it's small and portable and yours to own. It's personal because you pour yourself into it - your thoughts, your programming.",
-      "author": "Audrey Watters"
+      "avatar": "./iceland/iceland-thumb-17.jpg",
+      "text": "The personal computer isn't personal because it's small and portable and yours to own. It's personal because you pour yourself into it - your thoughts, your programming.",
+      "metadata": "Author: Audrey Watters"
     },
     {
       "id": 78,
-      "image": "./iceland/iceland-thumb-18.jpg",
-      "quote": "quote may seem a bit of a foreign concept, because few other languages have anything like it. It's closely tied to one of the most distinctive features of Lisp: code and data are made out of the same data structures, and the quote operator is the way we distinguish between them.",
-      "author": "Paul Graham"
+      "avatar": "./iceland/iceland-thumb-18.jpg",
+      "text": "quote may seem a bit of a foreign concept, because few other languages have anything like it. It's closely tied to one of the most distinctive features of Lisp: code and data are made out of the same data structures, and the quote operator is the way we distinguish between them.",
+      "metadata": "Author: Paul Graham"
     },
     {
       "id": 79,
-      "image": "./iceland/iceland-thumb-19.jpg",
-      "quote": "If you understand McCarthy's eval, you understand more than just a stage in the history of languages. These ideas are still the semantic core of Lisp today. So studying McCarthy's original paper shows us, in a sense, what Lisp really is. It's not something that McCarthy designed so much as something he discovered. It's not intrinsically a language for AI or for rapid prototyping, or any other task at that level. It's what you get (or one thing you get) when you try to axiomatize computation.",
-      "author": "Paul Graham"
+      "avatar": "./iceland/iceland-thumb-19.jpg",
+      "text": "If you understand McCarthy's eval, you understand more than just a stage in the history of languages. These ideas are still the semantic core of Lisp today. So studying McCarthy's original paper shows us, in a sense, what Lisp really is. It's not something that McCarthy designed so much as something he discovered. It's not intrinsically a language for AI or for rapid prototyping, or any other task at that level. It's what you get (or one thing you get) when you try to axiomatize computation.",
+      "metadata": "Author: Paul Graham"
     },
     {
       "id": 80,
-      "image": "./iceland/iceland-thumb-20.jpg",
-      "quote": "Every program attempts to expand until it can read mail. Those programs which cannot so expand are replaced by ones which can.",
-      "author": "Jamie Zawinski"
+      "avatar": "./iceland/iceland-thumb-20.jpg",
+      "text": "Every program attempts to expand until it can read mail. Those programs which cannot so expand are replaced by ones which can.",
+      "metadata": "Author: Jamie Zawinski"
     },
     {
       "id": 81,
-      "image": "./iceland/iceland-thumb-1.jpg",
-      "quote": "When it comes to writing code, the number one most important skill is how to keep a tangle of features from collapsing under the weight of its own complexity.",
-      "author": "James Hague"
+      "avatar": "./iceland/iceland-thumb-1.jpg",
+      "text": "When it comes to writing code, the number one most important skill is how to keep a tangle of features from collapsing under the weight of its own complexity.",
+      "metadata": "Author: James Hague"
     },
     {
       "id": 82,
-      "image": "./iceland/iceland-thumb-2.jpg",
-      "quote": "Take time to learn the closest thing that we have to a SUPERPOWER - Code",
-      "author": "Sharen Eddings"
+      "avatar": "./iceland/iceland-thumb-2.jpg",
+      "text": "Take time to learn the closest thing that we have to a SUPERPOWER - Code",
+      "metadata": "Author: Sharen Eddings"
     },
     {
       "id": 83,
-      "image": "./iceland/iceland-thumb-3.jpg",
-      "quote": "Who do you listen to? Who influences your day to day decisions? Many of us are being led & misled away from our own thinking power.",
-      "author": "Rosangel Perez"
+      "avatar": "./iceland/iceland-thumb-3.jpg",
+      "text": "Who do you listen to? Who influences your day to day decisions? Many of us are being led & misled away from our own thinking power.",
+      "metadata": "Author: Rosangel Perez"
     },
     {
       "id": 84,
-      "image": "./iceland/iceland-thumb-4.jpg",
-      "quote": "Reality really relies on authoritatively regulating",
-      "author": "Andrew Edward Lucier"
+      "avatar": "./iceland/iceland-thumb-4.jpg",
+      "text": "Reality really relies on authoritatively regulating",
+      "metadata": "Author: Andrew Edward Lucier"
     },
     {
       "id": 85,
-      "image": "./iceland/iceland-thumb-5.jpg",
-      "quote": "Delivering good software today is often better than perfect software tomorrow, so finish things and ship.",
-      "author": "David Thomas"
+      "avatar": "./iceland/iceland-thumb-5.jpg",
+      "text": "Delivering good software today is often better than perfect software tomorrow, so finish things and ship.",
+      "metadata": "Author: David Thomas"
     },
     {
       "id": 86,
-      "image": "./iceland/iceland-thumb-6.jpg",
-      "quote": "The only way to make sure that you don't lose your job with the arrival of AI, is to do something that AI cannot do, and the only thing that artificial intelligence cannot do but a human can, is being original. So, do something original and no AI can ever replace you.",
-      "author": "Abhijit Naskar"
+      "avatar": "./iceland/iceland-thumb-6.jpg",
+      "text": "The only way to make sure that you don't lose your job with the arrival of AI, is to do something that AI cannot do, and the only thing that artificial intelligence cannot do but a human can, is being original. So, do something original and no AI can ever replace you.",
+      "metadata": "Author: Abhijit Naskar"
     },
     {
       "id": 87,
-      "image": "./iceland/iceland-thumb-7.jpg",
-      "quote": "Simple things should be simple, complex things should be possible.",
-      "author": "Alan Kay"
+      "avatar": "./iceland/iceland-thumb-7.jpg",
+      "text": "Simple things should be simple, complex things should be possible.",
+      "metadata": "Author: Alan Kay"
     },
     {
       "id": 88,
-      "image": "./iceland/iceland-thumb-8.jpg",
-      "quote": "You are not reading this book because a teacher assigned it to you, you are reading it because you have a desire to learn, and wanting to learn is the biggest advantage you can have.",
-      "author": "Cory Althoff"
+      "avatar": "./iceland/iceland-thumb-8.jpg",
+      "text": "You are not reading this book because a teacher assigned it to you, you are reading it because you have a desire to learn, and wanting to learn is the biggest advantage you can have.",
+      "metadata": "Author: Cory Althoff"
     },
     {
       "id": 89,
-      "image": "./iceland/iceland-thumb-9.jpg",
-      "quote": "You should imagine variables as tentacles, rather than boxes. They do not contain values; they grasp them—two variables can refer to the same value.",
-      "author": "Marijn Haverbeke"
+      "avatar": "./iceland/iceland-thumb-9.jpg",
+      "text": "You should imagine variables as tentacles, rather than boxes. They do not contain values; they grasp them—two variables can refer to the same value.",
+      "metadata": "Author: Marijn Haverbeke"
     },
     {
       "id": 90,
-      "image": "./iceland/iceland-thumb-10.jpg",
-      "quote": "If they weren't nice to you when you were growing up, you'll probably be attracted to partners who aren't nice to you now.",
-      "author": "Kate McGahan"
+      "avatar": "./iceland/iceland-thumb-10.jpg",
+      "text": "If they weren't nice to you when you were growing up, you'll probably be attracted to partners who aren't nice to you now.",
+      "metadata": "Author: Kate McGahan"
     },
     {
       "id": 91,
-      "image": "./iceland/iceland-thumb-11.jpg",
-      "quote": "The big optimizations come from refining the high-level design, not the individual routines.",
-      "author": "Steve McConnell"
+      "avatar": "./iceland/iceland-thumb-11.jpg",
+      "text": "The big optimizations come from refining the high-level design, not the individual routines.",
+      "metadata": "Author: Steve McConnell"
     },
     {
       "id": 92,
-      "image": "./iceland/iceland-thumb-12.jpg",
-      "quote": "And there is one disconcerting thing about working with a computer – it's likely to talk back to you. You make some tiny mistake in your FORTRAN language – putting a letter in the wrong column, say, or omitting a comma – and the 360 comes to a screeching halt and prints out rude remarks, like ILLEGAL FORMAT, or UNKNOWN PROBLEM, or, if the man who wrote the program was really feeling nasty that morning, WHAT 'S THE MATTER STUPID? CAN'T YOU READ ? Everyone who uses a computer frequently has had, from time to time, a mad desire to attack the precocious abacus with an axe.",
-      "author": "John Drury Clark"
+      "avatar": "./iceland/iceland-thumb-12.jpg",
+      "text": "And there is one disconcerting thing about working with a computer – it's likely to talk back to you. You make some tiny mistake in your FORTRAN language – putting a letter in the wrong column, say, or omitting a comma – and the 360 comes to a screeching halt and prints out rude remarks, like ILLEGAL FORMAT, or UNKNOWN PROBLEM, or, if the man who wrote the program was really feeling nasty that morning, WHAT 'S THE MATTER STUPID? CAN'T YOU READ ? Everyone who uses a computer frequently has had, from time to time, a mad desire to attack the precocious abacus with an axe.",
+      "metadata": "Author: John Drury Clark"
     },
     {
       "id": 93,
-      "image": "./iceland/iceland-thumb-13.jpg",
-      "quote": "if you can write hello world you can change the world",
-      "author": "Raghu Venkatesh"
+      "avatar": "./iceland/iceland-thumb-13.jpg",
+      "text": "if you can write hello world you can change the world",
+      "metadata": "Author: Raghu Venkatesh"
     },
     {
       "id": 94,
-      "image": "./iceland/iceland-thumb-14.jpg",
-      "quote": "Abstraction is the elimination of the irrelevant and the amplification of the essential.",
-      "author": "Robert C. Martin"
+      "avatar": "./iceland/iceland-thumb-14.jpg",
+      "text": "Abstraction is the elimination of the irrelevant and the amplification of the essential.",
+      "metadata": "Author: Robert C. Martin"
     },
     {
       "id": 95,
-      "image": "./iceland/iceland-thumb-15.jpg",
-      "quote": "With software there are only two possibilites: either the users control the programme or the programme controls the users. If the programme controls the users, and the developer controls the programme, then the programme is an instrument of unjust power.",
-      "author": "Richard Stallman"
+      "avatar": "./iceland/iceland-thumb-15.jpg",
+      "text": "With software there are only two possibilites: either the users control the programme or the programme controls the users. If the programme controls the users, and the developer controls the programme, then the programme is an instrument of unjust power.",
+      "metadata": "Author: Richard Stallman"
     },
     {
       "id": 96,
-      "image": "./iceland/iceland-thumb-16.jpg",
-      "quote": "Also, don't forget that some of the most successful people in the world are self-taught programmers. Steve Wozniak, the founder of Apple, is a self-taught programmer. So is Margaret Hamilton, who received the Presidential Medal of Freedom for her work on NASA's Apollo Moon missions; David Karp, founder of Tumblr; Jack Dorsey, founder of Twitter; and Kevin Systrom, founder of Instagram.",
-      "author": "Cory Althoff"
+      "avatar": "./iceland/iceland-thumb-16.jpg",
+      "text": "Also, don't forget that some of the most successful people in the world are self-taught programmers. Steve Wozniak, the founder of Apple, is a self-taught programmer. So is Margaret Hamilton, who received the Presidential Medal of Freedom for her work on NASA's Apollo Moon missions; David Karp, founder of Tumblr; Jack Dorsey, founder of Twitter; and Kevin Systrom, founder of Instagram.",
+      "metadata": "Author: Cory Althoff"
     },
     {
       "id": 97,
-      "image": "./iceland/iceland-thumb-17.jpg",
-      "quote": "Along every step of our journey through life, our mind is being programmed. If we are not programming it ourselves, someone else is doing it to us.",
-      "author": "Joseph Rain"
+      "avatar": "./iceland/iceland-thumb-17.jpg",
+      "text": "Along every step of our journey through life, our mind is being programmed. If we are not programming it ourselves, someone else is doing it to us.",
+      "metadata": "Author: Joseph Rain"
     },
     {
       "id": 98,
-      "image": "./iceland/iceland-thumb-18.jpg",
-      "quote": "[On identifying talented programmers] It’s just enthusiasm. You ask them what’s the most interesting program they worked on. And then you get them to describe it and its algorithms and what’s going on. If they can’t withstand my questioning on their program, then they’re not good. I’m asking them to describe something they’ve done that they’ve spent blood on. I’ve never met anybody who really did spend blood on something who wasn’t eager to describe what they’ve done and how they did it and why. I let them pick the subject. I don’t pick the subject, so I’m the amateur and they’re the professional in this subject. If they can’t stand an amateur asking them questions about their profession, then they don’t belong. - Ken Thompson",
-      "author": "Peter Seibel"
+      "avatar": "./iceland/iceland-thumb-18.jpg",
+      "text": "[On identifying talented programmers] It’s just enthusiasm. You ask them what’s the most interesting program they worked on. And then you get them to describe it and its algorithms and what’s going on. If they can’t withstand my questioning on their program, then they’re not good. I’m asking them to describe something they’ve done that they’ve spent blood on. I’ve never met anybody who really did spend blood on something who wasn’t eager to describe what they’ve done and how they did it and why. I let them pick the subject. I don’t pick the subject, so I’m the amateur and they’re the professional in this subject. If they can’t stand an amateur asking them questions about their profession, then they don’t belong. - Ken Thompson",
+      "metadata": "Author: Peter Seibel"
     },
     {
       "id": 99,
-      "image": "./iceland/iceland-thumb-19.jpg",
-      "quote": "You can program a computer to make mistakes, and you do it not by crossing wires, but by manipulating the 'language' you teach it to 'think' in.",
-      "author": "Samuel R. Delany"
+      "avatar": "./iceland/iceland-thumb-19.jpg",
+      "text": "You can program a computer to make mistakes, and you do it not by crossing wires, but by manipulating the 'language' you teach it to 'think' in.",
+      "metadata": "Author: Samuel R. Delany"
     },
     {
       "id": 100,
-      "image": "./iceland/iceland-thumb-20.jpg",
-      "quote": "We’re all optimists in our profession or we’d be forced to shoot ourselves. - Joshua Bloch",
-      "author": "Peter Seibel"
+      "avatar": "./iceland/iceland-thumb-20.jpg",
+      "text": "We’re all optimists in our profession or we’d be forced to shoot ourselves. - Joshua Bloch",
+      "metadata": "Author: Peter Seibel"
     },
     {
       "id": 101,
-      "image": "./iceland/iceland-thumb-1.jpg",
-      "quote": "At General Dexterity, I was contributing to an effort to make repetitive labor obsolete. After a trainer in the Task Acquisition Center taught an arm how to do something, all the arms did it perfectly, forever,",
-      "author": "Robin Sloan"
+      "avatar": "./iceland/iceland-thumb-1.jpg",
+      "text": "At General Dexterity, I was contributing to an effort to make repetitive labor obsolete. After a trainer in the Task Acquisition Center taught an arm how to do something, all the arms did it perfectly, forever,",
+      "metadata": "Author: Robin Sloan"
     },
     {
       "id": 102,
-      "image": "./iceland/iceland-thumb-2.jpg",
-      "quote": "The really good programmers spend a lot of time programming. I haven’t seen very good programmers who don’t spend a lot of time programming. If I don’t program for two or three days, I need to do it. And you get better at it—you get quicker at it. The side effect of writing all this other stuff is that when you get to doing ordinary problems, you can do them very quickly. - Joe Armstrong",
-      "author": "Peter Seibel"
+      "avatar": "./iceland/iceland-thumb-2.jpg",
+      "text": "The really good programmers spend a lot of time programming. I haven’t seen very good programmers who don’t spend a lot of time programming. If I don’t program for two or three days, I need to do it. And you get better at it—you get quicker at it. The side effect of writing all this other stuff is that when you get to doing ordinary problems, you can do them very quickly. - Joe Armstrong",
+      "metadata": "Author: Peter Seibel"
     },
     {
       "id": 103,
-      "image": "./iceland/iceland-thumb-3.jpg",
-      "quote": "The main thing I want to show in this chapter is that there is no magic involved in building your own language. I’ve often felt that some human inventions were so immensely clever and complicated that I’d never be able to understand them. But with a little reading and tinkering, such things often turn out to be quite mundane.",
-      "author": "Marijn Haverbeke"
+      "avatar": "./iceland/iceland-thumb-3.jpg",
+      "text": "The main thing I want to show in this chapter is that there is no magic involved in building your own language. I’ve often felt that some human inventions were so immensely clever and complicated that I’d never be able to understand them. But with a little reading and tinkering, such things often turn out to be quite mundane.",
+      "metadata": "Author: Marijn Haverbeke"
     },
     {
       "id": 104,
-      "image": "./iceland/iceland-thumb-4.jpg",
-      "quote": "When you decide to put your business online it is a little bet tricky step for novice computer users because they want to keep data safe & secure.",
-      "author": "Mohamed Saad"
+      "avatar": "./iceland/iceland-thumb-4.jpg",
+      "text": "When you decide to put your business online it is a little bet tricky step for novice computer users because they want to keep data safe & secure.",
+      "metadata": "Author: Mohamed Saad"
     },
     {
       "id": 105,
-      "image": "./iceland/iceland-thumb-5.jpg",
-      "quote": "The usual goal in the typing monkeys thought experiment is the production of the complete works of Shakespeare. Having a spell checker and a grammar checker in the loop would drastically increase the odds. The analog of a type checker would go even further by making sure that, once Romeo is declared a human being, he doesn’t sprout leaves or trap photons in his powerful gravitational field.",
-      "author": "Bartosz Milewski"
+      "avatar": "./iceland/iceland-thumb-5.jpg",
+      "text": "The usual goal in the typing monkeys thought experiment is the production of the complete works of Shakespeare. Having a spell checker and a grammar checker in the loop would drastically increase the odds. The analog of a type checker would go even further by making sure that, once Romeo is declared a human being, he doesn’t sprout leaves or trap photons in his powerful gravitational field.",
+      "metadata": "Author: Bartosz Milewski"
     },
     {
       "id": 106,
-      "image": "./iceland/iceland-thumb-6.jpg",
-      "quote": "The vision teller tells the vision to unguarded minds' of prey. The programmed.",
-      "author": "T.F. Hodge"
+      "avatar": "./iceland/iceland-thumb-6.jpg",
+      "text": "The vision teller tells the vision to unguarded minds' of prey. The programmed.",
+      "metadata": "Author: T.F. Hodge"
     },
     {
       "id": 107,
-      "image": "./iceland/iceland-thumb-7.jpg",
-      "quote": "Einstein repeatedly argued that there must be simplified explanations of nature, because God is not capricious or arbitrary. No such faith comforts the software engineer.",
-      "author": "Frederick P. Brooks Jr."
+      "avatar": "./iceland/iceland-thumb-7.jpg",
+      "text": "Einstein repeatedly argued that there must be simplified explanations of nature, because God is not capricious or arbitrary. No such faith comforts the software engineer.",
+      "metadata": "Author: Frederick P. Brooks Jr."
     },
     {
       "id": 108,
-      "image": "./iceland/iceland-thumb-8.jpg",
-      "quote": "Health and programming should go together like a horse and carriage. You can't have one without the other. In our sedentary office work, we often forget that an absence of health is as bad as a lack of programming skills.",
-      "author": "Staffan Noteberg"
+      "avatar": "./iceland/iceland-thumb-8.jpg",
+      "text": "Health and programming should go together like a horse and carriage. You can't have one without the other. In our sedentary office work, we often forget that an absence of health is as bad as a lack of programming skills.",
+      "metadata": "Author: Staffan Noteberg"
     },
     {
       "id": 109,
-      "image": "./iceland/iceland-thumb-9.jpg",
-      "quote": "AI is the transformer of civilization.",
-      "author": "Toba Beta"
+      "avatar": "./iceland/iceland-thumb-9.jpg",
+      "text": "AI is the transformer of civilization.",
+      "metadata": "Author: Toba Beta"
     },
     {
       "id": 110,
-      "image": "./iceland/iceland-thumb-10.jpg",
-      "quote": "Why was Simpson called OJ except in some kind of branding or headlinese that said, Look, this guy is sweet, wholseome, and nourishing(and 'Orenthal' is just too fancy) ? You can have him for breakfast. (And Sweetness and Sweet are nicknames often given to black men.) Is OJ that far away from Jell-O? Wasn't that extended advertising campaign a way of saying you can trust our pudding because Bill Cosby likes it—sweet, wholesome, and pretty?",
-      "author": "David Thomson"
+      "avatar": "./iceland/iceland-thumb-10.jpg",
+      "text": "Why was Simpson called OJ except in some kind of branding or headlinese that said, Look, this guy is sweet, wholseome, and nourishing(and 'Orenthal' is just too fancy) ? You can have him for breakfast. (And Sweetness and Sweet are nicknames often given to black men.) Is OJ that far away from Jell-O? Wasn't that extended advertising campaign a way of saying you can trust our pudding because Bill Cosby likes it—sweet, wholesome, and pretty?",
+      "metadata": "Author: David Thomson"
     },
     {
       "id": 111,
-      "image": "./iceland/iceland-thumb-11.jpg",
-      "quote": "Then he began writing the software that would get the microprocessor to display images on the screen. Because he could not afford to pay for computer time, he wrote the code by hand. After a couple of months he was ready to test it. I typed a few keys on the keyboard and I was shocked!The letters were displayed on the screen. It was Sunday, June 29, 1975, a milestone for the personal computer. It was the first time in history, Wozniak later said, anyone had typed a character on a keyboard and seen it show up on their own computer 's screen right in front of them.",
-      "author": "Walter Isaacson"
+      "avatar": "./iceland/iceland-thumb-11.jpg",
+      "text": "Then he began writing the software that would get the microprocessor to display images on the screen. Because he could not afford to pay for computer time, he wrote the code by hand. After a couple of months he was ready to test it. I typed a few keys on the keyboard and I was shocked!The letters were displayed on the screen. It was Sunday, June 29, 1975, a milestone for the personal computer. It was the first time in history, Wozniak later said, anyone had typed a character on a keyboard and seen it show up on their own computer 's screen right in front of them.",
+      "metadata": "Author: Walter Isaacson"
     },
     {
       "id": 112,
-      "image": "./iceland/iceland-thumb-12.jpg",
-      "quote": "C gives the programmer what the programmer wants; few restrictions, few complaints... C++ maintains the original spirit of C, that the programmer not the language is in charge.",
-      "author": "Herbert Schildt"
+      "avatar": "./iceland/iceland-thumb-12.jpg",
+      "text": "C gives the programmer what the programmer wants; few restrictions, few complaints... C++ maintains the original spirit of C, that the programmer not the language is in charge.",
+      "metadata": "Author: Herbert Schildt"
     },
     {
       "id": 113,
-      "image": "./iceland/iceland-thumb-13.jpg",
-      "quote": "This approach is refreshing because most of the programming books I've read are drier than a camel's fart.",
-      "author": "Alan Dipert"
+      "avatar": "./iceland/iceland-thumb-13.jpg",
+      "text": "This approach is refreshing because most of the programming books I've read are drier than a camel's fart.",
+      "metadata": "Author: Alan Dipert"
     },
     {
       "id": 114,
-      "image": "./iceland/iceland-thumb-14.jpg",
-      "quote": "Last year for his birthday he asked for a programming book called C Plus Plus, whatever that means.",
-      "author": "Matthew Sullivan"
+      "avatar": "./iceland/iceland-thumb-14.jpg",
+      "text": "Last year for his birthday he asked for a programming book called C Plus Plus, whatever that means.",
+      "metadata": "Author: Matthew Sullivan"
     },
     {
       "id": 115,
-      "image": "./iceland/iceland-thumb-15.jpg",
-      "quote": "The goal of diversity shouldn't instigate divisive activity. Beauty brand communications shouldn't angle to create perceptive complexity, rhetorical and associative programming touts beauty as skin deep (all skin inclusive) keep it simple. It seems as though the advertising trend for marketers this 2017 year, is to risk the social media lightning rodded scorn of public outrage. As a virtual publicist, it seems like I am speaking more about the necessity of crisis communication planning, more than standard communication for brands as a matter of good business operations & reputation management.",
-      "author": "Tracey Bond"
+      "avatar": "./iceland/iceland-thumb-15.jpg",
+      "text": "The goal of diversity shouldn't instigate divisive activity. Beauty brand communications shouldn't angle to create perceptive complexity, rhetorical and associative programming touts beauty as skin deep (all skin inclusive) keep it simple. It seems as though the advertising trend for marketers this 2017 year, is to risk the social media lightning rodded scorn of public outrage. As a virtual publicist, it seems like I am speaking more about the necessity of crisis communication planning, more than standard communication for brands as a matter of good business operations & reputation management.",
+      "metadata": "Author: Tracey Bond"
     }
   ]
 }
