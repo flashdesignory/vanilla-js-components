@@ -34,6 +34,11 @@ const requestMore = async () => {
 };
 
 const Template = ({ ...args }) => {
+  state = {
+    page: 0,
+    limit: 10,
+    totalItems: 0,
+  };
   list = new InfiniteList({ ...args });
   requestMore();
   return list.render();

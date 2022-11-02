@@ -118,7 +118,6 @@ export class InfiniteList {
     this.items.forEach((item, index) => {
       const itemElement = item.render();
       if (
-        index === this.items.length - 1 &&
         item.id === this.data[this.data.length - 1].id
       ) {
         this.lastListElement = itemElement;
