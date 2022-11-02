@@ -8,7 +8,7 @@ export default {
 const Template = ({ ...args }) => {
   const container = document.createElement("div");
   container.style.position = "relative";
-  container.style.width = "420px";
+  container.style.maxWidth = "420px";
 
   const dc = new DisplayCard({ ...args });
   container.appendChild(dc.render());
