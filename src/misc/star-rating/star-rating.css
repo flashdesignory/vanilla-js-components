@@ -1,3 +1,7 @@
+@import "../../styles//transitions.css";
+@import "../../styles/colors.css";
+@import "../../styles/fonts.css";
+
 .ratings-container,
 .ratings-container * {
   box-sizing: border-box;
@@ -15,18 +19,18 @@
 }
 
 .ratings-star {
-  font-size: 32px;
-  color: #666;
+  font-size: var(--font-size-large);
+  color: var(--neutral-gray-102);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: var(--default-transition);
   user-select: none;
 }
 
 .ratings-star.active {
-  color: goldenrod;
+  color: var(--fancy-gold);
 }
 
 .ratings-star:not(.active):hover,
 .ratings-star:not(.active):hover ~ .ratings-star {
-  color: goldenrod;
+  color: var(--fancy-gold);
 }

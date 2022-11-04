@@ -1,0 +1,7 @@
+body {
+    --border-radius-small: 5px;
+
+    --border-radius-50: 50%;
+
+    --content-padding-medium: 15px;
+}

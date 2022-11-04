@@ -1,33 +1,31 @@
+@import "../../styles//colors.css";
+@import "../../styles/layout.css";
+@import "../../styles/animations.css";
+
 .skeleton-container,
 .skeleton-container * {
   box-sizing: border-box;
 }
 
 .skeleton-container {
-  --skeleton-border-radius: 5px;
-  --skeleton-padding: 15px;
-  --skeleton-elements-color: #ccc;
-  --skeleton-main-color: #fff;
-
-  padding: var(--skeleton-padding);
+  padding: var(--content-padding-medium);
   max-width: 400px;
   width: 100%;
   height: 110px;
-  background: var(--skeleton-main-color);
-  border-radius: var(--skeleton-border-radius);
+  background: var(--primary-white);
+  border-radius: var(--border-radius-small);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2),
-    0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: var(--content-shadow);
 }
 
 .skeleton-left {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding-right: var(--skeleton-padding);
+  padding-right: var(--content-padding-medium);
   justify-content: space-between;
   height: 100%;
 }
@@ -40,38 +38,26 @@
 .skeleton-square {
   width: 80px;
   height: 80px;
-  border-radius: var(--skeleton-border-radius);
-  background-color: var(--skeleton-elements-color);
+  border-radius: var(--border-radius-small);
+  background-color: var(--neutral-gray-204);
 }
 
 .skeleton-circle {
   width: 80px;
   height: 80px;
-  border-radius: 50%;
-  background-color: var(--skeleton-elements-color);
+  border-radius: var(--border-radius-50);
+  background-color: var(--neutral-gray-204);
 }
 
 .skeleton-line {
   width: 100%;
   height: 20px;
-  border-radius: var(--skeleton-border-radius);
-  background-color: var(--skeleton-elements-color);
+  border-radius: var(--border-radius-small);
+  background-color: var(--neutral-gray-204);
 }
 
 .skeleton-circle,
 .skeleton-square,
 .skeleton-line {
-  animation: skeleton-animation 3s ease-in-out infinite;
-}
-
-@keyframes skeleton-animation {
-  0% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.5;
-  }
+  animation: pulse-animation 3s ease-in-out infinite;
 }

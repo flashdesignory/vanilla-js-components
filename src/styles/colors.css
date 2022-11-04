@@ -1,0 +1,11 @@
+body {
+    --primary-white: #ffffff;
+
+    --neutral-gray-204: rgb(204, 204, 204);
+    --neutral-gray-102: rgb(102, 102, 102);
+
+    --fancy-gold: rgb(218, 165, 32);
+
+    --content-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2),
+    0 1px 8px 0 rgba(0, 0, 0, 0.12);
+}
