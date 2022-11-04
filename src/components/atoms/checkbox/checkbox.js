@@ -4,13 +4,16 @@ import "./checkbox.css";
 
 export class Checkbox {
   constructor({ id, name, label, onChange, checked }) {
+    this.onChange = onChange;
+    this.handleOnChange = this.handleOnChange.bind(this);
+    this.update({ id, name, label, checked });
+  }
+
+  update({ id, name, label, checked }) {
     this.id = id;
     this.name = name;
     this.label = label;
-    this.onChange = onChange;
     this.checked = checked;
-
-    this.handleOnChange = this.handleOnChange.bind(this);
   }
 
   handleOnChange(e) {

@@ -5,9 +5,13 @@ import { Checkbox } from "./checkbox.js";
 
 export class CheckboxGroup {
   constructor({ data, name, onChange }) {
+    this.onChange = onChange;
+    this.update({ data, name });
+  }
+
+  update({ data, name }) {
     this.data = data;
     this.name = name;
-    this.onChange = onChange;
 
     this.inputs = this.data.map((item) => {
       const checkbox = new Checkbox({

@@ -39,6 +39,7 @@
   transform: scale(0);
   box-shadow: inset 1em 1em darkorange;
   border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
 .checkbox-container .input:checked::before {

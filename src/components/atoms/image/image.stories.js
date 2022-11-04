@@ -19,9 +19,9 @@ const Template = ({ ...args }) => {
 export const Simple = Template.bind({});
 Simple.args = {
   src: "./misc/image-1.jpg",
-    alt: "animals on a bus",
-    width: "300",
-    height: "300",
+  alt: "animals on a bus",
+  width: "300",
+  height: "300",
 };
 
 export const Animated = Template.bind({});

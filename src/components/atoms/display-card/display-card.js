@@ -22,8 +22,7 @@ export class DisplayCard extends DisplayCardBase {
     if (props) this.update(props);
   }
 
-  update(props) {
-    const { index, id, height, y, ...data } = props;
+  update({ index, id, height, y, ...data }) {
     this.index = index;
     this.height = height;
     this.y = y;
@@ -78,7 +77,7 @@ export class DisplayCard extends DisplayCardBase {
       switch (name) {
         case "avatar":
           this[name] = new Avatar({
-            image: {...data},
+            image: { ...data },
           });
           break;
         case "text":
@@ -103,7 +102,7 @@ export class DisplayCard extends DisplayCardBase {
       }
       parent.appendChild(this[name].render());
     } else {
-      this[name].update({...data});
+      this[name].update({ ...data });
     }
   }
 

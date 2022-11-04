@@ -38,6 +38,7 @@
   transform: scale(0);
   box-shadow: inset 1em 1em darkorange;
   border-radius: 50%;
+  transition: all 0.3s ease;
 }
 
 .radio-button-container .input:checked::before {

@@ -12,14 +12,17 @@ export class InputForm {
     submitText = "Submit!",
     onSubmit,
   }) {
+    this.onSubmit = onSubmit;
+    this.handleOnSubmit = this.handleOnSubmit.bind(this);
+    this.handleOnInput = this.handleOnInput.bind(this);
+    this.update({ id, placeholder, value, submitText });
+  }
+
+  update({ id, placeholder, value, submitText }) {
     this.id = id;
     this.placeholder = placeholder;
     this.value = value;
     this.submitText = submitText;
-    this.onSubmit = onSubmit;
-
-    this.handleOnSubmit = this.handleOnSubmit.bind(this);
-    this.handleOnInput = this.handleOnInput.bind(this);
   }
 
   handleOnSubmit(e) {

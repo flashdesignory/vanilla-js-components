@@ -4,13 +4,16 @@ import "./input.css";
 
 export class Input {
   constructor({ id, type, placeholder, value, onInput }) {
-    this.id = id;
     this.type = type;
+    this.onInput = onInput;
+    this.handleOnInput = this.handleOnInput.bind(this);
+    this.update({ id, placeholder, value });
+  }
+
+  update({ id, placeholder, value }) {
+    this.id = id;
     this.placeholder = placeholder;
     this.value = value;
-    this.onInput = onInput;
-
-    this.handleOnInput = this.handleOnInput.bind(this);
   }
 
   handleOnInput(e) {

@@ -4,11 +4,15 @@ import "./button.css";
 
 export class Button {
   constructor({ type, label, onClick }) {
-    this.label = label;
     this.onClick = onClick;
     this.type = type;
 
     this.handleOnClick = this.handleOnClick.bind(this);
+    this.update({ label });
+  }
+
+  update({ label }) {
+    this.label = label;
   }
 
   handleOnClick(e) {
@@ -27,7 +31,11 @@ export class Button {
   }
 }
 
-export const FunctionalButton = ({ type, label, onClick }) => {
+export const FunctionalButton = ({ type, text, onClick }) => {
+  let label = text;
+  const update = ({ text }) => {
+    label = text;
+  };
   const handleOnClick = (e) => {
     if (onClick) onClick(e);
   };
@@ -41,5 +49,5 @@ export const FunctionalButton = ({ type, label, onClick }) => {
     container.appendChild(button);
     return container;
   };
-  return { render };
+  return { render, update };
 };

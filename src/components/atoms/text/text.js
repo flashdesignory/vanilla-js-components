@@ -16,11 +16,11 @@ export class Text {
       this.container.classList.add(this.containerClass);
     }
 
-    this.update(text);
+    this.update({ text });
   }
 
-  update(text) {
-    this.text = text
+  update({ text }) {
+    this.text = text;
   }
 
   render() {

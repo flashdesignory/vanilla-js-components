@@ -3,7 +3,15 @@
 import "./image.css";
 
 export class Image {
-  constructor({ src, alt, width, height, imageClass, containerClass, fadeIn = false }) {
+  constructor({
+    src,
+    alt,
+    width,
+    height,
+    imageClass,
+    containerClass,
+    fadeIn = false,
+  }) {
     this.imageClass = imageClass;
     this.containerClass = containerClass;
     this.fadeIn = fadeIn;
@@ -25,7 +33,14 @@ export class Image {
     this.image.addEventListener("error", this.handleOnError);
     this.container.appendChild(this.image);
 
-    this.update({src, alt, width, height});
+    this.update({ src, alt, width, height });
+  }
+
+  update({ src, alt, width, height }) {
+    this.src = src;
+    this.alt = alt;
+    this.width = width;
+    this.height = height;
   }
 
   handleOnError() {
@@ -35,13 +50,6 @@ export class Image {
   handleOnLoad() {
     // console.log("image has loaded");
     if (this.fadeIn) this.image.style.opacity = 1;
-  }
-
-  update({ src, alt, width, height }) {
-    this.src = src;
-    this.alt = alt;
-    this.width = width;
-    this.height = height;
   }
 
   render() {

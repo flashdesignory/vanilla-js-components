@@ -4,12 +4,15 @@ import "./select.css";
 
 export class Select {
   constructor({ id, multiple, data, onChange }) {
+    this.onChange = onChange;
+    this.handleOnChange = this.handleOnChange.bind(this);
+    this.update({ id, multiple, data });
+  }
+
+  update({ id, multiple, data }) {
     this.id = id;
     this.multiple = multiple;
     this.data = data;
-    this.onChange = onChange;
-
-    this.handleOnChange = this.handleOnChange.bind(this);
   }
 
   handleOnChange(e) {
