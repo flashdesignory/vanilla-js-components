@@ -32,9 +32,6 @@ export class DisplayCard extends DisplayCardBase {
   }
 
   render() {
-    this.left.replaceChildren();
-    this.right.replaceChildren();
-
     this.container.id = this.id;
     this.container.style.height = `${this.height}px`;
 
@@ -46,42 +43,73 @@ export class DisplayCard extends DisplayCardBase {
       }px)`;
     }
 
-    const avatar = new Avatar({
-      image: {
-        src: this.data.avatar,
-      },
+    // always add avatar;
+    this.add(this.left, this.avatar, "avatar", undefined, {
+      src: this.data.avatar,
     });
-    this.left.appendChild(avatar.render());
 
     if (this.data.text) {
-      const text = new Text({
-        content: this.data.text,
-        truncate: true,
-        containerClass: "item-text",
+      this.add(this.right, this.text, "text", "item-text", {
+        text: this.data.text,
       });
-      this.right.appendChild(text.render());
+    } else {
+      this.remove(this.right, this.text);
     }
 
     if (this.data.image) {
-      const { src, width, height, alt } = this.data.image;
-      const image = new Image({
-        src,
-        width,
-        height,
-        alt,
-        imageClass: "item-image",
-      });
-      this.right.appendChild(image.render());
+      this.add(this.right, this.image, "image", "item-image", this.data.image);
+    } else {
+      this.remove(this.right, this.image);
     }
 
     if (this.data.metadata) {
-      const metadata = new Text({
-        content: this.data.metadata,
-        containerClass: "item-metadata",
+      this.add(this.right, this.metadata, "metadata", "item-metadata", {
+        text: this.data.metadata,
       });
-      this.right.appendChild(metadata.render());
+    } else {
+      this.remove(this.right, this.metadata);
     }
 
     return this.container;
+  }
+
+  add(parent, instance, name, className, data) {
+    if (instance === undefined) {
+      switch (name) {
+        case "avatar":
+          this[name] = new Avatar({
+            image: {...data},
+          });
+          break;
+        case "text":
+          this[name] = new Text({
+            ...data,
+            truncate: true,
+            containerClass: className,
+          });
+          break;
+        case "image":
+          this[name] = new Image({
+            ...data,
+            imageClass: className,
+          });
+          break;
+        case "metadata":
+          this[name] = new Text({
+            ...data,
+            containerClass: className,
+          });
+          break;
+      }
+      parent.appendChild(this[name].render());
+    } else {
+      this[name].update({...data});
+    }
+  }
+
+  remove(parent, instance) {
+    if (instance === undefined) return;
+    parent.removeChild(instance.container);
+    instance = undefined;
   }
 }

@@ -23,7 +23,7 @@ export class InfiniteList {
     // derrived values needed for calculations
     this.visibleWindowHeight = visibleItems * itemHeight;
     // initial values
-    this.items = [];
+    this.items = {};
     this.data = [];
     this.scrollTop = 0;
     // intersection observer
@@ -95,17 +95,19 @@ export class InfiniteList {
       this.data.length - 1
     );
 
-    // this.items = [];
-    let count = 0;
+    let prev = { ...this.items };
+    this.items = {};
+
     for (let i = startIndex; i <= endIndex; i++) {
       const item = this.data[i];
       const props = { ...item, index: i, height: this.itemHeight };
-      if (this.items[count]) {
-        this.items[count].update(props);
+      const current = prev[props.id];
+      if (current !== undefined) {
+        current.update(props);
+        this.items[props.id] = current;
       } else {
-        this.items.push(new DisplayCard(props));
+        this.items[props.id] = new DisplayCard(props);
       }
-      count++;
     }
   }
 
@@ -115,11 +117,9 @@ export class InfiniteList {
 
     if (this.lastListElement) this.oberver.unobserve(this.lastListElement);
 
-    this.items.forEach((item, index) => {
+    Object.values(this.items).forEach((item) => {
       const itemElement = item.render();
-      if (
-        item.id === this.data[this.data.length - 1].id
-      ) {
+      if (item.id === this.data[this.data.length - 1].id) {
         this.lastListElement = itemElement;
         if (this.lastListElement) this.oberver.observe(this.lastListElement);
       }

@@ -3,7 +3,7 @@ import { Text } from "./text";
 export default {
   title: "Atoms/Text",
   argTypes: {
-    content: { control: "text" },
+    text: { control: "text" },
     truncate: { control: "boolean" },
   },
 };
@@ -15,5 +15,5 @@ const Template = ({ ...args }) => {
 
 export const Simple = Template.bind({});
 Simple.args = {
-  content: "Hello world!",
+  text: "Hello world!",
 };

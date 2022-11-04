@@ -3,7 +3,9 @@ import { Avatar } from "./avatar";
 export default {
   title: "Atoms/Avatar",
   argTypes: {
-    image: { control: "text" },
+    image: {
+      src: { control: "text" },
+    },
   },
 };
 

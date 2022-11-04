@@ -24,7 +24,7 @@ export class VirtualList {
     this.amountRowsBuffered = amountRowsBuffered;
     this.numMaxItems = visibleItems + 2 * amountRowsBuffered;
     // initial values
-    this.items = [];
+    this.items = {};
     this.scrollTop = 0;
     // set initial elements
     this.container = document.createElement("div");
@@ -66,23 +66,25 @@ export class VirtualList {
       this.data.length - 1
     );
 
-    // this.items = [];
-    let count = 0;
+    let prev = { ...this.items };
+    this.items = {};
+
     for (let i = startIndex; i <= endIndex; i++) {
       const item = this.data[i];
       const props = { ...item, index: i, height: this.itemHeight };
-      if (this.items[count]) {
-        this.items[count].update(props);
+      const current = prev[props.id];
+      if (current !== undefined) {
+        current.update(props);
+        this.items[props.id] = current;
       } else {
-        this.items.push(new DisplayCard(props));
+        this.items[props.id] = new DisplayCard(props);
       }
-      count++;
     }
   }
 
   render() {
     this.content.replaceChildren();
-    this.items.forEach((item) => {
+    Object.values(this.items).forEach((item) => {
       this.content.appendChild(item.render());
     });
     return this.container;

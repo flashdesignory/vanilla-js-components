@@ -36,7 +36,7 @@ export class DynamicList {
     this.displayWidth = displayWidth;
 
     this.amountRowsBuffered = 2;
-    this.items = [];
+    this.items = {};
     this.positions = [];
     this.scrollTop = 0;
 
@@ -76,18 +76,20 @@ export class DynamicList {
       this.data.length - 1
     );
 
-    // this.items = [];
-    let count = 0;
+    let prev = { ...this.items };
+    this.items = {};
+
     for (let i = startIndex; i <= endIndex; i++) {
       const data = this.data[i];
       const position = this.positions[i];
       const props = { ...data, y: position.y, height: position.height };
-      if (this.items[count]) {
-        this.items[count].update(props);
+      const current = prev[props.id];
+      if (current !== undefined) {
+        current.update(props);
+        this.items[props.id] = current;
       } else {
-        this.items.push(new DisplayCard(props));
+        this.items[props.id] = new DisplayCard(props);
       }
-      count++;
     }
   }
 
@@ -108,7 +110,7 @@ export class DynamicList {
     this.content = document.createElement("div");
     this.content.classList.add("list-content");
     this.content.style.height = `${this.totalHeight}px`;
-    this.items.forEach((item) => {
+    Object.values(this.items).forEach((item) => {
       this.content.appendChild(item.render());
     });
 

@@ -3,8 +3,7 @@
 import "./text.css";
 
 export class Text {
-  constructor({ content, containerClass, truncate }) {
-    this.content = content;
+  constructor({ text, containerClass, truncate }) {
     this.containerClass = containerClass;
     this.truncate = truncate;
 
@@ -16,10 +15,16 @@ export class Text {
     if (this.containerClass) {
       this.container.classList.add(this.containerClass);
     }
+
+    this.update(text);
+  }
+
+  update(text) {
+    this.text = text
   }
 
   render() {
-    this.container.textContent = this.content;
+    this.container.textContent = this.text;
     return this.container;
   }
 }
