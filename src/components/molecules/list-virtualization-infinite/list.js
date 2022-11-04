@@ -31,7 +31,7 @@ export class InfiniteList {
     this.observerConfig = {
       root: null,
       rootMargin: "0px",
-      threshold: 1,
+      threshold: 0.5,
     };
     this.handleOnObserve = this.handleOnObserve.bind(this);
     this.oberver = new IntersectionObserver(
@@ -119,11 +119,14 @@ export class InfiniteList {
 
     Object.values(this.items).forEach((item) => {
       const itemElement = item.render();
-      if (item.id === this.data[this.data.length - 1].id) {
-        this.lastListElement = itemElement;
-        if (this.lastListElement) this.oberver.observe(this.lastListElement);
+     
+      if (itemElement) {
+        this.content.appendChild(itemElement);
+        if (item.id === this.data[this.data.length - 1].id) {
+          this.lastListElement = itemElement;
+          this.oberver.observe(this.lastListElement);
+        }
       }
-      if (itemElement) this.content.appendChild(itemElement);
     });
 
     return this.container;
