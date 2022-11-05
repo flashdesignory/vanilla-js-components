@@ -119,7 +119,7 @@ export class InfiniteList {
 
     Object.values(this.items).forEach((item) => {
       const itemElement = item.render();
-     
+
       if (itemElement) {
         this.content.appendChild(itemElement);
         if (item.id === this.data[this.data.length - 1].id) {

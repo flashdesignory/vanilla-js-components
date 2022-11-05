@@ -1,5 +1,5 @@
-import { TodoList } from './todo-list.js';
-import { data } from './data.js';
+import { TodoList } from "./todo-list.js";
+import { data } from "./data.js";
 
 export default {
   title: "Organisms/Todo List",
@@ -18,6 +18,6 @@ const Template = ({ ...args }) => {
 export const Simple = Template.bind({});
 Simple.args = {
   data,
-  title: 'Todo List:',
-  name: 'todo',
+  title: "Todo List:",
+  name: "todo",
 };

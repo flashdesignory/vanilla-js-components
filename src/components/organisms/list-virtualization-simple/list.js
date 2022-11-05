@@ -2,7 +2,7 @@
 // document.adoptedStyleSheets.push(sheet);
 import "./list.css";
 
-import { DisplayCard } from "../../molecules/display-card/display-card.js"
+import { DisplayCard } from "../../molecules/display-card/display-card.js";
 import { throttle } from "../../../lib/index.js";
 
 export class VirtualList {

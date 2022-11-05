@@ -1,14 +1,14 @@
 export const data = [
   {
-    task: 'Clean Car',
+    task: "Clean Car",
     completed: false,
   },
   {
-    task: 'Clean Garage',
+    task: "Clean Garage",
     completed: true,
   },
   {
-    task: 'Clean Kitchen',
+    task: "Clean Kitchen",
     completed: false,
   },
 ];

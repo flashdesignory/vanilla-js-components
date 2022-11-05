@@ -2,31 +2,30 @@
 // document.adoptedStyleSheets.push(sheet);
 import "./todo-list.css";
 
-import { Text } from '../../atoms/text/text.js';
-import { InputForm } from '../../molecules/input-form/input-form.js';
-import { TodoItem } from './todo-item.js';
+import { Text } from "../../atoms/text/text.js";
+import { InputForm } from "../../molecules/input-form/input-form.js";
+import { TodoItem } from "./todo-item.js";
+import { hasValidMin } from "../../../lib/index.js";
 
 export class TodoList {
-  constructor({
-    title, name, data,
-  }) {
+  constructor({ title, name, data }) {
     this.updateItem = this.updateItem.bind(this);
     this.addItem = this.addItem.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
 
-    this.container = document.createElement('div');
-    this.container.classList.add('todo-container');
+    this.container = document.createElement("div");
+    this.container.classList.add("todo-container");
 
-    this.header = new Text({containerClass: "todo-title"});
+    this.header = new Text({ containerClass: "todo-title" });
     this.container.appendChild(this.header.render());
 
     const inputForm = new InputForm({
       onSubmit: this.addItem,
-    })
+    });
     this.container.appendChild(inputForm.render());
 
-    this.list = document.createElement('div');
-    this.list.classList.add('todo-list');
+    this.list = document.createElement("div");
+    this.list.classList.add("todo-list");
     this.container.appendChild(this.list);
 
     this.update({ title, name, data });
@@ -37,14 +36,17 @@ export class TodoList {
     this.name = name;
     this.data = [...data];
 
-    this.header.update({text: this.title });
+    this.header.update({ text: this.title });
   }
 
   updateItem(updatedItem) {
     this.data = this.data.map((item) => {
       const newItem = {
         ...item,
-        completed: item.task === updatedItem.task ? updatedItem.completed : item.completed,
+        completed:
+          item.task === updatedItem.task
+            ? updatedItem.completed
+            : item.completed,
       };
       return newItem;
     });
@@ -56,7 +58,7 @@ export class TodoList {
   }
 
   addItem(e) {
-    if (e.target.elements.input.value <= 0) return;
+    if (!hasValidMin(e.target.elements.input.value, 2)) return;
 
     const newItem = {
       task: e.target.elements.input.value,

@@ -3,7 +3,7 @@
 import "./list.css";
 
 import { throttle } from "../../../lib/index.js";
-import { DisplayCard } from "../../molecules/display-card/display-card.js"
+import { DisplayCard } from "../../molecules/display-card/display-card.js";
 
 const getIndex = (items, scrollTop) => {
   let min = 0;
