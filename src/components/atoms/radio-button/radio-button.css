@@ -1,31 +1,38 @@
+@import url("../../../styles/colors.css");
+@import url("../../../styles/fonts.css");
+@import url("../../../styles/layout.css");
+@import url("../../../styles/transitions.css");
+
 .radio-button-container,
 .radio-button-container * {
   box-sizing: border-box;
 }
 
 .radio-button-container {
-  color: orange;
   display: flex;
+  color: var(--utils-gray-dark);
+  font-family: var(--default-font-family);
 }
 
 .radio-button-container .label {
-  margin-left: 5px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-left: var(--content-spacing-small);
+  font-family: inherit;
+  cursor: pointer;
 }
 
 .radio-button-container .input {
   /* hide & reset */
-  -webkit-appearance: none;
   appearance: none;
   background-color: transparent;
   margin: 0;
+
   /* custom styles */
   font: inherit;
-  color: currentColor;
+  color: currentcolor;
   width: 20px;
   height: 20px;
-  border: 2px solid currentColor;
-  border-radius: 50%;
+  border: var(--border-width-medium) solid currentcolor;
+  border-radius: var(--border-radius-50);
   display: grid;
   place-content: center;
   cursor: pointer;
@@ -36,9 +43,9 @@
   width: 10px;
   height: 10px;
   transform: scale(0);
-  box-shadow: inset 1em 1em darkorange;
-  border-radius: 50%;
-  transition: all 0.3s ease;
+  box-shadow: inset 1em 1em var(--utils-gray-light);
+  border-radius: var(--border-radius-50);
+  transition: var(--default-transition);
 }
 
 .radio-button-container .input:checked::before {
@@ -46,5 +53,5 @@
 }
 
 .radio-button-group-container .radio-button-container:not(:last-child) {
-  margin-bottom: 5px;
+  margin-bottom: var(--content-spacing-medium);
 }

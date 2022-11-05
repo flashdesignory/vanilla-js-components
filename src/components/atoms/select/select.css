@@ -3,20 +3,25 @@
   box-sizing: border-box;
 }
 
+.select-container {
+  display: flex;
+}
+
 .select-container .select {
   outline: 0;
-  padding: 10px;
-  border-radius: 10px;
-  border: 2px solid darkorange;
-  color: darkorange;
-  transition: all 0.3s ease;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: var(--content-spacing-medium);
+  border-radius: var(--border-radius-medium);
+  border: var(--border-width-medium) solid var(--utils-gray-dark);
+  color: var(--utils-gray-dark);
+  transition: var(--default-transition);
+  font-family: var(--default-font-family);
 }
 
 .select-container .select:hover {
-  border-color: orangered;
+  border-color: var(--utils-gray-light);
+  color: var(--utils-gray-light);
 }
 
 .select-container .option {
-  color: darkorange;
+  color: var(--utils-gray-dark);
 }

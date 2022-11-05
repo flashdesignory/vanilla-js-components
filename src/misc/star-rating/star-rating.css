@@ -1,6 +1,6 @@
-@import "../../styles//transitions.css";
-@import "../../styles/colors.css";
-@import "../../styles/fonts.css";
+@import url("../../styles//transitions.css");
+@import url("../../styles/colors.css");
+@import url("../../styles/fonts.css");
 
 .ratings-container,
 .ratings-container * {
@@ -19,8 +19,8 @@
 }
 
 .ratings-star {
-  font-size: var(--font-size-large);
-  color: var(--neutral-gray-102);
+  font-size: var(--font-size-xlarge);
+  color: var(--neutrals-gray-102);
   cursor: pointer;
   transition: var(--default-transition);
   user-select: none;

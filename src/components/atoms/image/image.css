@@ -1,3 +1,5 @@
+@import url("../../../styles/transitions.css");
+
 .image-container,
 .image-container * {
   box-sizing: border-box;
@@ -8,5 +10,5 @@
 }
 
 .image-container img {
-  transition: all 0.3s ease;
+  transition: var(--default-transition);
 }

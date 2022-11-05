@@ -1,10 +1,14 @@
+@import url("../../../styles/colors.css");
+@import url("../../../styles/fonts.css");
+
 .text-container,
 .text-container * {
   box-sizing: border-box;
 }
 
 .text-container {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: var(--default-font-family);
+  color: var(--utils-gray-dark);
 }
 
 .text-container.truncate {

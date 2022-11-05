@@ -1,0 +1,23 @@
+@import url("../../../styles/colors.css");
+@import url("../../../styles/layout.css");
+
+.dynamic-list,
+.dynamic-list * {
+  box-sizing: border-box;
+}
+
+.dynamic-list {
+  width: 100%;
+  background-color: transparent;
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-radius: var(--border-radius-small);
+  box-shadow: var(--content-shadow);
+}
+
+.dynamic-list .list-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

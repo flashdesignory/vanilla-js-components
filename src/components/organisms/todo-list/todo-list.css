@@ -1,0 +1,44 @@
+@import url("../../../styles/colors.css");
+@import url("../../../styles/fonts.css");
+@import url("../../../styles/layout.css");
+
+.todo-container,
+.todo-container * {
+  box-sizing: border-box;
+}
+
+.todo-container {
+  background: var(--neutrals-white);
+  border-radius: var(--border-radius-large);
+  padding: var(--content-spacing-xlarge);
+  max-width: 400px;
+  width: 100%;
+  box-shadow: var(--content-shadow);
+}
+
+.todo-title {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-more-bold);
+  margin-bottom: var(--content-spacing-medium);
+}
+
+.todo-list {
+  margin-top: var(--content-spacing-large);
+}
+
+.todo-item-container {
+  padding: var(--content-spacing-medium);
+  display: flex;
+  border-radius: var(--border-radius-small);
+  border: var(--border-width-medium) solid var(--utils-gray-light);
+  position: relative;
+}
+
+.todo-item-container:not(:last-child) {
+  margin-bottom: var(--content-spacing-large);
+}
+
+.todo-item-container label {
+  flex: 1;
+  margin-right: var(--content-spacing-medium);
+}

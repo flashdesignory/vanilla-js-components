@@ -1,32 +1,40 @@
+@import url("../../../styles/colors.css");
+@import url("../../../styles/fonts.css");
+@import url("../../../styles/layout.css");
+@import url("../../../styles/transitions.css");
+
 .checkbox-container,
 .checkbox-container * {
   box-sizing: border-box;
 }
 
 .checkbox-container {
-  color: orange;
   display: flex;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  flex: 1;
+  align-items: center;
+  color: var(--utils-gray-dark);
+  font-family: var(--default-font-family);
 }
 
 .checkbox-container .label {
-  margin-left: 5px;
+  margin-left: var(--content-spacing-small);
   font-family: inherit;
+  cursor: pointer;
 }
 
 .checkbox-container .input {
   /* hide & reset */
-  -webkit-appearance: none;
   appearance: none;
   background-color: transparent;
   margin: 0;
+
   /* custom styles */
   font: inherit;
-  color: currentColor;
+  color: currentcolor;
   width: 20px;
   height: 20px;
-  border: 2px solid currentColor;
-  border-radius: 5px;
+  border: var(--border-width-medium) solid currentcolor;
+  border-radius: var(--border-radius-small);
   display: grid;
   place-content: center;
   cursor: pointer;
@@ -37,9 +45,9 @@
   width: 12px;
   height: 12px;
   transform: scale(0);
-  box-shadow: inset 1em 1em darkorange;
-  border-radius: 2px;
-  transition: all 0.3s ease;
+  box-shadow: inset 1em 1em var(--utils-gray-light);
+  border-radius: var(--border-radius-xsmall);
+  transition: var(--default-transition);
 }
 
 .checkbox-container .input:checked::before {
@@ -47,5 +55,5 @@
 }
 
 .input-group-container .checkbox-container:not(:last-child) {
-  margin-bottom: 5px;
+  margin-bottom: var(--content-spacing-medium);
 }

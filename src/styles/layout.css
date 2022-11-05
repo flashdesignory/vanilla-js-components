@@ -1,7 +1,20 @@
 body {
-    --border-radius-small: 5px;
+  /* border-radius pixels */
+  --border-radius-xsmall: 2px;
+  --border-radius-small: 5px;
+  --border-radius-medium: 10px;
+  --border-radius-large: 15px;
 
-    --border-radius-50: 50%;
+  /* border-radius percentages */
+  --border-radius-50: 50%;
 
-    --content-padding-medium: 15px;
+  /* border-widths */
+  --border-width-small: 1px;
+  --border-width-medium: 2px;
+
+  /* content spacing */
+  --content-spacing-small: 5px;
+  --content-spacing-medium: 10px;
+  --content-spacing-large: 15px;
+  --content-spacing-xlarge: 20px;
 }

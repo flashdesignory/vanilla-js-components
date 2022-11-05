@@ -1,0 +1,24 @@
+@import url("../../../styles/colors.css");
+@import url("../../../styles/layout.css");
+
+.avatar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: var(--border-radius-small);
+  background-color: var(--neutrals-gray-204);
+  box-shadow: var(--content-shadow);
+  overflow: hidden;
+}
+
+.avatar-container svg {
+  width: 90%;
+  height: 90%;
+}
+
+.avatar-container svg path {
+  fill: var(--utils-gray-dark);
+}
