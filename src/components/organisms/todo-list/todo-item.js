@@ -36,7 +36,7 @@ export class TodoItem {
       name: this.name,
       label: this.value.task,
       onChange: this.handleOnChange,
-      checked: this.value.complete,
+      checked: this.value.completed,
     });
     this.container.appendChild(this.input.render());
 
