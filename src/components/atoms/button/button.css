@@ -40,3 +40,12 @@
   border-color: var(--utils-gray-light);
   color: var(--utils-gray-light);
 }
+
+.button-icon {
+  border: none;
+  background-color: transparent;
+}
+
+.button-icon:hover {
+  opacity: 0.5;
+}

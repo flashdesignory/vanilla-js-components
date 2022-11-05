@@ -1,4 +1,5 @@
 import { Button } from "./button";
+import { ArrowLeft } from "../../../assets/arrow-left";
 
 export default {
   title: "Atoms/Button",
@@ -23,4 +24,10 @@ export const Secondary = Template.bind({});
 Secondary.args = {
   label: "Button",
   type: "secondary",
+};
+
+export const Icon = Template.bind({});
+Icon.args = {
+  label: ArrowLeft,
+  type: "icon",
 };

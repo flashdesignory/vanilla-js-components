@@ -5,7 +5,7 @@ import "./button.css";
 export class Button {
   constructor({ type, label, onClick }) {
     this.onClick = onClick;
-    this.type = type;
+    this.type = type; // "primary" | "secondary" | "icon"
 
     this.handleOnClick = this.handleOnClick.bind(this);
     this.update({ label });
@@ -24,7 +24,10 @@ export class Button {
     container.classList.add("button-container");
     const button = document.createElement("button");
     button.classList.add("button", `button-${this.type}`);
-    button.textContent = this.label;
+
+    if (this.type !== "icon") button.textContent = this.label;
+    else button.insertAdjacentHTML("afterbegin", this.label);
+
     button.addEventListener("click", this.handleOnClick);
     container.appendChild(button);
     return container;
