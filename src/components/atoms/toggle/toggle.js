@@ -23,6 +23,9 @@ export class Toggle {
 
   handleChange(e) {
     this.checked = e.target.checked;
+    if (this.status) {
+      this.status.textContent = `selected: ${this.checked}`;
+    }
   }
 
   render() {
@@ -34,7 +37,7 @@ export class Toggle {
 
     const label = document.createElement("label");
     label.classList.add("toggle-label");
-    label.for = this.id;
+    label.htmlFor = this.id;
     container.appendChild(label);
 
     this.input = document.createElement("input");
@@ -48,6 +51,11 @@ export class Toggle {
     const span = document.createElement("span");
     span.classList.add("toggle-switch");
     label.appendChild(span);
+
+    this.status = document.createElement("div");
+    this.status.classList.add("visually-hidden");
+    this.status.textContent = `selected: ${this.checked}`;
+    label.appendChild(this.status);
 
     return container;
   }

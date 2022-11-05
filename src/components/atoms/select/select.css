@@ -1,3 +1,5 @@
+@import url("../../../styles/accessibility.css");
+
 .select-container,
 .select-container * {
   box-sizing: border-box;

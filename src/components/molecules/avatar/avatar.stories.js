@@ -23,5 +23,6 @@ Image.args = {
     src: "./misc/image-1.jpg",
     width: "80",
     height: "80",
+    alt: "animals on a bus",
   },
 };

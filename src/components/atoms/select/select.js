@@ -31,6 +31,13 @@ export class Select {
   render() {
     const container = document.createElement("div");
     container.classList.add("select-container");
+
+    const label = document.createElement("label");
+    label.classList.add("visually-hidden");
+    label.htmlFor = this.id;
+    label.textContent = this.id;
+    container.appendChild(label);
+
     const select = document.createElement("select");
     select.classList.add("select");
     select.id = this.id;
@@ -46,6 +53,7 @@ export class Select {
 
     select.addEventListener("change", this.handleOnChange);
     container.appendChild(select);
+
     return container;
   }
 }
