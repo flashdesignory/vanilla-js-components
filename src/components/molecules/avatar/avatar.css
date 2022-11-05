@@ -9,7 +9,7 @@
   width: 80px;
   height: 80px;
   border-radius: var(--border-radius-small);
-  background-color: var(--neutrals-gray-204);
+  background-color: var(--neutrals-gray-230);
   box-shadow: var(--content-shadow);
   overflow: hidden;
 }

@@ -38,7 +38,7 @@
   height: 100%;
   margin-left: var(--content-spacing-large);
   width: calc(100% - 80px - var(--content-spacing-large));
-  background: var(--neutrals-gray-204);
+  background: var(--neutrals-gray-230);
   padding: var(--content-spacing-medium);
   border-radius: var(--border-radius-small);
   box-shadow: var(--content-shadow);
@@ -58,7 +58,7 @@
 
 .item-metadata {
   font-weight: normal;
-  color: var(--neutrals-gray-153);
+  color: var(--neutrals-gray-102);
   font-size: var(--font-size-small);
 }
 

@@ -44,6 +44,7 @@ export class DynamicList {
 
     this.container = document.createElement("div");
     this.container.classList.add("dynamic-list");
+    this.container.tabIndex = 0;
     this.container.style.height = `${this.displayHeight}px`;
     this.container.style.maxWidth = `${this.displayWidth}px`;
 

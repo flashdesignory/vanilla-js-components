@@ -41,6 +41,7 @@ export class InfiniteList {
     // set initial elements
     this.container = document.createElement("div");
     this.container.classList.add("infinite-list");
+    this.container.tabIndex = 0;
     this.container.style.height = `${this.visibleWindowHeight}px`;
     this.container.style.maxWidth = `${this.itemWidth}px`;
 

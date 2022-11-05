@@ -4,12 +4,12 @@ body {
   --neutrals-black: rgb(0 0 0); /* #000000 */
 
   /* neutral gray */
-  --neutrals-gray-230: rgb(230 230 230); /* #e6e6e6 */
-  --neutrals-gray-204: rgb(204 204 204); /* #cccccc */
   --neutrals-gray-102: rgb(102 102 102); /* #666666 */
   --neutrals-gray-118: rgb(118 118 118); /* #767676 */
   --neutrals-gray-128: rgb(128 128 128); /* 808080 */
   --neutrals-gray-153: rgb(153 153 153); /* #999999 */
+  --neutrals-gray-204: rgb(204 204 204); /* #cccccc */
+  --neutrals-gray-230: rgb(230 230 230); /* #e6e6e6 */
 
   /* utils gray */
   --utils-gray-lighter: #a4adb8; /* #a4adB8 */
@@ -24,6 +24,8 @@ body {
   --fancy-gold: rgb(218 165 32); /* #daa520 */
 
   /* shadows */
-  --content-shadow: 0 3px 4px 0 rgb(0 0 0 / 14%),
-    0 3px 3px -2px rgb(0 0 0 / 20%), 0 1px 8px 0 rgb(0 0 0 / 12%);
+  --content-shadow:
+    0 3px 4px 0 rgb(0 0 0 / 14%),
+    0 3px 3px -2px rgb(0 0 0 / 20%),
+    0 1px 8px 0 rgb(0 0 0 / 12%);
 }
