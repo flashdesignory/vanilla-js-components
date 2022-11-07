@@ -46,16 +46,16 @@ export class VirtualList {
   }
 
   update({ data, visibleItems, itemHeight, itemWidth, amountRowsBuffered }) {
-    if (data !== undefined) {
-      this.state.data = [...this.state.data, ...data];
-      this.totalHeight = this.state.data.length * this.state.itemHeight;
-    }
-
     if (visibleItems !== undefined) this.state.visibleItems = visibleItems;
     if (itemHeight !== undefined) this.state.itemHeight = itemHeight;
     if (itemWidth !== undefined) this.state.itemWidth = itemWidth;
     if (amountRowsBuffered !== undefined)
       this.state.amountRowsBuffered = amountRowsBuffered;
+
+    if (data !== undefined) {
+      this.state.data = [...this.state.data, ...data];
+      this.totalHeight = this.state.data.length * this.state.itemHeight;
+    }
 
     // derrived values needed for calculations
     this.visibleWindowHeight = this.state.visibleItems * this.state.itemHeight;
