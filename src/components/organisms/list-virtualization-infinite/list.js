@@ -129,8 +129,6 @@ export class InfiniteList {
     this.container.style.height = `${this.visibleWindowHeight}px`;
     this.container.style.maxWidth = `${this.state.itemWidth}px`;
 
-    console.log(this.totalHeight);
-
     this.content.replaceChildren();
     this.content.style.height = `${this.totalHeight}px`;
 
