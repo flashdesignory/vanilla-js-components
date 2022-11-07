@@ -22,7 +22,7 @@
   width: 42px;
   height: 16px;
   display: flex;
-  background-color: var(--utils-gray-light);
+  background-color: var(--neutrals-gray-204);
   border-radius: 22px;
   cursor: pointer;
 }
@@ -31,7 +31,7 @@
   position: absolute;
   left: 0;
   top: 3px;
-  background-color: var(--utils-gray-dark);
+  background-color: var(--neutrals-gray-153);
   border-radius: 22px;
   transition: var(--default-transition);
   width: 45%;
@@ -46,7 +46,7 @@
   width: 22px;
   left: 0;
   bottom: -3px;
-  background-color: var(--utils-highlight-blue);
+  background-color: var(--utils-highlight-olive);
   border-radius: var(--border-radius-50);
   transition: var(--default-transition);
 }
