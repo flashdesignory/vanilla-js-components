@@ -68,7 +68,7 @@ export class InfiniteList {
 
     if (data !== undefined) {
       this.state.data = [...this.state.data, ...data];
-      this.totalHeight = this.state.data.length * this.itemHeight;
+      this.totalHeight = this.state.data.length * this.state.itemHeight;
     }
 
     // derrived values needed for calculations
@@ -128,6 +128,8 @@ export class InfiniteList {
   render() {
     this.container.style.height = `${this.visibleWindowHeight}px`;
     this.container.style.maxWidth = `${this.state.itemWidth}px`;
+
+    console.log(this.totalHeight);
 
     this.content.replaceChildren();
     this.content.style.height = `${this.totalHeight}px`;
