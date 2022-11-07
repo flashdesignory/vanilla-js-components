@@ -61,7 +61,7 @@ export class InfiniteList {
 
   update({ data, visibleItems, itemHeight, itemWidth, amountRowsBuffered }) {
     if (data !== undefined) {
-      this.state.data = [...this.state.data, ...data.items];
+      this.state.data = [...this.state.data, ...data];
       this.totalHeight = this.state.data.length * this.itemHeight;
     }
 
