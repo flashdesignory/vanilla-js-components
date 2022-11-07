@@ -31,12 +31,19 @@ export class TodoItem {
   update({ name, value }) {
     if (name !== undefined) this.state.name = name;
     if (value !== undefined) this.state.value = { ...value };
+
+    this.input.update({
+      id: this.state.value.task,
+      name: this.state.name,
+      label: this.state.value.task,
+      checked: this.state.value.completed,
+    });
   }
 
   handleOnChange(e) {
     const completed = e.target.checked;
     this.state.value = { ...this.state.value, completed };
-    this.onChange(this.value);
+    this.onChange(this.state.value);
   }
 
   handleOnClick() {
@@ -44,12 +51,7 @@ export class TodoItem {
   }
 
   render() {
-    this.input.update({
-      id: this.state.value.task,
-      name: this.state.name,
-      label: this.state.value.task,
-      checked: this.state.value.completed,
-    });
+    this.input.render();
 
     return this.container;
   }

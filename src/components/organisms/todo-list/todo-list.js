@@ -36,6 +36,8 @@ export class TodoList {
     if (title !== undefined) this.state.title = title;
     if (name !== undefined) this.state.name = name;
     if (data !== undefined) this.state.data = [...data];
+
+    this.header.update({ text: this.state.title });
   }
 
   updateItem(updatedItem) {
@@ -79,7 +81,7 @@ export class TodoList {
   }
 
   render() {
-    this.header.update({ text: this.state.title });
+    this.header.render();
 
     this.state.data.forEach((item) => {
       const element = new TodoItem({
