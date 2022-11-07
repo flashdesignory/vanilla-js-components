@@ -2,6 +2,7 @@
 @import url("../../../styles/colors.css");
 @import url("../../../styles/fonts.css");
 @import url("../../../styles/layout.css");
+@import url("../../../styles/transitions.css");
 
 .pollwidget-container,
 .pollwidget-container * {
@@ -41,7 +42,7 @@
 }
 
 .option-container .top {
-  padding: 8px 15px;
+  padding: var(--content-spacing-small) var(--content-spacing-large);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -59,7 +60,7 @@
   display: flex;
   flex-direction: row;
   flex: 0;
-  background: var(--neutrals-gray-230);
+  background: var(--neutrals-gray-204);
   padding: var(--content-spacing-medium);
   border-radius: var(--border-radius-small);
   box-shadow: none;
@@ -71,30 +72,22 @@
 }
 
 .option-container .bottom {
-  height: 7px;
+  height: var(--content-spacing-medium);
   position: relative;
-  background: #f0f0f0;
-  border-radius: 30px;
+  background: var(--neutrals-gray-204);
+  border-radius: var(--border-radius-medium);
   pointer-events: none;
-  margin: 0 15px 8px;
+  margin: 0 var(--content-spacing-large) var(--content-spacing-small);
 }
 
 .option-container .bottom .progress {
   width: 0%;
   height: 100%;
-  background-color: #ccc;
+  background-color: var(--neutrals-gray-102);
   border-radius: inherit;
-  transition: all 0.3s ease;
-}
-
-.option-container.selected .circle {
-  border-color: olivedrab;
-}
-
-.option-container.selected .circle::after {
-  opacity: 1;
+  transition: var(--default-transition);
 }
 
 .option-container.selected .progress {
-  background-color: olivedrab;
+  background-color: var(--utils-highlight-olive);
 }

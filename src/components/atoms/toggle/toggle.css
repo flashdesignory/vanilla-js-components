@@ -46,7 +46,7 @@
   width: 22px;
   left: 0;
   bottom: -3px;
-  background-color: var(--utils-highlight);
+  background-color: var(--utils-highlight-blue);
   border-radius: var(--border-radius-50);
   transition: var(--default-transition);
 }

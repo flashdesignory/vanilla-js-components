@@ -18,7 +18,8 @@ body {
   --utils-gray-darker: rgb(58 66 74); /* #3a424a */
 
   /* highlights */
-  --utils-highlight: rgb(162 191 199); /* #a2bfc7 */
+  --utils-highlight-blue: rgb(162 191 199); /* #a2bfc7 */
+  --utils-highlight-olive: rgb(107 142 35); /* olivedrab, #6b8e23 */
 
   /* misc colors */
   --fancy-gold: rgb(218 165 32); /* #daa520 */
