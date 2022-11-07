@@ -28,7 +28,7 @@ const requestMore = async () => {
     state.page++;
     const data = await getData(url, state.page, state.limit);
     state.totalItems = data.total;
-    list.updateData(data);
+    list.update({ data });
     list.handleOnScroll();
   }
 };

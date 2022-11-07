@@ -2,7 +2,9 @@ import { StarRating } from "./star-rating";
 
 export default {
   title: "Misc/StarRating",
-  argTypes: {},
+  argTypes: {
+    onChange: { action: "onChange" },
+  },
 };
 
 const Template = ({ ...args }) => {

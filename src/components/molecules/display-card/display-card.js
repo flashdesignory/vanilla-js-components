@@ -7,6 +7,8 @@ export class DisplayCard extends DisplayCardBase {
   constructor(props) {
     super();
 
+    this.state = {};
+
     this.content = document.createElement("div");
     this.content.classList.add("item-content");
     this.container.appendChild(this.content);
@@ -23,47 +25,53 @@ export class DisplayCard extends DisplayCardBase {
   }
 
   update({ index, id, height, y, ...data }) {
-    this.index = index;
-    this.height = height;
-    this.y = y;
-    this.id = id;
-    this.data = data;
+    if (index !== undefined) this.state.index = index;
+    if (height !== undefined) this.state.height = height;
+    if (y !== undefined) this.state.y = y;
+    if (id !== undefined) this.state.id = id;
+    if (data !== undefined) this.state.data = data;
   }
 
   render() {
-    this.container.id = this.id;
-    this.container.style.height = `${this.height}px`;
+    this.container.id = this.state.id;
+    this.container.style.height = `${this.state.height}px`;
 
-    if (this.y !== undefined) {
-      this.container.style.transform = `translateY(${this.y}px)`;
+    if (this.state.y !== undefined) {
+      this.container.style.transform = `translateY(${this.state.y}px)`;
     } else {
       this.container.style.transform = `translateY(${
-        this.index * this.height
+        this.state.index * this.state.height
       }px)`;
     }
 
     // always add avatar;
     this.add(this.left, this.avatar, "avatar", undefined, {
-      src: this.data.avatar,
+      src: this.state.data.avatar,
     });
 
-    if (this.data.text) {
+    if (this.state.data.text) {
       this.add(this.right, this.text, "text", "item-text", {
-        text: this.data.text,
+        text: this.state.data.text,
       });
     } else {
       this.remove(this.right, this.text);
     }
 
-    if (this.data.image) {
-      this.add(this.right, this.image, "image", "item-image", this.data.image);
+    if (this.state.data.image) {
+      this.add(
+        this.right,
+        this.image,
+        "image",
+        "item-image",
+        this.state.data.image
+      );
     } else {
       this.remove(this.right, this.image);
     }
 
-    if (this.data.metadata) {
+    if (this.state.data.metadata) {
       this.add(this.right, this.metadata, "metadata", "item-metadata", {
-        text: this.data.metadata,
+        text: this.state.data.metadata,
       });
     } else {
       this.remove(this.right, this.metadata);

@@ -12,6 +12,7 @@ export class Image {
     containerClass,
     fadeIn = false,
   }) {
+    this.state = {};
     this.imageClass = imageClass;
     this.containerClass = containerClass;
     this.fadeIn = fadeIn;
@@ -37,10 +38,10 @@ export class Image {
   }
 
   update({ src, alt, width, height }) {
-    this.src = src;
-    this.alt = alt;
-    this.width = width;
-    this.height = height;
+    if (src !== undefined) this.state.src = src;
+    if (alt !== undefined) this.state.alt = alt;
+    if (width !== undefined) this.state.width = width;
+    if (height !== undefined) this.state.height = height;
   }
 
   handleOnError() {
@@ -48,15 +49,15 @@ export class Image {
   }
 
   handleOnLoad() {
-    // console.log("image has loaded");
     if (this.fadeIn) this.image.style.opacity = 1;
   }
 
   render() {
-    this.image.src = this.src;
-    if (this.alt) this.image.alt = this.alt;
-    if (this.width) this.image.width = this.width;
-    if (this.height) this.image.height = this.height;
+    if (this.state.src) this.image.src = this.state.src;
+    if (this.state.alt) this.image.alt = this.state.alt;
+    if (this.state.width) this.image.width = this.state.width;
+    if (this.state.height) this.image.height = this.state.height;
+
     if (this.fadeIn) this.image.style.opacity = 0;
     return this.container;
   }

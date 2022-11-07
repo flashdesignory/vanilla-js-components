@@ -4,30 +4,36 @@ import "./skeleton.css";
 
 export class Skeleton {
   constructor({ avatarShape = "square" }) {
-    this.avatarShape = avatarShape;
-  }
+    this.state = {};
 
-  render() {
-    const container = document.createElement("div");
-    container.classList.add("skeleton-container");
-    const left = document.createElement("div");
-    left.classList.add("skeleton-left");
-    container.appendChild(left);
+    this.container = document.createElement("div");
+    this.container.classList.add("skeleton-container");
+    this.left = document.createElement("div");
+    this.left.classList.add("skeleton-left");
+    this.container.appendChild(this.left);
 
     for (let i = 0; i < 3; i++) {
       const line = document.createElement("div");
       line.classList.add("skeleton-line");
-      left.appendChild(line);
+      this.left.appendChild(line);
     }
 
-    const right = document.createElement("div");
-    right.classList.add("skeleton-right");
-    container.appendChild(right);
+    this.right = document.createElement("div");
+    this.right.classList.add("skeleton-right");
+    this.container.appendChild(this.right);
 
-    const square = document.createElement("div");
-    square.classList.add(`skeleton-${this.avatarShape}`);
-    right.appendChild(square);
+    this.avatar = document.createElement("div");
+    this.right.appendChild(this.avatar);
 
-    return container;
+    this.update({ avatarShape });
+  }
+
+  update({ avatarShape }) {
+    if (avatarShape !== undefined) this.state.avatarShape = avatarShape;
+  }
+
+  render() {
+    this.avatar.classList.add(`skeleton-${this.state.avatarShape}`);
+    return this.container;
   }
 }

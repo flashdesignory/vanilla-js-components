@@ -20,6 +20,7 @@
   margin-left: var(--content-spacing-small);
   font-family: inherit;
   cursor: pointer;
+  flex: 1;
 }
 
 .checkbox-container .input {

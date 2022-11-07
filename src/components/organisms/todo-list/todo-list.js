@@ -9,6 +9,7 @@ import { hasValidMin } from "../../../lib/index.js";
 
 export class TodoList {
   constructor({ title, name, data }) {
+    this.state = {};
     this.updateItem = this.updateItem.bind(this);
     this.addItem = this.addItem.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
@@ -32,15 +33,13 @@ export class TodoList {
   }
 
   update({ title, name, data }) {
-    this.title = title;
-    this.name = name;
-    this.data = [...data];
-
-    this.header.update({ text: this.title });
+    if (title !== undefined) this.state.title = title;
+    if (name !== undefined) this.state.name = name;
+    if (data !== undefined) this.state.data = [...data];
   }
 
   updateItem(updatedItem) {
-    this.data = this.data.map((item) => {
+    this.state.data = this.state.data.map((item) => {
       const newItem = {
         ...item,
         completed:
@@ -53,7 +52,9 @@ export class TodoList {
   }
 
   deleteItem(deletedValue, deletedItem) {
-    this.data = this.data.filter((item) => item.task !== deletedValue.task);
+    this.state.data = this.state.data.filter(
+      (item) => item.task !== deletedValue.task
+    );
     this.list.removeChild(deletedItem);
   }
 
@@ -70,22 +71,22 @@ export class TodoList {
       value: newItem,
       onChange: this.updateItem,
       onDelete: this.deleteItem,
-      name: this.name,
+      name: this.state.name,
     });
 
     this.list.insertBefore(element.render(), this.list.childNodes[0]);
-    this.data.push(newItem);
+    this.state.data.push(newItem);
   }
 
   render() {
-    this.header.render();
+    this.header.update({ text: this.state.title });
 
-    this.data.forEach((item) => {
+    this.state.data.forEach((item) => {
       const element = new TodoItem({
         value: item,
         onChange: this.updateItem,
         onDelete: this.deleteItem,
-        name: this.name,
+        name: this.state.name,
       });
 
       this.list.appendChild(element.render());

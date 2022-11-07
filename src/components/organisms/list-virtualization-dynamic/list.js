@@ -30,12 +30,9 @@ const getIndex = (items, scrollTop) => {
 };
 
 export class DynamicList {
-  constructor({ data, displayHeight, displayWidth }) {
-    this.data = data;
-    this.displayHeight = displayHeight;
-    this.displayWidth = displayWidth;
+  constructor({ data, displayHeight, displayWidth, amountRowsBuffered }) {
+    this.state = { data: [] };
 
-    this.amountRowsBuffered = 2;
     this.items = {};
     this.positions = [];
     this.scrollTop = 0;
@@ -45,43 +42,62 @@ export class DynamicList {
     this.container = document.createElement("div");
     this.container.classList.add("dynamic-list");
     this.container.tabIndex = 0;
-    this.container.style.height = `${this.displayHeight}px`;
-    this.container.style.maxWidth = `${this.displayWidth}px`;
 
     this.handleOnScroll = this.handleOnScroll.bind(this);
-    this.updateElements = this.updateElements.bind(this);
+    this.rebuild = this.rebuild.bind(this);
 
     const throttled = throttle(this.handleOnScroll, 50);
     this.container.addEventListener("scroll", throttled);
 
-    this.populatePositions();
-    this.updateElements();
+    this.update({ data, displayHeight, displayWidth, amountRowsBuffered });
+    // display initial list items
+    if (data && data.length > 0) {
+      this.populatePositions();
+      this.rebuild();
+    }
   }
 
-  handleOnScroll(e) {
-    this.updateElements(e);
-    this.render();
+  update({ data, displayHeight, displayWidth, amountRowsBuffered }) {
+    if (data !== undefined) {
+      this.state.data = [...this.state.data, ...data];
+    }
+
+    if (displayHeight !== undefined) this.state.displayHeight = displayHeight;
+    if (displayWidth !== undefined) this.state.displayWidth = displayWidth;
+    if (amountRowsBuffered !== undefined)
+      this.state.amountRowsBuffered = amountRowsBuffered;
   }
 
-  updateElements(e) {
+  populatePositions() {
+    this.state.data.forEach((item) => {
+      const position = {
+        y: this.totalHeight,
+        height: item.type === "text" ? 130 : 268,
+      };
+      this.totalHeight += position.height;
+      this.positions.push(position);
+    });
+  }
+
+  rebuild(e) {
     this.scrollTop = e ? e.target.scrollTop : this.scrollTop;
 
     const startIndex = Math.max(
-      getIndex(this.positions, this.scrollTop) - this.amountRowsBuffered,
+      getIndex(this.positions, this.scrollTop) - this.state.amountRowsBuffered,
       0
     );
 
     const endIndex = Math.min(
-      getIndex(this.positions, this.scrollTop + this.displayHeight) +
-        this.amountRowsBuffered,
-      this.data.length - 1
+      getIndex(this.positions, this.scrollTop + this.state.displayHeight) +
+        this.state.amountRowsBuffered,
+      this.state.data.length - 1
     );
 
     let prev = { ...this.items };
     this.items = {};
 
     for (let i = startIndex; i <= endIndex; i++) {
-      const data = this.data[i];
+      const data = this.state.data[i];
       const position = this.positions[i];
       const props = { ...data, y: position.y, height: position.height };
       const current = prev[props.id];
@@ -94,18 +110,15 @@ export class DynamicList {
     }
   }
 
-  populatePositions() {
-    this.data.forEach((item) => {
-      const position = {
-        y: this.totalHeight,
-        height: item.type === "text" ? 130 : 268,
-      };
-      this.totalHeight += position.height;
-      this.positions.push(position);
-    });
+  handleOnScroll(e) {
+    this.rebuild(e);
+    this.render();
   }
 
   render() {
+    this.container.style.height = `${this.state.displayHeight}px`;
+    this.container.style.maxWidth = `${this.state.displayWidth}px`;
+
     this.container.replaceChildren();
 
     this.content = document.createElement("div");

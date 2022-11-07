@@ -7,24 +7,18 @@ import { DisplayCard } from "../../molecules/display-card/display-card.js";
 
 export class InfiniteList {
   constructor({
-    data = [],
+    data,
     visibleItems,
     itemHeight,
     itemWidth,
     amountRowsBuffered,
     onLastItem,
   }) {
+    this.state = { data: [] };
     // keep track of props within the class
-    this.visibleItems = visibleItems;
-    this.itemHeight = itemHeight;
-    this.itemWidth = itemWidth;
-    this.amountRowsBuffered = amountRowsBuffered;
     this.onLastItem = onLastItem;
-    // derrived values needed for calculations
-    this.visibleWindowHeight = visibleItems * itemHeight;
     // initial values
     this.items = {};
-    this.data = [];
     this.scrollTop = 0;
     // intersection observer
     this.lastListElement = null;
@@ -42,8 +36,6 @@ export class InfiniteList {
     this.container = document.createElement("div");
     this.container.classList.add("infinite-list");
     this.container.tabIndex = 0;
-    this.container.style.height = `${this.visibleWindowHeight}px`;
-    this.container.style.maxWidth = `${this.itemWidth}px`;
 
     this.content = document.createElement("div");
     this.content.classList.add("list-content");
@@ -53,10 +45,67 @@ export class InfiniteList {
     // throttle scroll;
     const throttled = throttle(this.handleOnScroll, 50);
     this.container.addEventListener("scroll", throttled);
+
     // display initial list items
+    this.update({
+      data,
+      visibleItems,
+      itemHeight,
+      itemWidth,
+      amountRowsBuffered,
+    });
     if (data && data.length > 0) {
-      this.updateData(data);
-      this.updateElements();
+      this.rebuild();
+    }
+  }
+
+  update({ data, visibleItems, itemHeight, itemWidth, amountRowsBuffered }) {
+    if (data !== undefined) {
+      this.state.data = [...this.state.data, ...data.items];
+      this.totalHeight = this.state.data.length * this.itemHeight;
+    }
+
+    if (visibleItems !== undefined) this.state.visibleItems = visibleItems;
+    if (itemHeight !== undefined) this.state.itemHeight = itemHeight;
+    if (itemWidth !== undefined) this.state.itemWidth = itemWidth;
+    if (amountRowsBuffered !== undefined)
+      this.state.amountRowsBuffered = amountRowsBuffered;
+
+    // derrived values needed for calculations
+    this.visibleWindowHeight = this.state.visibleItems * this.state.itemHeight;
+  }
+
+  rebuild(e) {
+    this.scrollTop = e ? e.target.scrollTop : this.scrollTop;
+
+    const startIndex = Math.max(
+      Math.floor(this.scrollTop / this.state.itemHeight) -
+        this.state.amountRowsBuffered,
+      0
+    );
+
+    const endIndex = Math.min(
+      Math.ceil(
+        (this.scrollTop + this.visibleWindowHeight) / this.state.itemHeight
+      ) -
+        1 +
+        this.state.amountRowsBuffered,
+      this.state.data.length - 1
+    );
+
+    let prev = { ...this.items };
+    this.items = {};
+
+    for (let i = startIndex; i <= endIndex; i++) {
+      const item = this.state.data[i];
+      const props = { ...item, index: i, height: this.state.itemHeight };
+      const current = prev[props.id];
+      if (current !== undefined) {
+        current.update(props);
+        this.items[props.id] = current;
+      } else {
+        this.items[props.id] = new DisplayCard(props);
+      }
     }
   }
 
@@ -72,47 +121,14 @@ export class InfiniteList {
   }
 
   handleOnScroll(e) {
-    this.updateElements(e);
+    this.rebuild(e);
     this.render();
   }
 
-  updateData(newData) {
-    this.data = [...this.data, ...newData.items];
-    this.totalHeight = this.data.length * this.itemHeight;
-  }
-
-  updateElements(e) {
-    this.scrollTop = e ? e.target.scrollTop : this.scrollTop;
-
-    const startIndex = Math.max(
-      Math.floor(this.scrollTop / this.itemHeight) - this.amountRowsBuffered,
-      0
-    );
-
-    const endIndex = Math.min(
-      Math.ceil((this.scrollTop + this.visibleWindowHeight) / this.itemHeight) -
-        1 +
-        this.amountRowsBuffered,
-      this.data.length - 1
-    );
-
-    let prev = { ...this.items };
-    this.items = {};
-
-    for (let i = startIndex; i <= endIndex; i++) {
-      const item = this.data[i];
-      const props = { ...item, index: i, height: this.itemHeight };
-      const current = prev[props.id];
-      if (current !== undefined) {
-        current.update(props);
-        this.items[props.id] = current;
-      } else {
-        this.items[props.id] = new DisplayCard(props);
-      }
-    }
-  }
-
   render() {
+    this.container.style.height = `${this.visibleWindowHeight}px`;
+    this.container.style.maxWidth = `${this.state.itemWidth}px`;
+
     this.content.replaceChildren();
     this.content.style.height = `${this.totalHeight}px`;
 
@@ -123,7 +139,7 @@ export class InfiniteList {
 
       if (itemElement) {
         this.content.appendChild(itemElement);
-        if (item.id === this.data[this.data.length - 1].id) {
+        if (item.state.id === this.state.data[this.state.data.length - 1].id) {
           this.lastListElement = itemElement;
           this.oberver.observe(this.lastListElement);
         }

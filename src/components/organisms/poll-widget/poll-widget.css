@@ -1,0 +1,100 @@
+@import url("../../../styles/accessibility.css");
+@import url("../../../styles/colors.css");
+@import url("../../../styles/fonts.css");
+@import url("../../../styles/layout.css");
+
+.pollwidget-container,
+.pollwidget-container * {
+  box-sizing: border-box;
+}
+
+.pollwidget-container {
+  background: var(--neutrals-white);
+  border-radius: var(--border-radius-large);
+  padding: var(--content-spacing-xlarge);
+  max-width: 400px;
+  width: 100%;
+  box-shadow: var(--content-shadow);
+}
+
+.pollwidget-container .pollwidget-title {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-more-bold);
+  margin-bottom: var(--content-spacing-medium);
+}
+
+.pollwidget-container .pollwidget-list {
+  margin-top: var(--content-spacing-large);
+}
+
+.pollwidget-container .option-container {
+  padding: var(--content-spacing-small);
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--border-radius-small);
+  border: var(--border-width-medium) solid var(--utils-gray-light);
+  position: relative;
+}
+
+.pollwidget-container .option-container:not(:last-child) {
+  margin-bottom: var(--content-spacing-large);
+}
+
+.option-container .top {
+  padding: 8px 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+}
+
+.option-container .left {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-self: center;
+}
+
+.option-container .right {
+  display: flex;
+  flex-direction: row;
+  flex: 0;
+  background: var(--neutrals-gray-230);
+  padding: var(--content-spacing-medium);
+  border-radius: var(--border-radius-small);
+  box-shadow: none;
+}
+
+.option-container .right .percentage {
+  width: 80px;
+  text-align: right;
+}
+
+.option-container .bottom {
+  height: 7px;
+  position: relative;
+  background: #f0f0f0;
+  border-radius: 30px;
+  pointer-events: none;
+  margin: 0 15px 8px;
+}
+
+.option-container .bottom .progress {
+  width: 0%;
+  height: 100%;
+  background-color: #ccc;
+  border-radius: inherit;
+  transition: all 0.3s ease;
+}
+
+.option-container.selected .circle {
+  border-color: olivedrab;
+}
+
+.option-container.selected .circle::after {
+  opacity: 1;
+}
+
+.option-container.selected .progress {
+  background-color: olivedrab;
+}

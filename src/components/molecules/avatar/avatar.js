@@ -7,18 +7,19 @@ import { Image } from "../../atoms/image/image.js";
 
 export class Avatar {
   constructor({ image = {} }) {
+    this.state = {};
     this.container = document.createElement("div");
     this.container.classList.add("avatar-container");
     this.update({ image });
   }
 
   update({ image }) {
-    this.image = image;
+    if (image !== undefined) this.state.image = image;
   }
 
   render() {
-    if (this.image.src !== undefined) {
-      const image = new Image({ ...this.image });
+    if (this.state.image.src !== undefined) {
+      const image = new Image({ ...this.state.image });
       this.container.appendChild(image.render());
     } else {
       this.container.insertAdjacentHTML("afterbegin", DefaultAvatar);

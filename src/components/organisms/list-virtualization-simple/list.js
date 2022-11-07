@@ -13,16 +13,7 @@ export class VirtualList {
     itemWidth,
     amountRowsBuffered,
   }) {
-    // keep track of props within the class
-    this.data = data;
-    this.visibleItems = visibleItems;
-    this.itemHeight = itemHeight;
-    this.itemWidth = itemWidth;
-    // derrived values needed for calculations
-    this.visibleWindowHeight = visibleItems * itemHeight;
-    this.totalHeight = this.data.length * itemHeight;
-    this.amountRowsBuffered = amountRowsBuffered;
-    this.numMaxItems = visibleItems + 2 * amountRowsBuffered;
+    this.state = { data: [] };
     // initial values
     this.items = {};
     this.scrollTop = 0;
@@ -30,8 +21,6 @@ export class VirtualList {
     this.container = document.createElement("div");
     this.container.classList.add("virtual-list");
     this.container.tabIndex = 0;
-    this.container.style.height = `${this.visibleWindowHeight}px`;
-    this.container.style.maxWidth = `${this.itemWidth}px`;
 
     this.content = document.createElement("div");
     this.content.classList.add("list-content");
@@ -39,40 +28,65 @@ export class VirtualList {
     this.container.appendChild(this.content);
     // bind functions
     this.handleOnScroll = this.handleOnScroll.bind(this);
-    this.updateElements = this.updateElements.bind(this);
+    this.rebuild = this.rebuild.bind(this);
     // throttle scroll;
     const throttled = throttle(this.handleOnScroll, 50);
     this.container.addEventListener("scroll", throttled);
     // display initial list items
-    this.updateElements();
+    this.update({
+      data,
+      visibleItems,
+      itemHeight,
+      itemWidth,
+      amountRowsBuffered,
+    });
+    if (data && data.length > 0) {
+      this.rebuild();
+    }
   }
 
-  handleOnScroll(e) {
-    this.updateElements(e);
-    this.render();
+  update({ data, visibleItems, itemHeight, itemWidth, amountRowsBuffered }) {
+    if (data !== undefined) {
+      this.state.data = [...this.state.data, ...data];
+      this.totalHeight = this.state.data.length * this.state.itemHeight;
+    }
+
+    if (visibleItems !== undefined) this.state.visibleItems = visibleItems;
+    if (itemHeight !== undefined) this.state.itemHeight = itemHeight;
+    if (itemWidth !== undefined) this.state.itemWidth = itemWidth;
+    if (amountRowsBuffered !== undefined)
+      this.state.amountRowsBuffered = amountRowsBuffered;
+
+    // derrived values needed for calculations
+    this.visibleWindowHeight = this.state.visibleItems * this.state.itemHeight;
+    this.numMaxItems =
+      this.state.visibleItems + 2 * this.state.amountRowsBuffered;
   }
 
-  updateElements(e) {
+  rebuild(e) {
     this.scrollTop = e ? e.target.scrollTop : this.scrollTop;
 
     const startIndex = Math.max(
-      Math.floor(this.scrollTop / this.itemHeight) - this.amountRowsBuffered,
+      Math.floor(this.scrollTop / this.state.itemHeight) -
+        this.state.amountRowsBuffered,
       0
     );
 
     const endIndex = Math.min(
-      Math.ceil((this.scrollTop + this.visibleWindowHeight) / this.itemHeight) -
+      Math.ceil(
+        (this.scrollTop + this.visibleWindowHeight) / this.state.itemHeight
+      ) -
         1 +
-        this.amountRowsBuffered,
-      this.data.length - 1
+        this.state.amountRowsBuffered,
+      this.state.data.length - 1
     );
 
     let prev = { ...this.items };
     this.items = {};
 
     for (let i = startIndex; i <= endIndex; i++) {
-      const item = this.data[i];
-      const props = { ...item, index: i, height: this.itemHeight };
+      const item = this.state.data[i];
+      const props = { ...item, index: i, height: this.state.itemHeight };
       const current = prev[props.id];
       if (current !== undefined) {
         current.update(props);
@@ -83,8 +97,17 @@ export class VirtualList {
     }
   }
 
+  handleOnScroll(e) {
+    this.rebuild(e);
+    this.render();
+  }
+
   render() {
+    this.container.style.height = `${this.visibleWindowHeight}px`;
+    this.container.style.maxWidth = `${this.state.itemWidth}px`;
+
     this.content.replaceChildren();
+    this.content.style.height = `${this.totalHeight}px`;
     Object.values(this.items).forEach((item) => {
       this.content.appendChild(item.render());
     });

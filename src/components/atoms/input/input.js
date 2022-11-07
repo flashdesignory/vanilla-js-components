@@ -4,16 +4,36 @@ import "./input.css";
 
 export class Input {
   constructor({ id, type, placeholder, value, onInput }) {
+    this.state = {};
     this.type = type;
     this.onInput = onInput;
     this.handleOnInput = this.handleOnInput.bind(this);
+
+    this.container = document.createElement("div");
+    this.container.classList.add("input-container");
+
+    this.input = document.createElement("input");
+    this.input.classList.add("input");
+    this.input.type = this.type;
+    this.input.addEventListener("input", this.handleOnInput);
+    this.container.appendChild(this.input);
+
     this.update({ id, placeholder, value });
   }
 
+  get value() {
+    return this.input.value;
+  }
+
+  set value(value) {
+    this.input.value = value;
+    this.state.value = value;
+  }
+
   update({ id, placeholder, value }) {
-    this.id = id;
-    this.placeholder = placeholder;
-    this.value = value;
+    if (id !== undefined) this.state.id = id;
+    if (placeholder !== undefined) this.state.placeholder = placeholder;
+    if (value !== undefined) this.state.value = value;
   }
 
   handleOnInput(e) {
@@ -21,16 +41,10 @@ export class Input {
   }
 
   render() {
-    const container = document.createElement("div");
-    container.classList.add("input-container");
-    const input = document.createElement("input");
-    input.classList.add("input");
-    input.id = this.id;
-    input.type = this.type;
-    input.placeholder = this.placeholder;
-    if (this.value) input.value = this.value;
-    input.addEventListener("input", this.handleOnInput);
-    container.appendChild(input);
-    return container;
+    if (this.state.id) this.input.id = this.state.id;
+    if (this.state.placeholder) this.input.placeholder = this.state.placeholder;
+    if (this.state.value) this.input.value = this.state.value;
+
+    return this.container;
   }
 }

@@ -4,21 +4,36 @@ import "./select.css";
 
 export class Select {
   constructor({ id, multiple, data, onChange }) {
+    this.state = {};
     this.onChange = onChange;
     this.handleOnChange = this.handleOnChange.bind(this);
+
+    this.container = document.createElement("div");
+    this.container.classList.add("select-container");
+
+    this.label = document.createElement("label");
+    this.label.classList.add("visually-hidden");
+    this.container.appendChild(this.label);
+
+    this.select = document.createElement("select");
+    this.select.classList.add("select");
+
+    this.select.addEventListener("change", this.handleOnChange);
+    this.container.appendChild(this.select);
+
     this.update({ id, multiple, data });
   }
 
   update({ id, multiple, data }) {
-    this.id = id;
-    this.multiple = multiple;
-    this.data = data;
+    if (id !== undefined) this.state.id = id;
+    if (multiple !== undefined) this.state.multiple = multiple;
+    if (data !== undefined) this.state.data = data;
   }
 
   handleOnChange(e) {
     if (!this.onChange) return;
 
-    if (this.multiple) {
+    if (this.state.multiple) {
       const selected = [...e.target.options].filter(
         (option) => option.selected
       );
@@ -29,31 +44,20 @@ export class Select {
   }
 
   render() {
-    const container = document.createElement("div");
-    container.classList.add("select-container");
+    this.label.htmlFor = this.state.id;
+    this.label.textContent = this.state.id;
 
-    const label = document.createElement("label");
-    label.classList.add("visually-hidden");
-    label.htmlFor = this.id;
-    label.textContent = this.id;
-    container.appendChild(label);
+    this.select.id = this.state.id;
+    this.select.multiple = this.state.multiple;
 
-    const select = document.createElement("select");
-    select.classList.add("select");
-    select.id = this.id;
-    select.multiple = this.multiple;
-
-    this.data.forEach((item) => {
+    this.state.data.forEach((item) => {
       const option = document.createElement("option");
       option.classList.add("option");
       option.value = item.value;
       option.textContent = item.text;
-      select.appendChild(option);
+      this.select.appendChild(option);
     });
 
-    select.addEventListener("change", this.handleOnChange);
-    container.appendChild(select);
-
-    return container;
+    return this.container;
   }
 }

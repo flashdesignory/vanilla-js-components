@@ -1,4 +1,8 @@
 @import url("../../../styles/accessibility.css");
+@import url("../../../styles/colors.css");
+@import url("../../../styles/fonts.css");
+@import url("../../../styles/layout.css");
+@import url("../../../styles/transitions.css");
 
 .select-container,
 .select-container * {

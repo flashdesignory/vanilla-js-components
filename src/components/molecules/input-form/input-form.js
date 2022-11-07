@@ -12,17 +12,43 @@ export class InputForm {
     submitText = "Submit!",
     onSubmit,
   }) {
+    this.state = {};
     this.onSubmit = onSubmit;
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
     this.handleOnInput = this.handleOnInput.bind(this);
+
+    this.container = document.createElement("div");
+    this.container.classList.add("input-form-container");
+
+    this.content = document.createElement("div");
+    this.content.classList.add("input-form-content");
+    this.container.appendChild(this.content);
+
+    this.form = document.createElement("form");
+    this.content.appendChild(this.form);
+
+    this.textInput = new Input({
+      id: "input",
+      type: "text",
+      onInput: this.handleOnInput,
+    });
+    this.form.appendChild(this.textInput.render());
+
+    this.submitInput = new Input({
+      id: "submit",
+      type: "submit",
+    });
+    this.form.appendChild(this.submitInput.render());
+    this.form.addEventListener("submit", this.handleOnSubmit);
+
     this.update({ id, placeholder, value, submitText });
   }
 
   update({ id, placeholder, value, submitText }) {
-    this.id = id;
-    this.placeholder = placeholder;
-    this.value = value;
-    this.submitText = submitText;
+    if (id !== undefined) this.state.id = id;
+    if (placeholder !== undefined) this.state.placeholder = placeholder;
+    if (value !== undefined) this.state.value = value;
+    if (submitText !== undefined) this.state.submitText = submitText;
   }
 
   handleOnSubmit(e) {
@@ -38,35 +64,14 @@ export class InputForm {
   }
 
   render() {
-    const container = document.createElement("div");
-    container.classList.add("input-form-container");
+    this.form.id = this.state.id;
 
-    const content = document.createElement("div");
-    content.classList.add("input-form-content");
-    container.appendChild(content);
-
-    const form = document.createElement("form");
-    form.id = this.id;
-    content.appendChild(form);
-
-    const textInput = new Input({
-      id: "input",
-      type: "text",
-      placeholder: this.placeholder,
-      value: this.value,
-      onInput: this.handleOnInput,
+    this.textInput.update({
+      placeholder: this.state.placeholder,
+      value: this.state.value,
     });
-    form.appendChild(textInput.render());
+    this.submitInput.update({ value: this.state.submitText });
 
-    const submitInput = new Input({
-      id: "submit",
-      type: "submit",
-      value: this.submitText,
-    });
-    form.appendChild(submitInput.render());
-
-    form.addEventListener("submit", this.handleOnSubmit);
-
-    return container;
+    return this.container;
   }
 }

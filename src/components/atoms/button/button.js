@@ -4,15 +4,25 @@ import "./button.css";
 
 export class Button {
   constructor({ type, label, onClick }) {
+    this.state = {};
     this.onClick = onClick;
     this.type = type; // "primary" | "secondary" | "icon"
 
     this.handleOnClick = this.handleOnClick.bind(this);
+
+    this.container = document.createElement("div");
+    this.container.classList.add("button-container");
+    this.button = document.createElement("button");
+    this.button.classList.add("button", `button-${this.type}`);
+
+    this.button.addEventListener("click", this.handleOnClick);
+    this.container.appendChild(this.button);
+
     this.update({ label });
   }
 
   update({ label }) {
-    this.label = label;
+    if (label !== undefined) this.state.label = label;
   }
 
   handleOnClick(e) {
@@ -20,17 +30,10 @@ export class Button {
   }
 
   render() {
-    const container = document.createElement("div");
-    container.classList.add("button-container");
-    const button = document.createElement("button");
-    button.classList.add("button", `button-${this.type}`);
+    if (this.type !== "icon") this.button.textContent = this.state.label;
+    else this.button.insertAdjacentHTML("afterbegin", this.state.label);
 
-    if (this.type !== "icon") button.textContent = this.label;
-    else button.insertAdjacentHTML("afterbegin", this.label);
-
-    button.addEventListener("click", this.handleOnClick);
-    container.appendChild(button);
-    return container;
+    return this.container;
   }
 }
 

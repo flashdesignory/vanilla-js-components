@@ -16,17 +16,17 @@
   box-shadow: var(--content-shadow);
 }
 
-.todo-title {
+.todo-container .todo-title {
   font-size: var(--font-size-large);
   font-weight: var(--font-weight-more-bold);
   margin-bottom: var(--content-spacing-medium);
 }
 
-.todo-list {
+.todo-container .todo-list {
   margin-top: var(--content-spacing-large);
 }
 
-.todo-item-container {
+.todo-container .todo-item-container {
   padding: var(--content-spacing-medium);
   display: flex;
   border-radius: var(--border-radius-small);
@@ -34,11 +34,11 @@
   position: relative;
 }
 
-.todo-item-container:not(:last-child) {
+.todo-container .todo-item-container:not(:last-child) {
   margin-bottom: var(--content-spacing-large);
 }
 
-.todo-item-container label {
+.todo-container .todo-item-container label {
   flex: 1;
   margin-right: var(--content-spacing-medium);
 }

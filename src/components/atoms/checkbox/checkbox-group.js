@@ -5,17 +5,18 @@ import { Checkbox } from "./checkbox.js";
 
 export class CheckboxGroup {
   constructor({ data, name, onChange }) {
+    this.state = {};
     this.onChange = onChange;
     this.update({ data, name });
   }
 
   update({ data, name }) {
-    this.data = data;
-    this.name = name;
+    if (data !== undefined) this.state.data = data;
+    if (name !== undefined) this.state.name = name;
 
-    this.inputs = this.data.map((item) => {
+    this.inputs = this.state.data.map((item) => {
       const checkbox = new Checkbox({
-        name: this.name,
+        name: this.state.name,
         label: item,
         id: item,
         onChange: this.onChange,

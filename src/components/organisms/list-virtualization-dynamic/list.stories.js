@@ -7,6 +7,7 @@ export default {
     data: { control: "json" },
     displayHeight: { control: "number" },
     displayWidth: { control: "number" },
+    amountRowsBuffered: { control: "number" },
   },
 };
 
@@ -20,6 +21,7 @@ Dynamic.args = {
   data,
   displayHeight: 390,
   displayWidth: 435,
+  amountRowsBuffered: 2,
 };
 
 // Inspiration
