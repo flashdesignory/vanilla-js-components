@@ -54,11 +54,14 @@ export class Input {
 
     if (this.state.placeholder) this.input.placeholder = this.state.placeholder;
 
-    if (this.state.label) this.label.textContent = this.state.label;
     if (this.state.hideLabel || !this.state.label)
       this.label.classList.add("visually-hidden");
 
     if (this.state.value) this.input.value = this.state.value;
+
+    // label should always have a value
+    // if it's not set with this.state.label, label will be hidden
+    this.label.textContent = this.state.label ?? this.state.placeholder ?? "Enter a value";
 
     return this.container;
   }

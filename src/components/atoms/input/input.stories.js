@@ -32,3 +32,9 @@ TextWithValue.args = {
   hideLabel: true,
   value: "Initial Value",
 };
+
+export const DefaultLabel = Template.bind({});
+DefaultLabel.args = {
+  id: "input",
+  type: "text",
+}
