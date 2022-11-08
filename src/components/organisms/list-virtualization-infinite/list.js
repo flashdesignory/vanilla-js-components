@@ -116,7 +116,7 @@ export class InfiniteList {
       if (!entry.isIntersecting) return;
       if (entry.target.id === this.lastListElement.id) {
         observer.unobserve(entry.target);
-        this.lastListElement = null;
+        this.lastListElement = undefined;
         this.onLastItem();
         return;
       }
@@ -137,7 +137,7 @@ export class InfiniteList {
 
     if (this.lastListElement) {
       this.oberver.unobserve(this.lastListElement);
-      this.lastListElement = null;
+      this.lastListElement = undefined;
     }
 
     Object.values(this.items).forEach((item) => {
