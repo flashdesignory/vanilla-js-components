@@ -20,4 +20,6 @@ Simple.args = {
   data,
   title: "Todo List:",
   name: "todo",
+  prompt: "Enter a todo",
+  submitText: "add",
 };

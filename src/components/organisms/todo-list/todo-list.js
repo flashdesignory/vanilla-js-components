@@ -8,7 +8,7 @@ import { TodoItem } from "./todo-item.js";
 import { hasValidMin } from "../../../lib/index.js";
 
 export class TodoList {
-  constructor({ title, name, data }) {
+  constructor({ title, name, data, prompt, submitText }) {
     this.state = {};
     this.updateItem = this.updateItem.bind(this);
     this.addItem = this.addItem.bind(this);
@@ -20,24 +20,30 @@ export class TodoList {
     this.header = new Text({ containerClass: "todo-title" });
     this.container.appendChild(this.header.render());
 
-    const inputForm = new InputForm({
+    this.inputForm = new InputForm({
       onSubmit: this.addItem,
     });
-    this.container.appendChild(inputForm.render());
+    this.container.appendChild(this.inputForm.render());
 
     this.list = document.createElement("div");
     this.list.classList.add("todo-list");
     this.container.appendChild(this.list);
 
-    this.update({ title, name, data });
+    this.update({ title, name, data, prompt, submitText });
   }
 
-  update({ title, name, data }) {
+  update({ title, name, data, prompt, submitText }) {
     if (title !== undefined) this.state.title = title;
     if (name !== undefined) this.state.name = name;
     if (data !== undefined) this.state.data = [...data];
+    if (prompt !== undefined) this.state.prompt = prompt;
+    if (submitText !== undefined) this.state.submitText = submitText;
 
     this.header.update({ text: this.state.title });
+    this.inputForm.update({
+      placeholder: this.state.prompt,
+      submitText: this.state.submitText,
+    });
   }
 
   updateItem(updatedItem) {
@@ -82,6 +88,7 @@ export class TodoList {
 
   render() {
     this.header.render();
+    this.inputForm.render();
 
     this.state.data.forEach((item) => {
       const element = new TodoItem({
