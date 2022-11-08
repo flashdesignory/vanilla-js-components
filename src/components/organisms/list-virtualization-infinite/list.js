@@ -150,7 +150,10 @@ export class InfiniteList {
 
       if (itemElement) {
         this.content.appendChild(itemElement);
-        if (item.state.id === this.state.data[this.state.data.length - 1].id && !this.isFetching) {
+        if (
+          item.state.id === this.state.data[this.state.data.length - 1].id &&
+          !this.isFetching
+        ) {
           this.lastListElement = itemElement;
           this.oberver.observe(this.lastListElement);
         }

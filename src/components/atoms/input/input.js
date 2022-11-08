@@ -61,7 +61,8 @@ export class Input {
 
     // label should always have a value
     // if it's not set with this.state.label, label will be hidden
-    this.label.textContent = this.state.label ?? this.state.placeholder ?? "Enter a value";
+    this.label.textContent =
+      this.state.label ?? this.state.placeholder ?? "Enter a value";
 
     return this.container;
   }

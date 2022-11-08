@@ -37,4 +37,4 @@ export const DefaultLabel = Template.bind({});
 DefaultLabel.args = {
   id: "input",
   type: "text",
-}
+};

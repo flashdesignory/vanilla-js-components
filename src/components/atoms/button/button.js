@@ -25,6 +25,10 @@ export class Button {
     if (label !== undefined) this.state.label = label;
   }
 
+  fireEvent() {
+    this.button.dispatchEvent(new Event("click"));
+  }
+
   handleOnClick(e) {
     if (this.onClick) this.onClick(e);
   }

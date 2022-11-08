@@ -18,6 +18,6 @@ const Template = ({ ...args }) => {
 export const Simple = Template.bind({});
 Simple.args = {
   data,
-  title: "Best Framework Ever",
-  name: "framework",
+  title: "Favorite Animal:",
+  name: "favorite animals",
 };

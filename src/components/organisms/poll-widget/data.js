@@ -1,1 +1,1 @@
-export const data = ["react", "vue", "remix", "angular"];
+export const data = ["cat", "dog", "bird", "bunny"];

@@ -1,12 +1,13 @@
+import { Button } from "../../atoms/button/button.js";
 import { Checkbox } from "../../atoms/checkbox/checkbox";
-import { Text } from "../../atoms/text/text.js";
 
-export class Option {
+export class PollWidgetItem {
   constructor({ name, value, onChange }) {
     this.state = {};
 
     this.onChange = onChange;
     this.handleOnChange = this.handleOnChange.bind(this);
+    this.handleOnClick = this.handleOnClick.bind(this);
 
     // container element
     this.container = document.createElement("div");
@@ -36,8 +37,11 @@ export class Option {
     });
     this.left.appendChild(this.input.render());
 
-    this.percent = new Text({ containerClass: "percentage" });
-    this.percent.update({ text: "0%" });
+    this.percent = new Button({
+      type: "primary",
+      onClick: this.handleOnClick,
+      label: "0%",
+    });
     this.right.appendChild(this.percent.render());
 
     this.progress = document.createElement("div");
@@ -63,7 +67,7 @@ export class Option {
   updateDisplay(checked, percentage) {
     // console.log('updateDisplay', checked, percentage)
     this.input.update({ checked });
-    this.percent.update({ text: `${percentage}%` });
+    this.percent.update({ label: `${percentage}%` });
     this.percent.render();
     this.progress.style.width = `${percentage}%`;
 
@@ -81,6 +85,10 @@ export class Option {
     }
 
     this.onChange(e);
+  }
+
+  handleOnClick() {
+    this.input.fireEvent();
   }
 
   render() {

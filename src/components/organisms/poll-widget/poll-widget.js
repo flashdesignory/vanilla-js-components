@@ -2,7 +2,7 @@
 // document.adoptedStyleSheets.push(sheet);
 import "./poll-widget.css";
 
-import { Option } from "./option.js";
+import { PollWidgetItem } from "./poll-widget-item.js";
 import { Text } from "../../atoms/text/text.js";
 
 export class PollWidget {
@@ -57,7 +57,7 @@ export class PollWidget {
     this.header.render();
 
     this.state.data.forEach((option) => {
-      const element = new Option({
+      const element = new PollWidgetItem({
         value: option,
         onChange: this.handleOnChange,
         name: this.state.name,

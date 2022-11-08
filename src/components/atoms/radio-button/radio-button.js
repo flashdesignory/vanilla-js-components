@@ -36,6 +36,10 @@ export class RadioButton {
     if (checked !== undefined) this.state.checked = checked;
   }
 
+  fireEvent() {
+    this.input.dispatchEvent(new Event("change"));
+  }
+
   handleOnChange(e) {
     if (this.onChange) this.onChange(e);
   }

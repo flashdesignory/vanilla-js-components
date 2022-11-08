@@ -40,6 +40,10 @@ export class Checkbox {
     if (this.onChange) this.onChange(e);
   }
 
+  fireEvent() {
+    this.input.dispatchEvent(new Event("change"));
+  }
+
   render() {
     this.input.id = this.state.id;
     this.input.name = this.state.name;
