@@ -17,7 +17,7 @@ export class Avatar {
     if (image !== undefined) this.state.image = image;
 
     if (!this.state.image.alt) {
-      this.state.image.alt = "avatar image"
+      this.state.image.alt = "avatar image";
     }
   }
 

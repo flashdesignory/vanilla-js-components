@@ -49,6 +49,13 @@ export class InputForm {
     if (placeholder !== undefined) this.state.placeholder = placeholder;
     if (value !== undefined) this.state.value = value;
     if (submitText !== undefined) this.state.submitText = submitText;
+
+    this.textInput.update({
+      placeholder: this.state.placeholder,
+      value: this.state.value,
+    });
+
+    this.submitInput.update({ value: this.state.submitText });
   }
 
   handleOnSubmit(e) {
@@ -66,11 +73,8 @@ export class InputForm {
   render() {
     this.form.id = this.state.id;
 
-    this.textInput.update({
-      placeholder: this.state.placeholder,
-      value: this.state.value,
-    });
-    this.submitInput.update({ value: this.state.submitText });
+    this.textInput.render();
+    this.submitInput.render();
 
     return this.container;
   }

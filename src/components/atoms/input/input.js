@@ -3,7 +3,7 @@
 import "./input.css";
 
 export class Input {
-  constructor({ id, type, placeholder, value, onInput }) {
+  constructor({ id, type, placeholder, value, onInput, label, hideLabel }) {
     this.state = {};
     this.type = type;
     this.onInput = onInput;
@@ -12,13 +12,17 @@ export class Input {
     this.container = document.createElement("div");
     this.container.classList.add("input-container");
 
+    this.label = document.createElement("label");
+    this.label.classList.add("label");
+    this.container.appendChild(this.label);
+
     this.input = document.createElement("input");
     this.input.classList.add("input");
     this.input.type = this.type;
     this.input.addEventListener("input", this.handleOnInput);
     this.container.appendChild(this.input);
 
-    this.update({ id, placeholder, value });
+    this.update({ id, placeholder, value, label, hideLabel });
   }
 
   get value() {
@@ -30,10 +34,12 @@ export class Input {
     this.state.value = value;
   }
 
-  update({ id, placeholder, value }) {
+  update({ id, placeholder, value, label, hideLabel }) {
     if (id !== undefined) this.state.id = id;
     if (placeholder !== undefined) this.state.placeholder = placeholder;
     if (value !== undefined) this.state.value = value;
+    if (label !== undefined) this.state.label = label;
+    if (hideLabel !== undefined) this.state.hideLabel = hideLabel;
   }
 
   handleOnInput(e) {
@@ -41,8 +47,17 @@ export class Input {
   }
 
   render() {
-    if (this.state.id) this.input.id = this.state.id;
+    if (this.state.id) {
+      this.input.id = this.state.id;
+      this.label.htmlFor = this.state.id;
+    }
+
     if (this.state.placeholder) this.input.placeholder = this.state.placeholder;
+
+    if (this.state.label) this.label.textContent = this.state.label;
+    if (this.state.hideLabel || !this.state.label)
+      this.label.classList.add("visually-hidden");
+
     if (this.state.value) this.input.value = this.state.value;
 
     return this.container;

@@ -6,6 +6,7 @@ export default {
     id: { control: "text" },
     type: { control: "text" },
     placeholder: { control: "text" },
+    label: { control: "text" },
     onInput: { action: "onInput" },
   },
 };
@@ -19,6 +20,7 @@ export const Text = Template.bind({});
 Text.args = {
   id: "input",
   type: "text",
+  label: "Enter some text:",
   placeholder: "Enter something",
 };
 
@@ -26,5 +28,7 @@ export const TextWithValue = Template.bind({});
 TextWithValue.args = {
   id: "controlled-input",
   type: "text",
+  label: "Enter some text",
+  hideLabel: true,
   value: "Initial Value",
 };
