@@ -112,10 +112,11 @@ export class InfiniteList {
   handleOnObserve(entries, observer) {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
-      if (entry.target === this.lastListElement) {
-        this.onLastItem();
+      if (entry.target.id === this.lastListElement.id) {
         observer.unobserve(entry.target);
         this.lastListElement = null;
+        this.onLastItem();
+        return;
       }
     });
   }
@@ -132,7 +133,10 @@ export class InfiniteList {
     this.content.replaceChildren();
     this.content.style.height = `${this.totalHeight}px`;
 
-    if (this.lastListElement) this.oberver.unobserve(this.lastListElement);
+    if (this.lastListElement) {
+      this.oberver.unobserve(this.lastListElement);
+      this.lastListElement = null;
+    }
 
     Object.values(this.items).forEach((item) => {
       const itemElement = item.render();
