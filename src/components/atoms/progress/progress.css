@@ -1,0 +1,24 @@
+@import url("../../../styles/colors.css");
+@import url("../../../styles/layout.css");
+@import url("../../../styles/transitions.css");
+
+.progress-container {
+  height: var(--content-spacing-medium);
+  position: relative;
+  background: var(--neutrals-gray-204);
+  border-radius: var(--border-radius-medium);
+  pointer-events: none;
+  margin: 0 var(--content-spacing-large) var(--content-spacing-small);
+}
+
+.progress-container .progress {
+  width: 0%;
+  height: 100%;
+  background-color: var(--neutrals-gray-102);
+  border-radius: inherit;
+  transition: var(--default-transition);
+}
+
+.progress-container.active .progress {
+  background-color: var(--utils-highlight-olive);
+}

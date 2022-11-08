@@ -1,5 +1,6 @@
 import { Button } from "../../atoms/button/button.js";
 import { Checkbox } from "../../atoms/checkbox/checkbox";
+import { Progress } from "../../atoms/progress/progress.js";
 
 export class PollWidgetItem {
   constructor({ name, value, onChange }) {
@@ -16,10 +17,6 @@ export class PollWidgetItem {
     this.top = document.createElement("div");
     this.top.classList.add("top");
     this.container.appendChild(this.top);
-
-    this.bottom = document.createElement("div");
-    this.bottom.classList.add("bottom");
-    this.container.appendChild(this.bottom);
 
     this.left = document.createElement("div");
     this.left.classList.add("left");
@@ -44,9 +41,11 @@ export class PollWidgetItem {
     });
     this.right.appendChild(this.percent.render());
 
-    this.progress = document.createElement("div");
-    this.progress.classList.add("progress");
-    this.bottom.appendChild(this.progress);
+    this.progress = new Progress({
+      percentage: 0,
+      active: false,
+    });
+    this.container.appendChild(this.progress.render());
 
     this.update({ name, value });
   }
@@ -69,13 +68,8 @@ export class PollWidgetItem {
     this.input.update({ checked });
     this.percent.update({ label: `${percentage}%` });
     this.percent.render();
-    this.progress.style.width = `${percentage}%`;
-
-    if (checked) {
-      this.container.classList.add("selected");
-    } else {
-      this.container.classList.remove("selected");
-    }
+    this.progress.update({ percentage, active: checked });
+    this.progress.render();
   }
 
   handleOnChange(e) {
