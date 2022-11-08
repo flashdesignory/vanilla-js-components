@@ -110,6 +110,8 @@ export class InfiniteList {
   }
 
   handleOnObserve(entries, observer) {
+    if (this.lastListElement === undefined) return;
+
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
       if (entry.target.id === this.lastListElement.id) {
