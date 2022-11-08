@@ -20,8 +20,9 @@ export class InfiniteList {
     // initial values
     this.items = {};
     this.scrollTop = 0;
+    this.isFetching = false;
     // intersection observer
-    this.lastListElement = null;
+    this.lastListElement = undefined;
     this.observerConfig = {
       root: null,
       rootMargin: "0px",
@@ -73,6 +74,8 @@ export class InfiniteList {
 
     // derrived values needed for calculations
     this.visibleWindowHeight = this.state.visibleItems * this.state.itemHeight;
+
+    this.isFetching = false;
   }
 
   rebuild(e) {
@@ -115,8 +118,10 @@ export class InfiniteList {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
       if (entry.target.id === this.lastListElement.id) {
+        console.log(this.lastListElement?.id, this.isFetching);
         observer.unobserve(entry.target);
         this.lastListElement = undefined;
+        this.isFetching = true;
         this.onLastItem();
         return;
       }
@@ -145,7 +150,7 @@ export class InfiniteList {
 
       if (itemElement) {
         this.content.appendChild(itemElement);
-        if (item.state.id === this.state.data[this.state.data.length - 1].id) {
+        if (item.state.id === this.state.data[this.state.data.length - 1].id && !this.isFetching) {
           this.lastListElement = itemElement;
           this.oberver.observe(this.lastListElement);
         }
