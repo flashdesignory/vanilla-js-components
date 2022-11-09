@@ -5,6 +5,8 @@ export default {
   title: "Atoms/List",
   argTypes: {
     data: { control: "array" },
+    insertMethod: { control: "text" },
+    onClick: { action: "onClick" },
   },
 };
 

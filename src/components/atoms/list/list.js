@@ -30,15 +30,17 @@ export class List {
   }
 
   update({ data, insertionMethod = "replace" }) {
-    switch (insertionMethod) {
-      case "append":
-        this.state.data = [...this.state.data, ...data];
-        break;
-      case "prepend":
-        this.state.data = [...data, ...this.state.data];
-        break;
-      default:
-        this.state.data = [...data];
+    if (data !== undefined) {
+      switch (insertionMethod) {
+        case "append":
+          this.state.data = [...this.state.data, ...data];
+          break;
+        case "prepend":
+          this.state.data = [...data, ...this.state.data];
+          break;
+        default:
+          this.state.data = [...data];
+      }
     }
   }
 

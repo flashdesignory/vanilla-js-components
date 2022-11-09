@@ -4,6 +4,7 @@ import "./autocomplete.css";
 
 import { Text } from "../../atoms/text/text.js";
 import { Input } from "../../atoms/input/input.js";
+import { List } from "../../atoms/list/list.js";
 import { debounce } from "../../../lib/utils.js";
 
 export class AutoComplete {
@@ -17,8 +18,12 @@ export class AutoComplete {
     this.container = document.createElement("div");
     this.container.classList.add("autocomplete-container");
 
+    this.top = document.createElement("div");
+    this.top.classList.add("autocomplete-header");
+    this.container.appendChild(this.top);
+
     this.header = new Text({ containerClass: "autocomplete-title" });
-    this.container.appendChild(this.header.render());
+    this.top.appendChild(this.header.render());
 
     this.input = new Input({
       id: "search-input",
@@ -26,14 +31,12 @@ export class AutoComplete {
       placeholder: "Start typing..",
       onInput: debounced,
     });
-    this.container.appendChild(this.input.render());
+    this.top.appendChild(this.input.render());
 
-    this.list = document.createElement("ul");
-    this.list.classList.add("result-list");
-    this.list.role = "listbox";
-    this.list.tabIndex = 0;
-    this.list.addEventListener("click", this.handleOnClick);
-    this.container.appendChild(this.list);
+    this.list = new List({
+      onClick: this.handleOnClick,
+    });
+    this.container.appendChild(this.list.render());
 
     this.update({ data, title, errorText });
   }
@@ -50,27 +53,19 @@ export class AutoComplete {
   }
 
   handleOnInput(e) {
-    this.list.replaceChildren();
-    if (!e.target.value) return;
+    let items;
 
-    const items = this.state.data.filter((item) =>
-      item.toLowerCase().includes(e.target.value.toLowerCase())
-    );
-    items.forEach((item) => {
-      const element = document.createElement("li");
-      element.classList.add("result-list-item");
-      element.textContent = item;
-      element.role = "option";
-      this.list.appendChild(element);
-    });
-
-    if (items.length === 0) {
-      const element = document.createElement("li");
-      element.classList.add("result-list-error");
-      element.textContent = this.state.errorText;
-      element.classList.add("disabled");
-      this.list.appendChild(element);
+    if (!e.target.value) {
+      items = [];
+    } else {
+        items = this.state.data.filter((item) =>
+        item.toLowerCase().includes(e.target.value.toLowerCase())
+      );
     }
+    
+    this.list.update({ data: items });
+    this.list.rebuild();
+    this.list.render();
   }
 
   handleOnClick(e) {
@@ -78,7 +73,10 @@ export class AutoComplete {
 
     this.input.update({ value: e.target.textContent });
     this.input.render();
-    this.list.replaceChildren();
+
+    this.list.update({ data: [] });
+    this.list.rebuild();
+    this.list.render();
   }
 
   render() {
