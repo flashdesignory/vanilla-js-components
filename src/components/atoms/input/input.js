@@ -3,11 +3,28 @@
 import "./input.css";
 
 export class Input {
-  constructor({ id, type, placeholder, value, onInput, label, hideLabel }) {
+  constructor({
+    id,
+    type,
+    placeholder,
+    value,
+    onInput,
+    onFocus,
+    onBlur,
+    onClick,
+    label,
+    hideLabel,
+  }) {
     this.state = {};
     this.type = type;
     this.onInput = onInput;
+    this.onFocus = onFocus;
+    this.onBlur = onBlur;
+    this.onClick = onClick;
     this.handleOnInput = this.handleOnInput.bind(this);
+    this.handleOnFocus = this.handleOnFocus.bind(this);
+    this.handleOnBlur = this.handleOnBlur.bind(this);
+    this.handleOnClick = this.handleOnClick.bind(this);
 
     this.container = document.createElement("div");
     this.container.classList.add("input-container");
@@ -20,6 +37,9 @@ export class Input {
     this.input.classList.add("input");
     this.input.type = this.type;
     this.input.addEventListener("input", this.handleOnInput);
+    this.input.addEventListener("focus", this.handleOnFocus);
+    this.input.addEventListener("blur", this.handleOnBlur);
+    this.input.addEventListener("click", this.handleOnClick);
     this.container.appendChild(this.input);
 
     this.update({ id, placeholder, value, label, hideLabel });
@@ -44,6 +64,18 @@ export class Input {
 
   handleOnInput(e) {
     if (this.onInput) this.onInput(e);
+  }
+
+  handleOnClick(e) {
+    if (this.onClick) this.onClick(e);
+  }
+
+  handleOnFocus(e) {
+    if (this.onFocus) this.onFocus(e);
+  }
+
+  handleOnBlur(e) {
+    if (this.onBlur) this.onBlur(e);
   }
 
   render() {

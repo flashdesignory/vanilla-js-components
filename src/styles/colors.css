@@ -19,13 +19,12 @@ body {
 
   /* highlights */
   --utils-highlight-olive: rgb(107 142 35); /* olivedrab, #6b8e23 */
+  --utils-highlight-red: darkred;
 
   /* misc colors */
   --fancy-gold: rgb(218 165 32); /* #daa520 */
 
   /* shadows */
-  --content-shadow:
-    0 3px 4px 0 rgb(0 0 0 / 14%),
-    0 3px 3px -2px rgb(0 0 0 / 20%),
-    0 1px 8px 0 rgb(0 0 0 / 12%);
+  --content-shadow: 0 3px 4px 0 rgb(0 0 0 / 14%),
+    0 3px 3px -2px rgb(0 0 0 / 20%), 0 1px 8px 0 rgb(0 0 0 / 12%);
 }
