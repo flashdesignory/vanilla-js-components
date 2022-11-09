@@ -31,6 +31,7 @@ export class AutoComplete {
     this.list = document.createElement("ul");
     this.list.classList.add("result-list");
     this.list.role = "listbox";
+    this.list.tabIndex = 0;
     this.list.addEventListener("click", this.handleOnClick);
     this.container.appendChild(this.list);
 
