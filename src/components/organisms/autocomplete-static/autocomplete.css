@@ -40,6 +40,8 @@
   padding: var(--content-spacing-medium);
   border-radius: var(--border-radius-small);
   box-shadow: var(--content-shadow);
+  font-family: var(--default-font-family);
+  font-size: var(--font-size-small);
 }
 
 .autocomplete-container .result-list-item {
@@ -50,8 +52,6 @@
   position: relative;
   background-color: var(--neutrals-white);
   color: var(--utils-gray-light);
-  font-family: var(--default-font-family);
-  font-size: var(--font-size-small);
   line-height: var(--font-size-small);
   cursor: pointer;
   transition: var(--default-transition);
