@@ -7,6 +7,7 @@ export default {
     data: { control: "array" },
     insertMethod: { control: "text" },
     onClick: { action: "onClick" },
+    emptyListText: { control: "text" },
   },
 };
 
@@ -15,7 +16,12 @@ const Template = ({ ...args }) => {
   return list.render();
 };
 
-export const Simple = Template.bind({});
-Simple.args = {
+export const WithData = Template.bind({});
+WithData.args = {
   data: data,
+};
+
+export const WithoutData = Template.bind({});
+WithoutData.args = {
+  emptyListText: "No items to display!",
 };

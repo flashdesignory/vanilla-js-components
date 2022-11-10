@@ -5,7 +5,7 @@ import "./list.css";
 import { Item } from "./item.js";
 
 export class List {
-  constructor({ data, insertionMethod, onClick }) {
+  constructor({ data, insertionMethod, onClick, emptyListText }) {
     this.state = { data: [] };
     this.items = [];
 
@@ -23,13 +23,16 @@ export class List {
     }
     this.container.appendChild(this.list);
 
-    this.update({ data, insertionMethod });
+    this.message = document.createElement("div");
+    this.message.classList.add("list-message");
+
+    this.update({ data, insertionMethod, emptyListText });
     if (data && data.length > 0) {
       this.rebuild();
     }
   }
 
-  update({ data, insertionMethod = "replace" }) {
+  update({ data, insertionMethod = "replace", emptyListText }) {
     if (data !== undefined) {
       switch (insertionMethod) {
         case "append":
@@ -42,6 +45,8 @@ export class List {
           this.state.data = [...data];
       }
     }
+
+    if (emptyListText !== undefined) this.state.emptyListText = emptyListText;
   }
 
   rebuild() {
@@ -53,11 +58,18 @@ export class List {
   }
 
   render() {
-    this.list.replaceChildren();
+    this.container.replaceChildren();
 
-    this.items.forEach((item) => {
-      this.list.appendChild(item.render());
-    });
+    if (this.items?.length > 0) {
+      this.list.replaceChildren();
+      this.items.forEach((item) => {
+        this.list.appendChild(item.render());
+      });
+      this.container.appendChild(this.list);
+    } else {
+      this.message.textContent = this.state.emptyListText;
+      this.container.appendChild(this.message);
+    }
 
     return this.container;
   }

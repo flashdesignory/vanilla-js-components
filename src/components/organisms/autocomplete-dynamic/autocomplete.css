@@ -39,3 +39,9 @@
 .autocomplete-container .list-container {
   margin-top: var(--content-spacing-medium);
 }
+
+.autocomplete-container .loader-container {
+  left: auto;
+  right: 15px;
+  top: 15px;
+}

@@ -1,0 +1,20 @@
+@import url("../../styles//colors.css");
+@import url("../../styles/layout.css");
+@import url("../../styles/animations.css");
+
+.loader-container,
+.loader-container * {
+  box-sizing: border-box;
+}
+
+.loader-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 120px;
+  height: 120px;
+  border: calc(120px / 10) solid var(--neutrals-gray-230);
+  border-top: calc(120px / 10) solid var(--utils-highlight-olive);
+  border-radius: var(--border-radius-50);
+  animation: spin-animation 2s linear infinite;
+}

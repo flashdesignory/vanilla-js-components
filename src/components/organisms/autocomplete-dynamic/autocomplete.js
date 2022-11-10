@@ -5,14 +5,16 @@ import "./autocomplete.css";
 import { Text } from "../../atoms/text/text.js";
 import { Input } from "../../atoms/input/input.js";
 import { List } from "../../atoms/list/list.js";
+import { Loader } from "../../../misc/loader/loader.js";
 import { debounce } from "../../../lib/utils.js";
 
 export class AutoComplete {
-  constructor({ data = [], title, errorText }) {
-    this.state = { data: [] };
+  constructor({ title, errorText, url, responseParser }) {
+    this.state = {};
 
     this.handleOnInput = this.handleOnInput.bind(this);
     this.handleOnClick = this.handleOnClick.bind(this);
+    this.fetchData = this.fetchData.bind(this);
     const debounced = debounce(this.handleOnInput, 250);
 
     this.container = document.createElement("div");
@@ -38,10 +40,12 @@ export class AutoComplete {
     });
     this.container.appendChild(this.list.render());
 
-    this.update({ data, title, errorText });
+    this.loader = new Loader({ size: 20 });
+
+    this.update({ title, errorText, url, responseParser });
   }
 
-  update({ data, title, errorText }) {
+  update({ title, errorText, url, responseParser }) {
     if (title !== undefined) {
       this.state.title = title;
       this.header.update({ text: this.state.title });
@@ -52,25 +56,38 @@ export class AutoComplete {
       this.list.update({ emptyListText: this.state.errorText });
     }
 
-    if (data !== undefined) {
-      this.state.data = [...data];
+    if (url !== undefined) {
+      this.state.url = url;
+    }
+
+    if (responseParser !== undefined) {
+      this.state.responseParser = responseParser;
     }
   }
 
-  handleOnInput(e) {
+  async handleOnInput(e) {
     let items;
 
     if (!e.target.value) {
       items = [];
     } else {
-      items = this.state.data.filter((item) =>
-        item.toLowerCase().includes(e.target.value.toLowerCase())
-      );
+      this.top.appendChild(this.loader.render());
+      const response = await this.fetchData(e.target.value);
+      this.top.removeChild(this.loader.container);
+      items = this.state.responseParser
+        ? this.state.responseParser(response)
+        : response;
     }
 
     this.list.update({ data: items });
     this.list.rebuild();
     this.list.render();
+  }
+
+  async fetchData(value) {
+    const response = await fetch(`${this.state.url}${value}`);
+    const data = await response.json();
+    return data;
   }
 
   handleOnClick(e) {

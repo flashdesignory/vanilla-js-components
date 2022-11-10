@@ -1,12 +1,10 @@
 import { AutoComplete } from "./autocomplete.js";
-import { data } from "./data.js";
-
 export default {
   title: "Organisms/AutoComplete",
   argTypes: {
-    data: { control: "array" },
     title: { control: "text" },
     errorText: { control: "text" },
+    url: { control: "text" },
   },
 };
 
@@ -15,9 +13,10 @@ const Template = ({ ...args }) => {
   return ac.render();
 };
 
-export const Static = Template.bind({});
-Static.args = {
-  data: data,
+export const Dynamic = Template.bind({});
+Dynamic.args = {
   title: "Country Search",
   errorText: "No results - try another search!",
+  url: "https://www.googleapis.com/customsearch/v1?key=AIzaSyBZWQpTfpiPAM11PHRG6z35zUjp_0oc1BE &cx=836cb9c197a4047d0&q=",
+  responseParser: (data) => data?.items?.map((item) => item.title),
 };

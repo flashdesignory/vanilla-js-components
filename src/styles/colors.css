@@ -19,7 +19,7 @@ body {
 
   /* highlights */
   --utils-highlight-olive: rgb(107 142 35); /* olivedrab, #6b8e23 */
-  --utils-highlight-red: darkred;
+  --utils-highlight-red: rgb(139 0 0); /* darkred, #8b0000 */
 
   /* misc colors */
   --fancy-gold: rgb(218 165 32); /* #daa520 */

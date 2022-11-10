@@ -2,6 +2,11 @@
 @import url("../../../styles/layout.css");
 @import url("../../../styles/transitions.css");
 
+.progress-container,
+.progress-container * {
+  box-sizing: border-box;
+}
+
 .progress-container {
   height: var(--content-spacing-medium);
   position: relative;
