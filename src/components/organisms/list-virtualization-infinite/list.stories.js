@@ -2,7 +2,7 @@ import { InfiniteList } from "./list.js";
 import { getData } from "./server.js";
 
 export default {
-  title: "Organisms/List",
+  title: "Organisms/VirtualList",
   argTypes: {
     data: { control: "json" },
     visibleItems: { control: "number" },

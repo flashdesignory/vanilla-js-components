@@ -2,7 +2,7 @@ import { DynamicList } from "./list.js";
 import { data } from "./data.js";
 
 export default {
-  title: "Organisms/List",
+  title: "Organisms/VirtualList",
   argTypes: {
     data: { control: "json" },
     displayHeight: { control: "number" },

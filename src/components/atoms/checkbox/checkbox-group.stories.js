@@ -2,7 +2,7 @@ import { CheckboxGroup } from "./checkbox-group";
 import { data } from "./data";
 
 export default {
-  title: "Atoms/Checkbox Group",
+  title: "Atoms/Checkbox",
   argTypes: {
     name: { control: "text" },
     onChange: { action: "onChange" },
@@ -15,8 +15,8 @@ const Template = ({ ...args }) => {
   return cbg.render();
 };
 
-export const Simple = Template.bind({});
-Simple.args = {
+export const Group = Template.bind({});
+Group.args = {
   name: "animals",
   data: data,
 };

@@ -2,7 +2,7 @@ import { PollWidget } from "./poll-widget.js";
 import { data } from "./data.js";
 
 export default {
-  title: "Organisms/Poll Widget",
+  title: "Organisms/PollWidget",
   argTypes: {
     data: { control: "json" },
     title: { control: "text" },

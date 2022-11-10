@@ -2,7 +2,7 @@ import { VirtualList } from "./list.js";
 import { data } from "./data.js";
 
 export default {
-  title: "Organisms/List",
+  title: "Organisms/VirtualList",
   argTypes: {
     data: { control: "json" },
     visibleItems: { control: "number" },

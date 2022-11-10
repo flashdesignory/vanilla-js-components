@@ -2,7 +2,7 @@ import { TodoList } from "./todo-list.js";
 import { data } from "./data.js";
 
 export default {
-  title: "Organisms/Todo List",
+  title: "Organisms/TodoList",
   argTypes: {
     data: { control: "json" },
     title: { control: "text" },
