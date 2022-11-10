@@ -3,12 +3,12 @@
 @import url("../../../styles/layout.css");
 @import url("../../../styles/transitions.css");
 
-.autocomplete-container,
-.autocomplete-container * {
+.static-autocomplete-container,
+.static-autocomplete-container * {
   box-sizing: border-box;
 }
 
-.autocomplete-container {
+.static-autocomplete-container {
   background: var(--neutrals-white);
   border-radius: var(--border-radius-large);
   padding: var(--content-spacing-xlarge);
@@ -17,25 +17,23 @@
   box-shadow: var(--content-shadow);
 }
 
-.autocomplete-container .autocomplete-header {
+.static-autocomplete-container .autocomplete-header {
   background: var(--neutrals-white);
-  border-radius: var(--border-radius-large);
-  padding: var(--content-spacing-medium) var(--content-spacing-large)
-    var(--content-spacing-medium) var(--content-spacing-medium);
-  box-shadow: var(--content-shadow);
   position: relative;
 }
 
-.autocomplete-container .autocomplete-title {
+.static-autocomplete-container .autocomplete-title {
   font-size: var(--font-size-large);
   font-weight: var(--font-weight-more-bold);
   margin-bottom: var(--content-spacing-medium);
 }
 
-.autocomplete-container .input-container {
+.static-autocomplete-container .input-container {
   margin-top: var(--content-spacing-medium);
 }
 
-.autocomplete-container .list-container {
+.static-autocomplete-container .list-container {
   margin-top: var(--content-spacing-medium);
+  box-shadow: none;
+  border: var(--border-width-medium) solid var(--utils-gray-dark);
 }

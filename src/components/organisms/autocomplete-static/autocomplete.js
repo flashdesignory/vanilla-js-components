@@ -16,7 +16,7 @@ export class AutoComplete {
     const debounced = debounce(this.handleOnInput, 250);
 
     this.container = document.createElement("div");
-    this.container.classList.add("autocomplete-container");
+    this.container.classList.add("static-autocomplete-container");
 
     this.top = document.createElement("div");
     this.top.classList.add("autocomplete-header");
