@@ -13,7 +13,12 @@
   height: 100%;
 }
 
-.image-container img {
+.image-container .picture {
+  display: flex;
+  height: 100%;
+}
+
+.image-container .image {
   bottom: 0;
   height: 100%;
   left: 0;
