@@ -58,8 +58,9 @@
   flex-shrink: 0;
 
   /* dimensions */
-  width: 300px;
+  width: calc(100% - 180px);
   height: 100%;
+  max-width: 300px;
 }
 
 .business-card-container .avatar-container {
@@ -74,6 +75,7 @@
 .business-card-container .business-card-name {
   /* fonts */
   font-size: var(--font-size-large);
+  text-align: center;
 
   /* colors */
   color: var(--utils-gray-darker);
@@ -85,6 +87,7 @@
 .business-card-container .business-card-title {
   /* fonts */
   font-size: var(--font-size-medium);
+  text-align: center;
 
   /* colors */
   color: var(--utils-gray-dark);
@@ -142,6 +145,7 @@
 
     /* dimensions */
     width: 100%;
+    max-width: auto;
     height: 300px;
 
     /* layout */
