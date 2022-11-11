@@ -8,14 +8,15 @@
 }
 
 .link {
-  display: inline-flex;
+  display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+  align-items: first baseline;
   font-family: var(--default-font-family);
   font-size: 14px;
   line-height: 14px;
   text-decoration: none;
   line-height: 24px;
-  align-items: center;
 }
 
 .link :not(:last-child) {

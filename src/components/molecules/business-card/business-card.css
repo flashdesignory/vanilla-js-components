@@ -98,12 +98,6 @@
 }
 
 .business-card-container .business-card-links a {
-  /* positioning */
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: first baseline;
-
   /* colors */
   color: var(--utils-gray-dark);
 
