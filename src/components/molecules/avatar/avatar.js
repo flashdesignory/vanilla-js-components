@@ -6,10 +6,17 @@ import { DefaultAvatar } from "../../../assets/avatar.js";
 import { Image } from "../../atoms/image/image.js";
 
 export class Avatar {
-  constructor({ image = {} }) {
+  constructor({ image = {}, containerClass }) {
     this.state = {};
+    this.containerClass = containerClass;
+    
     this.container = document.createElement("div");
     this.container.classList.add("avatar-container");
+
+    if (this.containerClass) {
+      this.container.classList.add(this.containerClass);
+    }
+
     this.update({ image });
   }
 

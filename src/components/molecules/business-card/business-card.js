@@ -22,18 +22,22 @@ export class BusinessCard {
     this.right.classList.add("business-card-right");
     this.container.appendChild(this.right);
 
-    this.avatar = new Avatar({});
+    this.top = document.createElement('div');
+    this.top.classList.add("business-card-top");
+    this.right.appendChild(this.top);
+
+    this.bottom = document.createElement('div');
+    this.bottom.classList.add("business-card-bottom");
+    this.right.appendChild(this.bottom);
+
+    this.avatar = new Avatar({ containerClass: "business-card-avatar" });
     this.left.appendChild(this.avatar.render());
 
     this.name = new Text({ containerClass: "business-card-name" });
-    this.right.appendChild(this.name.render());
+    this.top.appendChild(this.name.render());
 
     this.title = new Text({ containerClass: "business-card-title" });
-    this.right.appendChild(this.title.render());
-
-    this.resources = document.createElement('div');
-    this.resources.classList.add("business-card-links");
-    this.right.appendChild(this.resources);
+    this.top.appendChild(this.title.render());
 
     this.update({ image, name, title, links });
 
@@ -82,9 +86,9 @@ export class BusinessCard {
     this.name.render();
     this.title.render();
 
-    this.resources.replaceChildren();
+    this.bottom.replaceChildren();
     this.list.forEach((item) => {
-      this.resources.appendChild(item.render());
+      this.bottom.appendChild(item.render());
     });
 
     return this.container;
