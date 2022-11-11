@@ -12,8 +12,9 @@ export class Image {
     containerClass,
     style,
     fadeIn = false,
+    sources,
   }) {
-    this.state = {};
+    this.state = { sources: [] };
     this.imageClass = imageClass;
     this.containerClass = containerClass;
     this.style = style;
@@ -29,27 +30,31 @@ export class Image {
     }
 
     if (this.style) {
-      Object.keys(this.style).forEach(
-        (key) => (this.container.style[key] = this.style[key])
-      );
+      Object.keys(this.style).forEach(key => this.container.style[key] = this.style[key])
     }
 
+    this.picture = document.createElement("picture");
+    this.picture.classList.add("picture");
+    this.container.appendChild(this.picture);
+
     this.image = document.createElement("img");
+    this.image.classList.add("image");
     if (this.imageClass) {
       this.image.classList.add(this.imageClass);
     }
     this.image.addEventListener("load", this.handleOnLoad);
     this.image.addEventListener("error", this.handleOnError);
-    this.container.appendChild(this.image);
+    this.picture.appendChild(this.image);
 
-    this.update({ src, alt, width, height });
+    this.update({ src, alt, width, height, sources });
   }
 
-  update({ src, alt, width, height }) {
+  update({ src, alt, width, height, sources }) {
     if (src !== undefined) this.state.src = src;
     if (alt !== undefined) this.state.alt = alt;
     if (width !== undefined) this.state.width = width;
     if (height !== undefined) this.state.height = height;
+    if (sources !== undefined) this.state.sources = sources;
   }
 
   handleOnError() {
@@ -61,6 +66,18 @@ export class Image {
   }
 
   render() {
+    const elements = this.picture.getElementsByTagName("source");
+    for (let i = elements.length - 1; i >= 0; i--) {
+      elements[i].parentNode.removeChild(elements[i]);
+    }
+
+    this.state.sources.forEach(source => {
+      const element = document.createElement('source');
+      element.srcset = source.srcset;
+      element.type = source.type;
+      this.picture.insertBefore(element, this.image);
+    })
+
     if (this.state.src) this.image.src = this.state.src;
     if (this.state.alt) this.image.alt = this.state.alt;
     if (this.state.width) this.image.width = this.state.width;
