@@ -1,0 +1,40 @@
+@import url("../../../styles/colors.css");
+@import url("../../../styles/fonts.css");
+@import url("../../../styles/layout.css");
+
+.link,
+.link * {
+  box-sizing: border-box;
+}
+
+.link {
+  display: inline-flex;
+  flex-direction: row;
+  font-family: var(--default-font-family);
+  font-size: 14px;
+  line-height: 14px;
+  text-decoration: none;
+  line-height: 24px;
+  align-items: center;
+}
+
+.link :not(:last-child) {
+  margin-right: var(--content-spacing-medium);
+}
+
+.link-icon {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-icon svg {
+  width: inherit;
+  height: inherit;
+}
+
+.link-text {
+  color: var(--utils-gray-dark);
+}

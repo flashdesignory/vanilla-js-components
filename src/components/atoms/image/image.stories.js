@@ -22,6 +22,7 @@ Simple.args = {
   alt: "animals on a bus",
   width: "300",
   height: "300",
+  style: { width: "300px", height: "300px" },
 };
 
 export const Animated = Template.bind({});
@@ -31,4 +32,5 @@ Animated.args = {
   width: "300",
   height: "300",
   fadeIn: true,
+  style: { width: "300px", height: "300px" },
 };

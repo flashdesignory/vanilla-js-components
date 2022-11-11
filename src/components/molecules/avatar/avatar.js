@@ -22,8 +22,10 @@ export class Avatar {
   }
 
   render() {
+    this.container.replaceChildren();
+
     if (this.state.image.src !== undefined) {
-      const image = new Image({ ...this.state.image });
+      const image = new Image({ fadeIn: true, ...this.state.image });
       this.container.appendChild(image.render());
     } else {
       this.container.insertAdjacentHTML("afterbegin", DefaultAvatar);

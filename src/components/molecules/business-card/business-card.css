@@ -1,3 +1,8 @@
+@import url("../../../styles/colors.css");
+@import url("../../../styles/fonts.css");
+@import url("../../../styles/layout.css");
+@import url("../../../styles/transitions.css");
+
 .business-card-container,
 .business-card-container * {
   box-sizing: border-box;
@@ -6,13 +11,14 @@
 .business-card-container {
   /* positioning */
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
+  position: relative;
 
   /* layout */
-  padding: 10px;
-  border-radius: 10px;
+  padding: var(--content-spacing-medium);
+  border-radius: var(--border-radius-medium);
 
   /* dimensions */
   aspect-ratio: 3.5 / 2;
@@ -22,24 +28,120 @@
   max-height: auto;
 
   /* colors */
-  background-color: rgb(255 255 255);
-  color: rgb(0 0 0);
-  box-shadow:
-    0 3px 4px 0 rgb(0 0 0 / 14%),
-    0 3px 3px -2px rgb(0 0 0 / 20%),
-    0 1px 8px 0 rgb(0 0 0 / 12%);
+  background-color: var(--neutrals-white);
+  color: var(--neutrals-black);
+  box-shadow: var(--content-shadow);
 
   /* fonts */
-  font-family: verdana, geneva, tahoma, sans-serif;
+  font-family: var(--default-font-family);
+}
+
+.business-card-container .business-card-left {
+  /* positioning */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* dimensions */
+  width: 220px;
+  height: 100%;
+}
+
+.business-card-container .business-card-right {
+  /* positioning */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  /* dimensions */
+  width: 260px;
+  height: 100%;
+}
+
+.business-card-container .avatar-container {
+  /* dimensions */
+  width: 140px;
+  height: 140px;
+
+  /* layout */
+  border-radius: var(--border-radius-50);
+}
+
+.business-card-container .business-card-name {
+  /* fonts */
+  font-size: var(--font-size-large);
+
+  /* colors */
+  color: var(--utils-gray-darker);
+
+  /* layout */
+  margin-bottom: var(--content-spacing-medium);
+}
+
+.business-card-container .business-card-title {
+  /* fonts */
+  font-size: var(--font-size-medium);
+
+  /* colors */
+  color: var(--utils-gray-dark);
+
+  /* layout */
+  margin-bottom: var(--content-spacing-xlarge);
+}
+
+.business-card-container .business-card-links {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.business-card-container .business-card-links a {
+  /* positioning */
+  display: flex;
+
+  /* colors */
+  color: var(--utils-gray-dark);
+
+  /* layout */
+  margin-bottom: var(--content-spacing-small);
+}
+
+.business-card-container .business-card-links a:hover {
+  color: var(--utiils-gray-light);
 }
 
 @media (orientation: portrait) {
   .business-card-container {
+    /* positioning */
+    flex-direction: column;
+
     /* dimensions */
     aspect-ratio: 2 / 3.5;
     height: 100%;
     max-height: 500px;
     width: auto;
     max-width: auto;
+  }
+
+  .business-card-container .business-card-left {
+    /* dimensions */
+    height: 220px;
+    width: 100%;
+  }
+
+  .business-card-container .business-card-right {
+    /* positioning */
+    justify-content: flex-start;
+    align-items: center;
+
+    /* dimensions */
+    width: 100%;
+    height: 260px;
+  }
+
+  .business-card-container .business-card-links {
+    align-items: center;
   }
 }
