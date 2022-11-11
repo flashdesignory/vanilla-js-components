@@ -17,10 +17,14 @@ const Template = ({ ...args }) => {
 export const Simple = Template.bind({});
 Simple.args = {
   image: {
-    src: "./misc/image-1.jpg",
+    src: "./avatar/avatar.jpg",
     width: "140",
     height: "140",
     alt: "Thorsten Kober",
+    sources: [
+      { srcset: "./avatar/avatar.webp", type: "image/webp" },
+      { srcset: "./avatar/avatar.jpg", type: "image/jpeg" }
+    ]
   },
   name: "Thorsten Kober",
   title: "Lead Software Engineer",
@@ -29,10 +33,14 @@ Simple.args = {
 export const Links = Template.bind({});
 Links.args = {
   image: {
-    src: "./misc/image-1.jpg",
+    src: "./avatar/avatar.jpg",
     width: "140",
     height: "140",
     alt: "Thorsten Kober",
+    sources: [
+      { srcset: "./avatar/avatar.webp", type: "image/webp" },
+      { srcset: "./avatar/avatar.jpg", type: "image/jpeg" }
+    ]
   },
   name: "Thorsten Kober",
   title: "Lead Software Engineer",
