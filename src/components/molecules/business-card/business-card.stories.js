@@ -1,5 +1,9 @@
 import { BusinessCard } from "./business-card.js";
 
+import { LinkedInIcon } from '../../../assets/linkedin.js';
+import { GithubIcon } from '../../../assets/github.js';
+import { WebsiteIcon } from '../../../assets/website.js';
+
 export default {
   title: "Molecules/BusinessCard",
   argTypes: {},
@@ -34,19 +38,25 @@ Links.args = {
   title: "Lead Software Engineer",
   links: [
     {
-      name: "Hulu",
-      icon: "work",
-      url: "https://www.hulu.com/",
-    },
-    {
-      name: "Los Angeles, CA",
-      icon: "location",
-      url: "https://www.google.com/maps/place/Los+Angeles,+CA",
-    },
-    {
-      name: "LinkedIn",
-      icon: "linkedin",
+      name: "Linked In",
+      type: "icon",
+      label: LinkedInIcon,
       url: "https://www.linkedin.com/in/thorstenkober/",
+      target: "_blank"
     },
-  ],
+    {
+      name: "Github",
+      type: "icon",
+      label: GithubIcon,
+      url: "https://github.com/flashdesignory",
+      target: "_blank"
+    },
+    {
+      name: "Website",
+      type: "icon",
+      label: WebsiteIcon,
+      url: "https://flashdesignory.github.io/",
+      target: "_blank"
+    }
+  ]
 };

@@ -16,26 +16,19 @@
   font-size: 14px;
   line-height: 14px;
   text-decoration: none;
-  line-height: 24px;
-}
-
-.link :not(:last-child) {
-  margin-right: var(--content-spacing-medium);
-}
-
-.link-icon {
-  width: 14px;
-  height: 14px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.link-icon svg {
-  width: inherit;
-  height: inherit;
-}
-
-.link-text {
   color: var(--utils-gray-dark);
+  transition: var(--default-transition);
+}
+
+.link svg {
+  fill: var(--utils-gray-dark);
+  transition: var(--default-transition);
+}
+
+.link:hover {
+  color: var(--utils-gray-light);
+}
+
+.link:hover svg {
+  fill: var(--utils-gray-light);
 }

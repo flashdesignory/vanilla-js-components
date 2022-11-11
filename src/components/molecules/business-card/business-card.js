@@ -2,24 +2,9 @@
 document.adoptedStyleSheets.push(sheet); */
 import "./business-card.css";
 
-import { Avatar } from "../avatar/avatar.js";
-import { Text } from "../../atoms/text/text.js";
-import { Link } from "../../atoms/link/link.js";
-
-import { LinkedInIcon } from "../../../assets/linkedin.js";
-import { LocationIcon } from "../../../assets/location.js";
-import { WorkIcon } from "../../../assets/work.js";
-
-const getIcon = (name) => {
-  switch (name) {
-    case "linkedin":
-      return LinkedInIcon;
-    case "location":
-      return LocationIcon;
-    case "work":
-      return WorkIcon;
-  }
-};
+import { Avatar } from '../avatar/avatar.js';
+import { Text } from '../../atoms/text/text.js';
+import { Link } from '../../atoms/link/link.js';
 
 export class BusinessCard {
   constructor({ image, name, title, links }) {
@@ -46,7 +31,7 @@ export class BusinessCard {
     this.title = new Text({ containerClass: "business-card-title" });
     this.right.appendChild(this.title.render());
 
-    this.resources = document.createElement("div");
+    this.resources = document.createElement('div');
     this.resources.classList.add("business-card-links");
     this.right.appendChild(this.resources);
 
@@ -59,13 +44,13 @@ export class BusinessCard {
 
   update({ image, name, title, links }) {
     if (image !== undefined) {
-      this.state.image = { ...image };
+      this.state.image = {...image};
       this.avatar.update({ image: this.state.image });
     }
 
     if (name !== undefined) {
       this.state.name = name;
-      this.name.update({ text: this.state.name });
+      this.name.update({ text: this.state.name});
     }
 
     if (title !== undefined) {
@@ -79,16 +64,17 @@ export class BusinessCard {
   }
 
   rebuild() {
-    this.state.links.forEach((link) => {
-      const { name, icon, url } = link;
+    this.state.links.forEach(link => {
+      const { name, type, label, url, target } = link;
       const element = new Link({
-        icon: getIcon(icon),
         name,
+        type,
+        label,
         url,
-        target: "_blank",
+        target,
       });
       this.list.push(element);
-    });
+    })
   }
 
   render() {

@@ -3,19 +3,28 @@
 import "./link.css";
 
 export class Link {
-  constructor({ icon, name, url, target }) {
+  constructor({
+    name,
+    type,
+    label,
+    url,
+    target,
+  }) {
     this.state = {};
-
-    this.update({ icon, name, url, target });
+    this.update({ name, type, label, url, target });
   }
 
-  update({ icon, name, url, target }) {
-    if (icon !== undefined) {
-      this.state.icon = icon;
-    }
-
+  update({ name, type, label, url, target }) {
     if (name !== undefined) {
       this.state.name = name;
+    }
+
+    if (type !== undefined) {
+      this.state.type = type;
+    }
+
+    if (label !== undefined) {
+      this.state.label = label;
     }
 
     if (url !== undefined) {
@@ -28,30 +37,19 @@ export class Link {
   }
 
   render() {
-    const link = document.createElement("a");
-    link.classList.add("link");
+    this.link = document.createElement('a');
+    this.link.classList.add('link');
 
     if (this.state.url) {
-      link.href = this.state.url;
+      this.link.href = this.state.url;
     }
     if (this.state.target) {
-      link.target = this.state.target;
+      this.link.target = this.state.target;
     }
 
-    if (this.state.icon) {
-      const span = document.createElement("span");
-      span.classList.add("link-icon");
-      span.insertAdjacentHTML("afterbegin", this.state.icon);
-      link.appendChild(span);
-    }
+    if (this.state.type !== "icon") this.link.textContent = this.state.label;
+    else this.link.insertAdjacentHTML("afterbegin", this.state.label);
 
-    if (this.state.name) {
-      const span = document.createElement("span");
-      span.classList.add("link-text");
-      span.textContent = this.state.name;
-      link.appendChild(span);
-    }
-
-    return link;
+    return this.link;
   }
 }
