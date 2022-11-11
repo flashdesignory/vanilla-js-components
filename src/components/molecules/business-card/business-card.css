@@ -22,10 +22,8 @@
 
   /* dimensions */
   aspect-ratio: 3.5 / 2;
-  width: 100%;
-  max-width: 500px;
+  width: 500px;
   height: auto;
-  max-height: auto;
 
   /* colors */
   background-color: var(--neutrals-white);
@@ -123,10 +121,8 @@
 
     /* dimensions */
     aspect-ratio: 2 / 3.5;
-    height: 100%;
-    max-height: 500px;
+    height: 500px;
     width: auto;
-    max-width: auto;
   }
 
   .business-card-container .business-card-left {
