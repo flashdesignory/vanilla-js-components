@@ -3,6 +3,7 @@ import { BusinessCard } from "./business-card.js";
 import { LinkedInIcon } from '../../../assets/linkedin.js';
 import { GithubIcon } from '../../../assets/github.js';
 import { WebsiteIcon } from '../../../assets/website.js';
+import { EmailIcon } from '../../../assets/email.js';
 
 export default {
   title: "Molecules/BusinessCard",
@@ -64,6 +65,13 @@ Links.args = {
       type: "icon",
       label: WebsiteIcon,
       url: "https://flashdesignory.github.io/",
+      target: "_blank"
+    },
+    {
+      name: "Email",
+      type: "icon",
+      label: EmailIcon,
+      url: "mailto:info@flashdesignory.com",
       target: "_blank"
     }
   ]
