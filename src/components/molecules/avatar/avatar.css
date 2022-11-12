@@ -12,6 +12,7 @@
   background-color: var(--neutrals-gray-230);
   box-shadow: var(--content-shadow);
   overflow: hidden;
+  isolation: isolate;
 }
 
 .avatar-container svg {
