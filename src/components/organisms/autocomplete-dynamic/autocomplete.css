@@ -38,6 +38,10 @@
   border: var(--border-width-medium) solid var(--utils-gray-dark);
 }
 
+.dynamic-autocomplete-container .list-container a {
+  flex: 1;
+}
+
 .dynamic-autocomplete-container .loader-container {
   left: auto;
   right: 15px;

@@ -9,7 +9,7 @@ import { Loader } from "../../../misc/loader/loader.js";
 import { debounce } from "../../../lib/utils.js";
 
 export class AutoComplete {
-  constructor({ title, errorText, url, responseParser }) {
+  constructor({ title, errorText, url, responseParser, ItemClass }) {
     this.state = {};
 
     this.handleOnInput = this.handleOnInput.bind(this);
@@ -37,15 +37,17 @@ export class AutoComplete {
 
     this.list = new List({
       onClick: this.handleOnClick,
+      title: "results list",
+      role: "list"
     });
     this.container.appendChild(this.list.render());
 
     this.loader = new Loader({ size: 20 });
 
-    this.update({ title, errorText, url, responseParser });
+    this.update({ title, errorText, url, responseParser, ItemClass });
   }
 
-  update({ title, errorText, url, responseParser }) {
+  update({ title, errorText, url, responseParser, ItemClass }) {
     if (title !== undefined) {
       this.state.title = title;
       this.header.update({ text: this.state.title });
@@ -62,6 +64,11 @@ export class AutoComplete {
 
     if (responseParser !== undefined) {
       this.state.responseParser = responseParser;
+    }
+
+    if (ItemClass !== undefined) {
+      this.state.ItemClass = ItemClass;
+      this.list.update({ ItemClass });
     }
   }
 
@@ -91,14 +98,17 @@ export class AutoComplete {
   }
 
   handleOnClick(e) {
-    if (!e.target.textContent || e.target.role !== "option") return;
+    if (!e.target.role !== "listItem") return;
 
-    this.input.update({ value: e.target.textContent });
+    /*
+    // empty list?
+    this.input.update({ value: "" });
     this.input.render();
 
     this.list.update({ data: [] });
     this.list.rebuild();
     this.list.render();
+    */
   }
 
   render() {

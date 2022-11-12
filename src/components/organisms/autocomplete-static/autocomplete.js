@@ -35,6 +35,8 @@ export class AutoComplete {
 
     this.list = new List({
       onClick: this.handleOnClick,
+      title: "results list",
+      role: "listbox"
     });
     this.container.appendChild(this.list.render());
 

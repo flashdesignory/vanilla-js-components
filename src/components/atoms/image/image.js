@@ -30,7 +30,9 @@ export class Image {
     }
 
     if (this.style) {
-      Object.keys(this.style).forEach(key => this.container.style[key] = this.style[key])
+      Object.keys(this.style).forEach(
+        (key) => (this.container.style[key] = this.style[key])
+      );
     }
 
     this.picture = document.createElement("picture");
@@ -71,12 +73,12 @@ export class Image {
       elements[i].parentNode.removeChild(elements[i]);
     }
 
-    this.state.sources.forEach(source => {
-      const element = document.createElement('source');
+    this.state.sources.forEach((source) => {
+      const element = document.createElement("source");
       element.srcset = source.srcset;
       element.type = source.type;
       this.picture.insertBefore(element, this.image);
-    })
+    });
 
     if (this.state.src) this.image.src = this.state.src;
     if (this.state.alt) this.image.alt = this.state.alt;

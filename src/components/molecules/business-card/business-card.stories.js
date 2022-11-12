@@ -1,9 +1,9 @@
 import { BusinessCard } from "./business-card.js";
 
-import { LinkedInIcon } from '../../../assets/linkedin.js';
-import { GithubIcon } from '../../../assets/github.js';
-import { WebsiteIcon } from '../../../assets/website.js';
-import { EmailIcon } from '../../../assets/email.js';
+import { LinkedInIcon } from "../../../assets/linkedin.js";
+import { GithubIcon } from "../../../assets/github.js";
+import { WebsiteIcon } from "../../../assets/website.js";
+import { EmailIcon } from "../../../assets/email.js";
 
 export default {
   title: "Molecules/BusinessCard",
@@ -24,8 +24,8 @@ Simple.args = {
     alt: "Thorsten Kober",
     sources: [
       { srcset: "./avatar/avatar.webp", type: "image/webp" },
-      { srcset: "./avatar/avatar.jpg", type: "image/jpeg" }
-    ]
+      { srcset: "./avatar/avatar.jpg", type: "image/jpeg" },
+    ],
   },
   name: "Thorsten Kober",
   title: "Lead Software Engineer",
@@ -40,8 +40,8 @@ Links.args = {
     alt: "Thorsten Kober",
     sources: [
       { srcset: "./avatar/avatar.webp", type: "image/webp" },
-      { srcset: "./avatar/avatar.jpg", type: "image/jpeg" }
-    ]
+      { srcset: "./avatar/avatar.jpg", type: "image/jpeg" },
+    ],
   },
   name: "Thorsten Kober",
   title: "Lead Software Engineer",
@@ -51,28 +51,28 @@ Links.args = {
       type: "icon",
       label: LinkedInIcon,
       url: "https://www.linkedin.com/in/thorstenkober/",
-      target: "_blank"
+      target: "_blank",
     },
     {
       name: "Github",
       type: "icon",
       label: GithubIcon,
       url: "https://github.com/flashdesignory",
-      target: "_blank"
+      target: "_blank",
     },
     {
       name: "Website",
       type: "icon",
       label: WebsiteIcon,
       url: "https://flashdesignory.github.io/",
-      target: "_blank"
+      target: "_blank",
     },
     {
       name: "Email",
       type: "icon",
       label: EmailIcon,
       url: "mailto:info@flashdesignory.com",
-      target: "_blank"
-    }
-  ]
+      target: "_blank",
+    },
+  ],
 };

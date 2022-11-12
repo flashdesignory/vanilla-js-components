@@ -9,7 +9,7 @@ export class Avatar {
   constructor({ image = {}, containerClass }) {
     this.state = {};
     this.containerClass = containerClass;
-    
+
     this.container = document.createElement("div");
     this.container.classList.add("avatar-container");
 

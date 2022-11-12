@@ -5,7 +5,16 @@ import "./list.css";
 import { Item } from "./item.js";
 
 export class List {
-  constructor({ data, insertionMethod, onClick, emptyListText }) {
+  constructor({
+    data,
+    insertionMethod,
+    onClick,
+    emptyListText,
+    ItemClass,
+    title,
+    // role = "listbox",
+    role="list"
+  }) {
     this.state = { data: [] };
     this.items = [];
 
@@ -17,7 +26,6 @@ export class List {
     this.list = document.createElement("ul");
     this.list.classList.add("list-ul");
     this.list.tabIndex = 0;
-    this.list.role = "listbox";
     if (this.onClick) {
       this.list.addEventListener("click", this.onClick);
     }
@@ -26,13 +34,29 @@ export class List {
     this.message = document.createElement("div");
     this.message.classList.add("list-message");
 
-    this.update({ data, insertionMethod, emptyListText });
+    this.update({
+      data,
+      insertionMethod,
+      emptyListText,
+      ItemClass,
+      title,
+      role,
+    });
     if (data && data.length > 0) {
       this.rebuild();
     }
   }
 
-  update({ data, insertionMethod = "replace", emptyListText }) {
+  update({
+    data,
+    insertionMethod = "replace",
+    emptyListText,
+    ItemClass,
+    title,
+    role,
+  }) {
+    if (ItemClass !== undefined) this.state.ItemClass = ItemClass;
+
     if (data !== undefined) {
       switch (insertionMethod) {
         case "append":
@@ -47,12 +71,17 @@ export class List {
     }
 
     if (emptyListText !== undefined) this.state.emptyListText = emptyListText;
+    if (title !== undefined) this.state.title = title;
+    if (role !== undefined) this.state.role = role;
   }
 
   rebuild() {
     this.items = [];
     this.state.data.forEach((item) => {
-      const element = new Item({ label: item });
+      const elementRole = this.state.role === "listbox" ? "option" : "listitem";
+      const element = this.state.ItemClass
+        ? new this.state.ItemClass({ data: item, role: elementRole })
+        : new Item({ label: item, role: elementRole });
       this.items.push(element);
     });
   }
@@ -62,9 +91,14 @@ export class List {
 
     if (this.items?.length > 0) {
       this.list.replaceChildren();
+
+      this.list.role = this.state.role;
+      this.list.title = this.state.title || undefined;
+
       this.items.forEach((item) => {
         this.list.appendChild(item.render());
       });
+
       this.container.appendChild(this.list);
     } else {
       this.message.textContent = this.state.emptyListText;

@@ -19,6 +19,7 @@ const Template = ({ ...args }) => {
 export const WithData = Template.bind({});
 WithData.args = {
   data: data,
+  title: "days",
 };
 
 export const WithoutData = Template.bind({});
