@@ -27,9 +27,9 @@ Text.args = {
 export const Image = Template.bind({});
 Image.args = {
   image: {
-    src: "./surf/surf-thumb-2.jpg",
+    src: "./misc/image-2.jpg",
     width: 1024,
-    height: 768,
+    height: 673,
     alt: "campervan",
   },
   height: 268,

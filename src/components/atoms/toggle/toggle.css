@@ -46,7 +46,7 @@
   width: 22px;
   left: 0;
   bottom: -3px;
-  background-color: var(--utils-highlight-olive);
+  background-color: var(--utils-highlight-orange);
   border-radius: var(--border-radius-50);
   transition: var(--default-transition);
 }
