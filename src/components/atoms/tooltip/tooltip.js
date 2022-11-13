@@ -56,9 +56,10 @@ export class Tooltip {
     this.timeout = setTimeout(this.handleOnMouseOut, 2000);
   }
 
-  handleOnMouseOut() {
+  handleOnMouseOut(e) {
     clearTimeout(this.timeout);
     this.tooltip.classList.remove("show");
+    if (!e) this.button.blur();
   }
 
   render() {
