@@ -12,5 +12,16 @@ const Template = ({ ...args }) => {
   return sr.render();
 };
 
-export const Simple = Template.bind({});
-Simple.args = {};
+export const EmptyRating = Template.bind({});
+EmptyRating.args = {};
+
+export const SetRating = Template.bind({});
+SetRating.args = {
+  currentRating: 3,
+};
+
+export const DisabledRating = Template.bind({});
+DisabledRating.args = {
+  currentRating: 2,
+  disabled: true,
+}

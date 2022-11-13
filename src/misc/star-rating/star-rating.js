@@ -3,9 +3,13 @@
 import "./star-rating.css";
 
 export class StarRating {
-  constructor({ onChange }) {
+  constructor({ currentRating, disabled, onChange }) {
+    this.state = {
+      currentRating: undefined, // number
+      disabled: undefined, // boolean
+    }
+
     this.onChange = onChange;
-    this.currentRating = 0;
     this.stars = [];
 
     this.updateRating = this.updateRating.bind(this);
@@ -22,25 +26,37 @@ export class StarRating {
       star.classList.add("ratings-star");
       star.id = i;
       star.innerHTML = "&starf;";
-      star.addEventListener("click", this.updateRating);
+
+      if (!disabled) star.addEventListener("click", this.updateRating);
+      else star.classList.add("disabled");
+
       this.stars.push(star);
       this.content.appendChild(star);
     }
+
+    this.update({ currentRating, disabled });
+  }
+
+  update({ currentRating, disabled }) {
+    if (currentRating !== undefined) this.state.currentRating = currentRating;
+    if (disabled !== undefined) this.state.disabled = disabled;
   }
 
   updateRating(e) {
-    this.currentRating = e.target.id;
+    this.update({ currentRating: e.target.id })
+    this.render();
+    if (this.onChange) this.onChange(e);
+  }
+
+  render() {
     this.stars.forEach((star) => {
-      if (star.id <= this.currentRating) {
+      if (star.id <= this.state.currentRating) {
         star.classList.add("active");
       } else {
         star.classList.remove("active");
       }
     });
-    if (this.onChange) this.onChange(e);
-  }
 
-  render() {
     return this.container;
   }
 }

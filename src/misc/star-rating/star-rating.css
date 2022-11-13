@@ -30,6 +30,10 @@
   color: var(--fancy-gold);
 }
 
+.ratings-star.disabled {
+  pointer-events: none;
+}
+
 .ratings-star:not(.active):hover,
 .ratings-star:not(.active):hover ~ .ratings-star {
   color: var(--fancy-gold);
