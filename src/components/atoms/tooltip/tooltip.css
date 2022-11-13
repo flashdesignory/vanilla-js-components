@@ -29,14 +29,12 @@
   visibility: hidden;
 }
 
-.tooltip-container .button:hover + .tooltip {
-  animation: remove 3s ease forwards;
-}
+/* .tooltip-container .button:hover + .tooltip {
+ visibility: visible;
+} */
 
-@keyframes remove {
-    0% {visibility: visible;}
-    99% {visibility: visible;}
-    100% {visibility: hidden;}
+.tooltip.show {
+    visibility: visible;
 }
 
 .bottom {
