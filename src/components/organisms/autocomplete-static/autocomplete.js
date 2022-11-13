@@ -10,7 +10,7 @@ import { debounce } from "../../../lib/utils.js";
 export class AutoComplete {
   constructor({ data = [], title, errorText }) {
     this.state = {
-      data: [],
+      data: [], // string[]
       title: undefined, // string
       errorText: undefined, // string
     };

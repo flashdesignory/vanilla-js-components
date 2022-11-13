@@ -15,7 +15,7 @@ export class List {
     role = "list",
   }) {
     this.state = {
-      data: [], // array of data to display
+      data: [], // unknown[]
       insertionMethod: undefined, // "append" | "prepend" | string | undefined
       emptyListText, // string
       ItemClass, // class

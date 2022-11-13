@@ -6,7 +6,7 @@ import { RadioButton } from "./radio-button.js";
 export class RadiobuttonGroup {
   constructor({ data, name, onChange }) {
     this.state = {
-      data: undefined, // array of input props
+      data: undefined, // string[]
       name: undefined, // string
     };
 

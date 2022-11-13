@@ -6,7 +6,7 @@ import { Checkbox } from "./checkbox.js";
 export class CheckboxGroup {
   constructor({ data, name, onChange }) {
     this.state = {
-      data: undefined, // array of input props
+      data: undefined, // string[]
       name: undefined, // string
     };
 

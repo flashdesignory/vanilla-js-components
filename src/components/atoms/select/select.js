@@ -7,7 +7,7 @@ export class Select {
     this.state = {
       id: undefined, // string
       multiple: undefined, // boolean
-      data: undefined, // array of items to display
+      data: undefined, // string[]
     };
 
     this.onChange = onChange;

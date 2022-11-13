@@ -12,7 +12,7 @@ export class DisplayCard extends DisplayCardBase {
       id: undefined, // string
       height: undefined, // number
       y: undefined, // number
-      data: undefined, // { avatar, text, image, metadata }
+      data: undefined, // { avatar: Avatar, text: string, image: Image, metadata: string }
     };
 
     this.content = document.createElement("div");

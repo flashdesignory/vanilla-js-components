@@ -15,7 +15,7 @@ export class InputForm {
     this.state = {
       id: undefined, // string
       placeholder: undefined, // string
-      value: undefined, // unknown
+      value: undefined, // string
       submitText: undefined, // string
     };
 

@@ -12,7 +12,7 @@ export class TodoList {
     this.state = {
       title: undefined, // string
       name: undefined, // string
-      data: undefined, // array of items
+      data: undefined, // { task: string, completed: boolean }[]
       prompt: undefined, // string
       submitText: undefined, // string
     };

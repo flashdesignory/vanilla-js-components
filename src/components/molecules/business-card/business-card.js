@@ -9,10 +9,10 @@ import { Link } from "../../atoms/link/link.js";
 export class BusinessCard {
   constructor({ image, name, title, links }) {
     this.state = {
-      image: undefined, // Image class props
+      image: undefined, // Image
       name: undefined, // string
       title: undefined, // string
-      links: undefined, // array of links
+      links: undefined, // Links[]
     };
     this.list = [];
 

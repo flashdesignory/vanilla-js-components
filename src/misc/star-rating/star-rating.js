@@ -7,7 +7,7 @@ export class StarRating {
     this.state = {
       currentRating: undefined, // number
       disabled: undefined, // boolean
-    }
+    };
 
     this.onChange = onChange;
     this.stars = [];
@@ -43,7 +43,7 @@ export class StarRating {
   }
 
   updateRating(e) {
-    this.update({ currentRating: e.target.id })
+    this.update({ currentRating: e.target.id });
     this.render();
     if (this.onChange) this.onChange(e);
   }

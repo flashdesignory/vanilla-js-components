@@ -24,4 +24,4 @@ export const DisabledRating = Template.bind({});
 DisabledRating.args = {
   currentRating: 2,
   disabled: true,
-}
+};

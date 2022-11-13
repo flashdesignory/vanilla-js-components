@@ -19,7 +19,7 @@ export class Image {
       alt: undefined, // string
       width: undefined, // string
       height: undefined, // string
-      sources: [], // array of picture sources
+      sources: [], // { srcset: string, type: "image/webp" | "image/jpeg" }[]
     };
 
     this.imageClass = imageClass;

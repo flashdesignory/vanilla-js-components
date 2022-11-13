@@ -15,7 +15,7 @@ export class InfiniteList {
     onLastItem,
   }) {
     this.state = {
-      data: [], // unkown[]
+      data: [], // {id: string, text: string, metadata: string, avatar: string }[]
       visibleItems: undefined, // number
       itemHeight: undefined, // number
       itemWidth: undefined, // number

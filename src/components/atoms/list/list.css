@@ -11,8 +11,7 @@
 .list-container {
   background: var(--neutrals-white);
   border-radius: var(--border-radius-large);
-  padding:
-    var(--content-spacing-medium) 0 var(--content-spacing-medium)
+  padding: var(--content-spacing-medium) 0 var(--content-spacing-medium)
     var(--content-spacing-medium);
   max-width: 400px;
   width: 100%;
