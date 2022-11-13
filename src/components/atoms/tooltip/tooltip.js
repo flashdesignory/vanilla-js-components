@@ -30,6 +30,7 @@ export class Tooltip {
     this.button = document.createElement("button");
     this.button.classList.add("button");
     this.button.addEventListener("mouseover", this.handleOnMouseOver);
+    this.button.addEventListener("click", this.handleOnMouseOver);
     this.button.addEventListener("mouseleave", this.handleOnMouseOut);
     this.button.addEventListener("mouseout", this.handleOnMouseOut);
     this.container.appendChild(this.button);
@@ -53,10 +54,10 @@ export class Tooltip {
   handleOnMouseOver() {
     clearTimeout(this.timeout);
     this.tooltip.classList.add("show");
-    this.timeout = setTimeout(() => this.button.parentElement.focus(), 2000);
+    this.timeout = setTimeout(this.handleOnMouseOut, 2000);
   }
 
-  handleOnMouseOut(e) {
+  handleOnMouseOut() {
     clearTimeout(this.timeout);
     this.tooltip.classList.remove("show");
   }
