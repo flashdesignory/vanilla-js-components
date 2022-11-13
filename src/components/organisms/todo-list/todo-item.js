@@ -3,7 +3,11 @@ import { Checkbox } from "../../atoms/checkbox/checkbox";
 
 export class TodoItem {
   constructor({ name, value, onChange, onDelete }) {
-    this.state = {};
+    this.state = {
+      name: undefined, // string
+      value: undefined, // { task: string, completed: boolean }
+    };
+
     this.onChange = onChange;
     this.onDelete = onDelete;
 

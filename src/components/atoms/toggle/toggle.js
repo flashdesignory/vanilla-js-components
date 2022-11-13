@@ -4,7 +4,10 @@ import "./toggle.css";
 
 export class Toggle {
   constructor({ checked, id }) {
-    this.state = {};
+    this.state = {
+      id: undefined, // string
+      checked: undefined, // boolean
+    };
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleChange = this.handleChange.bind(this);
 

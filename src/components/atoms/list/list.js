@@ -12,10 +12,16 @@ export class List {
     emptyListText,
     ItemClass,
     title,
-    // role = "listbox",
-    role="list"
+    role = "list",
   }) {
-    this.state = { data: [] };
+    this.state = {
+      data: [], // array of data to display
+      insertionMethod: undefined, // "append" | "prepend" | string | undefined
+      emptyListText, // string
+      ItemClass, // class
+      title, // string
+      role: undefined, // "listbox" | "list"
+    };
     this.items = [];
 
     this.onClick = onClick;

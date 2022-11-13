@@ -7,7 +7,11 @@ import { Text } from "../../atoms/text/text.js";
 
 export class PollWidget {
   constructor({ title, name, data }) {
-    this.state = {};
+    this.state = {
+      title: undefined, // string
+      name: undefined, // string
+      data: undefined, // string[]
+    };
     this.elements = [];
     this.totalClicks = 0;
     this.clicks = {};

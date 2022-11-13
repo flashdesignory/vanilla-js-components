@@ -9,7 +9,14 @@ import { hasValidMin } from "../../../lib/index.js";
 
 export class TodoList {
   constructor({ title, name, data, prompt, submitText }) {
-    this.state = {};
+    this.state = {
+      title: undefined, // string
+      name: undefined, // string
+      data: undefined, // array of items
+      prompt: undefined, // string
+      submitText: undefined, // string
+    };
+
     this.updateItem = this.updateItem.bind(this);
     this.addItem = this.addItem.bind(this);
     this.deleteItem = this.deleteItem.bind(this);

@@ -1,10 +1,9 @@
 export class Item {
-  constructor({ 
-    label, 
-    // role = "option" 
-    role = "listitem"
-}) {
-    this.state = {};
+  constructor({ label, role = "listitem" }) {
+    this.state = {
+      label: undefined, // string
+      role: undefined, // "listitem" | "option"
+    };
 
     this.item = document.createElement("li");
     this.item.classList.add("list-li");

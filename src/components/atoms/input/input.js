@@ -15,7 +15,14 @@ export class Input {
     label,
     hideLabel,
   }) {
-    this.state = {};
+    this.state = {
+      id: undefined, // string
+      placeholder: undefined, // string
+      value: undefined, // unknown
+      label: undefined, // string
+      hideLabel: undefined, // boolean
+    };
+
     this.type = type;
     this.onInput = onInput;
     this.onFocus = onFocus;

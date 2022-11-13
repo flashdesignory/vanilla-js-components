@@ -31,7 +31,12 @@ const getIndex = (items, scrollTop) => {
 
 export class DynamicList {
   constructor({ data, displayHeight, displayWidth, amountRowsBuffered }) {
-    this.state = { data: [] };
+    this.state = {
+      data: [], // unkown[]
+      displayHeight: undefined, // number
+      displayWidth: undefined, // number
+      amountRowsBuffered: undefined, // number
+    };
 
     this.items = {};
     this.positions = [];

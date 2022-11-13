@@ -5,7 +5,11 @@ import { Checkbox } from "./checkbox.js";
 
 export class CheckboxGroup {
   constructor({ data, name, onChange }) {
-    this.state = {};
+    this.state = {
+      data: undefined, // array of input props
+      name: undefined, // string
+    };
+
     this.onChange = onChange;
     this.update({ data, name });
   }

@@ -4,7 +4,10 @@ import "./button.css";
 
 export class Button {
   constructor({ type, label, onClick }) {
-    this.state = {};
+    this.state = {
+      label: undefined, // string
+    };
+
     this.onClick = onClick;
     this.type = type; // "primary" | "secondary" | "icon"
 

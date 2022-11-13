@@ -4,7 +4,14 @@ import "./link.css";
 
 export class Link {
   constructor({ name, type = "text", label, url, target = "_blank" }) {
-    this.state = {};
+    this.state = {
+      name: undefined, // string
+      type: undefined, // "icon" | "text"
+      label: undefined, // string
+      url: undefined, // string
+      target: undefined, // "_blank" | string
+    };
+
     this.update({ name, type, label, url, target });
   }
 

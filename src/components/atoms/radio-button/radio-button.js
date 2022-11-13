@@ -4,7 +4,13 @@ import "./radio-button.css";
 
 export class RadioButton {
   constructor({ id, name, label, onChange, checked }) {
-    this.state = {};
+    this.state = {
+      id: undefined, // string
+      name: undefined, // string
+      label: undefined, // string
+      checked: undefined, // boolean
+    };
+
     this.onChange = onChange;
     this.handleOnChange = this.handleOnChange.bind(this);
 

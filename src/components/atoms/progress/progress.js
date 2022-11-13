@@ -4,7 +4,10 @@ import "./progress.css";
 
 export class Progress {
   constructor({ percentage, active }) {
-    this.state = {};
+    this.state = {
+      active: undefined, // boolean
+      percentage: undefined, // number
+    };
 
     this.container = document.createElement("div");
     this.container.classList.add("progress-container");

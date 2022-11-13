@@ -5,17 +5,22 @@ import { RadioButton } from "./radio-button.js";
 
 export class RadiobuttonGroup {
   constructor({ data, name, onChange }) {
+    this.state = {
+      data: undefined, // array of input props
+      name: undefined, // string
+    };
+
     this.onChange = onChange;
     this.update({ data, name });
   }
 
   update({ data, name }) {
-    this.data = data;
-    this.name = name;
+    if (data !== undefined) this.state.data = data;
+    if (name !== undefined) this.state.name = name;
 
-    this.inputs = data.map((item) => {
+    this.inputs = this.state.data.map((item) => {
       const checkbox = new RadioButton({
-        name: this.name,
+        name: this.state.name,
         label: item,
         id: item,
         onChange: this.onChange,

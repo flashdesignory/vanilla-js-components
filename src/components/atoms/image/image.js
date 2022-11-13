@@ -14,7 +14,14 @@ export class Image {
     fadeIn = false,
     sources,
   }) {
-    this.state = { sources: [] };
+    this.state = {
+      src: undefined, // string
+      alt: undefined, // string
+      width: undefined, // string
+      height: undefined, // string
+      sources: [], // array of picture sources
+    };
+
     this.imageClass = imageClass;
     this.containerClass = containerClass;
     this.style = style;

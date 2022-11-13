@@ -4,7 +4,10 @@ import { Progress } from "../../atoms/progress/progress.js";
 
 export class PollWidgetItem {
   constructor({ name, value, onChange }) {
-    this.state = {};
+    this.state = {
+      name: undefined, // string
+      value: undefined, // number
+    };
 
     this.onChange = onChange;
     this.handleOnChange = this.handleOnChange.bind(this);

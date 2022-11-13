@@ -4,7 +4,9 @@ import "./text.css";
 
 export class Text {
   constructor({ text, containerClass, truncate }) {
-    this.state = {};
+    this.state = {
+      text: undefined, // string
+    };
     this.containerClass = containerClass;
     this.truncate = truncate;
 

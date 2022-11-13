@@ -14,7 +14,14 @@ export class InfiniteList {
     amountRowsBuffered,
     onLastItem,
   }) {
-    this.state = { data: [] };
+    this.state = {
+      data: [], // unkown[]
+      visibleItems: undefined, // number
+      itemHeight: undefined, // number
+      itemWidth: undefined, // number
+      amountRowsBuffered: undefined, // number
+    };
+
     // keep track of props within the class
     this.onLastItem = onLastItem;
     // initial values

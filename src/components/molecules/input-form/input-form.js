@@ -12,7 +12,13 @@ export class InputForm {
     submitText = "Submit!",
     onSubmit,
   }) {
-    this.state = {};
+    this.state = {
+      id: undefined, // string
+      placeholder: undefined, // string
+      value: undefined, // unknown
+      submitText: undefined, // string
+    };
+
     this.onSubmit = onSubmit;
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
     this.handleOnInput = this.handleOnInput.bind(this);

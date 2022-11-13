@@ -7,7 +7,13 @@ export class DisplayCard extends DisplayCardBase {
   constructor(props) {
     super();
 
-    this.state = {};
+    this.state = {
+      index: undefined, // number
+      id: undefined, // string
+      height: undefined, // number
+      y: undefined, // number
+      data: undefined, // { avatar, text, image, metadata }
+    };
 
     this.content = document.createElement("div");
     this.content.classList.add("item-content");

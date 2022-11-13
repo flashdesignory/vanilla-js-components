@@ -4,7 +4,9 @@ import "./loader.css";
 
 export class Loader {
   constructor({ size = 120 }) {
-    this.state = {};
+    this.state = {
+      size: undefined, // number
+    };
 
     this.container = document.createElement("div");
     this.container.classList.add("loader-container");
@@ -13,7 +15,7 @@ export class Loader {
   }
 
   update({ size }) {
-    this.state.size = size;
+    if (size !== undefined) this.state.size = size;
   }
 
   render() {

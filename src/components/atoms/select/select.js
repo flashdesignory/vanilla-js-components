@@ -4,7 +4,12 @@ import "./select.css";
 
 export class Select {
   constructor({ id, multiple, data, onChange }) {
-    this.state = {};
+    this.state = {
+      id: undefined, // string
+      multiple: undefined, // boolean
+      data: undefined, // array of items to display
+    };
+
     this.onChange = onChange;
     this.handleOnChange = this.handleOnChange.bind(this);
 

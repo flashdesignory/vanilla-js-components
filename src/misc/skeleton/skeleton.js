@@ -4,7 +4,9 @@ import "./skeleton.css";
 
 export class Skeleton {
   constructor({ avatarShape = "square" }) {
-    this.state = {};
+    this.state = {
+      avatarShape: undefined, // "square" | "circle"
+    };
 
     this.container = document.createElement("div");
     this.container.classList.add("skeleton-container");

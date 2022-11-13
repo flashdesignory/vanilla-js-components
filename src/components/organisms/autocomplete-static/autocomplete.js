@@ -9,7 +9,11 @@ import { debounce } from "../../../lib/utils.js";
 
 export class AutoComplete {
   constructor({ data = [], title, errorText }) {
-    this.state = { data: [] };
+    this.state = {
+      data: [],
+      title: undefined, // string
+      errorText: undefined, // string
+    };
 
     this.handleOnInput = this.handleOnInput.bind(this);
     this.handleOnClick = this.handleOnClick.bind(this);
@@ -36,7 +40,7 @@ export class AutoComplete {
     this.list = new List({
       onClick: this.handleOnClick,
       title: "results list",
-      role: "listbox"
+      role: "listbox",
     });
     this.container.appendChild(this.list.render());
 

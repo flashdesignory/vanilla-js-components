@@ -13,7 +13,14 @@ export class VirtualList {
     itemWidth,
     amountRowsBuffered,
   }) {
-    this.state = { data: [] };
+    this.state = {
+      data: [], // unkown[]
+      visibleItems: undefined, // number
+      itemHeight: undefined, // number
+      itemWidth: undefined, // number
+      amountRowsBuffered: undefined, // number
+    };
+
     // initial values
     this.items = {};
     this.scrollTop = 0;
