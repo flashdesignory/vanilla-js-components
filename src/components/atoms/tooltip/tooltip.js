@@ -64,7 +64,7 @@ export class Tooltip {
 
   render() {
     if (this.state.id !== undefined) {
-      this.button.setAttribute("aria-labeledby", this.state.id);
+      this.button.setAttribute("aria-labelledby", this.state.id);
       this.tooltip.id = this.state.id;
     }
 
