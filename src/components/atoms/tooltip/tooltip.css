@@ -1,0 +1,117 @@
+@import url("../../../styles/colors.css");
+@import url("../../../styles/fonts.css");
+@import url("../../../styles/layout.css");
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  font-family: var(--default-font-family);
+  font-size: var(--font-size-medium);
+}
+
+.tooltip-container .button {
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0;
+  border: none;
+  background: none;
+  border-radius: 0;
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 100;
+  border-radius: var(--border-radius-small);
+  padding: var(--content-spacing-small);
+  background-color: var(--utils-highlight-orange);
+  color: var(--neutrals-white);
+  white-space: nowrap;
+  visibility: hidden;
+}
+
+.tooltip-container .button:hover + .tooltip {
+  visibility: visible;
+}
+
+.bottom {
+  /* center */
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* offset */
+  top: 100%;
+  margin-top: var(--content-spacing-medium);
+}
+
+.top {
+  /* center */
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* offset */
+  bottom: 100%;
+  margin-bottom: var(--content-spacing-medium);
+}
+
+.right {
+  /* center */
+  top: 50%;
+  transform: translateY(-50%);
+
+  /* offset */
+  left: 100%;
+  margin-left: var(--content-spacing-medium);
+}
+
+.left {
+  /* center */
+  top: 50%;
+  transform: translateY(-50%);
+
+  /* offset */
+  right: 100%;
+  margin-right: var(--content-spacing-medium);
+}
+
+.tooltip::after {
+  content: " ";
+  position: absolute;
+  border-width: var(--content-spacing-small);
+  border-style: solid;
+}
+
+.tooltip.top::after {
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: calc(var(--content-spacing-small) * -1);
+  border-color:
+    var(--utils-highlight-orange) transparent transparent
+    transparent;
+}
+
+.tooltip.bottom::after {
+  bottom: 100%; /* At the top of the tooltip */
+  left: 50%;
+  margin-left: calc(var(--content-spacing-small) * -1);
+  border-color:
+    transparent transparent var(--utils-highlight-orange)
+    transparent;
+}
+
+.tooltip.right::after {
+  top: 50%;
+  right: 100%; /* To the left of the tooltip */
+  margin-top: calc(var(--content-spacing-small) * -1);
+  border-color:
+    transparent var(--utils-highlight-orange) transparent
+    transparent;
+}
+
+.tooltip.left::after {
+  top: 50%;
+  left: 100%; /* To the right of the tooltip */
+  margin-top: calc(var(--content-spacing-small) * -1);
+  border-color:
+    transparent transparent transparent
+    var(--utils-highlight-orange);
+}
