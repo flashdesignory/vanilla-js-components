@@ -31,6 +31,12 @@
 
 .tooltip-container .button:hover + .tooltip {
   visibility: visible;
+  animation: remove 3s ease forwards;
+}
+
+@keyframes remove {
+    99% {visibility: visible;}
+    100% {visibility: hidden;}
 }
 
 .bottom {
