@@ -53,7 +53,7 @@ export class Tooltip {
   handleOnMouseOver() {
     clearTimeout(this.timeout);
     this.tooltip.classList.add("show");
-    this.timeout = setTimeout(() => this.button.dispatchEvent(new Event("mouseout")), 2000);
+    this.timeout = setTimeout(() => this.button.parentElement.focus(), 2000);
   }
 
   handleOnMouseOut(e) {
