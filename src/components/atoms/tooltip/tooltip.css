@@ -37,7 +37,7 @@
     visibility: visible;
 }
 
-.tooltip-container .bottom {
+.tooltip-container .tooltip.bottom {
   /* center */
   left: 50%;
   transform: translateX(-50%);
@@ -47,7 +47,7 @@
   margin-top: var(--content-spacing-medium);
 }
 
-.tooltip-container .top {
+.tooltip-container .tooltip.top {
   /* center */
   left: 50%;
   transform: translateX(-50%);
@@ -57,7 +57,7 @@
   margin-bottom: var(--content-spacing-medium);
 }
 
-.tooltip-container .right {
+.tooltip-container .tooltip.right {
   /* center */
   top: 50%;
   transform: translateY(-50%);
@@ -67,7 +67,7 @@
   margin-left: var(--content-spacing-medium);
 }
 
-.tooltip-container .left {
+.tooltip-container .tooltip.left {
   /* center */
   top: 50%;
   transform: translateY(-50%);

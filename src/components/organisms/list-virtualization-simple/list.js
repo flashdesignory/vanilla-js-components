@@ -31,7 +31,6 @@ export class VirtualList {
 
     this.content = document.createElement("div");
     this.content.classList.add("list-content");
-    this.content.style.height = `${this.totalHeight}px`;
     this.container.appendChild(this.content);
     // bind functions
     this.handleOnScroll = this.handleOnScroll.bind(this);
