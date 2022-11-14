@@ -1,0 +1,23 @@
+@import url("../../../styles/colors.css");
+@import url("../../../styles/layout.css");
+
+.carousel-container,
+.carousel-container * {
+  box-sizing: border-box;
+}
+
+.carousel-container {
+  height: 100%;
+  background-color: transparent;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  border-radius: var(--border-radius-small);
+  box-shadow: var(--content-shadow);
+  position: relative;
+}
+
+.carousel-container .carousel-content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}

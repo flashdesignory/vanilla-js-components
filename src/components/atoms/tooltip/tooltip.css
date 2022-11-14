@@ -34,7 +34,7 @@
 } */
 
 .tooltip-container .tooltip.show {
-    visibility: visible;
+  visibility: visible;
 }
 
 .tooltip-container .tooltip.bottom {
