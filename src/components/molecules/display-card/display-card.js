@@ -110,6 +110,7 @@ export class DisplayCard extends DisplayCardBase {
         case "metadata":
           this[name] = new Text({
             ...data,
+            truncate: true,
             containerClass: className,
           });
           break;
