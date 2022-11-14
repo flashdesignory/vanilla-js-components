@@ -1,12 +1,12 @@
 @import url("../../../styles/colors.css");
 @import url("../../../styles/layout.css");
 
-.carousel-container,
-.carousel-container * {
+.image-slider-container,
+.image-slider-container * {
   box-sizing: border-box;
 }
 
-.carousel-container {
+.image-slider-container {
   height: 100%;
   background-color: transparent;
   overflow-x: scroll;
@@ -16,7 +16,7 @@
   position: relative;
 }
 
-.carousel-container .carousel-content {
+.image-slider-container .image-slider-content {
   display: flex;
   flex-direction: row;
   width: 100%;

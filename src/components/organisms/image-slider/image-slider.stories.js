@@ -1,8 +1,8 @@
-import { Carousel } from "./carousel";
+import { ImageSlider } from "./image-slider";
 import { data } from "./data.js";
 
 export default {
-  title: "Organisms/Carousel",
+  title: "Organisms/ImageSlider",
   argTypes: {
     data: { control: "json" },
     itemHeight: { control: "number" },
@@ -11,8 +11,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const carousel = new Carousel({ ...args });
-  return carousel.render();
+  const slider = new ImageSlider({ ...args });
+  return slider.render();
 };
 
 export const Simple = Template.bind({});

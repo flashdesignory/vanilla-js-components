@@ -1,10 +1,10 @@
-// import sheet from './carousel.css' assert { type: 'css' };
+// import sheet from './image-slider.css' assert { type: 'css' };
 // document.adoptedStyleSheets.push(sheet);
-import "./carousel.css";
+import "./image-slider.css";
 
 import { DisplayImage } from "../../molecules/display-image/display-image.js";
 
-export class Carousel {
+export class ImageSlider {
   constructor({ data = [], itemHeight, itemWidth }) {
     this.state = {
       data: [], // {src: string }[]
@@ -16,11 +16,11 @@ export class Carousel {
     this.items = {};
 
     this.container = document.createElement("div");
-    this.container.classList.add("carousel-container");
+    this.container.classList.add("image-slider-container");
     this.container.tabIndex = 0;
 
     this.content = document.createElement("div");
-    this.content.classList.add("carousel-content");
+    this.content.classList.add("image-slider-content");
     this.container.appendChild(this.content);
 
     this.update({ data, itemWidth, itemHeight });
