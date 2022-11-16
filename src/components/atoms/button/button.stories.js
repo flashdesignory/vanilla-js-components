@@ -28,6 +28,6 @@ Secondary.args = {
 
 export const Icon = Template.bind({});
 Icon.args = {
-  label: ArrowLeft,
+  label: ArrowLeft({ width: "44", height: "44" }),
   type: "icon",
 };

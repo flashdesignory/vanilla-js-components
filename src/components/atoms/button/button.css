@@ -19,6 +19,11 @@
   font-family: var(--default-font-family);
 }
 
+.button:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
 .button-primary {
   background-color: var(--utils-gray-dark);
   border-color: var(--utils-gray-dark);
@@ -44,8 +49,18 @@
 .button-icon {
   border: none;
   background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
 }
 
 .button-icon:hover {
   opacity: 0.5;
+}
+
+.button-icon svg path {
+  fill: var(--utils-gray-dark);
+  transition: var(--default-transition);
 }

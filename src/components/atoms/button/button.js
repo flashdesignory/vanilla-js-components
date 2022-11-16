@@ -3,29 +3,40 @@
 import "./button.css";
 
 export class Button {
-  constructor({ type, label, onClick }) {
+  constructor({ type, label, onClick, containerClass, disabled }) {
     this.state = {
       label: undefined, // string
+      disabled: undefined, // boolean
     };
 
     this.onClick = onClick;
     this.type = type; // "primary" | "secondary" | "icon"
+    this.containerClass = containerClass;
 
     this.handleOnClick = this.handleOnClick.bind(this);
 
     this.container = document.createElement("div");
     this.container.classList.add("button-container");
+
+    if (this.containerClass) {
+      this.container.classList.add(this.containerClass);
+    }
+
     this.button = document.createElement("button");
     this.button.classList.add("button", `button-${this.type}`);
 
     this.button.addEventListener("click", this.handleOnClick);
     this.container.appendChild(this.button);
 
-    this.update({ label });
+    this.update({ label, disabled });
   }
 
-  update({ label }) {
+  update({ label, disabled }) {
     if (label !== undefined) this.state.label = label;
+    if (disabled !== undefined) {
+      this.state.disabled = disabled;
+      this.button.disabled = this.state.disabled;
+    }
   }
 
   fireEvent() {

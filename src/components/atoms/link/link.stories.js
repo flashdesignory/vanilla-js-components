@@ -30,7 +30,7 @@ export const IconLink = Template.bind({});
 IconLink.args = {
   name: "flashdesignory",
   type: "icon",
-  label: WebsiteIcon,
+  label: WebsiteIcon({}),
   url: "https://flashdesignory.github.io/",
   target: "_blank",
 };
