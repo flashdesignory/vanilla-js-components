@@ -1,0 +1,44 @@
+@import url("../../../styles/colors.css");
+@import url("../../../styles/layout.css");
+@import url("../../../styles/transitions.css");
+
+.image-carousel-container,
+.image-carousel-container * {
+  box-sizing: border-box;
+}
+
+.image-carousel-container {
+  height: 100%;
+  background-color: transparent;
+  overflow: hidden;
+  border-radius: var(--border-radius-small);
+  box-shadow: var(--content-shadow);
+  position: relative;
+}
+
+.image-carousel-container .image-carousel-content {
+  position: absolute;
+  min-width: 100%;
+  height: 100%;
+  transition: var(--default-transition);
+  display: flex;
+  flex-direction: row;
+}
+
+.image-carousel-container .button-container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.image-carousel-container .button-container.next {
+  width: 44px;
+  height: 44px;
+  right: 10px;
+}
+
+.image-carousel-container .button-container.prev {
+  width: 44px;
+  height: 44px;
+  left: 10px;
+}
