@@ -37,7 +37,7 @@ export class Avatar {
       const image = new Image({ fadeIn: true, ...this.state.image });
       this.container.appendChild(image.render());
     } else {
-      this.container.insertAdjacentHTML("afterbegin", DefaultAvatar);
+      this.container.insertAdjacentHTML("afterbegin", DefaultAvatar());
     }
     return this.container;
   }
