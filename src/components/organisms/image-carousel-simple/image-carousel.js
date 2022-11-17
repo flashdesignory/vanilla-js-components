@@ -33,13 +33,13 @@ export class ImageCarousel {
 
     this.nextButton = new Button({
       type: "icon",
-      label: ArrowRight({ width: "44", height: "44" }),
+      label: ArrowRight({ width: "33", height: "33" }),
       onClick: this.next,
       containerClass: "next",
     });
     this.prevButton = new Button({
       type: "icon",
-      label: ArrowLeft({ width: "44", height: "44" }),
+      label: ArrowLeft({ width: "33", height: "33" }),
       onClick: this.prev,
       containerClass: "prev",
       disabled: true,
