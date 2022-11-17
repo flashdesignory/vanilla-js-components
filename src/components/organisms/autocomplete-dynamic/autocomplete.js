@@ -35,7 +35,7 @@ export class AutoComplete {
 
     this.input = new Input({
       id: "search-input",
-      type: "text",
+      type: "search",
       placeholder: "Start typing..",
       onInput: debounced,
     });
