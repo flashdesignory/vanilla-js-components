@@ -33,3 +33,20 @@
   isolation: isolate;
   box-shadow: var(--content-shadow);
 }
+
+.display-image-container .item-placeholder {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.display-image-container .item-placeholder svg {
+  width: 50%;
+  height: 50%;
+  fill: var(--neutrals-gray-128);
+  opacity: 0.25;
+}

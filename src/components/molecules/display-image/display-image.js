@@ -2,6 +2,7 @@
 // document.adoptedStyleSheets.push(sheet);
 import "./display-image.css";
 
+import { ImageIcon } from "../../../assets/image.js";
 import { getAspectRatioForStyles } from "../../../lib/image.js";
 import { Image } from "../../atoms/image/image.js";
 
@@ -23,6 +24,11 @@ export class DisplayImage {
     this.content = document.createElement("div");
     this.content.classList.add("item-content");
     this.container.appendChild(this.content);
+
+    this.placeholder = document.createElement("div");
+    this.placeholder.classList.add("item-placeholder");
+    this.placeholder.insertAdjacentHTML("afterbegin", ImageIcon());
+    this.content.appendChild(this.placeholder);
 
     if (props) this.update(props);
   }
@@ -54,9 +60,10 @@ export class DisplayImage {
     }
 
     if (this.state.data !== undefined) {
-      this.content.replaceChildren();
-      const image = new Image({ ...this.state.data });
-      this.content.appendChild(image.render());
+      // this.content.replaceChildren();
+      const image = new Image({ ...this.state.data, fadeIn: true });
+      const element = image.render();
+      this.content.appendChild(element);
     }
 
     return this.container;
