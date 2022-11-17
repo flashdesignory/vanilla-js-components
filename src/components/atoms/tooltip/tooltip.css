@@ -1,6 +1,7 @@
 @import url("../../../styles/colors.css");
 @import url("../../../styles/fonts.css");
 @import url("../../../styles/layout.css");
+@import url("../../../styles/transitions.css");
 
 .tooltip-container {
   position: relative;
@@ -27,6 +28,8 @@
   color: var(--neutrals-white);
   white-space: nowrap;
   visibility: hidden;
+  opacity: 0;
+  transition: var(--default-transition);
 }
 
 /* .tooltip-container .button:hover + .tooltip {
@@ -35,6 +38,7 @@
 
 .tooltip-container .tooltip.show {
   visibility: visible;
+  opacity: 1;
 }
 
 .tooltip-container .tooltip.bottom {
