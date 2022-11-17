@@ -40,13 +40,13 @@
 .dynamic-carousel-container .button-container.next-button {
   width: 44px;
   height: 44px;
-  right: 0px;
+  right: 0;
 }
 
 .dynamic-carousel-container .button-container.prev-button {
   width: 44px;
   height: 44px;
-  left: 0px;
+  left: 0;
 }
 
 .dynamic-carousel-container .dynamic-carousel-content .prev-slide.right-to-left {
@@ -58,11 +58,13 @@
 }
 
 .dynamic-carousel-container .dynamic-carousel-content .next-slide.right-to-left {
-  animation: next-right-to-left 0.3s forwards;
+  /* animation: next-right-to-left 0.3s forwards; */
+  transform: translateX(100%);
 }
 
 .dynamic-carousel-container .dynamic-carousel-content .prev-slide.left-to-right {
-  animation: prev-left-to-right 0.3s forwards;
+  /* animation: prev-left-to-right 0.3s forwards; */
+  transform: translateX(-100%);
 }
 
 .dynamic-carousel-container .dynamic-carousel-content .current-slide.left-to-right {
