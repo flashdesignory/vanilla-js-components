@@ -24,11 +24,11 @@ export class ImageCarousel {
     this.update = this.update.bind(this);
 
     this.container = document.createElement("div");
-    this.container.classList.add("image-carousel-container");
+    this.container.classList.add("simple-carousel-container");
     this.container.tabIndex = 0;
 
     this.content = document.createElement("div");
-    this.content.classList.add("image-carousel-content");
+    this.content.classList.add("simple-carousel-content");
     this.container.appendChild(this.content);
 
     this.nextButton = new Button({

@@ -1,0 +1,104 @@
+@import url("../../../styles/colors.css");
+@import url("../../../styles/layout.css");
+@import url("../../../styles/transitions.css");
+
+.dynamic-carousel-container,
+.dynamic-carousel-container * {
+  box-sizing: border-box;
+}
+
+.dynamic-carousel-container {
+  height: 100%;
+  background-color: transparent;
+  overflow: hidden;
+  border-radius: var(--border-radius-small);
+  box-shadow: var(--content-shadow);
+  position: relative;
+}
+
+.dynamic-carousel-container .dynamic-carousel-content {
+  position: absolute;
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.dynamic-carousel-container .button-container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 11;
+}
+
+.dynamic-carousel-container .display-image-container {
+  position: absolute;
+  transform: translateX(100%);
+  z-index: 1;
+}
+
+.dynamic-carousel-container .button-container.next-button {
+  width: 44px;
+  height: 44px;
+  right: 10px;
+}
+
+.dynamic-carousel-container .button-container.prev-button {
+  width: 44px;
+  height: 44px;
+  left: 10px;
+}
+
+.dynamic-carousel-container .dynamic-carousel-content .prev-slide.right-to-left {
+  animation: prev-right-to-left 0.3s forwards;
+}
+
+.dynamic-carousel-container .dynamic-carousel-content .current-slide.right-to-left {
+  animation: current-right-to-left 0.3s forwards;
+}
+
+.dynamic-carousel-container .dynamic-carousel-content .next-slide.right-to-left {
+  animation: next-right-to-left 0.3s forwards;
+}
+
+.dynamic-carousel-container .dynamic-carousel-content .prev-slide.left-to-right {
+  animation: prev-left-to-right 0.3s forwards;
+}
+
+.dynamic-carousel-container .dynamic-carousel-content .current-slide.left-to-right {
+  animation: current-left-to-right 0.3s forwards;
+}
+
+.dynamic-carousel-container .dynamic-carousel-content .next-slide.left-to-right {
+  animation: next-left-to-right 0.3s forwards;
+}
+
+@keyframes prev-left-to-right {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes current-left-to-right {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes next-left-to-right {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes prev-right-to-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes current-right-to-left {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes next-right-to-left {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(100%); }
+}
