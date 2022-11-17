@@ -40,13 +40,13 @@
 .dynamic-carousel-container .button-container.next-button {
   width: 44px;
   height: 44px;
-  right: 10px;
+  right: 0px;
 }
 
 .dynamic-carousel-container .button-container.prev-button {
   width: 44px;
   height: 44px;
-  left: 10px;
+  left: 0px;
 }
 
 .dynamic-carousel-container .dynamic-carousel-content .prev-slide.right-to-left {
