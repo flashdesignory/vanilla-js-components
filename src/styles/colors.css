@@ -1,7 +1,7 @@
 body {
   /* primary neutrals */
-  --neutrals-white: rgb(255 255 255); /* #ffffff */
-  --neutrals-black: rgb(0 0 0); /* #000000 */
+  --neutrals-white: rgb(255 255 255); /* white, #ffffff */
+  --neutrals-black: rgb(0 0 0); /* black, #000000 */
 
   /* neutral gray */
   --neutrals-gray-102: rgb(102 102 102); /* #666666 */
