@@ -15,7 +15,7 @@
   padding: var(--content-spacing-medium);
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
   font-family: var(--default-font-family);
 }
 
