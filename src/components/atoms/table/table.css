@@ -33,7 +33,6 @@
 
 .table-container thead {
   display: flex;
-  flex: 1;
   width: 100%;
   position: sticky;
   left: 0;
@@ -43,12 +42,12 @@
 
 .table-container tr {
   display: flex;
-  flex: 1;
   position: relative;
   color: var(--utils-gray-dark);
   line-height: var(--font-size-small);
   cursor: pointer;
   transition: var(--default-transition);
+  width: 100%;
 }
 
 .table-container thead tr {
@@ -75,7 +74,7 @@
 .table-container th {
   padding: var(--content-spacing-medium);
   display: flex;
-  flex: 1;
+  width: 100%;
 }
 
 .table-container td:not(:last-child),
