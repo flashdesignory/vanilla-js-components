@@ -58,8 +58,13 @@ export class Table {
 
   rebuild() {
     this.rows = [];
-    this.columNames = Object.keys(this.state.data[0]);
 
+    if (this.state.data !== undefined && this.state.data.length > 0) {
+      this.columNames = Object.keys(this.state.data[0]);
+    } else {
+      this.columNames = [];
+    }
+    
     this.state.data.forEach((entry) => {
       this.rows.push(new Row({ data: entry }));
     });
