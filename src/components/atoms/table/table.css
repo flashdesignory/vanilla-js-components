@@ -1,3 +1,4 @@
+@import url("../../../styles/accessibility.css");
 @import url("../../../styles/colors.css");
 @import url("../../../styles/fonts.css");
 @import url("../../../styles/layout.css");
@@ -30,8 +31,19 @@
   overflow-y: auto;
 }
 
+.table-container thead {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
 .table-container tr {
   display: flex;
+  flex: 1;
   position: relative;
   color: var(--utils-gray-dark);
   line-height: var(--font-size-small);
@@ -39,25 +51,35 @@
   transition: var(--default-transition);
 }
 
+.table-container thead tr {
+  background-color: var(--utils-highlight-orange);
+}
+
 .table-container tr:not(:last-child) {
   border-bottom: 1px solid var(--utils-gray-dark);
 }
 
-.table-container tr:nth-child(even) {
+.table-container tbody tr:nth-child(even) {
   background-color: var(--neutrals-gray-230);
 }
 
-.table-container tr:nth-child(odd) {
+.table-container tbody tr:nth-child(odd) {
   background-color: var(--neutrals-white);
 }
 
-.table-container td {
+.table-container th {
+  border-bottom: 1px solid var(--utils-gray-dark);
+}
+
+.table-container td,
+.table-container th {
   padding: var(--content-spacing-medium);
   display: flex;
   flex: 1;
 }
 
-.table-container td:not(:last-child) {
+.table-container td:not(:last-child),
+.table-container th:not(:last-child) {
   border-right: 1px solid var(--utils-gray-dark);
 }
 

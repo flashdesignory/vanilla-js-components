@@ -14,11 +14,10 @@ export class Row {
   }
 
   render() {
-    Object.keys(this.state.data).forEach((key) => {
+    Object.keys(this.state.data).forEach(key => {
       const cell = document.createElement("td");
       cell.setAttribute("data-attr", key);
-      const text = document.createTextNode(this.state.data[key]);
-      cell.appendChild(text);
+      cell.textContent = this.state.data[key];
       this.tableRow.appendChild(cell);
     });
     return this.tableRow;
