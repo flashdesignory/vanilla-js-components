@@ -77,21 +77,27 @@ export class ImageCarousel {
   }
 
   handleNextClick() {
-    this.animate('next');
+    this.animate("next");
   }
 
   handlePrevClick() {
-    this.animate('prev');
+    this.animate("prev");
   }
 
   applyClasses(direction) {
-    this.current.classList.add('current-slide', direction);
-    this.prev.classList.add('prev-slide', direction);
-    this.next.classList.add('next-slide', direction);
+    this.current.classList.add("current-slide", direction);
+    this.prev.classList.add("prev-slide", direction);
+    this.next.classList.add("next-slide", direction);
   }
 
   removeClasses() {
-    const classesToRemove = ['prev-slide', 'current-slide', 'next-slide', "right-to-left", "left-to-right"];
+    const classesToRemove = [
+      "prev-slide",
+      "current-slide",
+      "next-slide",
+      "right-to-left",
+      "left-to-right",
+    ];
     this.prev.classList.remove(...classesToRemove);
     this.current.classList.remove(...classesToRemove);
     this.next.classList.remove(...classesToRemove);
@@ -100,7 +106,7 @@ export class ImageCarousel {
   animate(direction) {
     this.removeClasses();
 
-    if (direction === 'prev') {
+    if (direction === "prev") {
       [this.prev, this.current, this.next] = [
         this.prev.previousElementSibling || this.content.lastElementChild,
         this.prev,
@@ -127,9 +133,13 @@ export class ImageCarousel {
       this.content.appendChild(item.render());
     });
 
-    this.current = this.content.querySelector('.current-slide') || this.content.firstElementChild;
-    this.prev = this.current.previousElementSibling || this.content.lastElementChild;
-    this.next = this.current.nextElementSibling || this.content.firstElementChild;
+    this.current =
+      this.content.querySelector(".current-slide") ||
+      this.content.firstElementChild;
+    this.prev =
+      this.current.previousElementSibling || this.content.lastElementChild;
+    this.next =
+      this.current.nextElementSibling || this.content.firstElementChild;
     this.applyClasses("right-to-left");
 
     return this.container;

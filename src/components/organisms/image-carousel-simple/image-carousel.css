@@ -34,11 +34,11 @@
 .simple-carousel-container .button-container.next {
   width: 44px;
   height: 44px;
-  right: 0px;
+  right: 0;
 }
 
 .simple-carousel-container .button-container.prev {
   width: 44px;
   height: 44px;
-  left: 0px;
+  left: 0;
 }

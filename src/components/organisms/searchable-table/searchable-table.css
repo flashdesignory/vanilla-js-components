@@ -1,0 +1,38 @@
+@import url("../../../styles/colors.css");
+@import url("../../../styles/fonts.css");
+@import url("../../../styles/layout.css");
+
+.searchable-table-container,
+.searchable-table-container * {
+  box-sizing: border-box;
+}
+
+.searchable-table-container {
+  background: var(--neutrals-white);
+  border-radius: var(--border-radius-large);
+  padding: var(--content-spacing-xlarge);
+  max-width: 400px;
+  width: 100%;
+  box-shadow: var(--content-shadow);
+}
+
+.searchable-table-container .searchable-table-header {
+  background: var(--neutrals-white);
+  position: relative;
+}
+
+.searchable-table-container .searchable-table-title {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-more-bold);
+  margin-bottom: var(--content-spacing-medium);
+}
+
+.searchable-table-container .input-container {
+  margin-top: var(--content-spacing-medium);
+}
+
+.searchable-table-container .table-container {
+  margin-top: var(--content-spacing-medium);
+  box-shadow: none;
+  border: var(--border-width-medium) solid var(--utils-gray-dark);
+}

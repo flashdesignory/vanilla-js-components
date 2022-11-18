@@ -1,4 +1,4 @@
-// import sheet from './autocomplete.css' assert { type: 'css' };
+// import sheet from './list.css' assert { type: 'css' };
 // document.adoptedStyleSheets.push(sheet);
 import "./list.css";
 
