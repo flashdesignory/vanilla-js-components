@@ -85,9 +85,13 @@ export class AutoComplete {
       items = [];
     } else {
       const searchterm = e.target.value.trim().toLowerCase();
-      this.top.appendChild(this.loader.render());
+      if (!this.top.contains(this.loader.container)) {
+        this.top.appendChild(this.loader.render());
+      }
       const response = await this.fetchData(searchterm);
-      this.top.removeChild(this.loader.container);
+      if (this.top.contains(this.loader.container)) {
+        this.top.removeChild(this.loader.container);
+      }
       items = this.state.responseParser
         ? this.state.responseParser(response)
         : response;
