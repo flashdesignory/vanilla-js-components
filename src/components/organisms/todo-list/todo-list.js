@@ -74,10 +74,11 @@ export class TodoList {
   }
 
   addItem(e) {
-    if (!hasValidMin(e.target.elements.input.value, 2)) return;
+    const inputtext = e.target.elements.input.value.trim();
+    if (!hasValidMin(inputtext, 2)) return;
 
     const newItem = {
-      task: e.target.elements.input.value,
+      task: inputtext,
       completed: false,
     };
 

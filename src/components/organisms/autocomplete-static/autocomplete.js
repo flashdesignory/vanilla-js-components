@@ -69,8 +69,9 @@ export class AutoComplete {
     if (!e.target.value) {
       items = [];
     } else {
+      const searchterm = e.target.value.trim().toLowerCase();
       items = this.state.data.filter((item) =>
-        item.toLowerCase().includes(e.target.value.toLowerCase())
+        item.toLowerCase().includes(searchterm)
       );
     }
 

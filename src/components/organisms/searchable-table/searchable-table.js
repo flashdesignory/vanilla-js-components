@@ -72,10 +72,11 @@ export class SearchableTable {
     if (!e.target.value) {
       items = [...this.state.data];
     } else {
+      const searchterm = e.target.value.trim().toLowerCase();
       items = this.state.data.filter((row) => {
         return (
           Object.values(row).filter((cell) =>
-            cell.toLowerCase().includes(e.target.value.toLowerCase())
+            cell.toLowerCase().includes(searchterm)
           ).length > 0
         );
       });
