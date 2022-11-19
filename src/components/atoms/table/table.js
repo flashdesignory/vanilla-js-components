@@ -6,7 +6,7 @@ import { Row } from "./row.js";
 import { Column } from "./column.js";
 
 export class Table {
-  constructor({ data, emptyTableText, title }) {
+  constructor({ data, emptyTableText, title, onClick }) {
     this.state = {
       data: [], // unknown[]
       emptyTableText, // string
@@ -15,6 +15,11 @@ export class Table {
 
     this.rows = [];
     this.columNames = [];
+    this.onClick = onClick;
+    this.sortKey = undefined;
+    this.sortDirection = "asc";
+
+    this.handleOnClick = this.handleOnClick.bind(this);
 
     this.container = document.createElement("div");
     this.container.classList.add("table-container");
@@ -39,15 +44,20 @@ export class Table {
       emptyTableText,
       title,
     });
+
     if (data && data.length > 0) {
       this.rebuild();
     }
   }
 
   update({ data, emptyTableText, title }) {
-    if (data !== undefined) this.state.data = [...data];
+    if (data !== undefined) {
+      this.state.data = [...data];
+    }
+
     if (emptyTableText !== undefined)
       this.state.emptyTableText = emptyTableText;
+
     if (title !== undefined) {
       this.state.title = title;
       this.caption.textContent = this.state.title;
@@ -57,17 +67,49 @@ export class Table {
   }
 
   rebuild() {
-    this.rows = [];
-
     if (this.state.data !== undefined && this.state.data.length > 0) {
       this.columNames = Object.keys(this.state.data[0]);
+      if (this.sortKey === undefined) this.sortKey = this.columNames[0];
     } else {
       this.columNames = [];
     }
-    
+
+    this.sort();
+
+    this.rows = [];
     this.state.data.forEach((entry) => {
-      this.rows.push(new Row({ data: entry }));
+      this.rows.push(new Row({ data: entry, onClick: this.handleOnClick }));
     });
+  }
+
+  sort() {
+    if (this.sortKey === undefined) return;
+    const reverse = this.sortDirection === "asc" ? 1 : -1;
+
+    const sortedData = [...this.state.data].sort((a, b) => {
+      if (a[this.sortKey] < b[this.sortKey]) return -1 * reverse;
+      if (a[this.sortKey] > b[this.sortKey]) return 1 * reverse;
+      return 0;
+    });
+
+    this.state.data = [...sortedData];
+  }
+
+  handleOnClick(e) {
+    if (e.target.tagName === "TH") {
+      if (this.sortKey === e.target.textContent) {
+        this.sortDirection = this.sortDirection === "asc" ? "desc" : "asc";
+      } else {
+        this.sortDirection = "asc";
+      }
+
+      this.sortKey = e.target.textContent;
+
+      this.rebuild();
+      this.render();
+    }
+
+    if (this.onClick) this.onClick(e);
   }
 
   render() {
@@ -75,7 +117,14 @@ export class Table {
 
     if (this.rows?.length > 0) {
       this.header.replaceChildren();
-      this.header.appendChild(new Column({ data: this.columNames }).render());
+      this.header.appendChild(
+        new Column({
+          data: this.columNames,
+          onClick: this.handleOnClick,
+          sortKey: this.sortKey,
+          sortDirection: this.sortDirection,
+        }).render()
+      );
 
       this.body.replaceChildren();
       this.rows.forEach((row) => {

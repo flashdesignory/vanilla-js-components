@@ -75,11 +75,35 @@
   padding: var(--content-spacing-medium);
   display: flex;
   width: 100%;
+  position: relative;
 }
 
 .table-container td:not(:last-child),
 .table-container th:not(:last-child) {
   border-right: 1px solid var(--utils-gray-dark);
+}
+
+.table-container th::after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: var(--content-spacing-medium);
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.table-container th.cell-desc::after {
+  border-bottom: var(--content-spacing-small) solid var(--utils-gray-dark);
+  border-left: var(--content-spacing-small) solid transparent;
+  border-right: var(--content-spacing-small) solid transparent;
+}
+
+.table-container th.cell-asc::after {
+  border-top: var(--content-spacing-small) solid var(--utils-gray-dark);
+  border-left: var(--content-spacing-small) solid transparent;
+  border-right: var(--content-spacing-small) solid transparent;
 }
 
 .table-container .table-message {

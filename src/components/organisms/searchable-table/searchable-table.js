@@ -15,6 +15,7 @@ export class SearchableTable {
       errorText: undefined, // string
     };
 
+    this.handleOnClick = this.handleOnClick.bind(this);
     this.handleOnInput = this.handleOnInput.bind(this);
     const debounced = debounce(this.handleOnInput, 250);
 
@@ -38,10 +39,15 @@ export class SearchableTable {
 
     this.table = new Table({
       title: "data table",
+      onClick: this.handleOnClick,
     });
     this.container.appendChild(this.table.render());
 
     this.update({ data, title, errorText });
+
+    if (data && data.length > 0) {
+      this.table.rebuild();
+    }
   }
 
   update({ data, title, errorText }) {
@@ -58,7 +64,6 @@ export class SearchableTable {
     if (data !== undefined) {
       this.state.data = [...data];
       this.table.update({ data: this.state.data });
-      this.table.rebuild();
     }
   }
 
@@ -79,6 +84,16 @@ export class SearchableTable {
     this.table.update({ data: items });
     this.table.rebuild();
     this.table.render();
+  }
+
+  handleOnClick(e) {
+    switch (e.target.tagName) {
+      case "TH":
+        // console.log("header click", e.target.textContent);
+        break;
+      default:
+      // console.log("body click", e.target.textContent);
+    }
   }
 
   render() {

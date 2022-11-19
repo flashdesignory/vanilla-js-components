@@ -14,6 +14,7 @@ export class Input {
     onClick,
     label,
     hideLabel,
+    shouldFocus,
   }) {
     this.state = {
       id: undefined, // string
@@ -21,6 +22,7 @@ export class Input {
       value: undefined, // unknown
       label: undefined, // string
       hideLabel: undefined, // boolean
+      shouldFocus: undefined, // boolean
     };
 
     this.type = type;
@@ -43,13 +45,14 @@ export class Input {
     this.input = document.createElement("input");
     this.input.classList.add("input");
     this.input.type = this.type;
+    this.input.autocomplete = "off";
     this.input.addEventListener("input", this.handleOnInput);
     this.input.addEventListener("focus", this.handleOnFocus);
     this.input.addEventListener("blur", this.handleOnBlur);
     this.input.addEventListener("click", this.handleOnClick);
     this.container.appendChild(this.input);
 
-    this.update({ id, placeholder, value, label, hideLabel });
+    this.update({ id, placeholder, value, label, hideLabel, shouldFocus });
   }
 
   get value() {
@@ -61,12 +64,13 @@ export class Input {
     this.state.value = value;
   }
 
-  update({ id, placeholder, value, label, hideLabel }) {
+  update({ id, placeholder, value, label, hideLabel, shouldFocus }) {
     if (id !== undefined) this.state.id = id;
     if (placeholder !== undefined) this.state.placeholder = placeholder;
     if (value !== undefined) this.state.value = value;
     if (label !== undefined) this.state.label = label;
     if (hideLabel !== undefined) this.state.hideLabel = hideLabel;
+    if (shouldFocus !== undefined) this.state.shouldFocus = shouldFocus;
   }
 
   handleOnInput(e) {
@@ -102,6 +106,11 @@ export class Input {
     // if it's not set with this.state.label, label will be hidden
     this.label.textContent =
       this.state.label ?? this.state.placeholder ?? "Enter a value";
+
+    if (this.state.shouldFocus) {
+      // need to add a delay for now
+      setTimeout(() => this.input.focus(), 50);
+    }
 
     return this.container;
   }

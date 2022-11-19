@@ -38,3 +38,21 @@ DefaultLabel.args = {
   id: "input",
   type: "text",
 };
+
+export const SearchInput = Template.bind({});
+SearchInput.args = {
+  id: "controlled-input",
+  type: "search",
+  label: "Enter some text",
+  hideLabel: true,
+  value: "Initial Value",
+  shouldFocus: true,
+};
+
+export const DateInput = Template.bind({});
+DateInput.args = {
+  id: "controlled-input",
+  type: "date",
+  label: "Enter a date",
+  hideLabel: true,
+};
