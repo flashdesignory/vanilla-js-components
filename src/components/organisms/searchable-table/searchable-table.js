@@ -5,7 +5,7 @@ import "./searchable-table.css";
 import { Text } from "../../atoms/text/text.js";
 import { Input } from "../../atoms/input/input.js";
 import { Table } from "../../atoms/table/table.js";
-import { debounce } from "../../../lib/utils.js";
+import { debounce } from "../../../lib/index.js";
 
 export class SearchableTable {
   constructor({ data, title, errorText }) {

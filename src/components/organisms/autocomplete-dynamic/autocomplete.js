@@ -6,7 +6,7 @@ import { Text } from "../../atoms/text/text.js";
 import { Input } from "../../atoms/input/input.js";
 import { List } from "../../atoms/list/list.js";
 import { Loader } from "../../../misc/loader/loader.js";
-import { debounce } from "../../../lib/utils.js";
+import { debounce } from "../../../lib/index.js";
 
 export class AutoComplete {
   constructor({ title, errorText, url, responseParser, ItemClass }) {
