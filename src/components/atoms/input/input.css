@@ -35,6 +35,10 @@
   cursor: pointer;
 }
 
+.input-container .input[type="password"] {
+  padding-right: calc(24px + var(--content-spacing-medium) * 2);
+}
+
 .input-container .input:hover {
   border-color: var(--utils-gray-light);
   color: var(--utils-gray-light);
