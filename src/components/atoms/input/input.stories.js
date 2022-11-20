@@ -16,27 +16,12 @@ const Template = ({ ...args }) => {
   return input.render();
 };
 
-export const Text = Template.bind({});
-Text.args = {
+export const TextInput = Template.bind({});
+TextInput.args = {
   id: "input",
   type: "text",
   label: "Enter some text:",
   placeholder: "Enter something",
-};
-
-export const TextWithValue = Template.bind({});
-TextWithValue.args = {
-  id: "controlled-input",
-  type: "text",
-  label: "Enter some text",
-  hideLabel: true,
-  value: "Initial Value",
-};
-
-export const DefaultLabel = Template.bind({});
-DefaultLabel.args = {
-  id: "input",
-  type: "text",
 };
 
 export const SearchInput = Template.bind({});
@@ -45,8 +30,6 @@ SearchInput.args = {
   type: "search",
   label: "Enter some text",
   hideLabel: true,
-  value: "Initial Value",
-  shouldFocus: true,
 };
 
 export const DateInput = Template.bind({});
@@ -55,4 +38,20 @@ DateInput.args = {
   type: "date",
   label: "Enter a date",
   hideLabel: true,
+};
+
+export const PasswordInput = Template.bind({});
+PasswordInput.args = {
+  id: "input",
+  type: "password",
+  label: "Enter password",
+};
+
+export const InputWithValue = Template.bind({});
+InputWithValue.args = {
+  id: "controlled-input",
+  type: "text",
+  label: "Enter some text",
+  hideLabel: true,
+  value: "Initial Value",
 };

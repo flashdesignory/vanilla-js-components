@@ -48,6 +48,7 @@ export class Button {
   }
 
   render() {
+    this.button.replaceChildren();
     if (this.type !== "icon") this.button.textContent = this.state.label;
     else this.button.insertAdjacentHTML("afterbegin", this.state.label);
 

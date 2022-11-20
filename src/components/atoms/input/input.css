@@ -12,6 +12,8 @@
   display: flex;
   flex-direction: column;
   font-family: var(--default-font-family);
+  max-width: 400px;
+  position: relative;
 }
 
 .input-container .label {
@@ -26,7 +28,7 @@
   border: var(--border-width-medium) solid var(--utils-gray-dark);
   color: var(--utils-gray-dark);
   transition: var(--default-transition);
-  max-width: 400px;
+  height: 40px;
 }
 
 .input-container .input[type="submit"] {
@@ -46,4 +48,13 @@
 .input-container .input::placeholder {
   color: var(--utils-gray-dark);
   opacity: 0.5;
+}
+
+.input-container .toggle {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  right: var(--content-spacing-medium);
+  bottom: calc((40px - 24px) / 2);
 }

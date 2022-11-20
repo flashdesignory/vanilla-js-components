@@ -2,6 +2,9 @@
 // document.adoptedStyleSheets.push(sheet);
 import "./input.css";
 
+import { Button } from "../button/button.js";
+import { EyeToggle } from "../../../assets/eye-toggle.js";
+
 export class Input {
   constructor({
     id,
@@ -30,10 +33,13 @@ export class Input {
     this.onFocus = onFocus;
     this.onBlur = onBlur;
     this.onClick = onClick;
+    this.passwordIsVisible = false;
+
     this.handleOnInput = this.handleOnInput.bind(this);
     this.handleOnFocus = this.handleOnFocus.bind(this);
     this.handleOnBlur = this.handleOnBlur.bind(this);
     this.handleOnClick = this.handleOnClick.bind(this);
+    this.handleToggleClick = this.handleToggleClick.bind(this);
 
     this.container = document.createElement("div");
     this.container.classList.add("input-container");
@@ -44,13 +50,29 @@ export class Input {
 
     this.input = document.createElement("input");
     this.input.classList.add("input");
-    this.input.type = this.type;
+    // this.input.type = this.type;
+    this.input.type =
+      this.type === "password" && this.passwordIsVisible ? "text" : this.type;
     this.input.autocomplete = "off";
     this.input.addEventListener("input", this.handleOnInput);
     this.input.addEventListener("focus", this.handleOnFocus);
     this.input.addEventListener("blur", this.handleOnBlur);
     this.input.addEventListener("click", this.handleOnClick);
     this.container.appendChild(this.input);
+
+    if (this.type === "password") {
+      this.toggle = new Button({
+        type: "icon",
+        onClick: this.handleToggleClick,
+        containerClass: "toggle",
+        label: EyeToggle({
+          width: "24",
+          height: "24",
+          on: this.passwordIsVisible,
+        }),
+      });
+      this.container.appendChild(this.toggle.render());
+    }
 
     this.update({ id, placeholder, value, label, hideLabel, shouldFocus });
   }
@@ -87,6 +109,23 @@ export class Input {
 
   handleOnBlur(e) {
     if (this.onBlur) this.onBlur(e);
+  }
+
+  handleToggleClick() {
+    this.passwordIsVisible = !this.passwordIsVisible;
+    this.input.type =
+      this.type === "password" && this.passwordIsVisible ? "text" : this.type;
+
+    if (this.toggle) {
+      this.toggle.update({
+        label: EyeToggle({
+          width: "24",
+          height: "24",
+          on: this.passwordIsVisible,
+        }),
+      });
+      this.toggle.render();
+    }
   }
 
   render() {
