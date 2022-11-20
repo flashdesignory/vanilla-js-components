@@ -50,7 +50,7 @@ export class Input {
 
     this.input = document.createElement("input");
     this.input.classList.add("input");
-    // this.input.type = this.type;
+    this.input.classList.add(`input-type-${this.type}`)
     this.input.type =
       this.type === "password" && this.passwordIsVisible ? "text" : this.type;
     this.input.autocomplete = "off";
