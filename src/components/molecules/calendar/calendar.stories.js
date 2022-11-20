@@ -1,0 +1,18 @@
+import { DisplayMonth } from "./month";
+
+export default {
+  title: "Molecules/Calendar",
+  argTypes: {
+    actualDate: { control: "date" },
+  },
+};
+
+const Template = ({ ...args }) => {
+  const dm = new DisplayMonth({ ...args });
+  return dm.render();
+};
+
+export const Month = Template.bind({});
+Month.args = {
+  actualDate: new Date(),
+};
