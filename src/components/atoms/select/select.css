@@ -11,6 +11,10 @@
 
 .select-container {
   display: flex;
+  flex-direction: column;
+  font-family: var(--default-font-family);
+  max-width: 400px;
+  position: relative;
 }
 
 .select-container .select {
@@ -20,7 +24,15 @@
   border: var(--border-width-medium) solid var(--utils-gray-dark);
   color: var(--utils-gray-dark);
   transition: var(--default-transition);
-  font-family: var(--default-font-family);
+  font-family: inherit;
+  height: 40px;
+
+  /* hide default dropdown */
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
 }
 
 .select-container .select:hover {
