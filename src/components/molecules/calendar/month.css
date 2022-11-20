@@ -18,6 +18,7 @@
   width: 100%;
   box-shadow: var(--content-shadow);
   position: relative;
+  font-family: var(--default-font-family);
 }
 
 .month-container .header {
