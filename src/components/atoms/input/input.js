@@ -135,6 +135,9 @@ export class Input {
     }
 
     if (this.state.placeholder) this.input.placeholder = this.state.placeholder;
+    else if (this.type === "date") {
+      this.state.placeholder = "MM/DD/YYYY"
+    }
 
     if (this.state.hideLabel || !this.state.label)
       this.label.classList.add("visually-hidden");
