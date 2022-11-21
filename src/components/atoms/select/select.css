@@ -25,6 +25,7 @@
   color: var(--utils-gray-dark);
   transition: var(--default-transition);
   font-family: inherit;
+  width: 100%;
   height: 40px;
 
   /* hide default dropdown */
