@@ -37,7 +37,6 @@ DateInput.args = {
   id: "input",
   type: "date",
   label: "Enter a date",
-  placeholder: "MM/DD/YYYY",
   hideLabel: true,
 };
 
@@ -46,6 +45,7 @@ PasswordInput.args = {
   id: "input",
   type: "password",
   label: "Enter password",
+  hideLabel: true
 };
 
 export const InputWithValue = Template.bind({});
