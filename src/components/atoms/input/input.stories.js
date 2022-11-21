@@ -34,9 +34,10 @@ SearchInput.args = {
 
 export const DateInput = Template.bind({});
 DateInput.args = {
-  id: "controlled-input",
+  id: "input",
   type: "date",
   label: "Enter a date",
+  placeholder: "MM/DD/YYYY",
   hideLabel: true,
 };
 
