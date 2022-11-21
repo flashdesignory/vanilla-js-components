@@ -28,6 +28,7 @@
   border: var(--border-width-medium) solid var(--utils-gray-dark);
   color: var(--utils-gray-dark);
   transition: var(--default-transition);
+  width: 100%;
   height: 40px;
 }
 
