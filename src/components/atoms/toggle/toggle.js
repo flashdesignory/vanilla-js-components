@@ -3,13 +3,14 @@
 import "./toggle.css";
 
 export class Toggle {
-  constructor({ checked, id }) {
+  constructor({ id, checked }) {
     this.state = {
       id: undefined, // string
       checked: undefined, // boolean
     };
-    this.handleKeyDown = this.handleKeyDown.bind(this);
+
     this.handleChange = this.handleChange.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
 
     this.container = document.createElement("div");
     this.container.classList.add("toggle-container");
@@ -18,7 +19,7 @@ export class Toggle {
     this.container.addEventListener("keydown", this.handleKeyDown);
 
     this.label = document.createElement("label");
-    this.label.classList.add("toggle-label");
+    this.label.classList.add("label");
     this.container.appendChild(this.label);
 
     this.input = document.createElement("input");
