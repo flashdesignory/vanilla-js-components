@@ -7,6 +7,7 @@ import { Input } from "../../atoms/input/input.js";
 import { List } from "../../atoms/list/list.js";
 import { Loader } from "../../../misc/loader/loader.js";
 import { debounce } from "../../../lib/index.js";
+import { fetchRequest } from "../../../lib/fetch.js";
 
 export class AutoComplete {
   constructor({ title, errorText, url, responseParser, ItemClass }) {
@@ -103,7 +104,10 @@ export class AutoComplete {
   }
 
   async fetchData(value) {
-    const response = await fetch(`${this.state.url}${value}`);
+    // const response = await fetch(`${this.state.url}${value}`);
+    const response = await fetchRequest(`${this.state.url}${value}`, {
+      hostOnly: true,
+    });
     const data = await response.json();
     return data;
   }

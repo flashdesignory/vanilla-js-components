@@ -2,7 +2,23 @@
 // document.adoptedStyleSheets.push(sheet);
 import "./button.css";
 
+/**
+ * Button Component
+ * @param {function} udpate - Update function for props.
+ * @param {function} fireEvent - Dispatches a click event on the button element.
+ * @param {function} handleOnClick - "Internal" function for the onClick.
+ * @param {function} render - Render function, which returns the container element.
+ */
 export class Button {
+  /**
+   * Button constructor
+   * @param {object} props - Props passed to the constructor function.
+   * @param {string} props.type - "primary" | "secondary" | "icon"
+   * @param {string} props.label - Text to display in the button.
+   * @param {function} props.onClick - Callback handler for onClick.
+   * @param {string} props.containerClass - Css class for the button container.
+   * @param {boolean} props.disabled - Disabled state of the button.
+   */
   constructor({ type, label, onClick, containerClass, disabled }) {
     this.state = {
       label: undefined, // string
@@ -31,6 +47,12 @@ export class Button {
     this.update({ label, disabled });
   }
 
+  /**
+   * Button update
+   * @param {object} props - Props passed to the update function.
+   * @param {string} props.label - Text to display in the button.
+   * @param {boolean} props.disabled - Disabled state of the button.
+   */
   update({ label, disabled }) {
     if (label !== undefined) this.state.label = label;
     if (disabled !== undefined) {
@@ -39,14 +61,25 @@ export class Button {
     }
   }
 
+  /**
+   * Button fireEvent
+   */
   fireEvent() {
     this.button.dispatchEvent(new Event("click"));
   }
 
+  /**
+   * Button handleOnClick
+   * @param {HTMLMouseEvent} e Forwards the native click event to the onClick handler.
+   */
   handleOnClick(e) {
     if (this.onClick) this.onClick(e);
   }
 
+  /**
+   * Button render
+   * @returns {HTMLDivElement} Container element.
+   */
   render() {
     this.button.replaceChildren();
     if (this.type !== "icon") this.button.textContent = this.state.label;
@@ -55,24 +88,3 @@ export class Button {
     return this.container;
   }
 }
-
-export const FunctionalButton = ({ type, text, onClick }) => {
-  let label = text;
-  const update = ({ text }) => {
-    label = text;
-  };
-  const handleOnClick = (e) => {
-    if (onClick) onClick(e);
-  };
-  const render = () => {
-    const container = document.createElement("div");
-    container.classList.add("button-container");
-    const button = document.createElement("button");
-    button.classList.add("button", `button-${type}`);
-    button.textContent = label;
-    button.addEventListener("click", handleOnClick);
-    container.appendChild(button);
-    return container;
-  };
-  return { render, update };
-};

@@ -45,7 +45,7 @@ PasswordInput.args = {
   id: "input",
   type: "password",
   label: "Enter password",
-  hideLabel: true
+  hideLabel: true,
 };
 
 export const InputWithValue = Template.bind({});

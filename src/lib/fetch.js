@@ -1,15 +1,22 @@
 const controllers = {};
 
-export const fetchRequest = async (url) => {
-  if (controllers[url]) {
-    controllers[url].abort();
+export const fetchRequest = async (
+  url,
+  options = {
+    hostOnly: false,
+  }
+) => {
+  const key = options.hostOnly ? new URL(url).host : url;
+
+  if (controllers[key]) {
+    controllers[key].abort();
   }
 
-  controllers[url] = new AbortController();
-  const { signal } = controllers[url];
+  controllers[key] = new AbortController();
+  const { signal } = controllers[key];
 
   const response = await fetch(url, { signal });
 
-  controllers[url] = null;
+  controllers[key] = null;
   return response;
 };

@@ -19,8 +19,8 @@ export class ImageCarousel {
     this.items = {};
     this.slideIndex = 1;
 
-    this.next = this.next.bind(this);
-    this.prev = this.prev.bind(this);
+    this.handleNextClick = this.handleNextClick.bind(this);
+    this.handlePrevClick = this.handlePrevClick.bind(this);
     this.update = this.update.bind(this);
 
     this.container = document.createElement("div");
@@ -34,13 +34,13 @@ export class ImageCarousel {
     this.nextButton = new Button({
       type: "icon",
       label: ArrowRight({ width: "33", height: "33" }),
-      onClick: this.next,
+      onClick: this.handleNextClick,
       containerClass: "next",
     });
     this.prevButton = new Button({
       type: "icon",
       label: ArrowLeft({ width: "33", height: "33" }),
-      onClick: this.prev,
+      onClick: this.handlePrevClick,
       containerClass: "prev",
       disabled: true,
     });
@@ -78,7 +78,7 @@ export class ImageCarousel {
     }
   }
 
-  next() {
+  handleNextClick() {
     if (this.slideIndex === this.state.data.length) {
       return;
     }
@@ -87,7 +87,7 @@ export class ImageCarousel {
     this.animate();
   }
 
-  prev() {
+  handlePrevClick() {
     if (this.slideIndex === 1) {
       return;
     }

@@ -67,7 +67,7 @@ export class PollWidgetItem {
   }
 
   updateDisplay(checked, percentage) {
-    // console.log('updateDisplay', checked, percentage)
+    // called from parent component
     this.input.update({ checked });
     this.percent.update({ label: `${percentage}%` });
     this.percent.render();

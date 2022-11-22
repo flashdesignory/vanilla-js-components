@@ -12,7 +12,7 @@ export class StarRating {
     this.onChange = onChange;
     this.stars = [];
 
-    this.updateRating = this.updateRating.bind(this);
+    this.updateDisplay = this.updateDisplay.bind(this);
 
     this.container = document.createElement("div");
     this.container.classList.add("ratings-container");
@@ -27,7 +27,7 @@ export class StarRating {
       star.id = i;
       star.innerHTML = "&starf;";
 
-      if (!disabled) star.addEventListener("click", this.updateRating);
+      if (!disabled) star.addEventListener("click", this.updateDisplay);
       else star.classList.add("disabled");
 
       this.stars.push(star);
@@ -42,7 +42,7 @@ export class StarRating {
     if (disabled !== undefined) this.state.disabled = disabled;
   }
 
-  updateRating(e) {
+  updateDisplay(e) {
     this.update({ currentRating: e.target.id });
     this.render();
     if (this.onChange) this.onChange(e);
