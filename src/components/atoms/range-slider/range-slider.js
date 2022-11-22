@@ -49,6 +49,10 @@ export class RangeSlider {
     this.container.addEventListener("mouseup", this.stop);
     this.container.addEventListener("mouseleave", this.stop);
 
+    this.container.addEventListener("touchstart", this.start);
+    this.container.removeEventListener("touchmove", this.capture);
+    this.container.addEventListener("touchend", this.stop);
+
     this.update({ id, value });
     // temp delay for now
     if (value !== undefined) setTimeout(() => this.updateDisplay(), 50);
@@ -74,7 +78,8 @@ export class RangeSlider {
     const offsetX = this.label.getBoundingClientRect().left;
     const trackWidth = this.label.getBoundingClientRect().width;
 
-    const localX = e.clientX - offsetX;
+    // const localX = e.clientX - offsetX;
+    const localX  = e.touches ? (e.touches[0].clientX - offsetX) : (e.clientX - offsetX);
     let percentX = localX / trackWidth;
     if (percentX < 0) percentX = 0;
     if (percentX > 1) percentX = 1;
