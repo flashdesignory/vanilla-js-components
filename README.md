@@ -1,4 +1,6 @@
 # Vanilla Javascript Components
+Initial version of a class based components collection.
+This is work in progress and might contain minor bugs.
 
 ## Github Page
 https://flashdesignory.github.io/vanilla-js-components/
