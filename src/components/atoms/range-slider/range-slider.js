@@ -49,9 +49,9 @@ export class RangeSlider {
     this.container.addEventListener("mouseup", this.stop);
     this.container.addEventListener("mouseleave", this.stop);
 
-    this.container.addEventListener("touchstart", this.start);
-    this.container.removeEventListener("touchmove", this.capture);
-    this.container.addEventListener("touchend", this.stop);
+    document.addEventListener("touchstart", this.start);
+    document.addEventListener("touchmove", this.capture);
+    document.addEventListener("touchend", this.stop);
 
     this.update({ id, value });
     // temp delay for now
