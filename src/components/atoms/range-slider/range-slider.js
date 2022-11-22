@@ -47,7 +47,7 @@ export class RangeSlider {
     this.container.addEventListener("mousedown", this.start);
     document.addEventListener("mousemove", this.capture);
     document.addEventListener("mouseup", this.stop);
-    this.container.addEventListener("mouseleave", this.stop);
+    document.addEventListener("mouseleave", this.stop);
 
     this.container.addEventListener("touchstart", this.start);
     document.addEventListener("touchmove", this.capture);
