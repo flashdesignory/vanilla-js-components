@@ -24,17 +24,29 @@
 .month-container .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: var(--content-spacing-xlarge);
 }
 
 .month-container .month-title {
   display: flex;
+  flex-direction: column;
   flex: 1;
   justify-content: center;
   align-items: center;
-  height: 40px;
+}
+
+.month-container .month-month-name {
   font-size: var(--font-size-large);
   font-weight: var(--font-weight-bold);
+  border-bottom: 1px solid var(--utils-gray-dark);
+  padding-bottom: 4px;
+}
+
+.month-container .month-year-name {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-bold);
+  margin-top: 4px;
 }
 
 .month-container .button-icon {

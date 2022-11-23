@@ -44,10 +44,16 @@ export class DisplayMonth {
       containerClass: "prev-button",
     });
 
-    this.title = new Text({ containerClass: "month-title" });
+    this.title = document.createElement("div");
+    this.title.classList.add("month-title");
+
+    this.monthName = new Text({ containerClass: "month-month-name" });
+    this.yearName = new Text({ containerClass: "month-year-name" });
+    this.title.appendChild(this.monthName.render());
+    this.title.appendChild(this.yearName.render());
 
     this.header.appendChild(this.prevButton.render());
-    this.header.appendChild(this.title.render());
+    this.header.appendChild(this.title);
     this.header.appendChild(this.nextButton.render());
 
     this.update({ displayDate: new Date(actualDate) });
@@ -80,7 +86,8 @@ export class DisplayMonth {
 
   rebuild() {
     this.items = [];
-    this.title.update({ text: MONTHS[this.state.displayDate.getMonth()] });
+    this.monthName.update({ text: MONTHS[this.state.displayDate.getMonth()] });
+    this.yearName.update({ text: this.state.displayDate.getFullYear() });
 
     const lastDayCurrentMonth = new Date(
       this.state.displayDate.getFullYear(),
@@ -134,7 +141,8 @@ export class DisplayMonth {
   render() {
     this.body.replaceChildren();
 
-    this.title.render();
+    this.monthName.render();
+    this.yearName.render();
 
     this.items.forEach((item) => this.body.appendChild(item));
     return this.container;
