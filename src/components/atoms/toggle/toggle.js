@@ -9,14 +9,14 @@ export class Toggle {
       checked: undefined, // boolean
     };
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.handleOnChange = this.handleOnChange.bind(this);
+    this.handleOnKeyDown = this.handleOnKeyDown.bind(this);
 
     this.container = document.createElement("div");
     this.container.classList.add("toggle-container");
     this.container.role = "checkbox";
     this.container.tabIndex = 0;
-    this.container.addEventListener("keydown", this.handleKeyDown);
+    this.container.addEventListener("keydown", this.handleOnKeyDown);
 
     this.label = document.createElement("label");
     this.label.classList.add("label");
@@ -25,11 +25,11 @@ export class Toggle {
     this.input = document.createElement("input");
     this.input.type = "checkbox";
     this.input.tabIndex = -1;
-    this.input.addEventListener("change", this.handleChange);
+    this.input.addEventListener("change", this.handleOnChange);
     this.label.appendChild(this.input);
 
     this.span = document.createElement("span");
-    this.span.classList.add("toggle-switch");
+    this.span.classList.add("switch");
     this.label.appendChild(this.span);
 
     this.status = document.createElement("div");
@@ -53,14 +53,14 @@ export class Toggle {
     if (checked !== undefined) this.state.checked = checked;
   }
 
-  handleKeyDown(e) {
+  handleOnKeyDown(e) {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       setTimeout(() => this.input.click(), 50);
     }
   }
 
-  handleChange(e) {
+  handleOnChange(e) {
     this.state.checked = e.target.checked;
     if (this.status) {
       this.status.textContent = `selected: ${this.state.checked}`;

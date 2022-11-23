@@ -27,7 +27,7 @@
   cursor: pointer;
 }
 
-.toggle-container .toggle-switch {
+.toggle-container .switch {
   position: absolute;
   left: 0;
   top: 3px;
@@ -39,7 +39,7 @@
   pointer-events: none;
 }
 
-.toggle-container .toggle-switch::before {
+.toggle-container .switch::before {
   position: absolute;
   content: "";
   height: 22px;
@@ -55,10 +55,10 @@
   display: none;
 }
 
-.toggle-container .label input[type="checkbox"]:checked + .toggle-switch::before {
+.toggle-container .label input[type="checkbox"]:checked + .switch::before {
   transform: translateX(20px);
 }
 
-.toggle-container .label input[type="checkbox"]:checked + .toggle-switch {
+.toggle-container .label input[type="checkbox"]:checked + .switch {
   width: 100%;
 }
