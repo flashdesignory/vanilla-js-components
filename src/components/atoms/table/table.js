@@ -2,8 +2,8 @@
 // document.adoptedStyleSheets.push(sheet);
 import "./table.css";
 
-import { Row } from "./row.js";
-import { Column } from "./column.js";
+import { BodyRow } from "./body-row.js";
+import { HeaderRow } from "./header-row.js";
 
 export class Table {
   constructor({ data, emptyTableText, title, onClick }) {
@@ -78,7 +78,7 @@ export class Table {
 
     this.rows = [];
     this.state.data.forEach((entry) => {
-      this.rows.push(new Row({ data: entry, onClick: this.handleOnClick }));
+      this.rows.push(new BodyRow({ data: entry, onClick: this.handleOnClick }));
     });
   }
 
@@ -118,7 +118,7 @@ export class Table {
     if (this.rows?.length > 0) {
       this.header.replaceChildren();
       this.header.appendChild(
-        new Column({
+        new HeaderRow({
           data: this.columNames,
           onClick: this.handleOnClick,
           sortKey: this.sortKey,

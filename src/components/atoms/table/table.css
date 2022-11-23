@@ -68,6 +68,8 @@
 
 .table-container th {
   border-bottom: 1px solid var(--utils-gray-dark);
+  align-items: center;
+  justify-content: space-between;
 }
 
 .table-container td,
@@ -84,7 +86,7 @@
   border-right: 1px solid var(--utils-gray-dark);
 }
 
-.table-container th::after {
+/* .table-container th::after {
   content: "";
   width: 0;
   height: 0;
@@ -93,15 +95,36 @@
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
+} */
+
+.table-container .cell-arrow {
+  display: flex;
+  content: "";
+  width: 0;
+  height: 0;
+  pointer-events: none;
 }
 
-.table-container th.cell-desc::after {
+.table-container .cell-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.table-container .cell-arrow,
+.table-container .cell-title {
+  pointer-events: none;
+}
+
+/* .table-container th.cell-desc::after */
+.table-container th.cell-desc .cell-arrow {
   border-bottom: var(--content-spacing-small) solid var(--utils-gray-dark);
   border-left: var(--content-spacing-small) solid transparent;
   border-right: var(--content-spacing-small) solid transparent;
 }
 
-.table-container th.cell-asc::after {
+/* .table-container th.cell-asc::after */
+.table-container th.cell-asc .cell-arrow {
   border-top: var(--content-spacing-small) solid var(--utils-gray-dark);
   border-left: var(--content-spacing-small) solid transparent;
   border-right: var(--content-spacing-small) solid transparent;

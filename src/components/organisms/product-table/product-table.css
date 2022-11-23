@@ -1,0 +1,42 @@
+@import url("../../../styles/colors.css");
+@import url("../../../styles/fonts.css");
+@import url("../../../styles/layout.css");
+
+.product-table-container,
+.product-table-container * {
+  box-sizing: border-box;
+}
+
+.product-table-container {
+  background: var(--neutrals-white);
+  border-radius: var(--border-radius-large);
+  padding: var(--content-spacing-xlarge);
+  max-width: 400px;
+  width: 100%;
+  box-shadow: var(--content-shadow);
+}
+
+.product-table-container .product-table-header {
+  background: var(--neutrals-white);
+  position: relative;
+}
+
+.product-table-container .product-table-title {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-more-bold);
+  margin-bottom: var(--content-spacing-medium);
+}
+
+.product-table-container .input-container {
+  margin-top: var(--content-spacing-medium);
+}
+
+.product-table-container .checkbox-container {
+  margin: var(--content-spacing-medium);
+}
+
+.product-table-container .table-container {
+  margin-top: var(--content-spacing-medium);
+  box-shadow: none;
+  border: var(--border-width-medium) solid var(--utils-gray-dark);
+}
