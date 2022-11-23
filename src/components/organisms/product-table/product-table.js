@@ -77,12 +77,17 @@ export class ProductTable {
   }
 
   handleOnInput(e) {
+    const showInStockOnly = this.filter.input.checked;
     let items;
+
     if (!e.target.value) {
-      items = [...this.state.data];
+      items = showInStockOnly
+      ? this.state.data.filter((row) => row.stocked)
+      : [...this.state.data];
     } else {
       const searchterm = e.target.value.trim().toLowerCase();
       items = this.state.data.filter((row) => {
+        if (showInStockOnly && !row.stocked) return;
         return (
           Object.values(row).filter((cell) =>
             cell.toString().toLowerCase().includes(searchterm)
@@ -107,16 +112,7 @@ export class ProductTable {
   }
 
   handleOnChange(e) {
-    let items;
-
-    const showInStockOnly = e.target.checked;
-    items = showInStockOnly
-      ? this.state.data.filter((row) => row.stocked)
-      : [...this.state.data];
-
-    this.table.update({ data: items });
-    this.table.rebuild();
-    this.table.render();
+    this.input.input.dispatchEvent(new Event("input"));
   }
 
   render() {
