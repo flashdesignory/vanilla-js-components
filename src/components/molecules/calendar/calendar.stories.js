@@ -4,6 +4,7 @@ export default {
   title: "Molecules/Calendar",
   argTypes: {
     actualDate: { control: "date" },
+    onClick: { action: "onClick" },
   },
 };
 

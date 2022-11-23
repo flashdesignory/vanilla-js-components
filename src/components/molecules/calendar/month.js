@@ -9,16 +9,19 @@ import { ArrowRight } from "../../../assets/arrow-right.js";
 import { Text } from "../../atoms/text/text";
 
 export class DisplayMonth {
-  constructor({ actualDate }) {
+  constructor({ actualDate, onClick }) {
     this.state = {
       displayDate: undefined, // date
     };
 
-    this.actualDate = actualDate; // date
+    this.actualDate = actualDate; // date that was passed into constructor
+    this.selectedDate = undefined; // date selected by user click
     this.items = [];
+    this.onClick = onClick;
 
     this.handleNextClick = this.handleNextClick.bind(this);
     this.handlePrevClick = this.handlePrevClick.bind(this);
+    this.handleCellClick = this.handleCellClick.bind(this);
 
     this.container = document.createElement("div");
     this.container.classList.add("month-container");
@@ -76,6 +79,15 @@ export class DisplayMonth {
     this.render();
   }
 
+  handleCellClick(e) {
+    this.selectedDate = new Date(this.state.displayDate);
+    this.selectedDate.setDate(e.target.textContent);
+    if (this.onClick) this.onClick(this.selectedDate);
+
+    this.rebuild();
+    this.render();
+  }
+
   update({ displayDate }) {
     if (displayDate !== undefined) {
       this.state.displayDate = displayDate;
@@ -85,7 +97,9 @@ export class DisplayMonth {
   }
 
   rebuild() {
+    this.items.forEach(item => item.removeEventListener("click", this.handleCellClick));
     this.items = [];
+
     this.monthName.update({ text: MONTHS[this.state.displayDate.getMonth()] });
     this.yearName.update({ text: this.state.displayDate.getFullYear() });
 
@@ -116,6 +130,7 @@ export class DisplayMonth {
       const cell = document.createElement("div");
       cell.classList.add("cell", "current-month");
       cell.textContent = i;
+      cell.addEventListener("click", this.handleCellClick);
 
       if (
         i === this.actualDate.getDate() &&
@@ -123,6 +138,15 @@ export class DisplayMonth {
         this.state.displayDate.getFullYear() === this.actualDate.getFullYear()
       ) {
         cell.classList.add("today");
+      }
+
+      if (
+        this.selectedDate !== undefined && 
+        i === this.selectedDate.getDate() &&
+        this.state.displayDate.getMonth() === this.selectedDate.getMonth() &&
+        this.state.displayDate.getFullYear() === this.selectedDate.getFullYear()
+      ) {
+        cell.classList.add("selected");
       }
 
       remainingCells--;

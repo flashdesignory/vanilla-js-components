@@ -84,3 +84,7 @@
 .month-container .cell:hover:not(.today) {
   background-color: var(--utils-gray-light);
 }
+
+.month-container .cell.selected {
+  border: var(--border-width-large) solid var(--utils-highlight-red);
+}
