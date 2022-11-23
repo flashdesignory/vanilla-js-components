@@ -16,7 +16,7 @@
   font-family: var(--default-font-family);
 }
 
-.input-form-content {
+.input-form-container .input-form-content {
   max-width: 400px;
   width: 100%;
   background: var(--neutrals-white);

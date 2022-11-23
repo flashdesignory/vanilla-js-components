@@ -12,6 +12,9 @@ export class Link {
       target: undefined, // "_blank" | string
     };
 
+    this.link = document.createElement("a");
+    this.link.classList.add("link");
+
     this.update({ name, type, label, url, target });
   }
 
@@ -38,9 +41,6 @@ export class Link {
   }
 
   render() {
-    this.link = document.createElement("a");
-    this.link.classList.add("link");
-
     if (this.state.url) {
       this.link.href = this.state.url;
     }

@@ -8,7 +8,7 @@
   box-sizing: border-box;
 }
 
-.button {
+.button-container .button {
   border: none;
   padding: var(--content-spacing-medium);
   border-radius: var(--border-radius-medium);
@@ -19,34 +19,34 @@
   font-family: var(--default-font-family);
 }
 
-.button:disabled {
+.button-container .button:disabled {
   pointer-events: none;
   opacity: 0.5;
 }
 
-.button-primary {
+.button-container .button-primary {
   background-color: var(--utils-gray-dark);
   border-color: var(--utils-gray-dark);
   color: var(--neutrals-white);
 }
 
-.button-primary:hover {
+.button-container .button-primary:hover {
   background-color: var(--utils-gray-light);
   border-color: var(--utils-gray-light);
 }
 
-.button-secondary {
+.button-container .button-secondary {
   background-color: transparent;
   border-color: var(--utils-gray-dark);
   color: var(--utils-gray-dark);
 }
 
-.button-secondary:hover {
+.button-container .button-secondary:hover {
   border-color: var(--utils-gray-light);
   color: var(--utils-gray-light);
 }
 
-.button-icon {
+.button-container .button-icon {
   border: none;
   background-color: transparent;
   display: flex;
@@ -59,11 +59,11 @@
   border-radius: 50%;
 }
 
-.button-icon:hover {
+.button-container .button-icon:hover {
   opacity: 0.5;
 }
 
-.button-icon svg path {
+.button-container .button-icon svg path {
   fill: var(--utils-gray-dark);
   transition: var(--default-transition);
 }

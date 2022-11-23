@@ -79,7 +79,9 @@ export class RangeSlider {
     const trackWidth = this.label.getBoundingClientRect().width;
 
     // const localX = e.clientX - offsetX;
-    const localX  = e.touches ? (e.touches[0].clientX - offsetX) : (e.clientX - offsetX);
+    const localX = e.touches
+      ? e.touches[0].clientX - offsetX
+      : e.clientX - offsetX;
     let percentX = localX / trackWidth;
     if (percentX < 0) percentX = 0;
     if (percentX > 1) percentX = 1;
