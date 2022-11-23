@@ -11,6 +11,7 @@ body {
   /* border-widths */
   --border-width-small: 1px;
   --border-width-medium: 2px;
+  --border-width-large: 4px;
 
   /* content spacing */
   --content-spacing-small: 5px;
