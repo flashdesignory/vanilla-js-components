@@ -76,7 +76,7 @@ export class SearchableTable {
       items = this.state.data.filter((row) => {
         return (
           Object.values(row).filter((cell) =>
-            cell.toLowerCase().includes(searchterm)
+            cell.toString().toLowerCase().includes(searchterm)
           ).length > 0
         );
       });
