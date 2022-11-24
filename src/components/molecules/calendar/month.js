@@ -97,7 +97,9 @@ export class DisplayMonth {
   }
 
   rebuild() {
-    this.items.forEach(item => item.removeEventListener("click", this.handleCellClick));
+    this.items.forEach((item) =>
+      item.removeEventListener("click", this.handleCellClick)
+    );
     this.items = [];
 
     this.monthName.update({ text: MONTHS[this.state.displayDate.getMonth()] });
@@ -141,7 +143,7 @@ export class DisplayMonth {
       }
 
       if (
-        this.selectedDate !== undefined && 
+        this.selectedDate !== undefined &&
         i === this.selectedDate.getDate() &&
         this.state.displayDate.getMonth() === this.selectedDate.getMonth() &&
         this.state.displayDate.getFullYear() === this.selectedDate.getFullYear()

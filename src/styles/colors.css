@@ -20,6 +20,7 @@ body {
   /* highlights */
   --utils-highlight-olive: rgb(107 142 35); /* olivedrab, #6b8e23 */
   --utils-highlight-red: rgb(139 0 0); /* darkred, #8b0000 */
+  --utils-highlight-red-light: rgb(197 98 98); /* #c56262 */
   --utils-highlight-orange: rgb(255 165 0); /* orange, #ffa500 */
 
   /* misc colors */

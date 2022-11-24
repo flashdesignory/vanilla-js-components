@@ -1,14 +1,15 @@
 // import sheet from './product-table.css' assert { type: 'css' };
 // document.adoptedStyleSheets.push(sheet);
-import "./product-table.css";
+import "./product-list.css";
 
 import { Text } from "../../atoms/text/text.js";
 import { Input } from "../../atoms/input/input.js";
-import { Table } from "../../atoms/table/table.js";
+import { List } from "../../atoms/list/list.js";
 import { Checkbox } from "../../atoms/checkbox/checkbox.js";
+import { ProductItem } from "./product-item.js";
 import { debounce } from "../../../lib/index.js";
 
-export class ProductTable {
+export class ProductList {
   constructor({ data, title, errorText }) {
     this.state = {
       data: undefined, // { task: string, completed: boolean }[]
@@ -22,13 +23,13 @@ export class ProductTable {
     const debounced = debounce(this.handleOnInput, 250);
 
     this.container = document.createElement("div");
-    this.container.classList.add("product-table-container");
+    this.container.classList.add("product-list-container");
 
     this.top = document.createElement("div");
-    this.top.classList.add("product-table-header");
+    this.top.classList.add("product-list-header");
     this.container.appendChild(this.top);
 
-    this.header = new Text({ containerClass: "product-table-title" });
+    this.header = new Text({ containerClass: "product-list-title" });
     this.top.appendChild(this.header.render());
 
     this.input = new Input({
@@ -46,17 +47,14 @@ export class ProductTable {
     });
     this.top.appendChild(this.filter.render());
 
-    this.table = new Table({
-      title: "data table",
+    this.list = new List({
+      title: "data-list",
       onClick: this.handleOnClick,
+      ItemClass: ProductItem,
     });
-    this.container.appendChild(this.table.render());
+    this.container.appendChild(this.list.render());
 
     this.update({ data, title, errorText });
-
-    if (data && data.length > 0) {
-      this.table.rebuild();
-    }
   }
 
   update({ data, title, errorText }) {
@@ -67,12 +65,13 @@ export class ProductTable {
 
     if (errorText !== undefined) {
       this.state.errorText = errorText;
-      this.table.update({ emptyTableText: this.state.errorText });
+      this.list.update({ emptyListText: this.state.errorText });
     }
 
     if (data !== undefined) {
       this.state.data = [...data];
-      this.table.update({ data: this.state.data });
+      this.list.update({ data: this.state.data });
+      this.list.rebuild();
     }
   }
 
@@ -96,28 +95,22 @@ export class ProductTable {
       });
     }
 
-    this.table.update({ data: items });
-    this.table.rebuild();
-    this.table.render();
-  }
-
-  handleOnClick(e) {
-    switch (e.target.tagName) {
-      case "TH":
-        // console.log("header click", e.target.textContent);
-        break;
-      default:
-      // console.log("body click", e.target.textContent);
-    }
+    this.list.update({ data: items });
+    this.list.rebuild();
+    this.list.render();
   }
 
   handleOnChange() {
     this.input.input.dispatchEvent(new Event("input"));
   }
 
+  handleOnClick(e) {
+    console.log(e.target);
+  }
+
   render() {
     this.header.render();
-    this.table.render();
+    this.list.render();
     return this.container;
   }
 }

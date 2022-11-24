@@ -87,7 +87,7 @@ export class List {
       const elementRole = this.state.role === "listbox" ? "option" : "listitem";
       const element = this.state.ItemClass
         ? new this.state.ItemClass({ data: item, role: elementRole })
-        : new Item({ label: item, role: elementRole });
+        : new Item({ data: item, role: elementRole });
       this.items.push(element);
     });
   }

@@ -1,0 +1,52 @@
+@import url("../../../styles/colors.css");
+@import url("../../../styles/fonts.css");
+@import url("../../../styles/layout.css");
+
+.product-list-container,
+.product-list-container * {
+  box-sizing: border-box;
+}
+
+.product-list-container {
+  background: var(--neutrals-white);
+  border-radius: var(--border-radius-large);
+  padding: var(--content-spacing-xlarge);
+  max-width: 400px;
+  width: 100%;
+  box-shadow: var(--content-shadow);
+}
+
+.product-list-container .product-list-header {
+  background: var(--neutrals-white);
+  position: relative;
+}
+
+.product-list-container .product-list-title {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-more-bold);
+  margin-bottom: var(--content-spacing-medium);
+}
+
+.product-list-container .input-container {
+  margin-top: var(--content-spacing-medium);
+}
+
+.product-list-container .checkbox-container {
+  margin: var(--content-spacing-medium);
+}
+
+.product-list-container .list-container {
+  margin-top: var(--content-spacing-medium);
+  box-shadow: none;
+  border: var(--border-width-medium) solid var(--utils-gray-dark);
+}
+
+.product-list-container .list-container .out-of-stock {
+  border-color: var(--utils-highlight-red);
+  color: var(--utils-highlight-red);
+}
+
+.product-list-container .list-container .out-of-stock:hover {
+  border-color: var(--utils-highlight-red-light);
+  color: var(--utils-highlight-red-light);
+}

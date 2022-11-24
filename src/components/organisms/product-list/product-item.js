@@ -1,4 +1,4 @@
-export class Item {
+export class ProductItem {
   constructor({ data, role = "listitem" }) {
     this.state = {
       data: undefined, // string
@@ -17,7 +17,8 @@ export class Item {
   }
 
   render() {
-    this.item.textContent = this.state.data;
+    if (!this.state.data.stocked) this.item.classList.add("out-of-stock");
+    this.item.textContent = this.state.data.name;
     this.item.role = this.state.role;
     return this.item;
   }
