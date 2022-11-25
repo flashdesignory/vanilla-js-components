@@ -17,6 +17,7 @@
   border-style: solid;
   transition: var(--default-transition);
   font-family: var(--default-font-family);
+  width: inherit;
 }
 
 .button-container .button:disabled {

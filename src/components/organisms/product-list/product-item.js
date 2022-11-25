@@ -31,7 +31,7 @@ export class ProductItem {
     price.classList.add("item-price");
     price.textContent = this.state.data.price;
     this.item.appendChild(price);
-    
+
     return this.item;
   }
 }
