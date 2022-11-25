@@ -37,6 +37,7 @@
 
 .list-container .list-li {
   display: flex;
+  justify-content: space-between;
   padding: var(--content-spacing-medium);
   border-radius: var(--border-radius-small);
   border: var(--border-width-medium) solid var(--utils-gray-dark);
