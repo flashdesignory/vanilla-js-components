@@ -63,6 +63,7 @@ export class TicTacToe {
     for (let i = 0; i < NUM_CELLS; i++) {
       const cell = document.createElement("div");
       cell.classList.add("cell");
+      cell.classList.add("disabled");
       cell.dataset.type = "cell";
       this.board.appendChild(cell);
       this.cells.push(cell);
