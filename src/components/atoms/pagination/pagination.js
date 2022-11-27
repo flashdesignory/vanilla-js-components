@@ -120,9 +120,9 @@ export class Pagination {
   renderDotButton() {
     return new Button({
       label: "...",
-      onClick: this.handleOnClick,
       id: "...",
       containerClass: "pagination-button",
+      disabled: true,
     });
   }
 
