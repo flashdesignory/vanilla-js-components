@@ -22,6 +22,8 @@ body {
   --utils-highlight-red: rgb(139 0 0); /* darkred, #8b0000 */
   --utils-highlight-red-light: rgb(197 98 98); /* #c56262 */
   --utils-highlight-orange: rgb(255 165 0); /* orange, #ffa500 */
+  --utils-highlight-orange-dark: rgb(255 140 0); /* darkorange, #ff8c00 */
+  --utils-highlight-orange-light: rgb(255 213 128); /* #ffd580 */
 
   /* misc colors */
   --fancy-gold: rgb(218 165 32); /* #daa520 */

@@ -1,0 +1,33 @@
+@import url("../../../styles/colors.css");
+@import url("../../../styles/layout.css");
+
+.pagination-container,
+.pagination-container * {
+  box-sizing: border-box;
+}
+
+.pagination-container {
+  display: flex;
+  width: 100%;
+  max-width: 400px;
+  min-width: 280px;
+}
+
+.pagination-container .pagination-button button,
+.pagination-container .pagination-button-active button {
+  border-radius: 0;
+  width: 30px;
+  height: auto;
+  aspect-ratio: 1/1;
+  padding: 0;
+}
+
+.pagination-container .pagination-button-active button {
+  background-color: var(--utils-highlight-orange);
+  border-color: var(--utils-highlight-orange);
+}
+
+.pagination-container .pagination-button-active button:hover {
+  background-color: var(--utils-highlight-orange-light);
+  border-color: var(--utils-highlight-orange-light);
+}
