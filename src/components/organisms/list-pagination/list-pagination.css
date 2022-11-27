@@ -1,0 +1,80 @@
+@import url("../../../styles/colors.css");
+@import url("../../../styles/fonts.css");
+@import url("../../../styles/layout.css");
+
+.list-pagination,
+.list-pagination * {
+  box-sizing: border-box;
+}
+
+.list-pagination {
+  background: var(--neutrals-white);
+  border-radius: var(--border-radius-large);
+  padding: var(--content-spacing-xlarge);
+  max-width: 400px;
+  width: 100%;
+  box-shadow: var(--content-shadow);
+  font-family: var(--default-font-family);
+}
+
+.list-pagination .list-container {
+  box-shadow: none;
+  border: var(--border-width-medium) solid var(--utils-gray-dark);
+  height: 235px;
+}
+
+.list-pagination .pagination-container {
+  justify-content: center;
+  margin-top: var(--content-spacing-medium);
+  background-color: var(--utils-gray-dark);
+  border-radius: var(--border-radius-large);
+}
+
+.list-pagination .pagination-container .pagination-button button {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--neutrals-white);
+}
+
+.list-pagination .pagination-container .pagination-button-active button {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--utils-highlight-orange);
+}
+
+.list-pagination .pagination-container .pagination-button button:hover {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--utils-gray-light);
+}
+
+.list-pagination .pagination-container .pagination-button-active button:hover {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--utils-highlight-orange-light);
+}
+
+.list-pagination .item-id {
+  display: flex;
+  width: 40px;
+  background: var(--utils-gray-dark);
+  height: 40px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  color: var(--neutrals-white);
+  font-weight: bold;
+  border-radius: 50%;
+  margin-right: var(--content-spacing-medium);
+}
+
+.list-pagination .item-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  flex: 1;
+  line-height: var(--font-size-medium);
+}

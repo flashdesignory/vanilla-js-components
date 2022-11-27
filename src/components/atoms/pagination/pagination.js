@@ -16,7 +16,7 @@ export class Pagination {
     this.state = {
       buttonWidth: undefined, // number
       containerWidth: undefined, // number
-      totalItems: undefined, // number
+      totalItems: 0, // number
       activeItem: undefined, // number
     };
 
@@ -87,6 +87,45 @@ export class Pagination {
     }
   }
 
+  renderPrevButton() {
+    return new Button({
+      label: "<",
+      onClick: this.handleOnClick,
+      id: "prev",
+      containerClass: "pagination-button",
+    });
+  }
+
+  renderNextButton() {
+    return new Button({
+      label: ">",
+      onClick: this.handleOnClick,
+      id: "next",
+      containerClass: "pagination-button",
+    });
+  }
+
+  renderIdButton(id) {
+    return new Button({
+      label: id.toString(),
+      onClick: this.handleOnClick,
+      id: id.toString(),
+      containerClass:
+        id === this.state.activeItem
+          ? "pagination-button-active"
+          : "pagination-button",
+    });
+  }
+
+  renderDotButton() {
+    return new Button({
+      label: "...",
+      onClick: this.handleOnClick,
+      id: "...",
+      containerClass: "pagination-button",
+    });
+  }
+
   render() {
     this.container.replaceChildren();
     // one or less items, don't render any buttons
@@ -96,38 +135,19 @@ export class Pagination {
     // Subtract prev and next from maxButtons
     if (this.state.totalItems <= this.maxButtons - 2) {
       // render prev button
-      const prevButton = new Button({
-        label: "<",
-        onClick: this.handleOnClick,
-        id: "prev",
-        containerClass: "pagination-button",
-      });
+      const prevButton = this.renderPrevButton();
       this.container.appendChild(prevButton.render());
       this.buttons.push(prevButton);
 
       // render items
       for (let i = 0; i < this.state.totalItems; i++) {
-        const id = i + 1;
-        const buttonElement = new Button({
-          label: id.toString(),
-          onClick: this.handleOnClick,
-          id: id.toString(),
-          containerClass:
-            id === this.state.activeItem
-              ? "pagination-button-active"
-              : "pagination-button",
-        });
+        const buttonElement = this.renderIdButton(i + 1);
         this.container.appendChild(buttonElement.render());
         this.buttons.push(buttonElement);
       }
 
       // render next button
-      const nextButton = new Button({
-        label: ">",
-        onClick: this.handleOnClick,
-        id: "next",
-        containerClass: "pagination-button",
-      });
+      const nextButton = this.renderNextButton();
       this.container.appendChild(nextButton.render());
       this.buttons.push(nextButton);
       return this.container;
@@ -142,60 +162,28 @@ export class Pagination {
     // put dots on the right side
     if (this.state.activeItem <= Math.ceil(numButtons / 2)) {
       // render prev button
-      const prevButton = new Button({
-        label: "<",
-        onClick: this.handleOnClick,
-        id: "prev",
-        containerClass: "pagination-button",
-      });
+      const prevButton = this.renderPrevButton();
       this.container.appendChild(prevButton.render());
       this.buttons.push(prevButton);
 
       // render items
       for (let i = 0; i < numButtons; i++) {
-        const id = i + 1;
-        const buttonElement = new Button({
-          label: id.toString(),
-          onClick: this.handleOnClick,
-          id: id.toString(),
-          containerClass:
-            id === this.state.activeItem
-              ? "pagination-button-active"
-              : "pagination-button",
-        });
+        const buttonElement = this.renderIdButton(i + 1);
         this.container.appendChild(buttonElement.render());
         this.buttons.push(buttonElement);
       }
 
       // render dots
-      const dotButton = new Button({
-        label: "...",
-        onClick: this.handleOnClick,
-        id: "...",
-        containerClass: "pagination-button",
-      });
+      const dotButton = this.renderDotButton();
       this.container.appendChild(dotButton.render());
 
       // render last button after dots
-      const lastButton = new Button({
-        label: this.state.totalItems.toString(),
-        onClick: this.handleOnClick,
-        id: this.state.totalItems.toString(),
-        containerClass:
-          this.state.totalItems === this.state.activeItem
-            ? "pagination-button-active"
-            : "pagination-button",
-      });
+      const lastButton = this.renderIdButton(this.state.totalItems);
       this.container.appendChild(lastButton.render());
       this.buttons.push(lastButton);
 
       // render next button
-      const nextButton = new Button({
-        label: ">",
-        onClick: this.handleOnClick,
-        id: "next",
-        containerClass: "pagination-button",
-      });
+      const nextButton = this.renderNextButton();
       this.container.appendChild(nextButton.render());
       this.buttons.push(nextButton);
 
@@ -208,35 +196,17 @@ export class Pagination {
       this.state.totalItems - Math.ceil(numButtons / 2)
     ) {
       // render prev button
-      const prevButton = new Button({
-        label: "<",
-        onClick: this.handleOnClick,
-        id: "prev",
-        containerClass: "pagination-button",
-      });
+      const prevButton = this.renderPrevButton();
       this.container.appendChild(prevButton.render());
       this.buttons.push(prevButton);
 
       // render first button
-      const firstButton = new Button({
-        label: "1",
-        onClick: this.handleOnClick,
-        id: "1",
-        containerClass:
-          this.state.activeItem === 1
-            ? "pagination-button-active"
-            : "pagination-button",
-      });
+      const firstButton = this.renderIdButton(1);
       this.container.appendChild(firstButton.render());
       this.buttons.push(firstButton);
 
       // render dots
-      const dotButton = new Button({
-        label: "...",
-        onClick: this.handleOnClick,
-        id: "...",
-        containerClass: "pagination-button",
-      });
+      const dotButton = this.renderDotButton();
       this.container.appendChild(dotButton.render());
 
       // render items
@@ -245,27 +215,13 @@ export class Pagination {
         i < this.state.totalItems;
         i++
       ) {
-        const id = i + 1;
-        const buttonElement = new Button({
-          label: id.toString(),
-          onClick: this.handleOnClick,
-          id: id.toString(),
-          containerClass:
-            id === this.state.activeItem
-              ? "pagination-button-active"
-              : "pagination-button",
-        });
+        const buttonElement = this.renderIdButton(i + 1);
         this.container.appendChild(buttonElement.render());
         this.buttons.push(buttonElement);
       }
 
       // render next button
-      const nextButton = new Button({
-        label: ">",
-        onClick: this.handleOnClick,
-        id: "next",
-        containerClass: "pagination-button",
-      });
+      const nextButton = this.renderNextButton();
       this.container.appendChild(nextButton.render());
       this.buttons.push(nextButton);
 
@@ -297,81 +253,37 @@ export class Pagination {
     }
 
     // render prev button
-    const prevButton = new Button({
-      label: "<",
-      onClick: this.handleOnClick,
-      id: "prev",
-      containerClass: "pagination-button",
-    });
+    const prevButton = this.renderPrevButton();
     this.container.appendChild(prevButton.render());
     this.buttons.push(prevButton);
 
     // render first button
-    const firstButton = new Button({
-      label: "1",
-      onClick: this.handleOnClick,
-      id: "1",
-      containerClass:
-        this.state.activeItem === 1
-          ? "pagination-button-active"
-          : "pagination-button",
-    });
+    const firstButton = this.renderIdButton(1);
     this.container.appendChild(firstButton.render());
     this.buttons.push(firstButton);
 
     // render left dots
-    const leftDotsButton = new Button({
-      label: "...",
-      onClick: this.handleOnClick,
-      id: "...",
-      containerClass: "pagination-button",
-    });
+    const leftDotsButton = this.renderDotButton();
     this.container.appendChild(leftDotsButton.render());
 
+    // render items
     for (let i = startIndex - 1; i < endIndex; i++) {
-      const id = i + 1;
-      const buttonElement = new Button({
-        label: id.toString(),
-        onClick: this.handleOnClick,
-        id: id.toString(),
-        containerClass:
-          id === this.state.activeItem
-            ? "pagination-button-active"
-            : "pagination-button",
-      });
+      const buttonElement = this.renderIdButton(i + 1);
       this.container.appendChild(buttonElement.render());
       this.buttons.push(buttonElement);
     }
 
     // render right dots
-    const rightDotsButton = new Button({
-      label: "...",
-      onClick: this.handleOnClick,
-      id: "...",
-      containerClass: "pagination-button",
-    });
+    const rightDotsButton = this.renderDotButton();
     this.container.appendChild(rightDotsButton.render());
 
     // render last button after dots
-    const lastButton = new Button({
-      label: this.state.totalItems.toString(),
-      onClick: this.handleOnClick,
-      id: this.state.totalItems.toString(),
-      containerClass:
-        this.state.totalItems === this.state.activeItem
-          ? "pagination-button-active"
-          : "pagination-button",
-    });
+    const lastButton = this.renderIdButton(this.state.totalItems);
     this.container.appendChild(lastButton.render());
     this.buttons.push(lastButton);
 
     // render next button
-    const nextButton = new Button({
-      label: ">",
-      onClick: this.handleOnClick,
-      id: "next",
-      containerClass: "pagination-button",
-    });
+    const nextButton = this.renderNextButton();
     this.container.appendChild(nextButton.render());
     this.buttons.push(nextButton);
 
