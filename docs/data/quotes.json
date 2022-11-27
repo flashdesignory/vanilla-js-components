@@ -345,7 +345,7 @@
     {
       "id": 58,
       "avatar": "./iceland/iceland-thumb-18.jpg",
-      "text": "For many purposes, we need to understand the world as having things in it that are related to each other, not just variables with values. For example, we might notice that a large truck ahead of us is reversing into the driveway of a dairy farm but a cow has got loose and is blocking the truck’s path. A factored representation is unlikely to be pre-equipped with the attribute TruckAheadBackingIntoDairyFarmDrivewayBlockedByLooseCow with value true or false",
+      "text": "For many purposes, we need to understand the world as having things in it that are related to each other, not just variables with values. For example, we might notice that a large truck ahead of us is reversing into the driveway of a dairy farm but a cow has got loose and is blocking the truck’s path. A factored representation is unlikely to be pre-equipped with the attribute Truck Ahead Backing Into Dairy Farm Driveway Blocked By Loose Cow with value true or false",
       "metadata": "Author: Stuart Russell"
     },
     {
