@@ -1,0 +1,178 @@
+export const data = [
+  {
+    id: "1",
+    type: "image",
+    image: {
+      src: "./surf/landscape/surf-01.jpg",
+      width: 1024,
+      height: 802,
+      alt: "surfers on the beach",
+    },
+    metadata: "Author: Fooballz, date: 01/01/2022",
+  },
+  {
+    id: "2",
+    type: "image",
+    image: {
+      src: "./surf/portrait/surf-01.jpg",
+      width: 782,
+      height: 1024,
+      alt: "surfers on the beach",
+    },
+    metadata: "Author: Fooballz, date: 01/01/2022",
+  },
+  {
+    id: "5",
+    type: "image",
+    image: {
+      src: "./surf/landscape/surf-02.jpg",
+      width: 1024,
+      height: 680,
+      alt: "surfer walking on the beach",
+    },
+    metadata: "Author: Fooballz, date: 01/01/2022",
+  },
+  {
+    id: "6",
+    type: "image",
+    image: {
+      src: "./surf/landscape/surf-03.jpg",
+      width: 1024,
+      height: 666,
+      alt: "pier on a beach",
+    },
+    metadata: "Author: Fooballz, date: 01/01/2022",
+  },
+  {
+    id: "2",
+    type: "image",
+    image: {
+      src: "./surf/portrait/surf-02.jpg",
+      width: 826,
+      height: 1024,
+      alt: "surfers on the beach",
+    },
+    metadata: "Author: Fooballz, date: 01/01/2022",
+  },
+  {
+    id: "2",
+    type: "image",
+    image: {
+      src: "./surf/portrait/surf-03.jpg",
+      width: 803,
+      height: 1024,
+      alt: "surfers on the beach",
+    },
+    metadata: "Author: Fooballz, date: 01/01/2022",
+  },
+  {
+    id: "8",
+    type: "image",
+    image: {
+      src: "./surf/landscape/surf-04.jpg",
+      width: 2048,
+      height: 1346,
+      alt: "beach car",
+    },
+    metadata: "Author: Fooballz, date: 01/01/2022",
+  },
+  {
+    id: "8",
+    type: "image",
+    image: {
+      src: "./surf/landscape/surf-05.jpg",
+      width: 1024,
+      height: 683,
+      alt: "beach car",
+    },
+    metadata: "Author: Fooballz, date: 01/01/2022",
+  },
+  {
+    id: "8",
+    type: "image",
+    image: {
+      src: "./surf/landscape/surf-06.jpg",
+      width: 1024,
+      height: 679,
+      alt: "beach car",
+    },
+    metadata: "Author: Fooballz, date: 01/01/2022",
+  },
+  {
+    id: "8",
+    type: "image",
+    image: {
+      src: "./surf/landscape/surf-07.jpg",
+      width: 1024,
+      height: 577,
+      alt: "beach car",
+    },
+    metadata: "Author: Fooballz, date: 01/01/2022",
+  },
+  {
+    id: "8",
+    type: "image",
+    image: {
+      src: "./surf/landscape/surf-08.jpg",
+      width: 1024,
+      height: 585,
+      alt: "beach car",
+    },
+    metadata: "Author: Fooballz, date: 01/01/2022",
+  },
+  {
+    id: "2",
+    type: "image",
+    image: {
+      src: "./surf/portrait/surf-04.jpg",
+      width: 683,
+      height: 1024,
+      alt: "surfers on the beach",
+    },
+    metadata: "Author: Fooballz, date: 01/01/2022",
+  },
+  {
+    id: "2",
+    type: "image",
+    image: {
+      src: "./surf/portrait/surf-05.jpg",
+      width: 683,
+      height: 1024,
+      alt: "surfers on the beach",
+    },
+    metadata: "Author: Fooballz, date: 01/01/2022",
+  },
+  {
+    id: "2",
+    type: "image",
+    image: {
+      src: "./surf/portrait/surf-06.jpg",
+      width: 683,
+      height: 1024,
+      alt: "surfers on the beach",
+    },
+    metadata: "Author: Fooballz, date: 01/01/2022",
+  },
+  {
+    id: "2",
+    type: "image",
+    image: {
+      src: "./surf/portrait/surf-07.jpg",
+      width: 807,
+      height: 1024,
+      alt: "surfers on the beach",
+    },
+    metadata: "Author: Fooballz, date: 01/01/2022",
+  },
+  {
+    id: "2",
+    type: "image",
+    image: {
+      src: "./surf/portrait/surf-08.jpg",
+      width: 813,
+      height: 1024,
+      alt: "surfers on the beach",
+    },
+    metadata: "Author: Fooballz, date: 01/01/2022",
+  },
+];
