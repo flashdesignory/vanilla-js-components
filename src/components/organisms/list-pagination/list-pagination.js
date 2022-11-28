@@ -5,6 +5,7 @@ import "./list-pagination.css";
 import { List } from "../../atoms/list/list.js";
 import { Pagination } from "../../atoms/pagination/pagination.js";
 import { ListPaginationItem } from "./list-pagination-item.js";
+// import { DisplayCard } from "../../molecules/display-card/display-card";
 
 export class ListPagination {
   constructor({ data, totalPages, activePage, requestPage }) {
@@ -26,6 +27,7 @@ export class ListPagination {
       title: "content list",
       role: "list",
       ItemClass: ListPaginationItem,
+      // ItemClass: DisplayCard
     });
     this.container.appendChild(this.list.render());
 

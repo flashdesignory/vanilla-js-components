@@ -1,5 +1,5 @@
 export class ProductItem {
-  constructor({ data, role = "listitem" }) {
+  constructor({ role = "listitem", ...data }) {
     this.state = {
       data: undefined, // string
       role: undefined, // "listitem" | "option"
@@ -8,11 +8,11 @@ export class ProductItem {
     this.item = document.createElement("li");
     this.item.classList.add("list-li");
 
-    this.update({ data, role });
+    this.update({ role, data });
   }
 
-  update({ data, role }) {
-    if (data !== undefined) this.state.data = data;
+  update({ role, data }) {
+    if (data !== undefined) this.state.data = { ...data };
     if (role !== undefined) this.state.role = role;
   }
 

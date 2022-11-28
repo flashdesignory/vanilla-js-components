@@ -1,7 +1,7 @@
 import { Link } from "../../atoms/link/link.js";
 
 export class DynamicItem {
-  constructor({ data, role }) {
+  constructor({ role, ...data }) {
     this.state = {
       data: undefined, // unkown[]
       role: undefined, // "listitem" | "option"
@@ -10,11 +10,11 @@ export class DynamicItem {
     this.item = document.createElement("li");
     this.item.classList.add("list-li");
 
-    this.update({ data, role });
+    this.update({ role, data });
   }
 
-  update({ data, role }) {
-    if (data !== undefined) this.state.data = data;
+  update({ role, data }) {
+    if (data !== undefined) this.state.data = { ...data };
     if (role !== undefined) this.state.role = role;
   }
 

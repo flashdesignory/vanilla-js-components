@@ -86,7 +86,7 @@ export class List {
     this.state.data.forEach((item) => {
       const elementRole = this.state.role === "listbox" ? "option" : "listitem";
       const element = this.state.ItemClass
-        ? new this.state.ItemClass({ data: item, role: elementRole })
+        ? new this.state.ItemClass({ ...item, role: elementRole })
         : new Item({ data: item, role: elementRole });
       this.items.push(element);
     });

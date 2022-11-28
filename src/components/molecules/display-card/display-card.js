@@ -44,10 +44,15 @@ export class DisplayCard extends DisplayCardBase {
 
     if (this.state.y !== undefined) {
       this.container.style.transform = `translateY(${this.state.y}px)`;
-    } else {
+    } else if (
+      this.state.index !== undefined &&
+      this.state.height !== undefined
+    ) {
       this.container.style.transform = `translateY(${
         this.state.index * this.state.height
       }px)`;
+    } else {
+      this.container.style.position = "relative";
     }
 
     // always add avatar;

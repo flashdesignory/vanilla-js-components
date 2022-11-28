@@ -1,5 +1,5 @@
 export class ListPaginationItem {
-  constructor({ data, role = "listitem" }) {
+  constructor({ role = "listitem", ...data }) {
     this.state = {
       data: undefined, // string
       role: undefined, // "listitem" | "option"
@@ -11,8 +11,8 @@ export class ListPaginationItem {
     this.update({ data, role });
   }
 
-  update({ data, role }) {
-    if (data !== undefined) this.state.data = data;
+  update({ role, data }) {
+    if (data !== undefined) this.state.data = { ...data };
     if (role !== undefined) this.state.role = role;
   }
 
