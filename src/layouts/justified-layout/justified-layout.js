@@ -30,6 +30,10 @@ export class JustifiedLayout {
     this.observer.observe(this.container);
 
     this.update({ maxHeight, containerWidth, data });
+
+    if (data && data.length > 0) {
+      this.rebuild();
+    }
   }
 
   update({ maxHeight, containerWidth, data }) {
@@ -50,27 +54,31 @@ export class JustifiedLayout {
         height: this.state.data[i].image.height,
         data: this.state.data[i].image,
       };
-      this.items.push(new DisplayImage(props));
+      const item = new DisplayImage(props);
+      this.items.push(item);
+      this.content.appendChild(item.render());
     }
   }
 
   handleOnObserve(entries) {
+    this.observer.disconnect();
     for (let entry of entries) {
       const cr = entry.contentRect;
       this.update({ containerWidth: cr.width });
-      this.rebuild();
       this.render();
     }
   }
 
   render() {
-    this.content.replaceChildren();
+    if (this.state.containerWidth === undefined) {
+      return this.container;
+    }
 
     let row = [];
     let currentWidth = 0;
     this.items.forEach((item, index) => {
       row.push(item);
-      currentWidth += Math.floor(
+      currentWidth += Math.ceil(
         (this.state.maxHeight / item.height) * item.width
       );
       if (
@@ -87,9 +95,11 @@ export class JustifiedLayout {
         row = [];
         currentWidth = 0;
       }
+      item.render();
     });
-
-    this.items.forEach((item) => this.content.appendChild(item.render()));
+    
+    // setTimeout(() => this.observer.observe(this.container), 0);
+    window.requestAnimationFrame(() => this.observer.observe(this.container));
     return this.container;
   }
 }
