@@ -74,6 +74,7 @@ export class DisplayImage {
 
     if (this.state.data !== undefined) {
       this.image.update({ ...this.state.data });
+      if (this.content.contains(this.image.container)) return this.container;
       this.content.appendChild(this.image.render());
     }
 
