@@ -26,8 +26,8 @@ export class JustifiedLayout {
 
     const throttled = throttle(this.handleOnObserve, 250);
 
-    var observer = new ResizeObserver(throttled);
-    observer.observe(this.container);
+    this.observer = new ResizeObserver(throttled);
+    this.observer.observe(this.container);
 
     this.update({ maxHeight, containerWidth, data });
   }
@@ -70,9 +70,16 @@ export class JustifiedLayout {
     let currentWidth = 0;
     this.items.forEach((item, index) => {
       row.push(item);
-      currentWidth += Math.floor((this.state.maxHeight / item.height) * item.width);
-      if (currentWidth >= this.state.containerWidth || index === this.items.length - 1) {
-        const height = Math.floor((this.state.containerWidth / currentWidth) * this.state.maxHeight);
+      currentWidth += Math.floor(
+        (this.state.maxHeight / item.height) * item.width
+      );
+      if (
+        currentWidth >= this.state.containerWidth ||
+        index === this.items.length - 1
+      ) {
+        const height = Math.floor(
+          (this.state.containerWidth / currentWidth) * this.state.maxHeight
+        );
         row.forEach((image) => {
           const width = Math.floor((height / image.height) * image.width);
           image.update({ width, height });
@@ -82,7 +89,7 @@ export class JustifiedLayout {
       }
     });
 
-    this.items.forEach(item => this.content.appendChild(item.render()));
+    this.items.forEach((item) => this.content.appendChild(item.render()));
     return this.container;
   }
 }

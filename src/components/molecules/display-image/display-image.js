@@ -8,7 +8,6 @@ import { Image } from "../../atoms/image/image.js";
 
 export class DisplayImage {
   constructor(props) {
-    console.log(props);
     this.state = {
       index: undefined, // number
       id: undefined, // string
@@ -30,6 +29,11 @@ export class DisplayImage {
     this.placeholder.classList.add("item-placeholder");
     this.placeholder.insertAdjacentHTML("afterbegin", ImageIcon());
     this.content.appendChild(this.placeholder);
+
+    this.image = new Image({
+      fadeIn: true,
+      lazyLoad: true,
+    });
 
     if (props) this.update(props);
   }
@@ -69,10 +73,8 @@ export class DisplayImage {
     }
 
     if (this.state.data !== undefined) {
-      // this.content.replaceChildren();
-      const image = new Image({ ...this.state.data, fadeIn: true });
-      const element = image.render();
-      this.content.appendChild(element);
+      this.image.update({ ...this.state.data });
+      this.content.appendChild(this.image.render());
     }
 
     return this.container;

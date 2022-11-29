@@ -36,7 +36,7 @@ export class InfiniteList {
       threshold: 0.5,
     };
     this.handleOnObserve = this.handleOnObserve.bind(this);
-    this.oberver = new IntersectionObserver(
+    this.observer = new IntersectionObserver(
       this.handleOnObserve,
       this.observerConfig
     );
@@ -148,7 +148,7 @@ export class InfiniteList {
     this.content.style.height = `${this.totalHeight}px`;
 
     if (this.lastListElement) {
-      this.oberver.unobserve(this.lastListElement);
+      this.observer.unobserve(this.lastListElement);
       this.lastListElement = undefined;
     }
 
@@ -162,7 +162,7 @@ export class InfiniteList {
           !this.isFetching
         ) {
           this.lastListElement = itemElement;
-          this.oberver.observe(this.lastListElement);
+          this.observer.observe(this.lastListElement);
         }
       }
     });

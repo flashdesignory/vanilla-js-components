@@ -32,8 +32,8 @@ export class Pagination {
 
     const throttled = throttle(this.handleOnObserve, 50);
 
-    var observer = new ResizeObserver(throttled);
-    observer.observe(this.container);
+    this.observer = new ResizeObserver(throttled);
+    this.observer.observe(this.container);
 
     this.update({ buttonWidth, containerWidth, totalItems, activeItem });
     this.rebuild();

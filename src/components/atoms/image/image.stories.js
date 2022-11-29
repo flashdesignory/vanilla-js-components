@@ -8,6 +8,7 @@ export default {
     height: { control: "text" },
     alt: { control: "text" },
     fadeIn: { control: "boolean" },
+    lazyLoad: { control: "boolean" },
   },
 };
 
@@ -32,5 +33,16 @@ Animated.args = {
   width: "300",
   height: "300",
   fadeIn: true,
+  style: { width: "300px", height: "300px" },
+};
+
+export const LazyLoaded = Template.bind({});
+LazyLoaded.args = {
+  src: "./misc/image-1.jpg",
+  alt: "animals on a bus",
+  width: "300",
+  height: "300",
+  fadeIn: true,
+  lazyLoad: true,
   style: { width: "300px", height: "300px" },
 };
