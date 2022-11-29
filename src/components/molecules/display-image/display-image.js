@@ -8,6 +8,7 @@ import { Image } from "../../atoms/image/image.js";
 
 export class DisplayImage {
   constructor(props) {
+    console.log(props);
     this.state = {
       index: undefined, // number
       id: undefined, // string
@@ -31,6 +32,14 @@ export class DisplayImage {
     this.content.appendChild(this.placeholder);
 
     if (props) this.update(props);
+  }
+
+  get width() {
+    return this.state.width;
+  }
+
+  get height() {
+    return this.state.height;
   }
 
   update({ index, id, height, width, x, y, data }) {
