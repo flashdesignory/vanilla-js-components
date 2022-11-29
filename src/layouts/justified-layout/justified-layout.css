@@ -23,7 +23,6 @@
 
 .justified-layout-container .display-image-container {
   width: 100%;
-  height: auto;
   padding: var(--content-spacing-medium);
 }
 
