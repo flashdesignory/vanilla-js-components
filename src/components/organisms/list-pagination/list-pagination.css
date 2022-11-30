@@ -20,7 +20,7 @@
 .list-pagination .list-container {
   box-shadow: none;
   border: var(--border-width-medium) solid var(--neutrals-gray-128);
-  height: 235px;
+  height: 285px;
 }
 
 .list-pagination .pagination-container {
