@@ -8,7 +8,8 @@
     "pretty": "prettier ./src --write",
     "stylelint": "stylelint **/*.css --fix",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o docs-build"
+    "build-storybook": "build-storybook -o docs-build",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
@@ -25,9 +26,12 @@
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^8.2.5",
     "eslint": "^8.25.0",
+    "eslint-config-prettier": "^8.5.0",
     "postcss": "^8.4.18",
     "prettier": "^2.7.1",
     "stylelint": "^14.14.1",
-    "stylelint-config-standard": "^29.0.0"
+    "stylelint-config-prettier": "^9.0.4",
+    "stylelint-config-standard": "^29.0.0",
+    "husky": "^8.0.0"
   }
 }

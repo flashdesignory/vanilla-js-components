@@ -121,7 +121,9 @@
 }
 
 /* for cross */
-.tic-tac-toe-container .tic-tac-toe-board.x .cell:not(.circle, .x):hover::after {
+.tic-tac-toe-container
+  .tic-tac-toe-board.x
+  .cell:not(.circle, .x):hover::after {
   content: "X";
   background-color: var(--utils-gray-light);
   color: var(--neutrals-white);
@@ -133,7 +135,9 @@
 }
 
 /* for circle */
-.tic-tac-toe-container .tic-tac-toe-board.circle .cell:not(.circle, .x):hover::after {
+.tic-tac-toe-container
+  .tic-tac-toe-board.circle
+  .cell:not(.circle, .x):hover::after {
   content: "O";
   background-color: var(--utils-gray-light);
   color: var(--neutrals-white);
