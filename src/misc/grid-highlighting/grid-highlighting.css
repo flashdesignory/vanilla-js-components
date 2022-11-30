@@ -1,0 +1,32 @@
+@import url("../../styles//colors.css");
+@import url("../../styles/layout.css");
+@import url("../../styles/animations.css");
+
+.grid-highlighting-container,
+.grid-highlighting-container * {
+  box-sizing: border-box;
+}
+
+.grid-highlighting-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.grid-highlighting-container .box {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  background-color: var(--utils-gray-dark);
+  pointer-events: none;
+}
+
+.grid-highlighting-container .box.selected {
+  background-color: var(--utils-highlight-olive);
+}
+
+.grid-highlighting-container .overlay {
+  position: absolute;
+  background-color: var(--neutrals-gray-102);
+  opacity: 0.5;
+}
