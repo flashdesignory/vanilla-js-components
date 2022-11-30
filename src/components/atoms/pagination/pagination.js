@@ -69,7 +69,7 @@ export class Pagination {
         nextId = this.state.activeItem - 1;
         break;
       default:
-        nextId = Number(e.target.id);
+        nextId = Number(e.target.textContent);
     }
 
     if (nextId && this.onClick) this.onClick(nextId);
@@ -109,7 +109,7 @@ export class Pagination {
     return new Button({
       label: id.toString(),
       onClick: this.handleOnClick,
-      id: id.toString(),
+      id: `pagination-button-${id}`,
       containerClass:
         id === this.state.activeItem
           ? "pagination-button-active"
@@ -120,7 +120,6 @@ export class Pagination {
   renderDotButton() {
     return new Button({
       label: "...",
-      id: "...",
       containerClass: "pagination-button",
       disabled: true,
     });

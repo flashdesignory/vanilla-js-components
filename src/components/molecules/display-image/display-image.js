@@ -57,7 +57,7 @@ export class DisplayImage {
   }
 
   render() {
-    this.container.id = this.state.id;
+    this.container.id = `display-image-${this.state.id}`;
     this.container.style.maxWidth = `${this.state.width}px`;
     this.container.style.maxHeight = `${this.state.height}px`;
     this.container.style.aspectRatio = `${getAspectRatioForStyles(

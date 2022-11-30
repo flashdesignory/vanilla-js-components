@@ -25,6 +25,7 @@
 .pagination-container .pagination-button-active button {
   background-color: var(--utils-highlight-orange);
   border-color: var(--utils-highlight-orange);
+  color: var(--neutrals-black);
 }
 
 .pagination-container .pagination-button-active button:hover {

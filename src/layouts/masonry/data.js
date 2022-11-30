@@ -22,7 +22,7 @@ export const data = [
     metadata: "Author: Fooballz, date: 01/01/2022",
   },
   {
-    id: "5",
+    id: "3",
     type: "image",
     image: {
       src: "./surf/landscape/surf-02.jpg",
@@ -33,7 +33,7 @@ export const data = [
     metadata: "Author: Fooballz, date: 01/01/2022",
   },
   {
-    id: "6",
+    id: "4",
     type: "image",
     image: {
       src: "./surf/landscape/surf-03.jpg",
@@ -44,7 +44,7 @@ export const data = [
     metadata: "Author: Fooballz, date: 01/01/2022",
   },
   {
-    id: "2",
+    id: "5",
     type: "image",
     image: {
       src: "./surf/portrait/surf-02.jpg",
@@ -55,7 +55,7 @@ export const data = [
     metadata: "Author: Fooballz, date: 01/01/2022",
   },
   {
-    id: "2",
+    id: "6",
     type: "image",
     image: {
       src: "./surf/portrait/surf-03.jpg",
@@ -66,7 +66,7 @@ export const data = [
     metadata: "Author: Fooballz, date: 01/01/2022",
   },
   {
-    id: "8",
+    id: "7",
     type: "image",
     image: {
       src: "./surf/landscape/surf-04.jpg",
@@ -88,7 +88,7 @@ export const data = [
     metadata: "Author: Fooballz, date: 01/01/2022",
   },
   {
-    id: "8",
+    id: "9",
     type: "image",
     image: {
       src: "./surf/landscape/surf-06.jpg",
@@ -99,7 +99,7 @@ export const data = [
     metadata: "Author: Fooballz, date: 01/01/2022",
   },
   {
-    id: "8",
+    id: "10",
     type: "image",
     image: {
       src: "./surf/landscape/surf-07.jpg",
@@ -110,7 +110,7 @@ export const data = [
     metadata: "Author: Fooballz, date: 01/01/2022",
   },
   {
-    id: "8",
+    id: "11",
     type: "image",
     image: {
       src: "./surf/landscape/surf-08.jpg",
@@ -121,7 +121,7 @@ export const data = [
     metadata: "Author: Fooballz, date: 01/01/2022",
   },
   {
-    id: "2",
+    id: "12",
     type: "image",
     image: {
       src: "./surf/portrait/surf-04.jpg",
@@ -132,7 +132,7 @@ export const data = [
     metadata: "Author: Fooballz, date: 01/01/2022",
   },
   {
-    id: "2",
+    id: "13",
     type: "image",
     image: {
       src: "./surf/portrait/surf-05.jpg",
@@ -143,7 +143,7 @@ export const data = [
     metadata: "Author: Fooballz, date: 01/01/2022",
   },
   {
-    id: "2",
+    id: "14",
     type: "image",
     image: {
       src: "./surf/portrait/surf-06.jpg",
@@ -154,7 +154,7 @@ export const data = [
     metadata: "Author: Fooballz, date: 01/01/2022",
   },
   {
-    id: "2",
+    id: "15",
     type: "image",
     image: {
       src: "./surf/portrait/surf-07.jpg",
@@ -165,7 +165,7 @@ export const data = [
     metadata: "Author: Fooballz, date: 01/01/2022",
   },
   {
-    id: "2",
+    id: "16",
     type: "image",
     image: {
       src: "./surf/portrait/surf-08.jpg",

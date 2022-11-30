@@ -4,8 +4,8 @@ import "./list-pagination.css";
 
 import { List } from "../../atoms/list/list.js";
 import { Pagination } from "../../atoms/pagination/pagination.js";
-import { ListPaginationItem } from "./list-pagination-item.js";
-// import { DisplayCard } from "../../molecules/display-card/display-card";
+// import { ListPaginationItem } from "./list-pagination-item.js";
+import { DisplayCard } from "../../molecules/display-card/display-card";
 
 export class ListPagination {
   constructor({ data, totalPages, activePage, requestPage }) {
@@ -26,9 +26,12 @@ export class ListPagination {
     this.list = new List({
       title: "content list",
       role: "list",
-      ItemClass: ListPaginationItem,
-      // ItemClass: DisplayCard
+      // ItemClass: ListPaginationItem,
+      ItemClass: DisplayCard,
     });
+
+    // set this aria attribute, if the li child is complex
+    this.list.container.setAttribute("aria-busy", "true");
     this.container.appendChild(this.list.render());
 
     this.pagination = new Pagination({

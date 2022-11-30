@@ -39,7 +39,7 @@ export class DisplayCard extends DisplayCardBase {
   }
 
   render() {
-    this.container.id = this.state.id;
+    this.container.id = `display-card-${this.state.id}`;
     this.container.style.height = `${this.state.height}px`;
 
     if (this.state.y !== undefined) {

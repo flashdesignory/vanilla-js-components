@@ -19,14 +19,14 @@
 
 .list-pagination .list-container {
   box-shadow: none;
-  border: var(--border-width-medium) solid var(--utils-gray-dark);
+  border: var(--border-width-medium) solid var(--neutrals-gray-128);
   height: 235px;
 }
 
 .list-pagination .pagination-container {
   justify-content: center;
   margin-top: var(--content-spacing-medium);
-  background-color: var(--utils-gray-dark);
+  background-color: var(--neutrals-gray-102);
   border-radius: var(--border-radius-large);
 }
 

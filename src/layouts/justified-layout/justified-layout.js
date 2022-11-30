@@ -97,7 +97,7 @@ export class JustifiedLayout {
       }
       item.render();
     });
-    
+
     // setTimeout(() => this.observer.observe(this.container), 0);
     window.requestAnimationFrame(() => this.observer.observe(this.container));
     return this.container;

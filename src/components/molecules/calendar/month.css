@@ -75,10 +75,12 @@
 .month-container .cell.prev-month,
 .month-container .cell.next-month {
   background-color: var(--utils-gray-lighter);
+  color: var(--neutrals-black);
 }
 
 .month-container .cell.today {
   background-color: var(--utils-highlight-orange);
+  color: var(--neutrals-black);
 }
 
 .month-container .cell:hover:not(.today) {

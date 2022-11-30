@@ -5,7 +5,7 @@ import "./star-rating.css";
 export class StarRating {
   constructor({ currentRating, disabled, onChange }) {
     this.state = {
-      currentRating: undefined, // number
+      currentRating: 0, // number
       disabled: undefined, // boolean
     };
 
@@ -26,6 +26,8 @@ export class StarRating {
       star.classList.add("ratings-star");
       star.id = i;
       star.innerHTML = "&starf;";
+      star.role = "img";
+      star.setAttribute("aria-label", `star ${i}`);
 
       if (!disabled) star.addEventListener("click", this.updateDisplay);
       else star.classList.add("disabled");
@@ -33,6 +35,10 @@ export class StarRating {
       this.stars.push(star);
       this.content.appendChild(star);
     }
+
+    this.status = document.createElement("div");
+    this.status.classList.add("visually-hidden");
+    this.container.appendChild(this.status);
 
     this.update({ currentRating, disabled });
   }
@@ -56,6 +62,8 @@ export class StarRating {
         star.classList.remove("active");
       }
     });
+
+    this.status.textContent = `rating: ${this.state.currentRating} out of 5`;
 
     return this.container;
   }
