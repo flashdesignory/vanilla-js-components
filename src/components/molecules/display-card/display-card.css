@@ -35,6 +35,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
   height: 100%;
   margin-left: var(--content-spacing-large);
   width: calc(100% - 80px - var(--content-spacing-large));
