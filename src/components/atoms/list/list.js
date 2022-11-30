@@ -82,6 +82,10 @@ export class List {
   }
 
   rebuild() {
+    if (this.state.ItemClass !== undefined) {
+      this.list.setAttribute("aria-busy", "true");
+    }
+
     this.items = [];
     this.state.data.forEach((item) => {
       const elementRole = this.state.role === "listbox" ? "option" : "listitem";
