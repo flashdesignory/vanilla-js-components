@@ -13,12 +13,8 @@ export default {
 
 let url = "./data/surf-landscape.json";
 
-let carousel = null;
-let state = {
-  page: 0,
-  limit: 6,
-  totalItems: 0,
-};
+let component = null;
+let state = {};
 
 const requestMore = async () => {
   console.log("request more ...");
@@ -26,9 +22,9 @@ const requestMore = async () => {
     state.page++;
     const data = await getData(url, state.page, state.limit);
     state.totalItems = data.total;
-    carousel.update({ data: data.items });
-    carousel.rebuild();
-    carousel.render();
+    component.update({ data: data.items });
+    component.rebuild();
+    component.render();
   }
 };
 
@@ -38,9 +34,9 @@ const Template = ({ ...args }) => {
     limit: 6,
     totalItems: 0,
   };
-  carousel = new ImageCarousel({ ...args });
+  component = new ImageCarousel({ ...args });
   requestMore();
-  return carousel.container;
+  return component.container;
 };
 
 export const Infinite = Template.bind({});

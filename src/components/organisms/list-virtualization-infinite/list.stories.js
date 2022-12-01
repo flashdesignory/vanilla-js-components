@@ -15,12 +15,8 @@ export default {
 
 let url = "./data/quotes.json";
 
-let list = null;
-let state = {
-  page: 0,
-  limit: 10,
-  totalItems: 0,
-};
+let component = null;
+let state = {};
 
 const requestMore = async () => {
   console.log("request more ...");
@@ -28,8 +24,8 @@ const requestMore = async () => {
     state.page++;
     const data = await getData(url, state.page, state.limit);
     state.totalItems = data.total;
-    list.update({ data: data.items });
-    list.handleOnScroll();
+    component.update({ data: data.items });
+    component.handleOnScroll();
   }
 };
 
@@ -39,9 +35,9 @@ const Template = ({ ...args }) => {
     limit: 10,
     totalItems: 0,
   };
-  list = new InfiniteList({ ...args });
+  component = new InfiniteList({ ...args });
   requestMore();
-  return list.render();
+  return component.container;
 };
 
 export const Infinite = Template.bind({});
