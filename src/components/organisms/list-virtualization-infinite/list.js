@@ -125,7 +125,6 @@ export class InfiniteList {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
       if (entry.target.id === this.lastListElement.id) {
-        console.log(this.lastListElement?.id, this.isFetching);
         observer.unobserve(entry.target);
         this.lastListElement = undefined;
         this.isFetching = true;

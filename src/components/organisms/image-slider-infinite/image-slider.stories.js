@@ -1,8 +1,8 @@
-import { ImageCarousel } from "./image-carousel";
+import { ImageSlider } from "./image-slider";
 import { getData } from "./server.js";
 
 export default {
-  title: "Organisms/ImageCarousel",
+  title: "Organisms/ImageSlider",
   argTypes: {
     data: { control: "json" },
     itemHeight: { control: "number" },
@@ -13,7 +13,7 @@ export default {
 
 let url = "./data/surf-landscape.json";
 
-let carousel = null;
+let slider = null;
 let state = {
   page: 0,
   limit: 6,
@@ -26,9 +26,9 @@ const requestMore = async () => {
     state.page++;
     const data = await getData(url, state.page, state.limit);
     state.totalItems = data.total;
-    carousel.update({ data: data.items });
-    carousel.rebuild();
-    carousel.render();
+    slider.update({ data: data.items });
+    slider.rebuild();
+    slider.render();
   }
 };
 
@@ -38,9 +38,9 @@ const Template = ({ ...args }) => {
     limit: 6,
     totalItems: 0,
   };
-  carousel = new ImageCarousel({ ...args });
+  slider = new ImageSlider({ ...args });
   requestMore();
-  return carousel.container;
+  return slider.container;
 };
 
 export const Infinite = Template.bind({});

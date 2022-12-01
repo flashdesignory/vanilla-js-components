@@ -1,13 +1,10 @@
-// import sheet from './image-carousel.css' assert { type: 'css' };
+// import sheet from './image-slider.css' assert { type: 'css' };
 // document.adoptedStyleSheets.push(sheet);
-import "./image-carousel.css";
+import "./image-slider.css";
 
 import { DisplayImage } from "../../molecules/display-image/display-image.js";
-import { Button } from "../../atoms/button/button.js";
-import { ArrowLeft } from "../../../assets/arrow-left.js";
-import { ArrowRight } from "../../../assets/arrow-right.js";
 
-export class ImageCarousel {
+export class ImageSlider {
   constructor({ data = [], itemHeight, itemWidth, onLastItem, }) {
     this.state = {
       data: [], // {src: string }[]
@@ -31,35 +28,14 @@ export class ImageCarousel {
 
     // initial values
     this.items = {};
-    this.slideIndex = 1;
-
-    this.handleNextClick = this.handleNextClick.bind(this);
-    this.handlePrevClick = this.handlePrevClick.bind(this);
-    this.update = this.update.bind(this);
 
     this.container = document.createElement("div");
-    this.container.classList.add("lazydata-carousel-container");
+    this.container.classList.add("lazydata-image-slider-container");
     this.container.tabIndex = 0;
 
     this.content = document.createElement("div");
-    this.content.classList.add("lazydata-carousel-content");
+    this.content.classList.add("lazydata-image-slider-content");
     this.container.appendChild(this.content);
-
-    this.nextButton = new Button({
-      type: "icon",
-      label: ArrowRight({ width: "33", height: "33" }),
-      onClick: this.handleNextClick,
-      containerClass: "next",
-    });
-    this.prevButton = new Button({
-      type: "icon",
-      label: ArrowLeft({ width: "33", height: "33" }),
-      onClick: this.handlePrevClick,
-      containerClass: "prev",
-      disabled: true,
-    });
-    this.container.appendChild(this.nextButton.render());
-    this.container.appendChild(this.prevButton.render());
 
     this.update({ data, itemWidth, itemHeight });
 
@@ -92,26 +68,6 @@ export class ImageCarousel {
       };
       this.items.push(new DisplayImage(props));
     }
-
-    this.updateButtons();
-  }
-
-  handleNextClick() {
-    if (this.slideIndex === this.state.data.length) {
-      return;
-    }
-
-    this.slideIndex++;
-    this.animate();
-  }
-
-  handlePrevClick() {
-    if (this.slideIndex === 1) {
-      return;
-    }
-
-    this.slideIndex--;
-    this.animate();
   }
 
   handleOnObserve(entries, observer) {
@@ -129,29 +85,12 @@ export class ImageCarousel {
     });
   }
 
-  animate() {
-    this.content.style.transform = `translateX(-${
-      (this.slideIndex - 1) * this.state.itemWidth
-    }px)`;
-
-    this.updateButtons();
-  }
-
-  updateButtons() {
-    this.nextButton.update({
-      disabled: this.slideIndex === this.state.data.length,
-    });
-    this.prevButton.update({ disabled: this.slideIndex === 1 });
-  }
-
   render() {
     if (this.lastListElement) {
       this.observer.unobserve(this.lastListElement);
       this.lastListElement = undefined;
     }
 
-    this.container.style.width = `${this.state.itemWidth}px`;
-    this.container.style.height = `${this.state.itemHeight}px`;
     this.content.replaceChildren();
     this.content.style.height = `${this.state.itemHeight}px`;
     this.content.style.width = `${this.totalWidth}px`;
