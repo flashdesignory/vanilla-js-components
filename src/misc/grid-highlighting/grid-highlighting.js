@@ -33,11 +33,11 @@ export class GridHighlighting {
   }
 
   addRectangle() {
-    this.rect = document.createElement('div');
+    this.rect = document.createElement("div");
     this.rect.classList.add("overlay");
     this.container.appendChild(this.rect);
   }
-  
+
   removeRectangle() {
     this.startX = 0;
     this.startY = 0;
@@ -48,21 +48,23 @@ export class GridHighlighting {
   draw(x, y) {
     if (x < this.startX) {
       this.rect.style.right = `${window.innerWidth - this.startX}px`;
-      this.rect.style.left = 'auto';
+      this.rect.style.left = "auto";
       this.rect.style.width = `${this.startX - x}px`;
     } else {
       this.rect.style.left = `${this.startX}px`;
-      this.rect.style.right = 'auto';
+      this.rect.style.right = "auto";
       this.rect.style.width = `${x - this.startX}px`;
     }
-  
+
     if (y < this.startY) {
-      this.rect.style.bottom = `${window.innerHeight - this.startY - window.scrollY}px`;
-      this.rect.style.top = 'auto';
+      this.rect.style.bottom = `${
+        window.innerHeight - this.startY - window.scrollY
+      }px`;
+      this.rect.style.top = "auto";
       this.rect.style.height = `${this.startY - y}px`;
     } else {
       this.rect.style.top = `${this.startY + window.scrollY}px`;
-      this.rect.style.bottom = 'auto';
+      this.rect.style.bottom = "auto";
       this.rect.style.height = `${y - this.startY}px`;
     }
   }
@@ -72,14 +74,14 @@ export class GridHighlighting {
       const current = box.getBoundingClientRect();
       const overlay = this.rect.getBoundingClientRect();
       if (
-        current.right >= overlay.left
-        && current.left <= overlay.right
-        && current.bottom >= overlay.top
-        && current.top <= overlay.bottom
+        current.right >= overlay.left &&
+        current.left <= overlay.right &&
+        current.bottom >= overlay.top &&
+        current.top <= overlay.bottom
       ) {
-        box.classList.add('selected');
+        box.classList.add("selected");
       } else {
-        box.classList.remove('selected');
+        box.classList.remove("selected");
       }
     });
   }
@@ -106,27 +108,27 @@ export class GridHighlighting {
   }
 
   handleOnResize() {
-    this.boxes.forEach((box) => box.classList.remove('selected'));
+    this.boxes.forEach((box) => box.classList.remove("selected"));
   }
 
   waitForUserInteraction() {
-    document.addEventListener('mousedown', this.handleOnMouseDown);
-    document.addEventListener('touchstart', this.handleOnMouseDown);
-  
-    document.removeEventListener('mousemove', this.handleOnMouseMove);
-    document.removeEventListener('touchmove', this.handleOnMouseMove);
-    document.removeEventListener('mouseup', this.handleOnMouseUp);
-    document.removeEventListener('touchend', this.handleOnMouseUp);
+    document.addEventListener("mousedown", this.handleOnMouseDown);
+    document.addEventListener("touchstart", this.handleOnMouseDown);
+
+    document.removeEventListener("mousemove", this.handleOnMouseMove);
+    document.removeEventListener("touchmove", this.handleOnMouseMove);
+    document.removeEventListener("mouseup", this.handleOnMouseUp);
+    document.removeEventListener("touchend", this.handleOnMouseUp);
   }
 
   captureUserInteraction() {
-    document.removeEventListener('mousedown', this.handleOnMouseDown);
-    document.removeEventListener('touchstart', this.handleOnMouseDown);
-  
-    document.addEventListener('mousemove', this.handleOnMouseMove);
-    document.addEventListener('touchmove', this.handleOnMouseMove);
-    document.addEventListener('mouseup', this.handleOnMouseUp);
-    document.addEventListener('touchend', this.handleOnMouseUp);
+    document.removeEventListener("mousedown", this.handleOnMouseDown);
+    document.removeEventListener("touchstart", this.handleOnMouseDown);
+
+    document.addEventListener("mousemove", this.handleOnMouseMove);
+    document.addEventListener("touchmove", this.handleOnMouseMove);
+    document.addEventListener("mouseup", this.handleOnMouseUp);
+    document.addEventListener("touchend", this.handleOnMouseUp);
   }
 
   render() {
