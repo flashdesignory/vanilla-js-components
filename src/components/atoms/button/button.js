@@ -20,6 +20,7 @@ export class Button {
    * @param {string} props.containerClass - Css class for the button container.
    * @param {boolean} props.disabled - Disabled state of the button.
    * @param {string} props.id - Id of button element.
+   * @param {string} props.dataset - dataset of button element.
    */
   constructor({
     variant = "primary",
@@ -29,12 +30,14 @@ export class Button {
     containerClass,
     disabled,
     id,
+    dataset,
   }) {
     this.state = {
       label: undefined, // string
       disabled: undefined, // boolean
       id: undefined, // string
       type: undefined, // string
+      dataset: undefined, // { id: string, value: string }
     };
 
     this.onClick = onClick;
@@ -56,7 +59,7 @@ export class Button {
     this.button.addEventListener("click", this.handleOnClick);
     this.container.appendChild(this.button);
 
-    this.update({ label, disabled, id, type });
+    this.update({ label, disabled, id, type, dataset });
   }
 
   /**
@@ -66,8 +69,9 @@ export class Button {
    * @param {boolean} props.disabled - Disabled state of the button.
    * @param {string} props.id - Id of button element.
    * @param {string} props.type - "button" | "submit" | "reset"
+   * @param {string} props.dataset - dataset of button element.
    */
-  update({ label, disabled, id, type }) {
+  update({ label, disabled, id, type, dataset }) {
     if (label !== undefined) this.state.label = label;
 
     if (disabled !== undefined) {
@@ -82,6 +86,11 @@ export class Button {
     if (type !== undefined) {
       this.state.type = type;
       this.button.type = this.state.type;
+    }
+
+    if (dataset !== undefined) {
+      this.state.dataset = dataset;
+      this.button.dataset[this.state.dataset.key] = this.state.dataset.value;
     }
   }
 

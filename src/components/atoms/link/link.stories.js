@@ -1,5 +1,5 @@
 import { Link } from "./link";
-import { WebsiteIcon } from "../../../assets/website.js";
+import { WebsiteIcon } from "../../../assets/business/website.js";
 
 export default {
   title: "Atoms/Link",

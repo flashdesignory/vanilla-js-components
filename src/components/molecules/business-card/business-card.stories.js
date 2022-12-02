@@ -1,9 +1,9 @@
 import { BusinessCard } from "./business-card.js";
 
-import { LinkedInIcon } from "../../../assets/linkedin.js";
-import { GithubIcon } from "../../../assets/github.js";
-import { WebsiteIcon } from "../../../assets/website.js";
-import { EmailIcon } from "../../../assets/email.js";
+import { LinkedInIcon } from "../../../assets/business/linkedin.js";
+import { GithubIcon } from "../../../assets/business/github.js";
+import { WebsiteIcon } from "../../../assets/business/website.js";
+import { EmailIcon } from "../../../assets/business/email.js";
 
 export default {
   title: "Molecules/BusinessCard",
