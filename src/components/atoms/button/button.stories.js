@@ -5,6 +5,7 @@ export default {
   title: "Atoms/Button",
   argTypes: {
     label: { control: "text" },
+    type: { control: "text" },
     onClick: { action: "onClick" },
   },
 };

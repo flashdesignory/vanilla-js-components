@@ -14,6 +14,7 @@ export class Button {
    * Button constructor
    * @param {object} props - Props passed to the constructor function.
    * @param {string} props.variant - "primary" | "secondary" | "icon"
+   * @param {string} props.type - "button" | "submit" | "reset"
    * @param {string} props.label - Text to display in the button.
    * @param {function} props.onClick - Callback handler for onClick.
    * @param {string} props.containerClass - Css class for the button container.
@@ -22,6 +23,7 @@ export class Button {
    */
   constructor({
     variant = "primary",
+    type,
     label,
     onClick,
     containerClass,
@@ -32,6 +34,7 @@ export class Button {
       label: undefined, // string
       disabled: undefined, // boolean
       id: undefined, // string
+      type: undefined, // string
     };
 
     this.onClick = onClick;
@@ -53,7 +56,7 @@ export class Button {
     this.button.addEventListener("click", this.handleOnClick);
     this.container.appendChild(this.button);
 
-    this.update({ label, disabled, id });
+    this.update({ label, disabled, id, type });
   }
 
   /**
@@ -62,9 +65,11 @@ export class Button {
    * @param {string} props.label - Text to display in the button.
    * @param {boolean} props.disabled - Disabled state of the button.
    * @param {string} props.id - Id of button element.
+   * @param {string} props.type - "button" | "submit" | "reset"
    */
-  update({ label, disabled, id }) {
+  update({ label, disabled, id, type }) {
     if (label !== undefined) this.state.label = label;
+
     if (disabled !== undefined) {
       this.state.disabled = disabled;
       this.button.disabled = this.state.disabled;
@@ -72,6 +77,11 @@ export class Button {
     if (id !== undefined) {
       this.state.id = id;
       this.button.id = this.state.id;
+    }
+
+    if (type !== undefined) {
+      this.state.type = type;
+      this.button.type = this.state.type;
     }
   }
 
