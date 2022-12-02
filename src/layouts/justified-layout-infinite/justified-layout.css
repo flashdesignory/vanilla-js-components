@@ -1,0 +1,32 @@
+@import url("../../styles//colors.css");
+@import url("../../styles//layout.css");
+
+.justified-layout-container,
+.justified-layout-container * {
+  box-sizing: border-box;
+}
+
+.justified-layout-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.justified-layout-container .justified-layout-content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: var(--neutrals-gray-128);
+}
+
+.justified-layout-container .display-image-container {
+  width: 100%;
+  height: fit-content;
+  padding: var(--content-spacing-medium);
+}
+
+.justified-layout-container .display-image-container .item-content {
+  padding: var(--content-spacing-medium);
+}
