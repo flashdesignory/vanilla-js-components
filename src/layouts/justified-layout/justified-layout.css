@@ -10,6 +10,8 @@
   display: flex;
   position: relative;
   width: 100%;
+  padding: var(--content-spacing-medium);
+  background-color: var(--neutrals-gray-128);
 }
 
 .justified-layout-container .justified-layout-content {
@@ -18,7 +20,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-color: var(--neutrals-gray-128);
 }
 
 .justified-layout-container .display-image-container {
@@ -29,4 +30,18 @@
 
 .justified-layout-container .display-image-container .item-content {
   padding: var(--content-spacing-medium);
+}
+
+@media (max-width: 480px ) {
+  .justified-layout-container {
+    padding: var(--content-spacing-small);
+  }
+
+  .justified-layout-container .display-image-container {
+    padding: var(--content-spacing-small);
+  }
+  
+  .justified-layout-container .display-image-container .item-content {
+    padding: var(--content-spacing-small);
+  }
 }

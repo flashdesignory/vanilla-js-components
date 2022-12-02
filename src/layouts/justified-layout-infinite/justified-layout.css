@@ -30,3 +30,17 @@
 .justified-layout-container .display-image-container .item-content {
   padding: var(--content-spacing-medium);
 }
+
+@media (max-width: 480px ) {
+  .justified-layout-container {
+    padding: var(--content-spacing-small);
+  }
+
+  .justified-layout-container .display-image-container {
+    padding: var(--content-spacing-small);
+  }
+  
+  .justified-layout-container .display-image-container .item-content {
+    padding: var(--content-spacing-small);
+  }
+}
