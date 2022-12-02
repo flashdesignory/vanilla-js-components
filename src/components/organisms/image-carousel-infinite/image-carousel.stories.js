@@ -43,5 +43,5 @@ export const Infinite = Template.bind({});
 Infinite.args = {
   itemWidth: 300,
   itemHeight: 200,
-  onLastItem: requestMore
+  onLastItem: requestMore,
 };

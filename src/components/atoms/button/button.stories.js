@@ -17,17 +17,17 @@ const Template = ({ ...args }) => {
 export const Primary = Template.bind({});
 Primary.args = {
   label: "Button",
-  type: "primary",
+  variant: "primary",
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   label: "Button",
-  type: "secondary",
+  variant: "secondary",
 };
 
 export const Icon = Template.bind({});
 Icon.args = {
   label: ArrowLeft({ width: "44", height: "44" }),
-  type: "icon",
+  variant: "icon",
 };

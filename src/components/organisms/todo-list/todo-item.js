@@ -23,7 +23,7 @@ export class TodoItem {
     this.container.appendChild(this.input.render());
 
     this.button = new Button({
-      type: "primary",
+      variant: "primary",
       label: "delete",
       onClick: this.handleOnClick,
     });

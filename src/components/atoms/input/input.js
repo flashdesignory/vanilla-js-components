@@ -62,7 +62,7 @@ export class Input {
 
     if (this.type === "password") {
       this.toggle = new Button({
-        type: "icon",
+        variant: "icon",
         onClick: this.handleToggleClick,
         containerClass: "toggle",
         label: EyeToggle({

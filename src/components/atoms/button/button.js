@@ -13,7 +13,7 @@ export class Button {
   /**
    * Button constructor
    * @param {object} props - Props passed to the constructor function.
-   * @param {string} props.type - "primary" | "secondary" | "icon"
+   * @param {string} props.variant - "primary" | "secondary" | "icon"
    * @param {string} props.label - Text to display in the button.
    * @param {function} props.onClick - Callback handler for onClick.
    * @param {string} props.containerClass - Css class for the button container.
@@ -21,7 +21,7 @@ export class Button {
    * @param {string} props.id - Id of button element.
    */
   constructor({
-    type = "primary",
+    variant = "primary",
     label,
     onClick,
     containerClass,
@@ -35,7 +35,7 @@ export class Button {
     };
 
     this.onClick = onClick;
-    this.type = type; // "primary" | "secondary" | "icon"
+    this.variant = variant; // "primary" | "secondary" | "icon"
     this.containerClass = containerClass;
 
     this.handleOnClick = this.handleOnClick.bind(this);
@@ -48,7 +48,7 @@ export class Button {
     }
 
     this.button = document.createElement("button");
-    this.button.classList.add("button", `button-${this.type}`);
+    this.button.classList.add("button", `button-${this.variant}`);
 
     this.button.addEventListener("click", this.handleOnClick);
     this.container.appendChild(this.button);
@@ -96,7 +96,7 @@ export class Button {
    */
   render() {
     this.button.replaceChildren();
-    if (this.type !== "icon") this.button.textContent = this.state.label;
+    if (this.variant !== "icon") this.button.textContent = this.state.label;
     else this.button.insertAdjacentHTML("afterbegin", this.state.label);
 
     return this.container;

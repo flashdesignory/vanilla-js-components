@@ -35,13 +35,13 @@ export class DisplayMonth {
     this.container.appendChild(this.body);
 
     this.nextButton = new Button({
-      type: "icon",
+      variant: "icon",
       label: ArrowRight({ width: "24", height: "24" }),
       onClick: this.handleNextClick,
       containerClass: "next-button",
     });
     this.prevButton = new Button({
-      type: "icon",
+      variant: "icon",
       label: ArrowLeft({ width: "24", height: "24" }),
       onClick: this.handlePrevClick,
       containerClass: "prev-button",

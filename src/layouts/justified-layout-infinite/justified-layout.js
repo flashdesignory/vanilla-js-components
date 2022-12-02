@@ -6,7 +6,7 @@ import { DisplayImage } from "../../components/molecules/display-image/display-i
 import { throttle } from "../../lib/index.js";
 
 export class JustifiedLayout {
-  constructor({ maxHeight, containerWidth, data = [], onLastItem, }) {
+  constructor({ maxHeight, containerWidth, data = [], onLastItem }) {
     this.state = {
       maxHeight: undefined, // number
       containerWidth: undefined, // number
@@ -105,7 +105,13 @@ export class JustifiedLayout {
   handleOnResize(entries) {
     for (let entry of entries) {
       const cr = entry.contentRect;
-      console.log("handleOnResize", "containerWidth", this.state.containerWidth, "new", cr.width);
+      console.log(
+        "handleOnResize",
+        "containerWidth",
+        this.state.containerWidth,
+        "new",
+        cr.width
+      );
       if (this.state.containerWidth === cr.width) return;
 
       this.resizeObserver.disconnect();
@@ -134,14 +140,14 @@ export class JustifiedLayout {
       this.observer.unobserve(this.lastListElement);
       this.lastListElement = undefined;
     }
-    
+
     if (this.state.containerWidth === undefined) {
       return this.container;
     }
 
     console.log("render()");
     this.resize();
-    this.items.forEach(item => {
+    this.items.forEach((item) => {
       const itemElement = item.render();
 
       if (
@@ -153,7 +159,9 @@ export class JustifiedLayout {
       }
     });
 
-    window.requestAnimationFrame(() => this.resizeObserver.observe(this.container));
+    window.requestAnimationFrame(() =>
+      this.resizeObserver.observe(this.container)
+    );
     return this.container;
   }
 }

@@ -5,7 +5,7 @@ import "./image-slider.css";
 import { DisplayImage } from "../../molecules/display-image/display-image.js";
 
 export class ImageSlider {
-  constructor({ data = [], itemHeight, itemWidth, onLastItem, }) {
+  constructor({ data = [], itemHeight, itemWidth, onLastItem }) {
     this.state = {
       data: [], // {src: string }[]
       itemHeight: undefined, // number

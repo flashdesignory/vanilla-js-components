@@ -5,7 +5,7 @@ import "./masonry.css";
 import { DisplayImage } from "../../components/molecules/display-image/display-image.js";
 
 export class Masonry {
-  constructor({ numColumns, data = [], onLastItem,  }) {
+  constructor({ numColumns, data = [], onLastItem }) {
     this.state = {
       numColumns: undefined, // number
       data: [], // unknown[]
@@ -90,7 +90,7 @@ export class Masonry {
       this.observer.unobserve(this.lastListElement);
       this.lastListElement = undefined;
     }
-    
+
     this.content.replaceChildren();
 
     for (let i = 0; i < this.state.numColumns; i++) {

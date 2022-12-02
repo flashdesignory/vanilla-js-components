@@ -50,7 +50,7 @@ export class TicTacToe {
     this.button = new Button({
       label: "New Game",
       onClick: this.start,
-      type: "primary",
+      variant: "primary",
       containerClass: "tic-tac-toe-button",
     });
     this.top.appendChild(this.button.render());

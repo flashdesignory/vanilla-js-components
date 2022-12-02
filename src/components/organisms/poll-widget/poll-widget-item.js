@@ -38,7 +38,7 @@ export class PollWidgetItem {
     this.left.appendChild(this.input.render());
 
     this.percent = new Button({
-      type: "primary",
+      variant: "primary",
       onClick: this.handleOnClick,
       label: "0%",
     });

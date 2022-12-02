@@ -8,7 +8,7 @@ import { ArrowLeft } from "../../../assets/arrow-left.js";
 import { ArrowRight } from "../../../assets/arrow-right.js";
 
 export class ImageCarousel {
-  constructor({ data = [], itemHeight, itemWidth, onLastItem, }) {
+  constructor({ data = [], itemHeight, itemWidth, onLastItem }) {
     this.state = {
       data: [], // {src: string }[]
       itemHeight: undefined, // number
@@ -46,13 +46,13 @@ export class ImageCarousel {
     this.container.appendChild(this.content);
 
     this.nextButton = new Button({
-      type: "icon",
+      variant: "icon",
       label: ArrowRight({ width: "33", height: "33" }),
       onClick: this.handleNextClick,
       containerClass: "next",
     });
     this.prevButton = new Button({
-      type: "icon",
+      variant: "icon",
       label: ArrowLeft({ width: "33", height: "33" }),
       onClick: this.handlePrevClick,
       containerClass: "prev",

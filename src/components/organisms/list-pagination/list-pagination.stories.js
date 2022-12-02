@@ -14,7 +14,7 @@ let component = null;
 let state = {};
 
 const requestPage = async (page) => {
-  console.log("request Page()")
+  console.log("request Page()");
   state.page = page;
   const data = await getData(url, state.page, state.limit);
   state.totalItems = data.total;

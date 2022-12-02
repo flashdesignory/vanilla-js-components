@@ -88,7 +88,13 @@ export class JustifiedLayout {
   handleOnResize(entries) {
     for (let entry of entries) {
       const cr = entry.contentRect;
-      console.log("handleOnResize", "containerWidth", this.state.containerWidth, "new", cr.width);
+      console.log(
+        "handleOnResize",
+        "containerWidth",
+        this.state.containerWidth,
+        "new",
+        cr.width
+      );
       if (this.state.containerWidth === cr.width) return;
 
       this.resizeObserver.disconnect();
@@ -104,9 +110,11 @@ export class JustifiedLayout {
 
     console.log("render()");
     this.resize();
-    this.items.forEach(item => item.render());
+    this.items.forEach((item) => item.render());
 
-    window.requestAnimationFrame(() => this.resizeObserver.observe(this.container));
+    window.requestAnimationFrame(() =>
+      this.resizeObserver.observe(this.container)
+    );
     return this.container;
   }
 }

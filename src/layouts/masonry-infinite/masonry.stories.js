@@ -41,5 +41,5 @@ const Template = ({ ...args }) => {
 export const Infinite = Template.bind({});
 Infinite.args = {
   numColumns: 3,
-  onLastItem: requestMore
+  onLastItem: requestMore,
 };

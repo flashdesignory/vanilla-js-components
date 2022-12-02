@@ -41,5 +41,5 @@ const Template = ({ ...args }) => {
 export const Infinite = Template.bind({});
 Infinite.args = {
   maxHeight: 300,
-  onLastItem: requestMore
+  onLastItem: requestMore,
 };
