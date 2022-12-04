@@ -11,8 +11,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const btn = new Button({ ...args });
-  return btn.render();
+  const component = new Button({ ...args });
+  return component.render();
 };
 
 export const Primary = Template.bind({});

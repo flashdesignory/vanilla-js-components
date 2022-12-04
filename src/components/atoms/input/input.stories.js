@@ -12,8 +12,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const input = new Input({ ...args });
-  return input.render();
+  const component = new Input({ ...args });
+  return component.render();
 };
 
 export const TextInput = Template.bind({});

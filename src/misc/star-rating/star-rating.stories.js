@@ -8,8 +8,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const sr = new StarRating({ ...args });
-  return sr.render();
+  const component = new StarRating({ ...args });
+  return component.render();
 };
 
 export const EmptyRating = Template.bind({});

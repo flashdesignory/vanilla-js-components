@@ -6,8 +6,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const gh = new GridHighlighting({ ...args });
-  return gh.render();
+  const component = new GridHighlighting({ ...args });
+  return component.render();
 };
 
 export const Default = Template.bind({});

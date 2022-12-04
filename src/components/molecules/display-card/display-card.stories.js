@@ -10,8 +10,8 @@ const Template = ({ ...args }) => {
   container.style.position = "relative";
   container.style.maxWidth = "420px";
 
-  const dc = new DisplayCard({ ...args });
-  container.appendChild(dc.render());
+  const component = new DisplayCard({ ...args });
+  container.appendChild(component.render());
   return container;
 };
 

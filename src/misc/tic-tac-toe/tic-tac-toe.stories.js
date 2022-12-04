@@ -9,8 +9,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const ttt = new TicTacToe({ ...args });
-  return ttt.render();
+  const component = new TicTacToe({ ...args });
+  return component.render();
 };
 
 export const Game = Template.bind({});

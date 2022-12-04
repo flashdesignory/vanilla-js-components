@@ -8,8 +8,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const loader = new Loader({ ...args });
-  return loader.render();
+  const component = new Loader({ ...args });
+  return component.render();
 };
 
 export const Large = Template.bind({});

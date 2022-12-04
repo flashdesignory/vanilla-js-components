@@ -9,8 +9,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const rs = new RangeSlider({ ...args });
-  return rs.render();
+  const component = new RangeSlider({ ...args });
+  return component.render();
 };
 
 export const Simple = Template.bind({});

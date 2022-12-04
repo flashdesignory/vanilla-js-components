@@ -11,8 +11,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const slider = new ImageSlider({ ...args });
-  return slider.render();
+  const component = new ImageSlider({ ...args });
+  return component.render();
 };
 
 export const Simple = Template.bind({});

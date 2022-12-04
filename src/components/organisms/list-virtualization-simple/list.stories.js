@@ -13,8 +13,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const list = new VirtualList({ ...args });
-  return list.render();
+  const component = new VirtualList({ ...args });
+  return component.render();
 };
 
 export const Simple = Template.bind({});

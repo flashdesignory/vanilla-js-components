@@ -9,8 +9,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const toggle = new Toggle({ ...args });
-  return toggle.render();
+  const component = new Toggle({ ...args });
+  return component.render();
 };
 
 export const Simple = Template.bind({});

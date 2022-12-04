@@ -11,8 +11,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const list = new TodoList({ ...args });
-  return list.render();
+  const component = new TodoList({ ...args });
+  return component.render();
 };
 
 export const Simple = Template.bind({});

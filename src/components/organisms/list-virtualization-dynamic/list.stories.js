@@ -12,8 +12,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const list = new DynamicList({ ...args });
-  return list.render();
+  const component = new DynamicList({ ...args });
+  return component.render();
 };
 
 export const Dynamic = Template.bind({});

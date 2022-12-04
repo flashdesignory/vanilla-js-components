@@ -11,8 +11,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const ac = new AutoComplete({ ...args });
-  return ac.render();
+  const component = new AutoComplete({ ...args });
+  return component.render();
 };
 
 export const Dynamic = Template.bind({});

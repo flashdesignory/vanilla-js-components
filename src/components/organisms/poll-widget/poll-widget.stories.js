@@ -11,8 +11,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const pw = new PollWidget({ ...args });
-  return pw.render();
+  const component = new PollWidget({ ...args });
+  return component.render();
 };
 
 export const Simple = Template.bind({});

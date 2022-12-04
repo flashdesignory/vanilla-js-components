@@ -10,8 +10,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const jl = new JustifiedLayout({ ...args });
-  return jl.render();
+  const component = new JustifiedLayout({ ...args });
+  return component.render();
 };
 
 export const Simple = Template.bind({});

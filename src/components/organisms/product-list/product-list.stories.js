@@ -11,8 +11,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const pl = new ProductList({ ...args });
-  return pl.render();
+  const component = new ProductList({ ...args });
+  return component.render();
 };
 
 export const Simple = Template.bind({});

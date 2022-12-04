@@ -6,8 +6,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const skeleton = new Skeleton({ ...args });
-  return skeleton.render();
+  const component = new Skeleton({ ...args });
+  return component.render();
 };
 
 export const Circle = Template.bind({});

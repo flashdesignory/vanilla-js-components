@@ -13,8 +13,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const link = new Link({ ...args });
-  return link.render();
+  const component = new Link({ ...args });
+  return component.render();
 };
 
 export const TextLink = Template.bind({});

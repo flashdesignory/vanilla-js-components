@@ -11,8 +11,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const st = new SearchableTable({ ...args });
-  return st.render();
+  const component = new SearchableTable({ ...args });
+  return component.render();
 };
 
 export const Simple = Template.bind({});

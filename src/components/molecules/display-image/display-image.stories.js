@@ -16,8 +16,8 @@ const Template = ({ ...args }) => {
   container.style.maxWidth = "420px";
   container.style.maxHeight = "420px";
 
-  const di = new DisplayImage({ ...args });
-  container.appendChild(di.render());
+  const component = new DisplayImage({ ...args });
+  container.appendChild(component.render());
   return container;
 };
 

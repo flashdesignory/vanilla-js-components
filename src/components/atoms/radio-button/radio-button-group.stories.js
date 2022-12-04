@@ -11,8 +11,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const rbg = new RadiobuttonGroup({ ...args });
-  return rbg.render();
+  const component = new RadiobuttonGroup({ ...args });
+  return component.render();
 };
 
 export const Group = Template.bind({});

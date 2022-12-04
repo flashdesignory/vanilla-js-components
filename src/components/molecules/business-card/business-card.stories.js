@@ -11,8 +11,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const bc = new BusinessCard({ ...args });
-  return bc.render();
+  const component = new BusinessCard({ ...args });
+  return component.render();
 };
 
 export const Simple = Template.bind({});

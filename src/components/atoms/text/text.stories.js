@@ -9,8 +9,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const text = new Text({ ...args });
-  return text.render();
+  const component = new Text({ ...args });
+  return component.render();
 };
 
 export const Simple = Template.bind({});

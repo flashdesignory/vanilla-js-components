@@ -11,8 +11,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const cbg = new CheckboxGroup({ ...args });
-  return cbg.render();
+  const component = new CheckboxGroup({ ...args });
+  return component.render();
 };
 
 export const Group = Template.bind({});

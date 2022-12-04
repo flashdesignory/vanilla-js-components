@@ -10,8 +10,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const pagination = new Pagination({ ...args });
-  return pagination.render();
+  const component = new Pagination({ ...args });
+  return component.render();
 };
 
 export const Simple = Template.bind({});

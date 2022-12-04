@@ -12,8 +12,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const cb = new Checkbox({ ...args });
-  return cb.render();
+  const component = new Checkbox({ ...args });
+  return component.render();
 };
 
 export const Single = Template.bind({});

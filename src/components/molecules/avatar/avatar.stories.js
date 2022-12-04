@@ -10,8 +10,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const avatar = new Avatar({ ...args });
-  return avatar.render();
+  const component = new Avatar({ ...args });
+  return component.render();
 };
 
 export const Simple = Template.bind({});

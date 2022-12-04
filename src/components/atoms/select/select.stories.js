@@ -12,8 +12,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const select = new Select({ ...args });
-  return select.render();
+  const component = new Select({ ...args });
+  return component.render();
 };
 
 export const Simple = Template.bind({});

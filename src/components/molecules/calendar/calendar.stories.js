@@ -9,8 +9,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const dm = new DisplayMonth({ ...args });
-  return dm.render();
+  const component = new DisplayMonth({ ...args });
+  return component.render();
 };
 
 export const Month = Template.bind({});

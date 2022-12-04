@@ -9,8 +9,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const progress = new Progress({ ...args });
-  return progress.render();
+  const component = new Progress({ ...args });
+  return component.render();
 };
 
 export const Empty = Template.bind({});

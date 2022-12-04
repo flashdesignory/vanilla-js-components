@@ -17,8 +17,8 @@ const Template = ({ ...args }) => {
     marginTop: "40px",
     transform: "translateX(-50%)",
   };
-  const tooltip = new Tooltip({ ...args, style });
-  return tooltip.render();
+  const component = new Tooltip({ ...args, style });
+  return component.render();
 };
 
 export const TextTop = Template.bind({});

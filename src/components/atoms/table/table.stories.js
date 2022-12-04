@@ -10,8 +10,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const table = new Table({ ...args });
-  return table.render();
+  const component = new Table({ ...args });
+  return component.render();
 };
 
 export const WithData = Template.bind({});

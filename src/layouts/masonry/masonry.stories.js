@@ -10,8 +10,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const masonry = new Masonry({ ...args });
-  return masonry.render();
+  const component = new Masonry({ ...args });
+  return component.render();
 };
 
 export const Simple = Template.bind({});

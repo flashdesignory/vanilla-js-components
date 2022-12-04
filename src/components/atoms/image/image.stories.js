@@ -13,8 +13,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const image = new Image({ ...args });
-  return image.render();
+  const component = new Image({ ...args });
+  return component.render();
 };
 
 export const Simple = Template.bind({});

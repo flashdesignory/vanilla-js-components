@@ -12,8 +12,8 @@ export default {
 };
 
 const Template = ({ ...args }) => {
-  const list = new List({ ...args });
-  return list.render();
+  const component = new List({ ...args });
+  return component.render();
 };
 
 export const WithData = Template.bind({});
