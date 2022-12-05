@@ -35,16 +35,19 @@ export class Draggable {
   handleOnDragStart(e) {
     e.dataTransfer.effectAllowed = "move";
     e.dataTransfer.setData("text/plain", this.container.id);
+    console.log('handleOnDragStart()');
 
     if (this.onStart) this.onStart("drag start");
   }
 
   handleOnDragEnd() {
     if (this.onEnd) this.onEnd("drag end");
+    console.log("handleOnDragEnd()");
   }
 
   handleOnTouchStart() {
     if (this.onStart) this.onStart("touch start");
+    console.log("handleOnTouchStart()");
   }
 
   handleOnTouchMove() {
@@ -53,6 +56,7 @@ export class Draggable {
 
   handleOnTouchEnd() {
     if (this.onEnd) this.onEnd("touch end");
+    console.log("handleOnTouchEnd()");
   }
 
   render() {
