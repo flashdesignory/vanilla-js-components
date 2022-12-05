@@ -78,7 +78,15 @@ export class EventsObserverExample {
     this.status = document.createElement("div");
     this.status.classList.add("events-observer-example-status");
     this.container.appendChild(this.status);
-    this.showMessage("idle");
+    // this.showMessage("idle");
+
+    if ("ondragstart" in window) {
+      this.showMessage("start dragging a box");
+    } else if ("ontouchstart" in window) {
+      this.showMessage("start touching a box");
+    } else {
+      this.showMessage("start clicking a box");
+    }
 
     this.update({ title, description });
   }
