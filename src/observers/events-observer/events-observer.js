@@ -1,8 +1,10 @@
 export class EventsObserver {
-  constructor({ ref, parent, events = [] }) {
+  constructor({ ref, parent, events = [], onConnect, onDisconnect }) {
     this.ref = ref; // dom node
     this.parent = parent; // dom node
     this.events = events; // { type: string, listener: function }[]
+    this.onConnect = onConnect;
+    this.onDisconnect = onDisconnect;
 
     this.connect = this.connect.bind(this);
     this.disconnect = this.disconnect.bind(this);
@@ -20,17 +22,19 @@ export class EventsObserver {
   }
 
   connect() {
-    console.log("connect()");
     this.events.forEach((entry) =>
       this.ref.addEventListener(...Object.values(entry))
     );
+
+    if (this.onConnect) this.onConnect(this.ref.id);
   }
 
   disconnect() {
-    console.log("deconnect()");
     this.events.forEach((entry) =>
       this.ref.removeEventListener(...Object.values(entry))
     );
+
+    if (this.onDisconnect) this.onDisconnect(this.ref.id);
   }
 
   add(event) {
