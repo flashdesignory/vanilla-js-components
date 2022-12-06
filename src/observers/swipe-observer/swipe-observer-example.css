@@ -1,0 +1,58 @@
+@import url("../../styles/colors.css");
+@import url("../../styles/fonts.css");
+@import url("../../styles/layout.css");
+@import url("../../styles/transitions.css");
+
+.swipe-observer-container,
+.swipe-observer-container * {
+  box-sizing: border-box;
+}
+
+.swipe-observer-container {
+  background: var(--neutrals-white);
+  border-radius: var(--border-radius-large);
+  padding: var(--content-spacing-xlarge);
+  max-width: 400px;
+  width: 100%;
+  box-shadow: var(--content-shadow);
+}
+
+.swipe-observer-container .swipe-observer-header {
+  background: var(--neutrals-white);
+  position: relative;
+}
+
+.swipe-observer-container .swipe-observer-title {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-more-bold);
+  margin-bottom: var(--content-spacing-medium);
+}
+
+.swipe-observer-container .swipe-observer-description {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-less-bold);
+  margin-bottom: var(--content-spacing-medium);
+}
+
+.swipe-observer-container .swipe-observer-body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 300px;
+  border-radius: var(--border-radius-large);
+  margin-top: var(--content-spacing-large);
+  border: var(--border-width-medium) solid var(--utils-gray-light);
+  overflow: hidden;
+  position: relative;
+}
+
+.swipe-observer-container .swipe-observer-status {
+  display: flex;
+  background: var(--utils-gray-dark);
+  border-radius: var(--border-radius-medium);
+  margin-top: var(--content-spacing-medium);
+  padding: var(--content-spacing-medium);
+  color: var(--neutrals-white);
+  font-family: var(--default-font-family);
+  font-size: var(--font-size-small);
+}

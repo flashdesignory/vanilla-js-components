@@ -46,6 +46,6 @@ export class EventsObserverExample extends DragAndDrop {
   }
 
   showMessage(msg) {
-    this.status.textContent = `status: ${msg}`;
+    this.status.textContent = `${new Date().toLocaleTimeString()}: ${msg}`;
   }
 }
