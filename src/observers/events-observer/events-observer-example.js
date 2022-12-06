@@ -16,8 +16,18 @@ export class EventsObserverExample {
 
     this.boxes = [];
     this.observers = [];
+    // for mobile or touch devices
+    this.touchX = undefined;
+    this.touchY = undefined;
+    this.touchBox = undefined;
 
     this.handleOnDrop = this.handleOnDrop.bind(this);
+
+    // touch events
+    this.handleOnStart = this.handleOnStart.bind(this);
+    this.handleOnEnd = this.handleOnEnd.bind(this);
+    this.handleOnMove = this.handleOnMove.bind(this);
+    this.evaluate = this.evaluate.bind(this);
 
     this.container = document.createElement("div");
     this.container.classList.add("events-observer-example-container");
@@ -56,8 +66,9 @@ export class EventsObserverExample {
       const box = new Draggable({
         containerClass: "events-observer-example-box",
         id: `box-${i}`,
-        onStart: (msg) => this.showMessage(`onStart: ${msg}`),
-        onEnd: (msg) => this.showMessage(`onEnd: ${msg}`)
+        onStart: this.handleOnStart,
+        onEnd: this.handleOnEnd,
+        onMove: this.handleOnMove,
       });
       this.toolbar.container.appendChild(box.render());
       box.container.textContent = i;
@@ -99,6 +110,52 @@ export class EventsObserverExample {
 
   handleOnDrop(/* { src, target } */) {
     // console.log("src", src, "target", target);
+  }
+
+  handleOnStart(e) {
+    this.touchX = e.touches ? e.touches[0].clientX : e.clientX;
+    this.touchY = e.touches ? e.touches[0].clientY : e.clientY;
+    this.touchBox = document.createElement("div");
+    this.touchBox.classList.add("events-observer-example-box", "over", "absolute");
+    this.touchBox.style.top = `${this.touchY - 20 + window.scrollY}px`;
+    this.touchBox.style.left = `${this.touchX - 20}px`;
+    this.container.appendChild(this.touchBox);
+  }
+
+  handleOnMove(e) {
+    this.touchX = e.touches ? e.touches[0].clientX : e.clientX;
+    this.touchY = e.touches ? e.touches[0].clientY : e.clientY;
+    this.touchBox.style.top = `${this.touchY - 20 + window.scrollY}px`;
+    this.touchBox.style.left = `${this.touchX - 20}px`;
+  }
+
+  handleOnEnd(e) {
+    this.container.removeChild(this.touchBox);
+    
+    this.evaluate(e.target);
+    this.touchX = undefined;
+    this.touchY = undefined;
+    this.touchBox = undefined;
+  }
+
+   evaluate(target) {
+      const droppableArea = this.droppable.container.getBoundingClientRect();
+      const toolbarArea = this.toolbar.container.getBoundingClientRect();
+      if (
+        this.touchX >= droppableArea.left &&
+        this.touchX <= droppableArea.right &&
+        this.touchY >= droppableArea.top &&
+        this.touchY <= droppableArea.bottom
+      ) {
+        this.droppable.drop(target.id);
+      } else if (
+        this.touchX >= toolbarArea.left &&
+        this.touchX <= toolbarArea.right &&
+        this.touchY >= toolbarArea.top &&
+        this.touchY <= toolbarArea.bottom 
+      ){
+        this.toolbar.drop(target.id);
+      } 
   }
 
   showMessage(msg) {

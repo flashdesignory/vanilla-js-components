@@ -47,6 +47,11 @@ export class Droppable {
     e.stopPropagation();
 
     const id = e.dataTransfer.getData("text/plain");
+    this.drop(id);
+    return false;
+  }
+
+  drop(id) {
     const element = document.getElementById(id);
 
     if (element?.parentElement === this.container) {
@@ -60,7 +65,6 @@ export class Droppable {
       : this.container.prepend(element);
 
     if (this.onDrop) this.onDrop({ src: id, target: this.container.id });
-    return false;
   }
 
   render() {

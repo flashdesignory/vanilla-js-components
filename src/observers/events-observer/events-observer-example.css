@@ -43,6 +43,7 @@
   margin-top: var(--content-spacing-large);
   border: var(--border-width-medium) solid var(--utils-gray-light);
   overflow: hidden;
+  position: relative;
 }
 
 .events-observer-example-container .events-observer-example-toolbar {
@@ -78,8 +79,14 @@
   transition: var(--default-transition);
 }
 
-.events-observer-example-container .events-observer-example-box:hover {
+.events-observer-example-container .events-observer-example-box:hover,
+.events-observer-example-container .events-observer-example-box.over {
   background-color: var(--utils-highlight-orange-light);
+}
+
+.events-observer-example-container .events-observer-example-box.absolute {
+  position: absolute;
+  transition: none;
 }
 
 .events-observer-example-container .events-observer-example-status {

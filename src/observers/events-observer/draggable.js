@@ -3,9 +3,10 @@
 import "./draggable.css";
 
 export class Draggable {
-  constructor({ containerClass, id, onStart, onEnd }) {
+  constructor({ containerClass, id, onStart, onEnd, onMove }) {
     this.onStart = onStart;
     this.onEnd = onEnd;
+    this.onMove = onMove;
 
     this.handleOnDragStart = this.handleOnDragStart.bind(this);
     this.handleOnDragEnd = this.handleOnDragEnd.bind(this);
@@ -36,27 +37,24 @@ export class Draggable {
     e.dataTransfer.effectAllowed = "move";
     e.dataTransfer.setData("text/plain", this.container.id);
     console.log('handleOnDragStart()');
-
-    if (this.onStart) this.onStart("drag start");
   }
 
   handleOnDragEnd() {
-    if (this.onEnd) this.onEnd("drag end");
     console.log("handleOnDragEnd()");
   }
 
-  handleOnTouchStart() {
-    if (this.onStart) this.onStart("touch start");
-    console.log("handleOnTouchStart()");
+  handleOnTouchStart(e) {
+    this.container.classList.add("over");
+    if (this.onStart) this.onStart(e);
   }
 
-  handleOnTouchMove() {
-
+  handleOnTouchMove(e) {
+    if (this.onMove) this.onMove(e);
   }
 
-  handleOnTouchEnd() {
-    if (this.onEnd) this.onEnd("touch end");
-    console.log("handleOnTouchEnd()");
+  handleOnTouchEnd(e) {
+    this.container.classList.remove("over");
+    if (this.onEnd) this.onEnd(e);
   }
 
   render() {
