@@ -28,18 +28,15 @@ export class Droppable {
   }
 
   handleOnDragOver(e) {
-    // console.log("over");
     e.preventDefault();
     return false;
   }
 
   handleOnDragEnter() {
-    // console.log("enter");
     this.container.classList.add("over");
   }
 
   handleOnDragLeave() {
-    // console.log("leave");
     this.container.classList.remove("over");
   }
 

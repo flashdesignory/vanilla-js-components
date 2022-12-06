@@ -36,7 +36,6 @@ export class Draggable {
   handleOnDragStart(e) {
     e.dataTransfer.effectAllowed = "move";
     e.dataTransfer.setData("text/plain", this.container.id);
-    console.log("handleOnDragStart()");
   }
 
   handleOnDragEnd() {
