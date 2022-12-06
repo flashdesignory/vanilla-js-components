@@ -116,7 +116,11 @@ export class EventsObserverExample {
     this.touchX = e.touches ? e.touches[0].clientX : e.clientX;
     this.touchY = e.touches ? e.touches[0].clientY : e.clientY;
     this.touchBox = document.createElement("div");
-    this.touchBox.classList.add("events-observer-example-box", "over", "absolute");
+    this.touchBox.classList.add(
+      "events-observer-example-box",
+      "over",
+      "absolute"
+    );
     this.touchBox.style.top = `${this.touchY - 20 + window.scrollY}px`;
     this.touchBox.style.left = `${this.touchX - 20}px`;
     this.container.appendChild(this.touchBox);
@@ -131,31 +135,31 @@ export class EventsObserverExample {
 
   handleOnEnd(e) {
     this.container.removeChild(this.touchBox);
-    
+
     this.evaluate(e.target);
     this.touchX = undefined;
     this.touchY = undefined;
     this.touchBox = undefined;
   }
 
-   evaluate(target) {
-      const droppableArea = this.droppable.container.getBoundingClientRect();
-      const toolbarArea = this.toolbar.container.getBoundingClientRect();
-      if (
-        this.touchX >= droppableArea.left &&
-        this.touchX <= droppableArea.right &&
-        this.touchY >= droppableArea.top &&
-        this.touchY <= droppableArea.bottom
-      ) {
-        this.droppable.drop(target.id);
-      } else if (
-        this.touchX >= toolbarArea.left &&
-        this.touchX <= toolbarArea.right &&
-        this.touchY >= toolbarArea.top &&
-        this.touchY <= toolbarArea.bottom 
-      ){
-        this.toolbar.drop(target.id);
-      } 
+  evaluate(target) {
+    const droppableArea = this.droppable.container.getBoundingClientRect();
+    const toolbarArea = this.toolbar.container.getBoundingClientRect();
+    if (
+      this.touchX >= droppableArea.left &&
+      this.touchX <= droppableArea.right &&
+      this.touchY >= droppableArea.top &&
+      this.touchY <= droppableArea.bottom
+    ) {
+      this.droppable.drop(target.id);
+    } else if (
+      this.touchX >= toolbarArea.left &&
+      this.touchX <= toolbarArea.right &&
+      this.touchY >= toolbarArea.top &&
+      this.touchY <= toolbarArea.bottom
+    ) {
+      this.toolbar.drop(target.id);
+    }
   }
 
   showMessage(msg) {
