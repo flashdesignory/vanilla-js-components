@@ -57,6 +57,7 @@ export class DragAndDrop {
       containerClass: "drag-and-drop-droppable",
       id: "body",
       onDrop: this.handleOnDrop,
+      showIcon: true,
     });
     this.body.appendChild(this.droppable.render());
 

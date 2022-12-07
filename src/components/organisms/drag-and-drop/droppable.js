@@ -2,10 +2,13 @@
 // document.adoptedStyleSheets.push(sheet);
 import "./draggable.css";
 
+import { DragAndDropIcon } from "../../../assets/drag-and-drop.js";
+
 export class Droppable {
-  constructor({ containerClass, id, onDrop, insertionPosition = "append" }) {
+  constructor({ containerClass, id, onDrop, insertionPosition = "append", showIcon = false }) {
     this.onDrop = onDrop;
     this.insertionPosition = insertionPosition;
+    this.showIcon = showIcon;
 
     this.handleOnDragOver = this.handleOnDragOver.bind(this);
     this.handleOnDragEnter = this.handleOnDragEnter.bind(this);
@@ -25,6 +28,13 @@ export class Droppable {
     this.container.addEventListener("dragenter", this.handleOnDragEnter);
     this.container.addEventListener("dragleave", this.handleOnDragLeave);
     this.container.addEventListener("drop", this.handleOnDrop);
+
+    if (this.showIcon) {
+      this.placeholder = document.createElement("div");
+      this.placeholder.classList.add("droppable-container-placeholder");
+      this.placeholder.insertAdjacentHTML("afterbegin", DragAndDropIcon());
+      this.container.appendChild(this.placeholder);
+    }
   }
 
   handleOnDragOver(e) {
