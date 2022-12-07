@@ -1,0 +1,46 @@
+@import url("../../../styles/colors.css");
+@import url("../../../styles/fonts.css");
+@import url("../../../styles/layout.css");
+@import url("../../../styles/transitions.css");
+
+.display-status-container,
+.display-status-container * {
+  box-sizing: border-box;
+}
+
+.display-status-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background: var(--utils-gray-dark);
+  border-radius: var(--border-radius-medium);
+  padding: var(--content-spacing-medium);
+  color: var(--neutrals-white);
+  font-family: var(--default-font-family);
+  font-size: var(--font-size-small);
+  min-width: 280px;
+  max-width: 400px;
+  height: 64px;
+}
+
+.display-status-container .display-status-list {
+  outline: 0;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  transition: var(--default-transition);
+}
+
+.display-status-container .display-status-item {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--content-spacing-small);
+  position: relative;
+  line-height: var(--font-size-small);
+}
