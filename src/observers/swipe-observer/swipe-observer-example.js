@@ -65,7 +65,7 @@ export class SwipeObserverExample {
   }
 
   handleOnSwipe(e) {
-    this.showMessage(e.type)
+    this.showMessage(e.type);
   }
 
   render() {

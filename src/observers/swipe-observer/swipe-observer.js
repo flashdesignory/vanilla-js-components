@@ -30,7 +30,6 @@ export class SwipeObserver {
   }
 
   addListeners() {
-    
     document.addEventListener("touchmove", this.update);
     document.addEventListener("touchend", this.end);
     document.addEventListener("mousemove", this.update);
@@ -59,13 +58,13 @@ export class SwipeObserver {
   }
 
   update(e) {
-    if(this.isMoving) {
+    if (this.isMoving) {
       this.currentX = e.touches ? e.touches[0].pageX : e.pageX;
       this.currentY = e.touches ? e.touches[0].pageY : e.pageY;
     }
   }
 
-  end(e) {
+  end() {
     this.evaluate();
 
     this.startX = undefined;
@@ -89,8 +88,8 @@ export class SwipeObserver {
     const toRight = dx > 0 ? true : false;
     const toBottom = dy > 0 ? true : false;
 
-    if(ax >= this.offset) {
-      if(toRight) {
+    if (ax >= this.offset) {
+      if (toRight) {
         this.ref.dispatchEvent(new Event("swipe-right"));
       } else {
         this.ref.dispatchEvent(new Event("swipe-left"));
@@ -98,7 +97,7 @@ export class SwipeObserver {
     }
 
     if (ay >= this.offset) {
-      if(toBottom) {
+      if (toBottom) {
         this.ref.dispatchEvent(new Event("swipe-down"));
       } else {
         this.ref.dispatchEvent(new Event("swipe-up"));
