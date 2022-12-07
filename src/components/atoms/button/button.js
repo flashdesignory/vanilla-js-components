@@ -31,6 +31,7 @@ export class Button {
     disabled,
     id,
     dataset,
+    style,
   }) {
     this.state = {
       label: undefined, // string
@@ -43,6 +44,7 @@ export class Button {
     this.onClick = onClick;
     this.variant = variant; // "primary" | "secondary" | "icon"
     this.containerClass = containerClass;
+    this.style = style;
 
     this.handleOnClick = this.handleOnClick.bind(this);
 
@@ -51,6 +53,12 @@ export class Button {
 
     if (this.containerClass) {
       this.container.classList.add(this.containerClass);
+    }
+
+    if (this.style) {
+      Object.keys(this.style).forEach(
+        (key) => (this.container.style[key] = this.style[key])
+      );
     }
 
     this.button = document.createElement("button");
