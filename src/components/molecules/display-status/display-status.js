@@ -3,7 +3,7 @@
 import "./display-status.css";
 
 export class DisplayStatus {
-  constructor({ namespace, showTimespamp = false, maxNumLogs = 10 }) {
+  constructor({ namespace, showTimespamp = false, maxNumLogs = 10, containerClass }) {
     this.logs = [];
 
     this.state = {
@@ -12,8 +12,14 @@ export class DisplayStatus {
       maxNumLogs: undefined, // number
     };
 
+    this.containerClass = containerClass;
+
     this.container = document.createElement("div");
     this.container.classList.add("display-status-container");
+
+    if (this.containerClass) {
+      this.container.classList.add(this.containerClass);
+    }
 
     this.list = document.createElement("ul");
     this.list.classList.add("display-status-list");
