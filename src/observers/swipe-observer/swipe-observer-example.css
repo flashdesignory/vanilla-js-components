@@ -47,12 +47,6 @@
 }
 
 .swipe-observer-container .swipe-observer-status {
-  display: flex;
-  background: var(--utils-gray-dark);
   border-radius: var(--border-radius-medium);
   margin-top: var(--content-spacing-medium);
-  padding: var(--content-spacing-medium);
-  color: var(--neutrals-white);
-  font-family: var(--default-font-family);
-  font-size: var(--font-size-small);
 }

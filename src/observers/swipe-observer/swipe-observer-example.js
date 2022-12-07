@@ -3,6 +3,7 @@
 import "./swipe-observer-example.css";
 
 import { Text } from "../../components/atoms/text/text.js";
+import { DisplayStatus } from "../../components/molecules/display-status/display-status.js";
 import { SwipeObserver } from "./swipe-observer.js";
 
 export class SwipeObserverExample {
@@ -31,10 +32,13 @@ export class SwipeObserverExample {
     this.body.classList.add("swipe-observer-body");
     this.container.appendChild(this.body);
 
-    this.status = document.createElement("div");
-    this.status.classList.add("swipe-observer-status");
-    this.container.appendChild(this.status);
-    this.showMessage("idle");
+    this.status = new DisplayStatus({ 
+      namespace: "so", 
+      showTimespamp: true,
+      containerClass: "swipe-observer-status"
+    });
+    this.container.appendChild(this.status.render());
+    this.status.log({ msg: "idle" });
 
     this.handleOnSwipe = this.handleOnSwipe.bind(this);
 
@@ -60,12 +64,8 @@ export class SwipeObserverExample {
     }
   }
 
-  showMessage(msg) {
-    this.status.textContent = `${new Date().toLocaleTimeString()}: ${msg}`;
-  }
-
   handleOnSwipe(e) {
-    this.showMessage(e.type);
+    this.status.log({ msg: e.type });
   }
 
   render() {

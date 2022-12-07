@@ -4,16 +4,20 @@ import "./events-observer-example.css";
 
 import { DragAndDrop } from "../../components/organisms/drag-and-drop/drag-and-drop.js";
 import { Draggable } from "../../components/organisms/drag-and-drop/draggable.js";
+import { DisplayStatus } from "../../components/molecules/display-status/display-status.js";
 import { EventsObserver } from "./events-observer.js";
 
 export class EventsObserverExample extends DragAndDrop {
   constructor({ title, description }) {
     super({ title, description });
 
-    this.status = document.createElement("div");
-    this.status.classList.add("drag-and-drop-status");
-    this.container.appendChild(this.status);
-    this.showMessage("idle");
+    this.status = new DisplayStatus({ 
+      namespace: "eo", 
+      showTimespamp: true,
+      containerClass: "drag-and-drop-status"
+    });
+    this.container.appendChild(this.status.render());
+    this.status.log({ msg: "idle" });
   }
 
   build() {
@@ -46,6 +50,6 @@ export class EventsObserverExample extends DragAndDrop {
   }
 
   showMessage(msg) {
-    this.status.textContent = `${new Date().toLocaleTimeString()}: ${msg}`;
+    this.status.log({ msg });
   }
 }

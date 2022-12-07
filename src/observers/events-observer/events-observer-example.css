@@ -3,13 +3,7 @@
 @import url("../../styles/layout.css");
 @import url("../../styles/transitions.css");
 
-.drag-and-drop-container .drag-and-drop-status {
-  display: flex;
-  background: var(--utils-gray-dark);
+.drag-and-drop-status {
   border-radius: var(--border-radius-medium);
   margin-top: var(--content-spacing-medium);
-  padding: var(--content-spacing-medium);
-  color: var(--neutrals-white);
-  font-family: var(--default-font-family);
-  font-size: var(--font-size-small);
 }
