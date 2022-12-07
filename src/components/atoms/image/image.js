@@ -35,6 +35,7 @@ export class Image {
 
     this.container = document.createElement("div");
     this.container.classList.add("image-container");
+
     if (this.containerClass) {
       this.container.classList.add(this.containerClass);
     }
