@@ -23,6 +23,7 @@ export class DisplayStatus {
 
     this.list = document.createElement("ul");
     this.list.classList.add("display-status-list");
+    this.list.tabIndex = 0;
     this.container.appendChild(this.list);
 
     this.update({ namespace, showTimespamp, maxNumLogs });
