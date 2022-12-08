@@ -1,22 +1,37 @@
-// import sheet from './draggable.css' assert { type: 'css' };
+// import sheet from './droppable.css' assert { type: 'css' };
 // document.adoptedStyleSheets.push(sheet);
-import "./draggable.css";
+import "./droppable.css";
 
 import { DragAndDropIcon } from "../../../assets/drag-and-drop.js";
 
 export class Droppable {
-  constructor({ containerClass, id, onDrop, insertionPosition = "append", showIcon = false }) {
+  constructor({
+    containerClass,
+    id,
+    onDrop,
+    insertionMethod = "append",
+    showIcon = false,
+    ref,
+    allowSelfDrop = false,
+  }) {
     this.onDrop = onDrop;
-    this.insertionPosition = insertionPosition;
+    // append | prepend | ordered
+    this.insertionMethod = insertionMethod;
     this.showIcon = showIcon;
+    this.ref = ref;
+    this.allowSelfDrop = allowSelfDrop;
 
     this.handleOnDragOver = this.handleOnDragOver.bind(this);
     this.handleOnDragEnter = this.handleOnDragEnter.bind(this);
     this.handleOnDragLeave = this.handleOnDragLeave.bind(this);
     this.handleOnDrop = this.handleOnDrop.bind(this);
 
-    this.container = document.createElement("div");
-    this.container.classList.add("droppable-container");
+    if (this.ref !== undefined) {
+      this.container = this.ref;
+    } else {
+      this.container = document.createElement("div");
+      this.container.classList.add("droppable-container");
+    }
 
     if (containerClass !== undefined) {
       this.container.classList.add(containerClass);
@@ -31,7 +46,7 @@ export class Droppable {
 
     if (this.showIcon) {
       this.placeholder = document.createElement("div");
-      this.placeholder.classList.add("droppable-container-placeholder");
+      this.placeholder.classList.add("placeholder");
       this.placeholder.insertAdjacentHTML("afterbegin", DragAndDropIcon());
       this.container.appendChild(this.placeholder);
     }
@@ -54,24 +69,47 @@ export class Droppable {
     e.stopPropagation();
 
     const id = e.dataTransfer.getData("text/plain");
-    this.drop(id);
+    this.drop(id, e.clientX, e.clientY);
     return false;
   }
 
-  drop(id) {
+  drop(id, x, y) {
     const element = document.getElementById(id);
 
-    if (element?.parentElement === this.container) {
+    if (element?.parentElement === this.container && !this.allowSelfDrop) {
       // don't drop element in same container that it's in
       return false;
     }
 
-    // append or prepend
-    this.insertionPosition === "append"
-      ? this.container.append(element)
-      : this.container.prepend(element);
+    switch (this.insertionMethod) {
+      case "append":
+        this.container.append(element);
+        break;
+      case "prepend":
+        this.container.prepend(element);
+        break;
+      default:
+        this.insert(element, x, y);
+        break;
+    }
 
     if (this.onDrop) this.onDrop({ src: id, target: this.container.id });
+  }
+
+  insert(element, x, y) {
+    let targetPosition;
+    const target = Array.from(this.container.children).find((child) => {
+      targetPosition = child.getBoundingClientRect();
+      return y >= targetPosition.top && y <= targetPosition.bottom;
+    });
+
+    const startPosition = element.getBoundingClientRect();
+    if (!target) return;
+    if (startPosition.top <= targetPosition.top) {
+      target.after(element);
+    } else {
+      target.before(element);
+    }
   }
 
   render() {

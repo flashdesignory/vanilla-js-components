@@ -1,0 +1,22 @@
+@import url("../../../styles/layout.css");
+
+.drag-and-drop-list-container,
+.drag-and-drop-list-container * {
+  box-sizing: border-box;
+}
+
+.drag-and-drop-list-container {
+  position: relative;
+  padding: var(--content-spacing-medium) 0;
+}
+
+.drag-and-drop-list-container .list-li {
+  cursor: move;
+  width: calc(100% - var(--content-spacing-medium) * 2);
+  margin: 0 var(--content-spacing-medium);
+}
+
+.drag-and-drop-list-container .list-li.absolute {
+  position: absolute;
+  transition: none;
+}
