@@ -10,6 +10,10 @@
   padding: var(--content-spacing-medium) 0;
 }
 
+.drag-and-drop-list-container .list-ul {
+  padding: 0;
+}
+
 .drag-and-drop-list-container .list-li {
   cursor: move;
   width: calc(100% - var(--content-spacing-medium) * 2);
