@@ -80,8 +80,10 @@ export class DragAndDropList extends List {
     this.touchClone = e.target.cloneNode(true);
     this.touchClone.classList.add("over", "absolute");
     this.touchClone.style.top = `${this.touchY - 20 + window.scrollY}px`;
-    this.touchClone.style.left = `${this.touchX - 20}px`;
-    this.touchClone.style.transform = `translate(-50%, -50%)`;
+    this.touchClone.style.left = `0`;
+    this.touchClone.style.transform = `translateY(-50%)`;
+    // this.touchClone.style.left = `${this.touchX - 20}px`;
+    // this.touchClone.style.transform = `translate(-50%, -50%)`;
     this.container.appendChild(this.touchClone);
   }
 
@@ -90,8 +92,10 @@ export class DragAndDropList extends List {
     this.touchY = e.touches ? e.touches[0].pageY : e.pageY;
 
     this.touchClone.style.top = `${this.touchY - 20 + window.scrollY}px`;
-    this.touchClone.style.left = `${this.touchX - 20}px`;
-    this.touchClone.style.transform = `translate(-50%, -50%)`;
+    this.touchClone.style.left = `0`;
+    this.touchClone.style.transform = `translateY(-50%)`;
+    // this.touchClone.style.left = `${this.touchX - 20}px`;
+    // this.touchClone.style.transform = `translate(-50%, -50%)`;
   }
 
   handleOnEnd(e) {
