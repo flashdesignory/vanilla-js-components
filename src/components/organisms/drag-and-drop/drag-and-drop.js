@@ -17,7 +17,7 @@ export class DragAndDrop {
     // for mobile or touch devices
     this.touchX = undefined;
     this.touchY = undefined;
-    this.touchBox = undefined;
+    this.touchClone = undefined;
 
     this.handleOnDrop = this.handleOnDrop.bind(this);
 
@@ -99,27 +99,29 @@ export class DragAndDrop {
   handleOnStart(e) {
     this.touchX = e.touches ? e.touches[0].clientX : e.clientX;
     this.touchY = e.touches ? e.touches[0].clientY : e.clientY;
-    this.touchBox = document.createElement("div");
-    this.touchBox.classList.add("drag-and-drop-box", "over", "absolute");
-    this.touchBox.style.top = `${this.touchY - 20 + window.scrollY}px`;
-    this.touchBox.style.left = `${this.touchX - 20}px`;
-    this.container.appendChild(this.touchBox);
+
+    this.touchClone = e.target.cloneNode(true);
+    this.touchClone.classList.add("over", "absolute");
+    this.touchClone.style.top = `${this.touchY - 20 + window.scrollY}px`;
+    this.touchClone.style.left = `${this.touchX - 20}px`;
+    this.container.appendChild(this.touchClone);
   }
 
   handleOnMove(e) {
     this.touchX = e.touches ? e.touches[0].clientX : e.clientX;
     this.touchY = e.touches ? e.touches[0].clientY : e.clientY;
-    this.touchBox.style.top = `${this.touchY - 20 + window.scrollY}px`;
-    this.touchBox.style.left = `${this.touchX - 20}px`;
+    
+    this.touchClone.style.top = `${this.touchY - 20 + window.scrollY}px`;
+    this.touchClone.style.left = `${this.touchX - 20}px`;
   }
 
   handleOnEnd(e) {
-    this.container.removeChild(this.touchBox);
+    this.container.removeChild(this.touchClone);
 
     this.evaluate(e.target);
     this.touchX = undefined;
     this.touchY = undefined;
-    this.touchBox = undefined;
+    this.touchClone = undefined;
   }
 
   evaluate(target) {
