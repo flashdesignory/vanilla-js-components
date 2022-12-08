@@ -32,10 +32,10 @@ export class SwipeObserverExample {
     this.body.classList.add("swipe-observer-body");
     this.container.appendChild(this.body);
 
-    this.status = new DisplayStatus({ 
-      namespace: "so", 
+    this.status = new DisplayStatus({
+      namespace: "so",
       showTimespamp: true,
-      containerClass: "swipe-observer-status"
+      containerClass: "swipe-observer-status",
     });
     this.container.appendChild(this.status.render());
     this.status.log({ msg: "idle" });

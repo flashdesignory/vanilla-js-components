@@ -11,10 +11,10 @@ export class EventsObserverExample extends DragAndDrop {
   constructor({ title, description }) {
     super({ title, description });
 
-    this.status = new DisplayStatus({ 
-      namespace: "eo", 
+    this.status = new DisplayStatus({
+      namespace: "eo",
       showTimespamp: true,
-      containerClass: "drag-and-drop-status"
+      containerClass: "drag-and-drop-status",
     });
     this.container.appendChild(this.status.render());
     this.status.log({ msg: "idle" });
