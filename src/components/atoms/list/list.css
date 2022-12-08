@@ -22,16 +22,18 @@
 }
 
 .list-container .list-ul {
-  outline: 0;
   display: flex;
   flex-direction: column;
-  list-style-type: none;
-  margin: 0;
-  padding: 0 var(--content-spacing-large) 0 0;
   width: 100%;
   height: 100%;
-  overflow-y: auto;
   border-radius: var(--border-radius-small);
+
+  /* ul specific */
+  list-style-type: none;
+  outline: 0;
+  margin: 0;
+  padding: 0 var(--content-spacing-large) 0 0;
+  overflow-y: auto;
 }
 
 .list-container .list-li {

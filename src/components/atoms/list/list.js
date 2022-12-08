@@ -13,6 +13,7 @@ export class List {
     ItemClass,
     title,
     role = "list",
+    containerClass,
   }) {
     this.state = {
       data: [], // unknown[]
@@ -22,12 +23,17 @@ export class List {
       title, // string
       role: undefined, // "listbox" | "list"
     };
-    this.items = [];
 
+    this.items = [];
     this.onClick = onClick;
+    this.containerClass = containerClass;
 
     this.container = document.createElement("div");
     this.container.classList.add("list-container");
+
+    if (this.containerClass) {
+      this.container.classList.add(this.containerClass);
+    }
 
     this.list = document.createElement("ul");
     this.list.classList.add("list-ul");
