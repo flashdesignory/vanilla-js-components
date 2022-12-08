@@ -8,6 +8,7 @@
 .drag-and-drop-list-container {
   position: relative;
   padding: var(--content-spacing-medium) 0;
+  height: 242px;
 }
 
 .drag-and-drop-list-container .list-ul {
@@ -28,4 +29,28 @@
 .drag-and-drop-list-container .list-li.absolute {
   position: absolute;
   transition: none;
+}
+
+.drag-and-drop-list-container .icon {
+  pointer-events: none;  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+
+.drag-and-drop-list-container .icon svg {
+  width: 50%;
+  height: 50%;
+  fill: var(--neutrals-gray-128);
+}
+
+.drag-and-drop-list-container .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

@@ -5,6 +5,7 @@ import "./drag-and-drop-list.css";
 import { List } from "../../atoms/list/list.js";
 import { Draggable } from "./draggable.js";
 import { Droppable } from "./droppable.js";
+import { DraggableItem } from "./drag-and-drop-list-item.js";
 
 export class DragAndDropList extends List {
   constructor({
@@ -66,11 +67,15 @@ export class DragAndDropList extends List {
   }
 
   renderItem(item) {
-    const element = document.createElement("li");
+    /* const element = document.createElement("li");
     element.classList.add("item-content");
     element.role = this.state.role === "listbox" ? "option" : "listitem";
     element.textContent = `${item}`;
-    return element;
+    return element; */
+
+    const elementRole = this.state.role === "listbox" ? "option" : "listitem";
+    const element = new DraggableItem({data: item, role: elementRole});
+    return element.render();
   }
 
   handleOnStart(e) {
