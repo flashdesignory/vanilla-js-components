@@ -1,4 +1,8 @@
-export const DraggableIcon = ({ width = "24", height = "24", color="black" } = {}) =>
+export const DraggableIcon = ({
+  width = "24",
+  height = "24",
+  color = "black",
+} = {}) =>
   `<svg
     width="${width}"
     height="${height}"
