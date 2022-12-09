@@ -110,7 +110,7 @@ export class DragAndDrop {
   handleOnMove(e) {
     this.touchX = e.touches ? e.touches[0].clientX : e.clientX;
     this.touchY = e.touches ? e.touches[0].clientY : e.clientY;
-    
+
     this.touchClone.style.top = `${this.touchY - 20 + window.scrollY}px`;
     this.touchClone.style.left = `${this.touchX - 20}px`;
   }

@@ -32,7 +32,7 @@
 }
 
 .drag-and-drop-list-container .icon {
-  pointer-events: none;  
+  pointer-events: none;
   display: flex;
   flex-direction: column;
   justify-content: center;

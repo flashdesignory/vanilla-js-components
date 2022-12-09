@@ -74,7 +74,7 @@ export class DragAndDropList extends List {
     return element; */
 
     const elementRole = this.state.role === "listbox" ? "option" : "listitem";
-    const element = new DraggableItem({data: item, role: elementRole});
+    const element = new DraggableItem({ data: item, role: elementRole });
     return element.render();
   }
 
