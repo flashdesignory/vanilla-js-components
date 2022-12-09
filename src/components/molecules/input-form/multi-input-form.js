@@ -4,20 +4,15 @@ import "./input-form.css";
 
 import { Input } from "../../atoms/input/input.js";
 
-export class InputForm {
-  constructor({
-    id = "form",
-    placeholder = "Enter Something",
-    value,
-    submitText = "Submit!",
-    onSubmit,
-  }) {
+export class MultiInputForm {
+  constructor({ id = "form", data, onSubmit, submitText }) {
     this.state = {
       id: undefined, // string
-      placeholder: undefined, // string
-      value: undefined, // string
       submitText: undefined, // string
+      data: [], // // {name: string, type: string, placeholder: string, value: string };
     };
+
+    this.items = [];
 
     this.onSubmit = onSubmit;
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
@@ -33,13 +28,6 @@ export class InputForm {
     this.form = document.createElement("form");
     this.content.appendChild(this.form);
 
-    this.textInput = new Input({
-      id: "input",
-      type: "text",
-      onInput: this.handleOnInput,
-    });
-    this.form.appendChild(this.textInput.render());
-
     this.submitInput = new Input({
       id: "submit",
       type: "submit",
@@ -49,26 +37,47 @@ export class InputForm {
     this.form.appendChild(this.submitInput.render());
     this.form.addEventListener("submit", this.handleOnSubmit);
 
-    this.update({ id, placeholder, value, submitText });
+    this.update({ id, data, submitText });
+
+    if (data && data.length > 0) {
+      this.rebuild();
+    }
   }
 
-  update({ id, placeholder, value, submitText }) {
+  update({ id, submitText, data }) {
     if (id !== undefined) this.state.id = id;
-    if (placeholder !== undefined) this.state.placeholder = placeholder;
-    if (value !== undefined) this.state.value = value;
-    if (submitText !== undefined) this.state.submitText = submitText;
 
-    this.textInput.update({
-      placeholder: this.state.placeholder,
-      value: this.state.value,
+    if (submitText !== undefined) {
+      this.state.submitText = submitText;
+      this.submitInput.update({ value: this.state.submitText });
+    }
+
+    if (data !== undefined) {
+      this.state.data = [...this.state.data, ...data];
+    }
+  }
+
+  rebuild() {
+    this.items = [];
+    this.form.replaceChildren();
+    this.state.data.forEach((item) => {
+      const element = new Input({
+        id: item.id,
+        type: item.type,
+        placeholder: item.placeholder,
+        value: item.value,
+        onInput: this.handleOnInput,
+      });
+      this.form.appendChild(element.render());
+      this.items.push(element);
     });
-
-    this.submitInput.update({ value: this.state.submitText });
+    this.form.appendChild(this.submitInput.render());
   }
 
   handleOnSubmit(e) {
-    console.log("submit", e.target.elements.input.value);
-
+    Array.from(e.target.elements).forEach((element) =>
+      console.log("submit", element.id, element.value)
+    );
     if (this.onSubmit) this.onSubmit(e);
     e.preventDefault();
     e.target.reset();
@@ -81,7 +90,7 @@ export class InputForm {
   render() {
     this.form.id = this.state.id;
 
-    this.textInput.render();
+    this.items.forEach((item) => item.render());
     this.submitInput.render();
 
     return this.container;
