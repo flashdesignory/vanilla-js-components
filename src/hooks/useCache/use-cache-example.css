@@ -1,0 +1,67 @@
+@import url("../../styles/colors.css");
+@import url("../../styles/fonts.css");
+@import url("../../styles/layout.css");
+@import url("../../styles/transitions.css");
+
+.use-cache-example-container,
+.use-cache-example-container * {
+  box-sizing: border-box;
+}
+
+.use-cache-example-container {
+  background: var(--neutrals-white);
+  border-radius: var(--border-radius-large);
+  padding: var(--content-spacing-xlarge);
+  max-width: 400px;
+  width: 100%;
+  box-shadow: var(--content-shadow);
+}
+
+.use-cache-example-container .use-cache-header {
+  background: var(--neutrals-white);
+  position: relative;
+}
+
+.use-cache-example-container .use-cache-title {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-more-bold);
+  margin-bottom: var(--content-spacing-medium);
+}
+
+.use-cache-example-container .use-cache-description {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-less-bold);
+  margin-bottom: var(--content-spacing-medium);
+}
+
+.use-cache-example-container .use-cache-status {
+  border-radius: var(--border-radius-medium);
+  margin-top: var(--content-spacing-medium);
+  height: 120px;
+}
+
+.use-cache-example-container .use-cache-body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 300px;
+  border-radius: var(--border-radius-large);
+  margin-top: var(--content-spacing-large);
+  border: var(--border-width-medium) solid var(--utils-gray-light);
+  overflow: hidden;
+  position: relative;
+  padding: var(--content-spacing-medium);
+  white-space: pre-wrap;
+}
+
+.use-cache-example-container .use-cache-code {
+  overflow-y: auto;
+}
+
+.use-cache-example-container .input-form-container:not(:last-child) {
+  margin-bottom: var(--content-spacing-medium);
+}
+
+.use-cache-example-container .input-container .input[type="submit"] {
+  width: 60px;
+}
