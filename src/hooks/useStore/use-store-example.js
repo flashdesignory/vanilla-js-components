@@ -10,12 +10,12 @@ import { hasValidMin } from "../../lib/validators.js";
 import { useStore } from "./use-store.js";
 
 export class UseStoreExample {
-  constructor({ title }) {
+  constructor({ title, namespace }) {
     this.state = {
       title: undefined, // string
     };
 
-    this.namespace = "example";
+    this.namespace = namespace
 
     this.store = useStore(this.namespace);
 

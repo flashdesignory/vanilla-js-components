@@ -6,6 +6,7 @@ export default {
   argTypes: {
     title: { control: "text" },
     description: { control: "text" },
+    namespace: { control: "text" }
   },
 };
 
@@ -16,7 +17,7 @@ const Template = ({ ...args }) => {
   const component = new UseStoreExample({ ...args });
   container.appendChild(component.render());
 
-  const base = new BaseComponent();
+  const base = new BaseComponent({ namespace: args.namespace });
   container.appendChild(base.render());
   return container;
 };
@@ -25,4 +26,5 @@ export const Example = Template.bind({});
 Example.args = {
   title: "UseStore Example",
   description: `Global store with namespace!`,
+  namespace: "example"
 };

@@ -5,10 +5,12 @@ import { useStore } from "./use-store.js";
 import "./base-component.css";
 
 export class BaseComponent {
-  constructor() {
+  constructor({
+    namespace
+  }) {
     this.state = {};
 
-    this.namespace = "example";
+    this.namespace = namespace
 
     this.store = useStore(this.namespace);
 
