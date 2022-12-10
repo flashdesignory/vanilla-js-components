@@ -22,10 +22,15 @@ export const useStore = (namespace = defaultNameSpace, initialState = {}) => {
 
   const getStore = (namespace) => ({ ...store.getStore(namespace) });
 
+  const subscribe = (callback) => {
+   store.events.subscribe('state-change', callback, namespace);
+  }
+
   return {
     getState,
     setState,
     resetStore,
     getStore,
+    subscribe,
   };
 };

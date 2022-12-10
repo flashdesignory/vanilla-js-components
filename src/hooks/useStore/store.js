@@ -25,8 +25,6 @@ export class Store {
       this.instance = new Store(initialState, namespace);
     }
 
-    console.log(this.instance.initialState, this.instance.state);
-
     if (namespace !== undefined) {
       // populating initialState here, since multiple namespaces
       // can be used and all of them can have initial states.
@@ -50,12 +48,13 @@ export class Store {
       }
 
       this.state[namespace][key] = value;
-    } else {
-      this.state[key] = value;
+      this.events.broadcast("state-change", this.state[namespace], namespace);
+      return { key, value, namespace };
     }
 
+    this.state[key] = value;
     this.events.broadcast("state-change", this.state);
-    return { key, value, namespace };
+    return { key, value };
   }
 
   getState(key, namespace) {

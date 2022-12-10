@@ -1,0 +1,20 @@
+@import url("../../styles/colors.css");
+@import url("../../styles/fonts.css");
+@import url("../../styles/layout.css");
+@import url("../../styles/transitions.css");
+
+.base-component-container,
+.base-component-container * {
+  box-sizing: border-box;
+}
+
+.base-component-container {
+  background: var(--neutrals-white);
+  border-radius: var(--border-radius-large);
+  padding: var(--content-spacing-xlarge);
+  max-width: 400px;
+  width: 100%;
+  box-shadow: var(--content-shadow);
+  margin-top: var(--content-spacing-xlarge);
+  white-space: pre-wrap;
+}

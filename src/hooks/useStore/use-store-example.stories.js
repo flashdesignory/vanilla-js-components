@@ -1,4 +1,5 @@
 import { UseStoreExample } from "./use-store-example";
+import { BaseComponent } from "./base-component";
 
 export default {
   title: "Hooks/UseStoreExample",
@@ -9,8 +10,15 @@ export default {
 };
 
 const Template = ({ ...args }) => {
+  const container = document.createElement("div");
+  container.classList.add("template-container");
+
   const component = new UseStoreExample({ ...args });
-  return component.render();
+  container.appendChild(component.render());
+
+  const base = new BaseComponent();
+  container.appendChild(base.render());
+  return container;
 };
 
 export const Example = Template.bind({});
