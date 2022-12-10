@@ -26,6 +26,6 @@ export const useStore = (namespace = defaultNameSpace, initialState = {}) => {
     getState,
     setState,
     resetStore,
-    getStore
+    getStore,
   };
 };
