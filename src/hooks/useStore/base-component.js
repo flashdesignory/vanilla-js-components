@@ -12,7 +12,7 @@ export class BaseComponent {
 
     this.namespace = namespace
 
-    this.store = useStore(this.namespace);
+    this.store = useStore({ namespace: this.namespace });
 
     this.state[this.namespace] = {...this.store.getStore(this.namespace)};
     this.update = this.update.bind(this);
@@ -20,6 +20,14 @@ export class BaseComponent {
 
     this.container = document.createElement("div");
     this.container.classList.add("base-component-container");
+
+    this.header = document.createElement("div");
+    this.header.classList.add("base-component-header");
+    this.container.appendChild(this.header);
+
+    this.body = document.createElement("div");
+    this.body.classList.add("base-component-body");
+    this.container.appendChild(this.body);
   }
 
   update(state) {
@@ -28,8 +36,9 @@ export class BaseComponent {
   }
 
   render() {
-    this.container.replaceChildren();
-    this.container.textContent = JSON.stringify(this.state[this.namespace], null, 4);
+    this.body.replaceChildren();
+    this.header.textContent = `Base component is listening for state changes of: ${this.namespace ? this.namespace : "all state"}`;
+    this.body.textContent = JSON.stringify(this.state[this.namespace], null, 4);
     return this.container;
   }
 }

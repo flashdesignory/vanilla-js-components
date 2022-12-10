@@ -22,9 +22,15 @@ const Template = ({ ...args }) => {
   return container;
 };
 
-export const Example = Template.bind({});
-Example.args = {
+export const NameSpace = Template.bind({});
+NameSpace.args = {
   title: "UseStore Example",
   description: `Global store with namespace!`,
   namespace: "example"
+};
+
+export const Simple = Template.bind({});
+Simple.args = {
+  title: "UseStore Example",
+  description: `Global store with namespace!`,
 };

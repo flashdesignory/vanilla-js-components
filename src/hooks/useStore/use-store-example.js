@@ -17,7 +17,7 @@ export class UseStoreExample {
 
     this.namespace = namespace
 
-    this.store = useStore(this.namespace);
+    this.store = useStore({ namespace: this.namespace });
 
     this.getState = this.getState.bind(this);
     this.setState = this.setState.bind(this);

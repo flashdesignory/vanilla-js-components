@@ -2,7 +2,7 @@ import { Store } from "./store.js";
 
 const defaultNameSpace = "default";
 
-export const useStore = (namespace = defaultNameSpace, initialState = {}) => {
+export const useStore = ({ namespace, initialState = {} }) => {
   const store = Store.getInstance({ initialState, namespace });
 
   const getState = (key) => {
