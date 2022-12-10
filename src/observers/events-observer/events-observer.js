@@ -1,3 +1,9 @@
+/**
+ * EventsObserver
+ * The EventsObserver uses the MutationObserver to add (connect) or remove (disconnect) listeners of an element.
+ * The MutationObserver triggers callbacks on adding or removing the element to the dom.
+ * Once this happens, all events in the array get added or removed.
+ */
 export class EventsObserver {
   constructor({ ref, parent, events = [], onConnect, onDisconnect }) {
     this.ref = ref; // dom node

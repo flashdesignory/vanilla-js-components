@@ -3,6 +3,13 @@ const defaultNameSpace = "default";
 
 const expired = (expiresAt) => expiresAt && expiresAt < Date.now();
 
+/**
+ * useCache
+ * This hook implements an in-memory cache that supports expiration of key/value pairs.
+ * The namespace param lets us create unique namespaces.
+ * @param {*} namespace
+ * @returns
+ */
 export const useCache = (namespace = defaultNameSpace) => {
   if (!cache[namespace]) {
     cache[namespace] = {};

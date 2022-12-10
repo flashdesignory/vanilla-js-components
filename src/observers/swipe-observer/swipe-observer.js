@@ -1,3 +1,8 @@
+/**
+ * SwipeObserver
+ * The SwipeObserver re-implements the native mobile swipe events.
+ * It supports mouse and touch events to determine if a swipe gesture was made.
+ */
 export class SwipeObserver {
   constructor({ ref, offset = 20 }) {
     this.ref = ref;
