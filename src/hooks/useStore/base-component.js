@@ -4,41 +4,47 @@ import { useStore } from "./use-store.js";
 // document.adoptedStyleSheets.push(sheet);
 import "./base-component.css";
 
+import { Text } from "../../components/atoms/text/text.js";
+
 export class BaseComponent {
-  constructor({
-    namespace
-  }) {
+  constructor({ namespace }) {
     this.state = {};
 
-    this.namespace = namespace
+    this.namespace = namespace;
 
     this.store = useStore({ namespace: this.namespace });
 
-    this.state[this.namespace] = {...this.store.getStore(this.namespace)};
     this.update = this.update.bind(this);
     this.store.subscribe(this.update);
 
     this.container = document.createElement("div");
     this.container.classList.add("base-component-container");
 
-    this.header = document.createElement("div");
-    this.header.classList.add("base-component-header");
-    this.container.appendChild(this.header);
+    this.header = new Text({ containerClass: "base-component-header" });
+    this.container.appendChild(this.header.render());
 
-    this.body = document.createElement("div");
-    this.body.classList.add("base-component-body");
-    this.container.appendChild(this.body);
+    this.body = new Text({ containerClass: "base-component-body" });
+    this.container.appendChild(this.body.render());
+
+    this.update({ ...this.store.getStore(this.namespace) });
   }
 
   update(state) {
-    this.state[this.namespace] = {...state};
+    this.state[this.namespace] = { ...state };
+    this.header.update({
+      text: `Base component is listening for state changes of: ${
+        this.namespace ? this.namespace : "all state"
+      }`,
+    });
+    this.body.update({
+      text: JSON.stringify(this.state[this.namespace], null, 4),
+    });
     this.render();
   }
 
   render() {
-    this.body.replaceChildren();
-    this.header.textContent = `Base component is listening for state changes of: ${this.namespace ? this.namespace : "all state"}`;
-    this.body.textContent = JSON.stringify(this.state[this.namespace], null, 4);
+    this.header.render();
+    this.body.render();
     return this.container;
   }
 }
