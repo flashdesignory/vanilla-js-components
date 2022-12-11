@@ -22,3 +22,10 @@
 .base-component-container .base-component-header {
   margin-bottom: var(--content-spacing-medium);
 }
+
+.base-component-container .base-component-body {
+  background: var(--utils-gray-dark);
+  color: var(--neutrals-white);
+  padding: var(--content-spacing-medium);
+  border-radius: var(--border-radius-medium);
+}
