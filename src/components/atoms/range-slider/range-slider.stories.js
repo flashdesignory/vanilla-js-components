@@ -5,6 +5,7 @@ export default {
   argTypes: {
     id: { control: "text" },
     value: { control: "number" },
+    onChange: { action: "onInput" },
   },
 };
 
@@ -13,7 +14,13 @@ const Template = ({ ...args }) => {
   return component.render();
 };
 
-export const Simple = Template.bind({});
-Simple.args = {
+export const Empty = Template.bind({});
+Empty.args = {
   id: "range-slider",
 };
+
+export const Half = Template.bind({});
+Half.args = {
+  id: "range-slider",
+  value: 50
+}

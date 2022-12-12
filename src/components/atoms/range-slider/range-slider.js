@@ -3,12 +3,13 @@
 import "./range-slider.css";
 
 export class RangeSlider {
-  constructor({ id, value }) {
+  constructor({ id, value, onChange }) {
     this.state = {
       id: undefined, // string
       value: undefined, // number
     };
 
+    this.onChange = onChange;
     this.mouseDown = false;
 
     this.handleOnChange = this.handleOnChange.bind(this);
@@ -26,6 +27,7 @@ export class RangeSlider {
     this.input.min = 0;
     this.input.max = 100;
     this.input.addEventListener("change", this.handleOnChange);
+    this.input.addEventListener("input", this.handleOnChange);
     this.label.appendChild(this.input);
 
     this.track = document.createElement("div");
@@ -55,7 +57,7 @@ export class RangeSlider {
 
     this.update({ id, value });
     // temp delay for now
-    if (value !== undefined) setTimeout(() => this.updateDisplay(), 50);
+    if (value !== undefined) setTimeout(() => this.handleOnChange(), 50);
   }
 
   get value() {
@@ -85,19 +87,10 @@ export class RangeSlider {
     let percentX = localX / trackWidth;
     if (percentX < 0) percentX = 0;
     if (percentX > 1) percentX = 1;
-    percentX = percentX.toFixed(2) * 100;
+    percentX = Math.floor(percentX.toFixed(2) * 100);
 
-    this.update({ value: percentX });
-    this.value = this.state.value;
-
-    this.updateDisplay();
-  }
-
-  updateDisplay() {
-    this.status.textContent = `value: ${this.state.value}`;
-    // calculations based on parent (label);
-    this.track.style.width = `${this.state.value}%`;
-    this.handle.style.left = `clamp(0px, calc(${this.state.value}% - 11px), calc(100% - 22px))`;
+    this.value = percentX;
+    this.input.dispatchEvent(new Event("input"))
   }
 
   start(e) {
@@ -107,16 +100,19 @@ export class RangeSlider {
 
   stop() {
     if (this.mouseDown) {
+      // this.container.dispatchEvent(new CustomEvent("change", { detail: this.state.value }));
       this.mouseDown = false;
     }
   }
 
   handleOnChange(e) {
-    this.state.value = e.target.value;
+    console.log('handleOnChange');
+    this.status.textContent = `value: ${this.state.value}`;
+    // calculations based on parent (label);
+    this.track.style.width = `${this.state.value}%`;
+    this.handle.style.left = `clamp(0px, calc(${this.state.value}% - 11px), calc(100% - 22px))`;
 
-    if (this.status) {
-      this.status.textContent = `value: ${this.state.value}`;
-    }
+    if (this.onChange && e !== undefined) this.onChange(e);
   }
 
   render() {
