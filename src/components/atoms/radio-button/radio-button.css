@@ -12,6 +12,7 @@
   display: flex;
   color: var(--utils-gray-dark);
   font-family: var(--default-font-family);
+  transition: var(--default-transition);
 }
 
 .radio-button-container:hover {
