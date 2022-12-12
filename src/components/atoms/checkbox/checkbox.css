@@ -16,6 +16,10 @@
   font-family: var(--default-font-family);
 }
 
+.checkbox-container:hover {
+  color: var(--utils-gray-light);
+}
+
 .checkbox-container .label {
   margin-left: var(--content-spacing-small);
   font-family: inherit;
