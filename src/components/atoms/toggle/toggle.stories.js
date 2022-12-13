@@ -5,6 +5,7 @@ export default {
   argTypes: {
     id: { control: "text" },
     checked: { control: "boolean" },
+    onChange: { action: "onInput" },
   },
 };
 

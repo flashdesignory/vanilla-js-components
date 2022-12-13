@@ -3,11 +3,13 @@
 import "./toggle.css";
 
 export class Toggle {
-  constructor({ id, checked }) {
+  constructor({ id, checked, onChange }) {
     this.state = {
       id: undefined, // string
       checked: undefined, // boolean
     };
+
+    this.onChange = onChange;
 
     this.handleOnChange = this.handleOnChange.bind(this);
     this.handleOnKeyDown = this.handleOnKeyDown.bind(this);
@@ -65,6 +67,8 @@ export class Toggle {
     if (this.status) {
       this.status.textContent = `selected: ${this.state.checked}`;
     }
+
+    if (this.onChange && e !== undefined) this.onChange(e);
   }
 
   render() {
