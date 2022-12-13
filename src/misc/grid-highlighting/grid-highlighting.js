@@ -47,7 +47,7 @@ export class GridHighlighting {
 
   draw(x, y) {
     if (x < this.startX) {
-      this.rect.style.right = `${window.innerWidth - this.startX}px`;
+      this.rect.style.right = `${document.documentElement.clientWidth - this.startX}px`;
       this.rect.style.left = "auto";
       this.rect.style.width = `${this.startX - x}px`;
     } else {
