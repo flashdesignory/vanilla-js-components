@@ -35,9 +35,21 @@
 
 .input-form-container .input-container:not(:last-child) {
   margin-right: var(--content-spacing-medium);
+  margin-bottom: 0;
   flex: 1;
 }
 
 .input-form-container .input-container:not(:last-child) input {
   flex: 1;
+}
+
+@media (max-width: 360px) {
+  .input-form-container form {
+    flex-direction: column;
+  }
+
+  .input-form-container .input-container:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: var(--content-spacing-medium);
+  }
 }
