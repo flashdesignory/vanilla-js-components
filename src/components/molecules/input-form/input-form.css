@@ -43,7 +43,7 @@
   flex: 1;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 320px) {
   .input-form-container form {
     flex-direction: column;
   }
