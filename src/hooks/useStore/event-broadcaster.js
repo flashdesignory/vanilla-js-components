@@ -18,7 +18,9 @@ export class EventBroadcaster {
 
   unsubscribe(event, fn, namespace) {
     if (namespace !== undefined) {
-      this.events[event] = this.events[event].filter((entry) => entry.fn !== fn && entry.namespace !== namespace);
+      this.events[event] = this.events[event].filter(
+        (entry) => entry.fn !== fn && entry.namespace !== namespace
+      );
       return;
     }
     this.events[event] = this.events[event].filter((entry) => entry.fn !== fn);
@@ -28,7 +30,9 @@ export class EventBroadcaster {
     if (this.events[event] === undefined) return;
 
     if (namespace !== undefined) {
-      this.events[event].forEach((entry) => entry.namespace === namespace && entry.fn(data));
+      this.events[event].forEach(
+        (entry) => entry.namespace === namespace && entry.fn(data)
+      );
       return;
     }
 

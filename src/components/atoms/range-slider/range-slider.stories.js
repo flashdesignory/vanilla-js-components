@@ -22,5 +22,5 @@ Empty.args = {
 export const Half = Template.bind({});
 Half.args = {
   id: "range-slider",
-  value: 50
-}
+  value: 50,
+};

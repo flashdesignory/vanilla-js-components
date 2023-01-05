@@ -1,0 +1,24 @@
+.input-selector-container,
+.input-selector-container * {
+  box-sizing: border-box;
+}
+
+.input-selector-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+}
+
+.input-selector-container .input-selector-trigger button {
+  width: 100%;
+  text-align: left;
+}
+
+.input-selector-container .list-container {
+  display: none;
+}
+
+.input-selector-container .list-container.show {
+  display: block;
+}

@@ -90,7 +90,7 @@ export class RangeSlider {
     percentX = Math.floor(percentX.toFixed(2) * 100);
 
     this.value = percentX;
-    this.input.dispatchEvent(new Event("input"))
+    this.input.dispatchEvent(new Event("input"));
   }
 
   start(e) {
@@ -106,7 +106,7 @@ export class RangeSlider {
   }
 
   handleOnChange(e) {
-    console.log('handleOnChange');
+    console.log("handleOnChange");
     this.status.textContent = `value: ${this.state.value}`;
     // calculations based on parent (label);
     this.track.style.width = `${this.state.value}%`;

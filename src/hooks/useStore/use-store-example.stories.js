@@ -6,7 +6,7 @@ export default {
   argTypes: {
     title: { control: "text" },
     description: { control: "text" },
-    namespace: { control: "text" }
+    namespace: { control: "text" },
   },
 };
 
@@ -26,7 +26,7 @@ export const NameSpace = Template.bind({});
 NameSpace.args = {
   title: "UseStore Example",
   description: `Global store with namespace!`,
-  namespace: "example"
+  namespace: "example",
 };
 
 export const Simple = Template.bind({});

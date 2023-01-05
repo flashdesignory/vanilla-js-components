@@ -1,7 +1,5 @@
 import { Store } from "./store.js";
 
-const defaultNameSpace = "default";
-
 export const useStore = ({ namespace, initialState = {} }) => {
   const store = Store.getInstance({ initialState, namespace });
 
@@ -23,8 +21,8 @@ export const useStore = ({ namespace, initialState = {} }) => {
   const getStore = (namespace) => ({ ...store.getStore(namespace) });
 
   const subscribe = (callback) => {
-   store.events.subscribe('state-change', callback, namespace);
-  }
+    store.events.subscribe("state-change", callback, namespace);
+  };
 
   return {
     getState,

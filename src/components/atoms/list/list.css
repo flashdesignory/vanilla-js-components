@@ -55,6 +55,12 @@
   color: var(--utils-gray-light);
 }
 
+.list-container .list-li:active,
+.list-container .list-li:focus {
+  outline: none;
+  border-color: var(--utils-highlight-orange);
+}
+
 .list-container .list-li:not(:last-child) {
   margin-bottom: var(--content-spacing-medium);
 }

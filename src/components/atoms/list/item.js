@@ -6,6 +6,7 @@ export class Item {
     };
 
     this.item = document.createElement("li");
+    this.item.tabIndex = 0;
     this.item.classList.add("list-li");
 
     this.update({ data, role });
@@ -18,7 +19,8 @@ export class Item {
 
   render() {
     this.item.textContent = this.state.data;
-    this.item.role = this.state.role;
+    // this.item.role = this.state.role;
+    this.item.setAttribute("role", this.state.role);
     return this.item;
   }
 }

@@ -15,7 +15,7 @@ export class UseStoreExample {
       title: undefined, // string
     };
 
-    this.namespace = namespace
+    this.namespace = namespace;
 
     this.store = useStore({ namespace: this.namespace });
 

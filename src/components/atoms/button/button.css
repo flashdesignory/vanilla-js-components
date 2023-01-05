@@ -20,6 +20,12 @@
   width: inherit;
 }
 
+.button-container .button:active,
+.button-container .button:focus {
+  outline: none;
+  border-color: var(--utils-highlight-orange);
+}
+
 .button-container .button:disabled {
   pointer-events: none;
   opacity: 0.5;
