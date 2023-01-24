@@ -18,7 +18,11 @@ export class TodoList {
       submitText: undefined, // string
     };
 
-    ({ addItem: this.addItem, updateItem: this.updateItem, deleteItem: this.deleteItem } = useTodo());
+    ({
+      addItem: this.addItem,
+      updateItem: this.updateItem,
+      deleteItem: this.deleteItem,
+    } = useTodo());
 
     this.handleAddItem = this.handleAddItem.bind(this);
     this.handleUpdateItem = this.handleUpdateItem.bind(this);
@@ -60,7 +64,7 @@ export class TodoList {
     const value = e.target.elements.input.value.trim();
     if (!hasValidMin(value, 2)) return;
 
-   this.update({ data: this.addItem(this.state.data, value )});
+    this.update({ data: this.addItem(this.state.data, value) });
 
     const element = new TodoItem({
       ref: this.list,
@@ -78,7 +82,7 @@ export class TodoList {
   }
 
   handleDeleteItem(item, element) {
-    this.update({ data: this.deleteItem(this.state.data, item.id )})
+    this.update({ data: this.deleteItem(this.state.data, item.id) });
     this.list.removeChild(element);
   }
 
