@@ -5,7 +5,7 @@ export class TodoItem {
   constructor({ name, value, onChange, onDelete }) {
     this.state = {
       name: undefined, // string
-      value: undefined, // { task: string, completed: boolean }
+      value: undefined, // { task: string, completed: boolean, id: string }
     };
 
     this.onChange = onChange;
@@ -37,7 +37,7 @@ export class TodoItem {
     if (value !== undefined) this.state.value = { ...value };
 
     this.input.update({
-      id: this.state.value.task,
+      id: this.state.value.id,
       name: this.state.name,
       label: this.state.value.task,
       checked: this.state.value.completed,

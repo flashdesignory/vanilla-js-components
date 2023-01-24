@@ -6,20 +6,21 @@ import { Text } from "../../atoms/text/text.js";
 import { InputForm } from "../../molecules/input-form/input-form.js";
 import { TodoItem } from "./todo-item.js";
 import { hasValidMin } from "../../../lib/index.js";
+import { useTodo } from "./use-todo.js";
 
 export class TodoList {
   constructor({ title, name, data, prompt, submitText }) {
     this.state = {
       title: undefined, // string
       name: undefined, // string
-      data: undefined, // { task: string, completed: boolean }[]
+      data: undefined, // { task: string, completed: boolean, id: string }[]
       prompt: undefined, // string
       submitText: undefined, // string
     };
 
-    this.updateItem = this.updateItem.bind(this);
-    this.addItem = this.addItem.bind(this);
-    this.deleteItem = this.deleteItem.bind(this);
+    this.handleAddItem = this.handleAddItem.bind(this);
+    this.handleUpdateItem = this.handleUpdateItem.bind(this);
+    this.handleDeleteItem = this.handleDeleteItem.bind(this);
 
     this.container = document.createElement("div");
     this.container.classList.add("todo-container");
@@ -28,7 +29,7 @@ export class TodoList {
     this.container.appendChild(this.header.render());
 
     this.inputForm = new InputForm({
-      onSubmit: this.addItem,
+      onSubmit: this.handleAddItem,
     });
     this.container.appendChild(this.inputForm.render());
 
@@ -53,45 +54,33 @@ export class TodoList {
     });
   }
 
-  updateItem(updatedItem) {
-    this.state.data = this.state.data.map((item) => {
-      const newItem = {
-        ...item,
-        completed:
-          item.task === updatedItem.task
-            ? updatedItem.completed
-            : item.completed,
-      };
-      return newItem;
-    });
-  }
+  handleAddItem(e) {
+    const value = e.target.elements.input.value.trim();
+    if (!hasValidMin(value, 2)) return;
 
-  deleteItem(deletedValue, deletedItem) {
-    this.state.data = this.state.data.filter(
-      (item) => item.task !== deletedValue.task
-    );
-    this.list.removeChild(deletedItem);
-  }
-
-  addItem(e) {
-    const inputtext = e.target.elements.input.value.trim();
-    if (!hasValidMin(inputtext, 2)) return;
-
-    const newItem = {
-      task: inputtext,
-      completed: false,
-    };
+   const { addItem } = useTodo();
+   this.update({ data: addItem(this.state.data, value )});
 
     const element = new TodoItem({
       ref: this.list,
-      value: newItem,
-      onChange: this.updateItem,
-      onDelete: this.deleteItem,
+      value: this.state.data[0],
+      onChange: this.handleUpdateItem,
+      onDelete: this.handleDeleteItem,
       name: this.state.name,
     });
 
     this.list.insertBefore(element.render(), this.list.childNodes[0]);
-    this.state.data.push(newItem);
+  }
+
+  handleUpdateItem(item) {
+    const { updateItem } = useTodo();
+    this.update({ data: updateItem(this.state.data, item) });
+  }
+
+  handleDeleteItem(item, element) {
+    const { deleteItem } = useTodo();
+    this.update({ data: deleteItem(this.state.data, item.id )})
+    this.list.removeChild(element);
   }
 
   render() {
@@ -101,8 +90,8 @@ export class TodoList {
     this.state.data.forEach((item) => {
       const element = new TodoItem({
         value: item,
-        onChange: this.updateItem,
-        onDelete: this.deleteItem,
+        onChange: this.handleUpdateItem,
+        onDelete: this.handleDeleteItem,
         name: this.state.name,
       });
 
