@@ -2,10 +2,10 @@ import { Button } from "../../atoms/button/button.js";
 import { Checkbox } from "../../atoms/checkbox/checkbox";
 
 export class TodoItem {
-  constructor({ name, value, onChange, onDelete }) {
+  constructor({ name, item, onChange, onDelete }) {
     this.state = {
       name: undefined, // string
-      value: undefined, // { task: string, completed: boolean, id: string }
+      item: undefined, // { task: string, completed: boolean, id: string }
     };
 
     this.onChange = onChange;
@@ -29,29 +29,29 @@ export class TodoItem {
     });
     this.container.appendChild(this.button.render());
 
-    this.update({ name, value });
+    this.update({ name, item });
   }
 
-  update({ name, value }) {
+  update({ name, item }) {
     if (name !== undefined) this.state.name = name;
-    if (value !== undefined) this.state.value = { ...value };
+    if (item !== undefined) this.state.item = { ...item };
 
     this.input.update({
-      id: this.state.value.id,
+      id: this.state.item.id,
       name: this.state.name,
-      label: this.state.value.task,
-      checked: this.state.value.completed,
+      label: this.state.item.task,
+      checked: this.state.item.completed,
     });
   }
 
   handleOnChange(e) {
     const completed = e.target.checked;
-    this.state.value = { ...this.state.value, completed };
-    this.onChange(this.state.value);
+    this.state.item = { ...this.state.item, completed };
+    this.onChange(this.state.item);
   }
 
   handleOnClick() {
-    this.onDelete(this.state.value, this.container);
+    this.onDelete(this.state.item, this.container);
   }
 
   render() {

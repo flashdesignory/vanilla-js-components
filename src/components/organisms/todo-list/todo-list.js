@@ -63,7 +63,7 @@ export class TodoList {
 
     const element = new TodoItem({
       ref: this.list,
-      value: this.state.data[0],
+      item: this.state.data[0],
       onChange: this.handleUpdateItem,
       onDelete: this.handleDeleteItem,
       name: this.state.name,
@@ -89,7 +89,7 @@ export class TodoList {
 
     this.state.data.forEach((item) => {
       const element = new TodoItem({
-        value: item,
+        item: item,
         onChange: this.handleUpdateItem,
         onDelete: this.handleDeleteItem,
         name: this.state.name,
