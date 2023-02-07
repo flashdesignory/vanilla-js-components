@@ -3,7 +3,7 @@ import { Checkbox } from "./checkbox";
 export default {
   title: "Atoms/Checkbox",
   argTypes: {
-    id: "checkbox",
+    id: { control: "text" },
     name: { control: "text" },
     label: { control: "text" },
     checked: { control: "boolean" },
@@ -19,4 +19,5 @@ const Template = ({ ...args }) => {
 export const Single = Template.bind({});
 Single.args = {
   label: "Check me!",
+  id: "checkbox"
 };
