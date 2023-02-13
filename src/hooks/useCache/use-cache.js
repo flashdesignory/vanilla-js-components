@@ -7,7 +7,7 @@ const expired = (expiresAt) => expiresAt && expiresAt < Date.now();
  * useCache
  * This hook implements an in-memory cache that supports expiration of key/value pairs.
  * The namespace param creates a unique namespaces.
- * 
+ *
  * @param {string} namespace
  * @returns Methods to interact with useCache.
  */
@@ -18,10 +18,10 @@ export const useCache = (namespace = defaultNameSpace) => {
 
   /**
    * Add a value to the cache.
-   * 
-   * @param {string} key 
-   * @param {*} value 
-   * @param {number|undefined} timeout 
+   *
+   * @param {string} key
+   * @param {*} value
+   * @param {number|undefined} timeout
    * @returns A key/value pair.
    */
   const setValue = (key, value, timeout) => {
@@ -32,8 +32,8 @@ export const useCache = (namespace = defaultNameSpace) => {
 
   /**
    * Deletes a value in the cache.
-   * 
-   * @param {string} key 
+   *
+   * @param {string} key
    * @returns A key/value pair.
    */
   const deleteValue = (key) => {
@@ -47,8 +47,8 @@ export const useCache = (namespace = defaultNameSpace) => {
 
   /**
    * Gets a value if found in the cache.
-   * 
-   * @param {string} key 
+   *
+   * @param {string} key
    * @returns A key/value pair.
    */
   const getValue = (key) => {
@@ -63,11 +63,11 @@ export const useCache = (namespace = defaultNameSpace) => {
 
   /**
    * Checks if an entry has an expiration.
-   * 
+   *
    * Null values represent no expiration.
    * Zero (0) represents an expired entry.
-   * 
-   * @param {string} key 
+   *
+   * @param {string} key
    * @returns Evaluated expiration
    */
   const timeTillExpiration = (key) => {
@@ -95,7 +95,7 @@ export const useCache = (namespace = defaultNameSpace) => {
 
   /**
    * Getter for the current cache.
-   * 
+   *
    * @returns Object of the current cache.
    */
   const getCache = () => ({ ...cache[namespace] });

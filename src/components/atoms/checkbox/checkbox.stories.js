@@ -19,5 +19,5 @@ const Template = ({ ...args }) => {
 export const Single = Template.bind({});
 Single.args = {
   label: "Check me!",
-  id: "checkbox"
+  id: "checkbox",
 };
