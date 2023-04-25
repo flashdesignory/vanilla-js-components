@@ -3,11 +3,12 @@
 import "./select.css";
 
 export class Select {
-  constructor({ id, multiple, data, onChange }) {
+  constructor({ id, multiple, data, onChange, label }) {
     this.state = {
       id: undefined, // string
       multiple: undefined, // boolean
       data: undefined, // string[]
+      label: undefined, // string
     };
 
     this.onChange = onChange;
@@ -26,13 +27,14 @@ export class Select {
     this.select.addEventListener("change", this.handleOnChange);
     this.container.appendChild(this.select);
 
-    this.update({ id, multiple, data });
+    this.update({ id, multiple, data, label });
   }
 
-  update({ id, multiple, data }) {
+  update({ id, multiple, data, label }) {
     if (id !== undefined) this.state.id = id;
     if (multiple !== undefined) this.state.multiple = multiple;
     if (data !== undefined) this.state.data = data;
+    if (label !== undefined) this.state.label = label;
   }
 
   handleOnChange(e) {
@@ -54,6 +56,15 @@ export class Select {
 
     this.select.id = this.state.id;
     this.select.multiple = this.state.multiple;
+
+    if (this.state.label) {
+      const option = document.createElement("option");
+      option.hidden = true;
+      option.disabled = true;
+      option.selected = true;
+      option.textContent = this.state.label;
+      this.select.appendChild(option);
+    }
 
     this.state.data.forEach((item) => {
       const option = document.createElement("option");

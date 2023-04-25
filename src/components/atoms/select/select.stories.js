@@ -6,6 +6,7 @@ export default {
   argTypes: {
     id: { control: "text" },
     multiple: { control: "boolean" },
+    label: { control: "text" },
     onChange: { action: "onChange" },
     data: { control: "array" },
   },
@@ -21,4 +22,5 @@ Simple.args = {
   id: "select",
   multiple: false,
   data: data,
+  label: "Select a car!"
 };
